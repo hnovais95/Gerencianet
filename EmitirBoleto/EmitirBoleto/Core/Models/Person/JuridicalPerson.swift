@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct JuridicalPerson: Person, JuridicalEntity {
+struct JuridicalPerson: JuridicalEntity {
     let name: String
     let cpf: String
     let phoneNumber: String

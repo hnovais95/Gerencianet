@@ -13,7 +13,7 @@ protocol Person {
     var address: Address { get }
 }
 
-protocol JuridicalEntity {
+protocol JuridicalEntity: Person {
     var corporateName: String { get }
     var cnpj: String { get }
 }

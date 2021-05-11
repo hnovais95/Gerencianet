@@ -187,10 +187,10 @@
 		CABCA900264AB086007AE005 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CABCA927264AD43D007AE005 /* Ports */,
+				CABCA904264AB0A3007AE005 /* Repositories */,
 				CABCA902264AB094007AE005 /* Models */,
 				CABCA903264AB09A007AE005 /* UseCases */,
-				CABCA904264AB0A3007AE005 /* Repositories */,
-				CABCA927264AD43D007AE005 /* Ports */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFC89AB264B1B4100D361B0 /* User */,
-				CABCA910264AB83E007AE005 /* Customer */,
+				CABCA910264AB83E007AE005 /* Person */,
 				CABCA91C264AC42C007AE005 /* Transaction */,
 				CABCA933264ADDA4007AE005 /* Responses */,
 				CAFC89A0264AFF3A00D361B0 /* Errors */,
@@ -251,14 +251,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		CABCA910264AB83E007AE005 /* Customer */ = {
+		CABCA910264AB83E007AE005 /* Person */ = {
 			isa = PBXGroup;
 			children = (
 				CABCA908264AB25D007AE005 /* Person.swift */,
 				CABCA917264AC2E3007AE005 /* NaturalPerson.swift */,
 				CABCA90E264AB71F007AE005 /* JuridicalPerson.swift */,
 			);
-			path = Customer;
+			path = Person;
 			sourceTree = "<group>";
 		};
 		CABCA911264AB8B8007AE005 /* Values */ = {

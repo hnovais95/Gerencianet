@@ -6,7 +6,10 @@
 //
 
 protocol PaymentGateway {
-    func createChargeOneStep(customer: Person,
+    func createChargeOneStep(customer: NaturalPerson,
+                             data: ChargeData,
+                             completionHandler: @escaping (Result<ChargeOneStepResponse, NetworkError>) -> Void)
+    func createChargeOneStep(customer: JuridicalPerson,
                              data: ChargeData,
                              completionHandler: @escaping (Result<ChargeOneStepResponse, NetworkError>) -> Void)
 }
