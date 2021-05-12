@@ -8,22 +8,30 @@
 struct Address: Serializable {
     let street: String
     let number: Int
-    let complement: String
     let neighborhood: String
-    let cep: String
+    let zipCode: String
+    let city: String
+    let complement: String
     let state: String
     
     init(_ street: String,
          _ number: Int,
-         _ complement: String,
          _ neighborhood: String,
+         _ zipCode: String,
+         _ city: String,
+         _ complement: String,
          _ cep: String,
          _ state: String) {
         self.street = street
         self.number = number
-        self.complement = complement
         self.neighborhood = neighborhood
-        self.cep = cep
+        self.zipCode = cep
+        self.city = city
+        self.complement = complement
         self.state = state
+    }
+    
+    private enum CodingKeys: String, CodingKey {        
+        case street, number, neighborhood, zipCode = "zipcode", city, complement, state
     }
 }

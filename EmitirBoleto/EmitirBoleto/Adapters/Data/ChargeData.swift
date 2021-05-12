@@ -6,18 +6,22 @@
 //
 
 struct ChargeData: Serializable {
-    let itens: [ItemModel]
+    let items: [ItemModel]
     let shippings: [ShippingModel]
-    let bankingBillet: BankingBilletModel?
+    let bankingBillet: BankingBilletData?
     
     init(_ charge: ChargeModel) {
-        self.itens = charge.itens
+        self.items = charge.items
         self.shippings = charge.shippings
-        self.bankingBillet = charge.bankingBillet
+        if let bankingBillet = charge.bankingBillet {
+            self.bankingBillet = BankingBilletData(bankingBillet)
+        } else {
+            self.bankingBillet = nil
+        }
     }
     
-    init(_ itens: [ItemModel], _ shipping: [ShippingModel], bankingBillet: BankingBilletModel) {
-        self.itens = itens
+    init(_ itens: [ItemModel], _ shipping: [ShippingModel], bankingBillet: BankingBilletData) {
+        self.items = itens
         self.shippings = shipping
         self.bankingBillet = bankingBillet
     }

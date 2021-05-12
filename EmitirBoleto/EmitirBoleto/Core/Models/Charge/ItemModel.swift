@@ -7,12 +7,12 @@
 
 struct ItemModel: Serializable {
     let name: String
-    let unitaryPrice: Int
+    let value: Int
     let amount: Int
     
-    init(_ name: String, _ unitaryPrice: Int, _ amount: Int) {
+    init(_ name: String, _ value: Int, _ amount: Int) {
         self.name = name
-        self.unitaryPrice = unitaryPrice
+        self.value = value
         self.amount = amount
     }
 }

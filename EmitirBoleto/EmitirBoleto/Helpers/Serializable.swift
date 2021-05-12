@@ -18,5 +18,4 @@ public extension Serializable {
         guard let data = self.toData() else { return nil }
         return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
     }
-    
 }

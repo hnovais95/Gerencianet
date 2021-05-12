@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct AuthorizeResponse {
+struct AuthorizeResponse: Serializable {
     let accessToken: String
     let refreshToken: String
     let expiresIn: Int

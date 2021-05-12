@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ChargeOneStepResponse {
+struct ChargeOneStepResponse: Serializable {
     let customer: String
     let expireAt: String
     let value: Int

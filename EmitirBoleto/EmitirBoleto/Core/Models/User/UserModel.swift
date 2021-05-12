@@ -11,7 +11,6 @@ class UserModel: Equatable {
     private(set) var clientID: String
     private(set) var clientSecret: String
     private(set) var token: String?
-    private(set) var cache: [String:String]?
     
     init(clientID: String, clientSecret: String)
     {
@@ -23,11 +22,8 @@ class UserModel: Equatable {
         self.token = token
     }
     
-    func setContext(_ context: [String:String]) {
-        self.cache = context
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.clientID == rhs.clientID
     }
     
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.clientID == rhs.clientID && lhs.clientSecret == rhs.clientSecret
-    }
 }

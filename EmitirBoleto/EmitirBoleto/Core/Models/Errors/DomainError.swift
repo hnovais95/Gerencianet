@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum DomianError: Error {
-    case invalidAddress
+enum DomainError: Error {
+    case unexpected
 }
