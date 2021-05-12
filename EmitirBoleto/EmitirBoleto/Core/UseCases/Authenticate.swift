@@ -14,7 +14,7 @@ class Authenticate {
         self.userRepository = userRepository
     }
     
-    func authorize(user: User) {
+    func authorize(user: UserModel) {
         var token: String?
         
         authenticator.authorize(user: user) { result in

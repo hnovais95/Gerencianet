@@ -7,11 +7,11 @@
 
 import Foundation
 
-class User {
+class UserModel: Equatable {
     private(set) var clientID: String
     private(set) var clientSecret: String
     private(set) var token: String?
-    private(set) var context: [String:String]?
+    private(set) var cache: [String:String]?
     
     init(clientID: String, clientSecret: String)
     {
@@ -24,6 +24,10 @@ class User {
     }
     
     func setContext(_ context: [String:String]) {
-        self.context = context
+        self.cache = context
+    }
+    
+    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.clientID == rhs.clientID && lhs.clientSecret == rhs.clientSecret
     }
 }

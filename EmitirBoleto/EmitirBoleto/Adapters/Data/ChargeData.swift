@@ -5,14 +5,20 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ChargeData {
-    let itens: [Item]
-    let shipping: [Shipping]
-    let bankingBillet: BankingBillet
+struct ChargeData: Serializable {
+    let itens: [ItemModel]
+    let shippings: [ShippingModel]
+    let bankingBillet: BankingBilletModel?
     
-    init(_ itens: [Item], _ shipping: [Shipping], bankingBillet: BankingBillet) {
+    init(_ charge: ChargeModel) {
+        self.itens = charge.itens
+        self.shippings = charge.shippings
+        self.bankingBillet = charge.bankingBillet
+    }
+    
+    init(_ itens: [ItemModel], _ shipping: [ShippingModel], bankingBillet: BankingBilletModel) {
         self.itens = itens
-        self.shipping = shipping
+        self.shippings = shipping
         self.bankingBillet = bankingBillet
     }
 }

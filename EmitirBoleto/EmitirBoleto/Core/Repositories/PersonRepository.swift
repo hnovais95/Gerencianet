@@ -6,9 +6,9 @@
 //
 
 protocol PersonRepository {
-    func getAllNaturalPerson() -> [NaturalPerson]
-    func getAllJuridicalPerson() -> [JuridicalPerson]
+    func getAllNaturalPerson() -> [NaturalPersonModel]
+    func getAllJuridicalPerson() -> [JuridicalPersonModel]
     func getAll() -> [Person]
-    func save(_ person: NaturalPerson)
-    func save(_ person: JuridicalPerson)
+    func save(_ person: NaturalPersonData)
+    func save(_ person: JuridicalPersonData)
 }

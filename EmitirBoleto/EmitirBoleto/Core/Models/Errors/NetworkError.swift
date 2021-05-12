@@ -8,5 +8,9 @@
 import Foundation
 
 enum NetworkError: Error {
-    case badURL, badRequest, unauthorized
+    case noConnectivity
+    case badRequest
+    case serverError
+    case unauthorized
+    case forbidden
 }

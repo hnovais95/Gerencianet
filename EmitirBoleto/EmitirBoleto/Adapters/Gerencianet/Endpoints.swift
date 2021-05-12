@@ -8,8 +8,7 @@
 import Foundation
 
 final class Endpoints {
-    private static let base: String = "https://sandbox.gerencianet.com.br"
-    
+    private static let base: String = "https://sandbox.gerencianet.com.br"    
     static let authorize: String = base + "/v1/authorize"
     static let chargeOneStep: String = base + "/v1/charge/one-step"
 }

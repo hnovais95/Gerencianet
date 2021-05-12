@@ -1,20 +1,18 @@
 //
-//  Itens.swift
+//  Shipping.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-import Foundation
-
-struct Item {
+struct ShippingModel: Serializable {
     let name: String
-    let unitaryPrice: Decimal
+    let value: Int
     let amount: Int
     
-    init(_ name: String, _ unitaryPrice: Decimal, _ amount: Int) {
+    init(_ name: String, _ value: Int, _ amount: Int) {
         self.name = name
-        self.unitaryPrice = unitaryPrice
+        self.value = value
         self.amount = amount
     }
 }

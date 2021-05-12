@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct Address {
+struct Address: Serializable {
     let street: String
     let number: Int
     let complement: String

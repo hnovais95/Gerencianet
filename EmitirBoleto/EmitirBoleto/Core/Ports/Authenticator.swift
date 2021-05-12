@@ -6,6 +6,6 @@
 //
 
 protocol Authenticator {
-    func authorize(user: User,
+    func authorize(user: UserModel,
                    completionHandler: @escaping (Result<AuthorizeResponse, NetworkError>) -> Void)
 }

@@ -5,19 +5,17 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-import Foundation
-
 struct ChargeOneStepResponse {
     let customer: String
     let expireAt: String
-    let value: Decimal
+    let value: Int
     let barCode: String
     let sharedLink: String
     let pdfLink: String
     
     init(_ customer: String,
          _ expireAt: String,
-         _ value: Decimal,
+         _ value: Int,
          _ barCode: String,
          _ sharedLink: String,
          _ pdfLink: String) {

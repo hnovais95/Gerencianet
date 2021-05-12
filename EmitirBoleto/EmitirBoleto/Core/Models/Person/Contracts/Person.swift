@@ -12,8 +12,3 @@ protocol Person {
     var email: String { get }
     var address: Address { get }
 }
-
-protocol JuridicalEntity: Person {
-    var corporateName: String { get }
-    var cnpj: String { get }
-}

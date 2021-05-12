@@ -6,7 +6,7 @@
 //
 
 protocol UserRepository {
-    func getUser(clientID: String) -> User
+    func getUser(clientID: String) -> UserModel
     func getToken(clientID: String) -> String
     func save(_ user: UserData)
 }

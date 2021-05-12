@@ -5,7 +5,6 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct BankingBillet {
+struct BankingBilletModel: Serializable {
     let expireAt: String
-    let costumer: Person
 }

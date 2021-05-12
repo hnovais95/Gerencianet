@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-class Payment {
+class ChargeGenerator {
     private let paymentGateway: PaymentGateway
     
     init(paymentGateway: PaymentGateway) {
@@ -13,28 +13,30 @@ class Payment {
     }
     
     func createCharge(customer: Person, data: ChargeData) -> ChargeOneStepResponse? {
-        var paymentResponse: ChargeOneStepResponse?
+        var chargeResponse: ChargeOneStepResponse?
         
         func completionHandle(result: Result<ChargeOneStepResponse, NetworkError>) {
             switch result {
             case .success(let response):
-                paymentResponse = response
+                chargeResponse = response
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
         
-        if customer is JuridicalPerson {
-            paymentGateway.createChargeOneStep(customer: customer as! JuridicalPerson, data: data) {
+        if customer is JuridicalPersonModel {
+            let customer = customer as! JuridicalPersonModel
+            paymentGateway.createChargeOneStep(customer: JuridicalPersonData(customer), data: data) {
                 completionHandle(result: $0)
             }
             
         } else {
-            paymentGateway.createChargeOneStep(customer: customer as! NaturalPerson, data: data) {
+            let customer = customer as! NaturalPersonModel
+            paymentGateway.createChargeOneStep(customer: NaturalPersonData(customer), data: data) {
                 completionHandle(result: $0)
             }
         }
         
-        return paymentResponse
+        return chargeResponse
     }
 }
