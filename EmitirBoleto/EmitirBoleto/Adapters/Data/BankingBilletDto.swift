@@ -5,18 +5,18 @@
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
 //
 
-struct BankingBilletData: Serializable {
-    var customer: CustomerData?
+struct BankingBilletDto: Serializable {
+    var customer: CustomerDto?
     let expireAt: String
     
     init(_ bankingBillet: BankingBilletModel) {
         if let customer = bankingBillet.customer {
-            self.customer = CustomerData(customer)
+            self.customer = CustomerDto(customer)
         }
         self.expireAt = bankingBillet.expireAt
     }
     
-    init(customer: CustomerData? = nil, expireAt: String) {
+    init(customer: CustomerDto? = nil, expireAt: String) {
         self.customer = customer
         self.expireAt = expireAt
     }

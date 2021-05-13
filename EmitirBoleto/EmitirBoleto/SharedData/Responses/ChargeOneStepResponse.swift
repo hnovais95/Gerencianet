@@ -13,6 +13,15 @@ struct ChargeOneStepResponse: Serializable {
     let sharedLink: String
     let pdfLink: String
     
+    init() {
+       self.customer = ""
+       self.expireAt = ""
+       self.value = 0
+       self.barCode = ""
+       self.sharedLink = ""
+       self.pdfLink = ""
+    }
+    
     init(_ customer: String,
          _ expireAt: String,
          _ value: Int,

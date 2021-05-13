@@ -25,5 +25,4 @@ class UserModel: Equatable {
     static func == (lhs: UserModel, rhs: UserModel) -> Bool {
         return lhs.clientID == rhs.clientID
     }
-    
 }

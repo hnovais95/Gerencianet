@@ -5,17 +5,19 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-class ChargeGenerator {
+class Charge {
     private let paymentGateway: PaymentGateway
     
     init(paymentGateway: PaymentGateway) {
         self.paymentGateway = paymentGateway
     }
     
-    func createCharge(localCharge: ChargeModel) -> ChargeOneStepResponse? {
+    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel) -> ChargeOneStepResponse? {
+        guard let token = user.token else { return nil }
+        
         var chargeResponse: ChargeOneStepResponse?
         
-        paymentGateway.createChargeOneStep(data: ChargeData(localCharge)) { result in
+        paymentGateway.createChargeOneStep(token: token, data: ChargeOneStepDto(charge)) { result in
             switch result {
             case .success(let response):
                 chargeResponse = response

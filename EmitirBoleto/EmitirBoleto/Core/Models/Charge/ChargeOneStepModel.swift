@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
 //
 
-struct ChargeModel {
+struct ChargeOneStepModel {
     private(set) var items: [ItemModel]
     private(set) var shippings: [ShippingModel]
     private(set) var bankingBillet: BankingBilletModel?

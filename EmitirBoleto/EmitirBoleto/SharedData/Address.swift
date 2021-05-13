@@ -20,12 +20,11 @@ struct Address: Serializable {
          _ zipCode: String,
          _ city: String,
          _ complement: String,
-         _ cep: String,
          _ state: String) {
         self.street = street
         self.number = number
         self.neighborhood = neighborhood
-        self.zipCode = cep
+        self.zipCode = zipCode
         self.city = city
         self.complement = complement
         self.state = state

@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
 //
 
-struct CustomerData: Serializable {
+struct CustomerDto: Serializable {
     let name: String
     let cpf: String
     let birth: String
@@ -55,7 +55,7 @@ struct CustomerData: Serializable {
         self.juridicalPerson = juridicalPerson
     }
     
-    static func == (lhs: CustomerData, rhs: CustomerData) -> Bool {
+    static func == (lhs: CustomerDto, rhs: CustomerDto) -> Bool {
         return lhs.name == rhs.name && lhs.cpf == rhs.cpf
     }
     

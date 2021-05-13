@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HTTPPostClient {
-    func post(to url: URL, with data: [String: Any], completion: @escaping (Result<Data?, NetworkError>) -> Void)
+    func post(to url: URL, with data: Data, headers: Data, completion: @escaping (Result<Data?, NetworkError>) -> Void)
 }

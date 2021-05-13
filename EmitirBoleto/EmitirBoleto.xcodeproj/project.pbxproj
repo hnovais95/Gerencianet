@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA449BAD264D3FFA0071AEF0 /* HeadersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BAC264D3FFA0071AEF0 /* HeadersFactory.swift */; };
+		CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BAF264D67100071AEF0 /* String+Extensions.swift */; };
+		CA449BB3264D8BCD0071AEF0 /* Gerencianet+ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BB2264D8BCD0071AEF0 /* Gerencianet+ChargeOneStep.swift */; };
+		CA449BB5264DA6A70071AEF0 /* Gerencianet+Authorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BB4264DA6A70071AEF0 /* Gerencianet+Authorize.swift */; };
 		CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CA264AB04D007AE005 /* AppDelegate.swift */; };
 		CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */; };
 		CABCA8CF264AB04D007AE005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CE264AB04D007AE005 /* ViewController.swift */; };
@@ -24,27 +28,26 @@
 		CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */; };
 		CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA923264ACFAD007AE005 /* CustomerRepository.swift */; };
 		CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA925264AD220007AE005 /* ItemRepository.swift */; };
-		CABCA929264AD44D007AE005 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA928264AD44D007AE005 /* Authenticator.swift */; };
 		CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA92A264AD46E007AE005 /* PaymentGateway.swift */; };
 		CABCA92E264AD828007AE005 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA92D264AD828007AE005 /* Endpoints.swift */; };
 		CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */; };
-		CAD3AEBD264BEAC400DD0DCB /* ChargeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEBC264BEAC400DD0DCB /* ChargeModel.swift */; };
+		CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */; };
 		CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC1264BF33300DD0DCB /* Serializable.swift */; };
-		CAD3AEC6264BF8AB00DD0DCB /* CustomerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC5264BF8AB00DD0DCB /* CustomerData.swift */; };
+		CAD3AEC6264BF8AB00DD0DCB /* CustomerDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */; };
 		CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */; };
 		CAD3AED1264C059800DD0DCB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AED0264C059800DD0DCB /* DomainError.swift */; };
 		CAD3AED8264C0A5700DD0DCB /* HTTPPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AED7264C0A5700DD0DCB /* HTTPPostClient.swift */; };
-		CAD3AEDA264C0B2600DD0DCB /* GerencianetGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AED9264C0B2600DD0DCB /* GerencianetGateway.swift */; };
+		CAD3AEDA264C0B2600DD0DCB /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AED9264C0B2600DD0DCB /* Gerencianet.swift */; };
 		CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */; };
-		CAD3AEE3264C2A6100DD0DCB /* BankingBilletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEE2264C2A6100DD0DCB /* BankingBilletData.swift */; };
+		CAD3AEE3264C2A6100DD0DCB /* BankingBilletDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */; };
 		CAD3AEE5264C44B700DD0DCB /* BodyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEE4264C44B700DD0DCB /* BodyFactory.swift */; };
 		CAFC8999264AF30B00D361B0 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8998264AF30B00D361B0 /* Authenticate.swift */; };
 		CAFC899D264AF7AC00D361B0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899C264AF7AC00D361B0 /* UserRepository.swift */; };
 		CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899E264AF7CE00D361B0 /* UserModel.swift */; };
 		CAFC89A2264B012800D361B0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A1264B012800D361B0 /* NetworkError.swift */; };
-		CAFC89A4264B077900D361B0 /* ChargeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* ChargeGenerator.swift */; };
-		CAFC89A6264B081C00D361B0 /* ChargeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A5264B081C00D361B0 /* ChargeData.swift */; };
-		CAFC89AA264B195500D361B0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A9264B195500D361B0 /* UserData.swift */; };
+		CAFC89A4264B077900D361B0 /* Charge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* Charge.swift */; };
+		CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */; };
+		CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A9264B195500D361B0 /* UserDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA449BAC264D3FFA0071AEF0 /* HeadersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersFactory.swift; sourceTree = "<group>"; };
+		CA449BAF264D67100071AEF0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CA449BB2264D8BCD0071AEF0 /* Gerencianet+ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+ChargeOneStep.swift"; sourceTree = "<group>"; };
+		CA449BB4264DA6A70071AEF0 /* Gerencianet+Authorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authorize.swift"; sourceTree = "<group>"; };
 		CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitirBoleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,27 +95,26 @@
 		CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponse.swift; sourceTree = "<group>"; };
 		CABCA923264ACFAD007AE005 /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
 		CABCA925264AD220007AE005 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
-		CABCA928264AD44D007AE005 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		CABCA92A264AD46E007AE005 /* PaymentGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGateway.swift; sourceTree = "<group>"; };
 		CABCA92D264AD828007AE005 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponse.swift; sourceTree = "<group>"; };
-		CAD3AEBC264BEAC400DD0DCB /* ChargeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeModel.swift; sourceTree = "<group>"; };
+		CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepModel.swift; sourceTree = "<group>"; };
 		CAD3AEC1264BF33300DD0DCB /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
-		CAD3AEC5264BF8AB00DD0DCB /* CustomerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerData.swift; sourceTree = "<group>"; };
+		CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDto.swift; sourceTree = "<group>"; };
 		CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		CAD3AED0264C059800DD0DCB /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		CAD3AED7264C0A5700DD0DCB /* HTTPPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPostClient.swift; sourceTree = "<group>"; };
-		CAD3AED9264C0B2600DD0DCB /* GerencianetGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetGateway.swift; sourceTree = "<group>"; };
+		CAD3AED9264C0B2600DD0DCB /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
 		CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuridicalPersonModel.swift; sourceTree = "<group>"; };
-		CAD3AEE2264C2A6100DD0DCB /* BankingBilletData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletData.swift; sourceTree = "<group>"; };
+		CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletDto.swift; sourceTree = "<group>"; };
 		CAD3AEE4264C44B700DD0DCB /* BodyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFactory.swift; sourceTree = "<group>"; };
 		CAFC8998264AF30B00D361B0 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		CAFC899C264AF7AC00D361B0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		CAFC899E264AF7CE00D361B0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CAFC89A1264B012800D361B0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		CAFC89A3264B077900D361B0 /* ChargeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeGenerator.swift; sourceTree = "<group>"; };
-		CAFC89A5264B081C00D361B0 /* ChargeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeData.swift; sourceTree = "<group>"; };
-		CAFC89A9264B195500D361B0 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		CAFC89A3264B077900D361B0 /* Charge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charge.swift; sourceTree = "<group>"; };
+		CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepDto.swift; sourceTree = "<group>"; };
+		CAFC89A9264B195500D361B0 /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA449BAE264D64720071AEF0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CABCA92D264AD828007AE005 /* Endpoints.swift */,
+				CAD3AEE4264C44B700DD0DCB /* BodyFactory.swift */,
+				CA449BAC264D3FFA0071AEF0 /* HeadersFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA449BB1264D6A220071AEF0 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CAFC89A1264B012800D361B0 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		CABCA8BE264AB04D007AE005 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD3AEC7264BF93000DD0DCB /* Helpers */,
-				CAD3AEC8264BFDB400DD0DCB /* Data */,
+				CAD3AEC8264BFDB400DD0DCB /* SharedData */,
 				CABCA901264AB08D007AE005 /* Infra */,
 				CABCA905264AB0DD007AE005 /* Adapters */,
 				CABCA900264AB086007AE005 /* Core */,
@@ -226,7 +250,7 @@
 				CAFC89AB264B1B4100D361B0 /* User */,
 				CABCA910264AB83E007AE005 /* Customer */,
 				CABCA91C264AC42C007AE005 /* Charge */,
-				CAFC89A0264AFF3A00D361B0 /* Errors */,
+				CAFC89A0264AFF3A00D361B0 /* Error */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFC8998264AF30B00D361B0 /* Authenticate.swift */,
-				CAFC89A3264B077900D361B0 /* ChargeGenerator.swift */,
+				CAFC89A3264B077900D361B0 /* Charge.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -283,7 +307,7 @@
 				CABCA919264AC307007AE005 /* ItemModel.swift */,
 				CABCA91F264AC67F007AE005 /* ShippingModel.swift */,
 				CABCA91D264AC43A007AE005 /* BankingBilletModel.swift */,
-				CAD3AEBC264BEAC400DD0DCB /* ChargeModel.swift */,
+				CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */,
 			);
 			path = Charge;
 			sourceTree = "<group>";
@@ -291,7 +315,6 @@
 		CABCA927264AD43D007AE005 /* Ports */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA928264AD44D007AE005 /* Authenticator.swift */,
 				CABCA92A264AD46E007AE005 /* PaymentGateway.swift */,
 			);
 			path = Ports;
@@ -311,17 +334,19 @@
 			children = (
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */,
+				CA449BAF264D67100071AEF0 /* String+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		CAD3AEC8264BFDB400DD0DCB /* Data */ = {
+		CAD3AEC8264BFDB400DD0DCB /* SharedData */ = {
 			isa = PBXGroup;
 			children = (
 				CABCA90A264AB3E5007AE005 /* Address.swift */,
+				CA449BB1264D6A220071AEF0 /* Errors */,
 				CABCA933264ADDA4007AE005 /* Responses */,
 			);
-			path = Data;
+			path = SharedData;
 			sourceTree = "<group>";
 		};
 		CAD3AEE8264C517900DD0DCB /* Contracts */ = {
@@ -332,21 +357,21 @@
 			path = Contracts;
 			sourceTree = "<group>";
 		};
-		CAFC89A0264AFF3A00D361B0 /* Errors */ = {
+		CAFC89A0264AFF3A00D361B0 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				CAFC89A1264B012800D361B0 /* NetworkError.swift */,
 				CAD3AED0264C059800DD0DCB /* DomainError.swift */,
 			);
-			path = Errors;
+			path = Error;
 			sourceTree = "<group>";
 		};
 		CAFC89A7264B108E00D361B0 /* Gerencianet */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA92D264AD828007AE005 /* Endpoints.swift */,
-				CAD3AEE4264C44B700DD0DCB /* BodyFactory.swift */,
-				CAD3AED9264C0B2600DD0DCB /* GerencianetGateway.swift */,
+				CA449BAE264D64720071AEF0 /* Helpers */,
+				CAD3AED9264C0B2600DD0DCB /* Gerencianet.swift */,
+				CA449BB4264DA6A70071AEF0 /* Gerencianet+Authorize.swift */,
+				CA449BB2264D8BCD0071AEF0 /* Gerencianet+ChargeOneStep.swift */,
 			);
 			path = Gerencianet;
 			sourceTree = "<group>";
@@ -354,10 +379,10 @@
 		CAFC89A8264B10A600D361B0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CAFC89A9264B195500D361B0 /* UserData.swift */,
-				CAD3AEC5264BF8AB00DD0DCB /* CustomerData.swift */,
-				CAD3AEE2264C2A6100DD0DCB /* BankingBilletData.swift */,
-				CAFC89A5264B081C00D361B0 /* ChargeData.swift */,
+				CAFC89A9264B195500D361B0 /* UserDto.swift */,
+				CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */,
+				CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */,
+				CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -501,30 +526,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */,
+				CA449BB5264DA6A70071AEF0 /* Gerencianet+Authorize.swift in Sources */,
 				CABCA90B264AB3E5007AE005 /* Address.swift in Sources */,
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
-				CAD3AEE3264C2A6100DD0DCB /* BankingBilletData.swift in Sources */,
+				CAD3AEE3264C2A6100DD0DCB /* BankingBilletDto.swift in Sources */,
 				CAFC89A2264B012800D361B0 /* NetworkError.swift in Sources */,
-				CAFC89AA264B195500D361B0 /* UserData.swift in Sources */,
+				CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */,
 				CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */,
 				CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */,
 				CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */,
-				CAD3AEBD264BEAC400DD0DCB /* ChargeModel.swift in Sources */,
+				CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */,
 				CABCA91E264AC43A007AE005 /* BankingBilletModel.swift in Sources */,
-				CAFC89A4264B077900D361B0 /* ChargeGenerator.swift in Sources */,
-				CAFC89A6264B081C00D361B0 /* ChargeData.swift in Sources */,
+				CAFC89A4264B077900D361B0 /* Charge.swift in Sources */,
+				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
+				CA449BB3264D8BCD0071AEF0 /* Gerencianet+ChargeOneStep.swift in Sources */,
+				CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */,
 				CAD3AED1264C059800DD0DCB /* DomainError.swift in Sources */,
-				CAD3AEC6264BF8AB00DD0DCB /* CustomerData.swift in Sources */,
+				CAD3AEC6264BF8AB00DD0DCB /* CustomerDto.swift in Sources */,
 				CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */,
 				CABCA8D5264AB04D007AE005 /* EmitirBoleto.xcdatamodeld in Sources */,
 				CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */,
-				CAD3AEDA264C0B2600DD0DCB /* GerencianetGateway.swift in Sources */,
+				CAD3AEDA264C0B2600DD0DCB /* Gerencianet.swift in Sources */,
 				CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */,
-				CABCA929264AD44D007AE005 /* Authenticator.swift in Sources */,
 				CABCA92E264AD828007AE005 /* Endpoints.swift in Sources */,
 				CABCA8CF264AB04D007AE005 /* ViewController.swift in Sources */,
 				CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */,
 				CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */,
+				CA449BAD264D3FFA0071AEF0 /* HeadersFactory.swift in Sources */,
 				CAD3AED8264C0A5700DD0DCB /* HTTPPostClient.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
 				CAFC8999264AF30B00D361B0 /* Authenticate.swift in Sources */,

@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct UserData: Serializable {
+struct UserDto: Serializable {
     let clientID: String
     let clientSecret: String
     let token: String?
@@ -34,7 +34,7 @@ struct UserData: Serializable {
         self.token = token
     }
     
-    static func == (lhs: UserData, rhs: UserData) -> Bool {
+    static func == (lhs: UserDto, rhs: UserDto) -> Bool {
         return lhs.clientID == rhs.clientID
     }
 }
