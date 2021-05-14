@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
 //
 
-struct JuridicalPersonModel: Serializable {
+struct JuridicalPersonModel {
     let corporateName: String
     let cnpj: String
     

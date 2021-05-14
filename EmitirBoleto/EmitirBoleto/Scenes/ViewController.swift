@@ -18,35 +18,22 @@ class ViewController: UIViewController {
     var shipping: ShippingModel!
     var charge: ChargeOneStepModel!
     var bankingBillet: BankingBilletModel!
-    var gerencianetGateway: Gerencianet!
+    var gerencianetGateway: GerencianetClient!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = UserModel(clientID: "client_id", clientSecret: "client_secrete")
-        user.setToken("s5df4tg4")
-        address = Address("Rua JK", 1, "Bauxita", "3540000", "Ouro Preto", "A", "MG")
-        customer = CustomerModel("Heitor", "12226629492", "31985624589", "1995-12-01", "email@dominio.com", address)
+        user = UserModel(clientID: "Client_Id_30ef246ffe7a828c813ee20b717702c85fe12407", clientSecret: "Client_Secret_43b9bb35170c383c53fa27d13253f3a2e0f045ea")
+        user.updateToken("Bearer d1d310a6cfda775aaf9d4ca55ff6717a776934fd765df7ddcbf7b1c4f9f762fa")
+        address = Address("Rua JK", 1, "Bauxita", "35400000", "Ouro Preto", "A", "MG")
+        customer = CustomerModel("Heitor Novais", "46282921678", "31985624589", "1995-12-01", "email@dominio.com", address)
         item = ItemModel("Produto 1", 10000, 2)
-        shipping = ShippingModel("Correios", 2000, 1)
+        shipping = ShippingModel("Correios", 2000)
         bankingBillet = BankingBilletModel(customer: customer, expireAt: "2021-05-15")
         charge = ChargeOneStepModel(bankingBillet: bankingBillet)
         charge.add(item: item)
         charge.add(shipping: shipping)
-        //gerencianetGateway = GerencianetGateway()
-        
-        //ChargeOneStepResponse("Heitor", "2021-05-15", 100000, "0000.0000", "www.sharedlink.com", "www.pdflink.com")
+        gerencianetGateway = GerencianetClient()
     }
-
-    @IBAction func buttonAction(_ sender: Any) {
-        let useCase = Charge(paymentGateway: gerencianetGateway)
-        let response = useCase.createChargeOneStep(user: user, charge: charge)
-        
-        if let response = response {
-            label.text = response.customer
-        }
-    }
-    
 }
-

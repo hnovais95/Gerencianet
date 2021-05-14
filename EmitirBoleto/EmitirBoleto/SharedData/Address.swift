@@ -31,6 +31,12 @@ struct Address: Serializable {
     }
     
     private enum CodingKeys: String, CodingKey {        
-        case street, number, neighborhood, zipCode = "zipcode", city, complement, state
+        case street
+        case number
+        case neighborhood
+        case zipCode = "zipcode"
+        case city
+        case complement
+        case state
     }
 }

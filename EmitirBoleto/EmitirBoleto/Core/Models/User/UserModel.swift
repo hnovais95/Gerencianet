@@ -8,21 +8,22 @@
 import Foundation
 
 class UserModel: Equatable {
-    private(set) var clientID: String
+    private(set) var clientId: String
     private(set) var clientSecret: String
-    private(set) var token: String?
+    private(set) var token: String
     
     init(clientID: String, clientSecret: String)
     {
-        self.clientID = clientID
+        self.clientId = clientID
         self.clientSecret = clientSecret
+        self.token = ""
     }
     
-    func setToken(_ token: String) {
+    func updateToken(_ token: String) {
         self.token = token
     }
     
     static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.clientID == rhs.clientID
+        return lhs.clientId == rhs.clientId
     }
 }

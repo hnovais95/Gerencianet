@@ -8,7 +8,7 @@
 struct ChargeOneStepModel {
     private(set) var items: [ItemModel]
     private(set) var shippings: [ShippingModel]
-    private(set) var bankingBillet: BankingBilletModel?
+    private(set) var bankingBillet: BankingBilletModel
     
     init(bankingBillet: BankingBilletModel) {
         self.items = [ItemModel]()

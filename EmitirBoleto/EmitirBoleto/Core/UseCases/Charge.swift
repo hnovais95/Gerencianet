@@ -12,20 +12,13 @@ class Charge {
         self.paymentGateway = paymentGateway
     }
     
-    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel) -> ChargeOneStepResponse? {
-        guard let token = user.token else { return nil }
-        
-        var chargeResponse: ChargeOneStepResponse?
-        
-        paymentGateway.createChargeOneStep(token: token, data: ChargeOneStepDto(charge)) { result in
-            switch result {
-            case .success(let response):
-                chargeResponse = response
-            case .failure(let error):
-                print(error.localizedDescription)
+    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel, completion: @escaping (Result<ChargeOneStepResponse, Error>) -> Void) {
+        paymentGateway.createChargeOneStep(token: user.token, chargeData: ChargeOneStepDto(charge)) { response, error in
+            if error == nil {
+                completion(.success(response!))
+            } else {
+                completion(.failure(error!))
             }
         }
-        
-        return chargeResponse
     }
 }

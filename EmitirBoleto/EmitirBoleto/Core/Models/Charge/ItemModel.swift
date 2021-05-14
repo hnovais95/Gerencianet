@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ItemModel: Serializable {
+struct ItemModel {
     let name: String
     let value: Int
     let amount: Int

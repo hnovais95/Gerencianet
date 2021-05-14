@@ -16,11 +16,19 @@ struct AuthorizeResponse: Serializable {
          _ refreshToken: String,
          _ expiresIn: Int,
          _ expireAt: String,
-         tokenType: String) {
+         _ tokenType: String) {
         self.accessToken = accessToken
         self.refreshToken = refreshToken
         self.expiresIn = expiresIn
         self.expireAt = expireAt
         self.tokenType = tokenType
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case refreshToken = "refresh_token"
+        case expiresIn = "expires_in"
+        case expireAt = "expire_at"
+        case tokenType = "token_type"
     }
 }

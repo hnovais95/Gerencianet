@@ -6,33 +6,67 @@
 //
 
 struct ChargeOneStepResponse: Serializable {
-    let customer: String
-    let expireAt: String
-    let value: Int
-    let barCode: String
-    let sharedLink: String
-    let pdfLink: String
+    let code: Int
+    let data: ResponseData
     
-    init() {
-       self.customer = ""
-       self.expireAt = ""
-       self.value = 0
-       self.barCode = ""
-       self.sharedLink = ""
-       self.pdfLink = ""
+    init(_ code: Int,
+         _ barcode: String,
+         _ link: String,
+         _ charge: String,
+         _ expireAt: String,
+         _ chargeId: Int,
+         _ status: String,
+         _ total: Int,
+         _ payment: String) {
+        self.code = code
+        self.data = ResponseData(barcode, link, charge, expireAt, chargeId, status, total, payment)
+    }
+}
+
+struct ResponseData: Serializable {
+    let barcode: String
+    let link: String
+    let pdf: Pdf
+    let expireAt: String
+    let chargeId: Int
+    let status: String
+    let total: Int
+    let payment: String
+    
+    init(_ barcode: String,
+         _ link: String,
+         _ charge: String,
+         _ expireAt: String,
+         _ chargeId: Int,
+         _ status: String,
+         _ total: Int,
+         _ payment: String) {
+        self.barcode = barcode
+        self.link = link
+        self.pdf = Pdf(charge)
+        self.expireAt = expireAt
+        self.chargeId = chargeId
+        self.status = status
+        self.total = total
+        self.payment = payment
     }
     
-    init(_ customer: String,
-         _ expireAt: String,
-         _ value: Int,
-         _ barCode: String,
-         _ sharedLink: String,
-         _ pdfLink: String) {
-        self.customer = customer
-        self.expireAt = expireAt
-        self.value = value
-        self.barCode = barCode
-        self.sharedLink = sharedLink
-        self.pdfLink = pdfLink
+    private enum CodingKeys: String, CodingKey {
+        case barcode
+        case link
+        case pdf
+        case expireAt = "expire_at"
+        case chargeId = "charge_id"
+        case status
+        case total
+        case payment
+    }
+}
+
+struct Pdf: Serializable {
+    let charge: String
+    
+    init(_ charge: String) {
+        self.charge = charge
     }
 }

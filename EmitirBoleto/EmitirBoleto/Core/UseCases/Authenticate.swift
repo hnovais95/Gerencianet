@@ -7,22 +7,20 @@
 
 class Authenticate {
     private let authenticator: PaymentGateway
-    private let userRepository: UserRepository
+    //private let userRepository: UserRepository
     
-    init(authenticator: PaymentGateway, userRepository: UserRepository) {
+    init(authenticator: PaymentGateway) {//, userRepository: UserRepository) {
         self.authenticator = authenticator
-        self.userRepository = userRepository
+        //self.userRepository = userRepository
     }
     
-    func authorize(user: UserModel) {
-        authenticator.authorize(user: user) { result in
-            switch result {
-            case .success(let response):
-                let token = "\(response.tokenType) \(response.accessToken)"
-                self.userRepository.saveToken(user.token!)
-                user.setToken(token)
-            case .failure(let error):
-                print(error.localizedDescription)
+    func authorize(user: UserModel, completion: @escaping (Result<Optional<Any>, Error>) -> Void) {
+        authenticator.authorize(user: UserDto(user)) { response, error  in
+            if error == nil {
+                user.updateToken("\(response!.tokenType) \(response!.accessToken)")
+                completion(.success(nil))
+            } else {
+                completion(.failure(error!))
             }
         }
     }
