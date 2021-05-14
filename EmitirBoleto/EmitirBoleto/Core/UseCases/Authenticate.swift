@@ -15,12 +15,14 @@ class Authenticate {
     }
     
     func authorize(user: UserModel, completion: @escaping (Result<Optional<Any>, Error>) -> Void) {
-        authenticator.authorize(user: UserDto(user)) { response, error  in
-            if error == nil {
-                user.updateToken("\(response!.tokenType) \(response!.accessToken)")
+        authenticator.authorize(user: UserDto(user)) { result in
+            switch result {
+            case .success(let response):
+                user.updateToken("\(response.tokenType) \(response.accessToken)")
                 completion(.success(nil))
-            } else {
-                completion(.failure(error!))
+                break
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

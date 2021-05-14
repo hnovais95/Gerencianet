@@ -7,10 +7,11 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum APIError: Error {
     case noConnectivity
     case badRequest
     case serverError
     case unauthorized
     case forbidden
+    case responseBuilder
 }

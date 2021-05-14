@@ -11,11 +11,6 @@
 		5B2C1C019D97527B273D86DE /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B73A124B5E1E9593376F8E /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */; };
 		60D5968BDE40F3F694434C0C /* Pods_EmitirBoleto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427FA4B23DC1784DB73F5703 /* Pods_EmitirBoleto.framework */; };
 		CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BAF264D67100071AEF0 /* String+Extensions.swift */; };
-		CA449BB9264DD1270071AEF0 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BB8264DD1270071AEF0 /* APIConfiguration.swift */; };
-		CA449BBB264DD1730071AEF0 /* GerencianetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BBA264DD1730071AEF0 /* GerencianetEndpoint.swift */; };
-		CA449BBD264DD2530071AEF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BBC264DD2530071AEF0 /* Constants.swift */; };
-		CA449BBF264DD5270071AEF0 /* GerencianetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BBE264DD5270071AEF0 /* GerencianetClient.swift */; };
-		CA449BC1264DEA7A0071AEF0 /* BodyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BC0264DEA7A0071AEF0 /* BodyFactory.swift */; };
 		CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CA264AB04D007AE005 /* AppDelegate.swift */; };
 		CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */; };
 		CABCA8CF264AB04D007AE005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CE264AB04D007AE005 /* ViewController.swift */; };
@@ -45,11 +40,19 @@
 		CAF751E2264E9D9E00EABEFC /* ItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E1264E9D9E00EABEFC /* ItemDto.swift */; };
 		CAF751E4264E9DB500EABEFC /* ShippingDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E3264E9DB500EABEFC /* ShippingDto.swift */; };
 		CAF751E6264EA68D00EABEFC /* JuridicalPersonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E5264EA68D00EABEFC /* JuridicalPersonDto.swift */; };
-		CAF751EB264ECA4000EABEFC /* NewBodyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EA264ECA4000EABEFC /* NewBodyFactory.swift */; };
+		CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EF264F117700EABEFC /* Gerencianet.swift */; };
+		CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */; };
+		CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F3264F119A00EABEFC /* HeadersFactory.swift */; };
+		CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F5264F11A700EABEFC /* BodyFactory.swift */; };
+		CAF751F8264F129000EABEFC /* Gerencianet+Authorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */; };
+		CAF751FA264F13B700EABEFC /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F9264F13B700EABEFC /* AlamofireClient.swift */; };
+		CAF751FE264F158400EABEFC /* HTTPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751FD264F158400EABEFC /* HTTPRequestClient.swift */; };
+		CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */; };
+		CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF75201264F270C00EABEFC /* APIConfigurations.swift */; };
 		CAFC8999264AF30B00D361B0 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC8998264AF30B00D361B0 /* Authenticate.swift */; };
 		CAFC899D264AF7AC00D361B0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899C264AF7AC00D361B0 /* UserRepository.swift */; };
 		CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899E264AF7CE00D361B0 /* UserModel.swift */; };
-		CAFC89A2264B012800D361B0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A1264B012800D361B0 /* NetworkError.swift */; };
+		CAFC89A2264B012800D361B0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A1264B012800D361B0 /* APIError.swift */; };
 		CAFC89A4264B077900D361B0 /* Charge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* Charge.swift */; };
 		CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */; };
 		CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A9264B195500D361B0 /* UserDto.swift */; };
@@ -81,11 +84,6 @@
 		83AD70706259383F52D7FC47 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BFB526D55251AA27FC467449 /* Pods-EmitirBoleto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.release.xcconfig"; sourceTree = "<group>"; };
 		CA449BAF264D67100071AEF0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		CA449BB8264DD1270071AEF0 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
-		CA449BBA264DD1730071AEF0 /* GerencianetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetEndpoint.swift; sourceTree = "<group>"; };
-		CA449BBC264DD2530071AEF0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CA449BBE264DD5270071AEF0 /* GerencianetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetClient.swift; sourceTree = "<group>"; };
-		CA449BC0264DEA7A0071AEF0 /* BodyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFactory.swift; sourceTree = "<group>"; };
 		CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitirBoleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,11 +119,19 @@
 		CAF751E1264E9D9E00EABEFC /* ItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDto.swift; sourceTree = "<group>"; };
 		CAF751E3264E9DB500EABEFC /* ShippingDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingDto.swift; sourceTree = "<group>"; };
 		CAF751E5264EA68D00EABEFC /* JuridicalPersonDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuridicalPersonDto.swift; sourceTree = "<group>"; };
-		CAF751EA264ECA4000EABEFC /* NewBodyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBodyFactory.swift; sourceTree = "<group>"; };
+		CAF751EF264F117700EABEFC /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
+		CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetEndpoints.swift; sourceTree = "<group>"; };
+		CAF751F3264F119A00EABEFC /* HeadersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersFactory.swift; sourceTree = "<group>"; };
+		CAF751F5264F11A700EABEFC /* BodyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFactory.swift; sourceTree = "<group>"; };
+		CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authorize.swift"; sourceTree = "<group>"; };
+		CAF751F9264F13B700EABEFC /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		CAF751FD264F158400EABEFC /* HTTPRequestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestClient.swift; sourceTree = "<group>"; };
+		CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+ChargeOneStep.swift"; sourceTree = "<group>"; };
+		CAF75201264F270C00EABEFC /* APIConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurations.swift; sourceTree = "<group>"; };
 		CAFC8998264AF30B00D361B0 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		CAFC899C264AF7AC00D361B0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		CAFC899E264AF7CE00D361B0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		CAFC89A1264B012800D361B0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CAFC89A1264B012800D361B0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CAFC89A3264B077900D361B0 /* Charge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charge.swift; sourceTree = "<group>"; };
 		CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepDto.swift; sourceTree = "<group>"; };
 		CAFC89A9264B195500D361B0 /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
@@ -182,43 +188,6 @@
 				F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CA449BC2264DEE4F0071AEF0 /* Gerencianet */ = {
-			isa = PBXGroup;
-			children = (
-				CA449BC4264DEE8B0071AEF0 /* Helper */,
-				CA449BC3264DEE680071AEF0 /* Contracts */,
-				CA449BC5264DEEA40071AEF0 /* Client */,
-			);
-			path = Gerencianet;
-			sourceTree = "<group>";
-		};
-		CA449BC3264DEE680071AEF0 /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				CA449BB8264DD1270071AEF0 /* APIConfiguration.swift */,
-			);
-			path = Contracts;
-			sourceTree = "<group>";
-		};
-		CA449BC4264DEE8B0071AEF0 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				CA449BC0264DEA7A0071AEF0 /* BodyFactory.swift */,
-				CAF751EA264ECA4000EABEFC /* NewBodyFactory.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		CA449BC5264DEEA40071AEF0 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				CA449BBC264DD2530071AEF0 /* Constants.swift */,
-				CA449BBA264DD1730071AEF0 /* GerencianetEndpoint.swift */,
-				CA449BBE264DD5270071AEF0 /* GerencianetClient.swift */,
-			);
-			path = Client;
 			sourceTree = "<group>";
 		};
 		CABCA8BE264AB04D007AE005 = {
@@ -303,7 +272,7 @@
 		CABCA901264AB08D007AE005 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
-				CA449BC2264DEE4F0071AEF0 /* Gerencianet */,
+				CAF751F9264F13B700EABEFC /* AlamofireClient.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -341,6 +310,7 @@
 		CABCA905264AB0DD007AE005 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				CAF751EE264F116400EABEFC /* Gerencianet */,
 				CAFC89A8264B10A600D361B0 /* Data */,
 			);
 			path = Adapters;
@@ -438,11 +408,42 @@
 			path = Charge;
 			sourceTree = "<group>";
 		};
+		CAF751EE264F116400EABEFC /* Gerencianet */ = {
+			isa = PBXGroup;
+			children = (
+				CAF75204264F28CB00EABEFC /* Helpers */,
+				CAF75203264F289400EABEFC /* Contracts */,
+				CAF751EF264F117700EABEFC /* Gerencianet.swift */,
+				CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */,
+				CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */,
+				CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */,
+			);
+			path = Gerencianet;
+			sourceTree = "<group>";
+		};
+		CAF75203264F289400EABEFC /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CAF751FD264F158400EABEFC /* HTTPRequestClient.swift */,
+				CAF75201264F270C00EABEFC /* APIConfigurations.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		CAF75204264F28CB00EABEFC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CAF751F3264F119A00EABEFC /* HeadersFactory.swift */,
+				CAF751F5264F11A700EABEFC /* BodyFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CAFC89A0264AFF3A00D361B0 /* Error */ = {
 			isa = PBXGroup;
 			children = (
 				CAD3AED0264C059800DD0DCB /* DomainError.swift */,
-				CAFC89A1264B012800D361B0 /* NetworkError.swift */,
+				CAFC89A1264B012800D361B0 /* APIError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -708,36 +709,39 @@
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
 				CAF751E2264E9D9E00EABEFC /* ItemDto.swift in Sources */,
 				CAD3AEE3264C2A6100DD0DCB /* BankingBilletDto.swift in Sources */,
-				CAFC89A2264B012800D361B0 /* NetworkError.swift in Sources */,
+				CAFC89A2264B012800D361B0 /* APIError.swift in Sources */,
 				CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */,
 				CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */,
 				CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */,
 				CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */,
 				CAF751E4264E9DB500EABEFC /* ShippingDto.swift in Sources */,
 				CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */,
+				CAF751FE264F158400EABEFC /* HTTPRequestClient.swift in Sources */,
 				CABCA91E264AC43A007AE005 /* BankingBilletModel.swift in Sources */,
 				CAFC89A4264B077900D361B0 /* Charge.swift in Sources */,
+				CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */,
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CAF751E6264EA68D00EABEFC /* JuridicalPersonDto.swift in Sources */,
-				CAF751EB264ECA4000EABEFC /* NewBodyFactory.swift in Sources */,
 				CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */,
+				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,
+				CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */,
 				CAD3AED1264C059800DD0DCB /* DomainError.swift in Sources */,
 				CAD3AEC6264BF8AB00DD0DCB /* CustomerDto.swift in Sources */,
 				CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */,
+				CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */,
 				CABCA8D5264AB04D007AE005 /* EmitirBoleto.xcdatamodeld in Sources */,
-				CA449BBD264DD2530071AEF0 /* Constants.swift in Sources */,
-				CA449BBB264DD1730071AEF0 /* GerencianetEndpoint.swift in Sources */,
-				CA449BB9264DD1270071AEF0 /* APIConfiguration.swift in Sources */,
 				CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */,
-				CA449BC1264DEA7A0071AEF0 /* BodyFactory.swift in Sources */,
+				CAF751F8264F129000EABEFC /* Gerencianet+Authorize.swift in Sources */,
+				CAF751FA264F13B700EABEFC /* AlamofireClient.swift in Sources */,
 				CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */,
 				CABCA8CF264AB04D007AE005 /* ViewController.swift in Sources */,
 				CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */,
 				CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */,
-				CA449BBF264DD5270071AEF0 /* GerencianetClient.swift in Sources */,
+				CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
 				CAFC8999264AF30B00D361B0 /* Authenticate.swift in Sources */,
 				CAFC899D264AF7AC00D361B0 /* UserRepository.swift in Sources */,
+				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
 				CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */,
 				CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */,

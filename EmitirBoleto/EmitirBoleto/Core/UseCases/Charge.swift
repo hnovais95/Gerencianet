@@ -12,12 +12,14 @@ class Charge {
         self.paymentGateway = paymentGateway
     }
     
-    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel, completion: @escaping (Result<ChargeOneStepResponse, Error>) -> Void) {
-        paymentGateway.createChargeOneStep(token: user.token, chargeData: ChargeOneStepDto(charge)) { response, error in
-            if error == nil {
-                completion(.success(response!))
-            } else {
-                completion(.failure(error!))
+    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel, completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {
+        paymentGateway.createChargeOneStep(token: user.token, data: ChargeOneStepDto(charge)) { result in
+            switch result {
+            case .success(let response):
+                completion(.success(response))
+                break
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

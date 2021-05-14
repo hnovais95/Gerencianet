@@ -6,9 +6,9 @@
 //
 
 protocol PaymentGateway {
-    func authorize(user: UserDto, completion: @escaping (AuthorizeResponse?, Error?) -> Void)
+    func authorize(user: UserDto, completion: @escaping (Result<AuthorizeResponse, APIError>) -> Void)
     
     func createChargeOneStep(token: String,
-                                    chargeData: ChargeOneStepDto,
-                                    completion: @escaping (ChargeOneStepResponse?, Error?) -> Void)
+                                    data: ChargeOneStepDto,
+                                    completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void)
 }
