@@ -11,7 +11,7 @@ struct CustomerModel {
     let birth: String
     let phoneNumber: String
     let email: String
-    let address: Address
+    let address: AddressModel?
     let juridicalPerson: JuridicalPersonModel?
     
     init(_ name: String,
@@ -19,14 +19,14 @@ struct CustomerModel {
          _ phoneNumber: String,
          _ birth: String,
          _ email: String,
-         _ address: Address) {
-        self.name = name
-        self.cpf = cpf
-        self.birth = birth
-        self.phoneNumber = phoneNumber
-        self.email = email
-        self.address = address
-        self.juridicalPerson = nil
+         _ juridicalPerson: JuridicalPersonModel) {
+        self.init(name,
+                  cpf,
+                  phoneNumber,
+                  birth,
+                  email,
+                  nil,
+                  juridicalPerson)
     }
     
     init(_ name: String,
@@ -34,8 +34,8 @@ struct CustomerModel {
          _ phoneNumber: String,
          _ birth: String,
          _ email: String,
-         _ address: Address,
-         _ juridicalPerson: JuridicalPersonModel) {
+         _ address: AddressModel? = nil,
+         _ juridicalPerson: JuridicalPersonModel? = nil) {
         self.name = name
         self.cpf = cpf
         self.birth = birth

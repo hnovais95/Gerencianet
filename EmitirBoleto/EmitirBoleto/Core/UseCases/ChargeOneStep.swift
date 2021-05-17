@@ -5,19 +5,21 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-class Charge {
+class ChargeOneStep {
     private let paymentGateway: PaymentGateway
     
     init(paymentGateway: PaymentGateway) {
         self.paymentGateway = paymentGateway
     }
     
-    func createChargeOneStep(user: UserModel, charge: ChargeOneStepModel, completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {
-        paymentGateway.createChargeOneStep(token: user.token, data: ChargeOneStepDto(charge)) { result in
+    func execute(user: UserModel,
+                 data: ChargeOneStepModel,
+                 completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {
+        paymentGateway.createChargeOneStep(token: user.token, data: ChargeOneStepDto(data)) { result in
+                
             switch result {
             case .success(let response):
                 completion(.success(response))
-                break
             case .failure(let error):
                 completion(.failure(error))
             }

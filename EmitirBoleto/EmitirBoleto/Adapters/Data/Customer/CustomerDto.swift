@@ -11,7 +11,7 @@ struct CustomerDto: Serializable {
     let birth: String
     let phoneNumber: String
     let email: String
-    let address: Address
+    let address: AddressDto?
     let juridicalPerson: JuridicalPersonDto?
     
     init(_ customer: CustomerModel) {        
@@ -29,14 +29,14 @@ struct CustomerDto: Serializable {
          _ phoneNumber: String,
          _ birth: String,
          _ email: String,
-         _ address: Address,
+         _ address: AddressModel? = nil,
          _ juridicalPerson: JuridicalPersonModel? = nil) {
         self.name = name
         self.cpf = cpf
         self.phoneNumber = phoneNumber
         self.birth = birth
         self.email = email
-        self.address = address
+        self.address = address != nil ? AddressDto(address!) : nil
         self.juridicalPerson = juridicalPerson != nil ? JuridicalPersonDto(juridicalPerson!) : nil
     }
     

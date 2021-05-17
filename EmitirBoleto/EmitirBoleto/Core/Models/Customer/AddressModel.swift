@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct Address: Serializable {
+struct AddressModel {
     let street: String
     let number: Int
     let neighborhood: String
@@ -28,15 +28,5 @@ struct Address: Serializable {
         self.city = city
         self.complement = complement
         self.state = state
-    }
-    
-    private enum CodingKeys: String, CodingKey {        
-        case street
-        case number
-        case neighborhood
-        case zipCode = "zipcode"
-        case city
-        case complement
-        case state
     }
 }
