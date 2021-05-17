@@ -7,7 +7,7 @@
 
 import Alamofire
 
-protocol HTTPRequestClient {
-    func post(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
+protocol HTTPAlamofireClient {
+    func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
               completion: @escaping (Result<Data?, APIError>) -> Void)
 }

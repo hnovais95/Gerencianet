@@ -8,9 +8,9 @@
 import Foundation
 
 final class Gerencianet: PaymentGateway {
-    private(set) var httpClient: HTTPRequestClient
+    private(set) var httpClient: HTTPAlamofireClient
     
-    public init(httpClient: AlamofireClient) {
+    public init(httpClient: HTTPAlamofireClient) {
         self.httpClient = httpClient
     }
 }

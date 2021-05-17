@@ -11,7 +11,7 @@ extension Gerencianet {
         
         let route = GerencianetEndpoint.authorize(user: user)
         
-        httpClient.post(to: route.url, method: route.method, with: route.body, headers: route.headers) { result in
+        httpClient.request(to: route.url, method: route.method, with: route.body, headers: route.headers) { result in
             switch result {
             case .success(let data):
                 if let response: AuthorizeResponse = data?.toModel() {

@@ -60,8 +60,8 @@ class ViewController: UIViewController {
                 chargeLabel.text = response.data.chargeId.description
                 break
             default:
-                authenticateButtonHandle()
-                chargeButtonHandle()
+                //authenticateButtonHandle()
+                //chargeButtonHandle()
                 break
             }
         }

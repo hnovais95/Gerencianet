@@ -22,9 +22,9 @@ enum GerencianetEndpoint: APIConfigurations {
     var url: URL {
         switch self {
         case .authorize:
-            return URL(string: "https://sandbox.gerencianet.com.br/v1/authorize")!
+            return URL(string: "\(Constants.HomologationServer.baseURL)authorize")!
         case .chargeOneStep:
-            return URL(string: "https://sandbox.gerencianet.com.br/v1/charge/one-step")!
+            return URL(string: "\(Constants.HomologationServer.baseURL)charge/one-step")!
         }
     }
     

@@ -8,11 +8,12 @@
 import Foundation
 import Alamofire
 
-class AlamofireClient: HTTPRequestClient {
-    func post(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
+class AlamofireClient: HTTPAlamofireClient {
+    func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
               completion: @escaping (Result<Data?, APIError>) -> Void) {
         
-        AF.request(url, method: method,
+        AF.request(url,
+                   method: method,
                    parameters: body,
                    encoding: JSONEncoding.default,
                    headers: headers).responseData { dataResponse in
@@ -20,7 +21,7 @@ class AlamofireClient: HTTPRequestClient {
             guard let statusCode = dataResponse.response?.statusCode else {
                 return completion(.failure(.noConnectivity))
             }
-            
+                    
             switch dataResponse.result {
             case .failure: completion(.failure(.noConnectivity))
             case .success(let data):
