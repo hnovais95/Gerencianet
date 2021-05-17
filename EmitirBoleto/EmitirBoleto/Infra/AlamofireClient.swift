@@ -16,14 +16,15 @@ class AlamofireClient: HTTPAlamofireClient {
                    method: method,
                    parameters: body,
                    encoding: JSONEncoding.default,
-                   headers: headers).responseData { dataResponse in
+                   headers: headers).responseData { responseData in
             
-            guard let statusCode = dataResponse.response?.statusCode else {
+            guard let statusCode = responseData.response?.statusCode else {
                 return completion(.failure(.noConnectivity))
             }
                     
-            switch dataResponse.result {
-            case .failure: completion(.failure(.noConnectivity))
+            switch responseData.result {
+            case .failure:
+                completion(.failure(.noConnectivity))
             case .success(let data):
                 switch statusCode {
                 case 204:
