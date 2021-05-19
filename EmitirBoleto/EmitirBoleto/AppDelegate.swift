@@ -12,17 +12,12 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var scheduleAuthentication: ScheduleAuthentication?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         scheduleAuthentication = ScheduleAuthentication(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
         scheduleAuthentication?.execute()
-        
-        for customer in CoreDataCustomerRepository().getAll() {
-            print("\(customer.name) \(customer.address?.street)")
-        }
         
         return true
     }

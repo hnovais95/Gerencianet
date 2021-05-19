@@ -31,10 +31,13 @@
 		CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */; };
 		CA87DFA2265497C90074A161 /* CoreDataItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */; };
 		CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D3264AB04D007AE005 /* EmitirBoleto.xcdatamodeld */; };
+		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
+		CABB5FC9265566940079FFDF /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* CustomerViewController.swift */; };
+		CABB5FCA265566940079FFDF /* CustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* CustomerViewController.xib */; };
+		CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */; };
 		CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CA264AB04D007AE005 /* AppDelegate.swift */; };
 		CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */; };
 		CABCA8CF264AB04D007AE005 /* ChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CE264AB04D007AE005 /* ChargeViewController.swift */; };
-		CABCA8D2264AB04D007AE005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D0264AB04D007AE005 /* Main.storyboard */; };
 		CABCA8D7264AB04E007AE005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D6264AB04E007AE005 /* Assets.xcassets */; };
 		CABCA8DA264AB04E007AE005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D8264AB04E007AE005 /* LaunchScreen.storyboard */; };
 		CABCA8E5264AB04F007AE005 /* EmitirBoletoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8E4264AB04F007AE005 /* EmitirBoletoTests.swift */; };
@@ -112,11 +115,14 @@
 		CA87DF9C265480E70074A161 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItemRepository.swift; sourceTree = "<group>"; };
+		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CABB5FC7265566940079FFDF /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		CABB5FC8265566940079FFDF /* CustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerViewController.xib; sourceTree = "<group>"; };
+		CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitirBoleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CABCA8CE264AB04D007AE005 /* ChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeViewController.swift; sourceTree = "<group>"; };
-		CABCA8D1264AB04D007AE005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CABCA8D4264AB04D007AE005 /* EmitirBoleto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmitirBoleto.xcdatamodel; sourceTree = "<group>"; };
 		CABCA8D6264AB04E007AE005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABCA8D9264AB04E007AE005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -267,6 +273,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CABB5FC32655647A0079FFDF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CABB5FC4265564FD0079FFDF /* Coordinator.swift */,
+				CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CABB5FC6265566640079FFDF /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				CABB5FC7265566940079FFDF /* CustomerViewController.swift */,
+				CABB5FC8265566940079FFDF /* CustomerViewController.xib */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
 		CABCA8BE264AB04D007AE005 = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +320,7 @@
 				CABCA901264AB08D007AE005 /* Infrastructure */,
 				CABCA905264AB0DD007AE005 /* Adapters */,
 				CABCA900264AB086007AE005 /* Core */,
+				CABB5FC32655647A0079FFDF /* Coordinator */,
 				CABCA8FF264AB080007AE005 /* Scenes */,
 				CABCA906264AB0ED007AE005 /* Storyboard */,
 				CABCA8CA264AB04D007AE005 /* AppDelegate.swift */,
@@ -329,6 +354,7 @@
 		CABCA8FF264AB080007AE005 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CABB5FC6265566640079FFDF /* Customer */,
 				CA2555412653268E00F75E20 /* Charge */,
 			);
 			path = Scenes;
@@ -398,7 +424,6 @@
 		CABCA906264AB0ED007AE005 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA8D0264AB04D007AE005 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -609,10 +634,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABB5FCA265566940079FFDF /* CustomerViewController.xib in Resources */,
 				CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */,
 				CABCA8DA264AB04E007AE005 /* LaunchScreen.storyboard in Resources */,
 				CABCA8D7264AB04E007AE005 /* Assets.xcassets in Resources */,
-				CABCA8D2264AB04D007AE005 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,10 +783,12 @@
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
+				CABB5FC9265566940079FFDF /* CustomerViewController.swift in Sources */,
 				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,
 				CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */,
 				CA87DF9926545F270074A161 /* CoreDataCustomerRepository.swift in Sources */,
 				CA87DF9526545BE30074A161 /* Address+CoreDataProperties.swift in Sources */,
+				CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */,
 				CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */,
 				CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */,
 				CA2555402652FA5C00F75E20 /* ChargeViewModel.swift in Sources */,
@@ -787,6 +814,7 @@
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
 				CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */,
 				CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */,
+				CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */,
 				CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
 			);
@@ -824,14 +852,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CABCA8D0264AB04D007AE005 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CABCA8D1264AB04D007AE005 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CABCA8D8264AB04E007AE005 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
