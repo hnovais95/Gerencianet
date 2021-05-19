@@ -20,16 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         scheduleAuthentication = ScheduleAuthentication(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
         scheduleAuthentication?.execute()
         
-        /*let customers = CoreDataCustomerRepository().getAll()
-        for customer in customers {
-            print(customer.name)
-        }*/
-        
-        let itens = CoreDataItemRepository().getAll()
-        for item in itens {
-            print(item.name)
-        }
-        
         return true
     }
 

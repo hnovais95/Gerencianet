@@ -12,7 +12,7 @@ class BodyFactory {
         return ["grant_type": "client_credentials"]
     }
     
-    static func makeChargeOneStepBody(parameters: ChargeOneStepDto) -> [String: Any] {
+    static func makeChargeOneStepBody(parameters: ChargeOneStepModel) -> [String: Any] {
         let shippings: [String: Any] = [
             "shippings": parameters.toJson()?["shippings"] as Any
         ]

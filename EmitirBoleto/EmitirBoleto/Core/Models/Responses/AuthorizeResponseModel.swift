@@ -1,11 +1,12 @@
 //
-//  AuthorizeResponse.swift
+//  AuthorizeResponseModel.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct AuthorizeResponse: Serializable {
+struct AuthorizeResponseModel: Serializable {
+    
     let accessToken: String
     let refreshToken: String
     let expiresIn: Int

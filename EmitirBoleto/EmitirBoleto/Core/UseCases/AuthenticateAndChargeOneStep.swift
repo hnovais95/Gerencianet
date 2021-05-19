@@ -8,6 +8,7 @@
 import Foundation
 
 class AuthenticateAndChargeOneStep {
+    
     private let paymentGateway: PaymentGateway
 
     init(paymentGateway: PaymentGateway) {
@@ -16,7 +17,7 @@ class AuthenticateAndChargeOneStep {
     
     func execute(user: UserModel,
                  data: ChargeOneStepModel,
-                 completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {        
+                 completion: @escaping (Result<ChargeOneStepResponseModel, APIError>) -> Void) {        
         let authenticate = Authenticate(paymentGateway: paymentGateway)
         let authenticateGroup = DispatchGroup()
         authenticateGroup.enter()
@@ -30,7 +31,8 @@ class AuthenticateAndChargeOneStep {
                 switch result {
                 case .success(let response):
                     completion(.success(response))
-                case .failure(let error):
+                case .failure(let error):                    
+                    print("Erro ao autenticar e reprocessar emissão de boleto: \(error.localizedDescription).")
                     completion(.failure(error))
                 }
             })

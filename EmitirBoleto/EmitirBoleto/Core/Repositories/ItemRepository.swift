@@ -6,6 +6,7 @@
 //
 
 protocol ItemRepository {
+    
     func getAll() -> [ItemModel]
     func save(_ data: ItemModel)
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class ChargeViewController: UIViewController {
+    
     @IBOutlet weak var authenticateButton: UIButton!
     @IBOutlet weak var authenticateLabel: UILabel!
     @IBOutlet weak var chargeButton: UIButton!
@@ -32,7 +33,7 @@ class ChargeViewController: UIViewController {
         // MARK: Init customer
         address = AddressModel("Rua da Sorte", 1, "Jardim Alvorada", "35400000", "Ouro Preto", "A", "MG")
         //juridicalPerson = JuridicalPersonModel("Novais Automação", "74926158000123")
-        customer = CustomerModel("Marlon Rafael", "46282921678", "31985624589", "1995-12-01", "email@dominio.com"/*, juridicalPerson*/)
+        customer = CustomerModel("Marlon Rafael", "46282921678", "31985624589", "1995-12-01", "email@dominio.com", address, juridicalPerson)
         // MARK: Init charge data
         item = ItemModel("Produto 2", 10000, 2)
         shipping = ShippingModel("Correios", 2000)

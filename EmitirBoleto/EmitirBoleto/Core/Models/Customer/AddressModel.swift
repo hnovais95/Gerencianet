@@ -1,11 +1,12 @@
 //
-//  Address.swift
+//  AddressModel.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct AddressModel {
+struct AddressModel: Serializable {
+    
     let street: String
     let number: Int
     let neighborhood: String
@@ -28,5 +29,15 @@ struct AddressModel {
         self.city = city
         self.complement = complement
         self.state = state
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case street
+        case number
+        case neighborhood
+        case zipCode = "zipcode"
+        case city
+        case complement
+        case state
     }
 }

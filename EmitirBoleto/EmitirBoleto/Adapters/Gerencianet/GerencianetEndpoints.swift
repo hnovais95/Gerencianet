@@ -1,5 +1,5 @@
 //
-//  Endpoints.swift
+//  GerencianetEndpoints.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 14/05/21.
@@ -9,8 +9,9 @@ import Foundation
 import Alamofire
 
 enum GerencianetEndpoint: APIConfigurations {
-    case authorize(user: UserDto)
-    case chargeOneStep(token: String, chargeData: ChargeOneStepDto)
+    
+    case authorize(clientId: String, clientSecret: String)
+    case chargeOneStep(token: String, chargeData: ChargeOneStepModel)
     
     var method: HTTPMethod {
         switch self {
@@ -30,8 +31,8 @@ enum GerencianetEndpoint: APIConfigurations {
     
     var headers: HTTPHeaders {
         switch self {
-        case .authorize(let user):
-            return HeadersFactory.makeAuthorizeHeaders(clientId: user.clientId, clientSecret: user.clientSecret)
+        case .authorize(let clientId, let clientSecret):
+            return HeadersFactory.makeAuthorizeHeaders(clientId: clientId, clientSecret: clientSecret)
         case .chargeOneStep(let token, _):
             return HeadersFactory.makeChargeOneStepHeaders(accessToken: token)
         }

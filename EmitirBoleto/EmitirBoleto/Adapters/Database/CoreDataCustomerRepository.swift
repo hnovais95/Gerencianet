@@ -61,6 +61,7 @@ class CoreDataCustomerRepository: CustomerRepository {
             customer.address?.neighborhood = data.address?.neighborhood
             customer.address?.city = data.address?.city
             customer.address?.zipCode = data.address?.zipCode
+            customer.address?.state = data.address?.state
         }
         
         do {

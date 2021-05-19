@@ -11,7 +11,6 @@
 		5B2C1C019D97527B273D86DE /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B73A124B5E1E9593376F8E /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */; };
 		60D5968BDE40F3F694434C0C /* Pods_EmitirBoleto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427FA4B23DC1784DB73F5703 /* Pods_EmitirBoleto.framework */; };
 		CA2555352652926900F75E20 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2555342652926900F75E20 /* APIConstants.swift */; };
-		CA2555372652A86E00F75E20 /* AddressDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2555362652A86E00F75E20 /* AddressDto.swift */; };
 		CA25553C2652F3A000F75E20 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */; };
 		CA25553E2652F7A100F75E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25553D2652F7A100F75E20 /* Constants.swift */; };
 		CA2555402652FA5C00F75E20 /* ChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25553F2652FA5C00F75E20 /* ChargeViewModel.swift */; };
@@ -45,21 +44,15 @@
 		CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA919264AC307007AE005 /* ItemModel.swift */; };
 		CABCA91E264AC43A007AE005 /* BankingBilletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA91D264AC43A007AE005 /* BankingBilletModel.swift */; };
 		CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA91F264AC67F007AE005 /* ShippingModel.swift */; };
-		CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */; };
+		CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */; };
 		CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA923264ACFAD007AE005 /* CustomerRepository.swift */; };
 		CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA925264AD220007AE005 /* ItemRepository.swift */; };
 		CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA92A264AD46E007AE005 /* PaymentGateway.swift */; };
-		CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */; };
+		CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */; };
 		CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */; };
 		CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC1264BF33300DD0DCB /* Serializable.swift */; };
-		CAD3AEC6264BF8AB00DD0DCB /* CustomerDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */; };
 		CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */; };
-		CAD3AED1264C059800DD0DCB /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AED0264C059800DD0DCB /* DomainError.swift */; };
 		CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */; };
-		CAD3AEE3264C2A6100DD0DCB /* BankingBilletDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */; };
-		CAF751E2264E9D9E00EABEFC /* ItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E1264E9D9E00EABEFC /* ItemDto.swift */; };
-		CAF751E4264E9DB500EABEFC /* ShippingDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E3264E9DB500EABEFC /* ShippingDto.swift */; };
-		CAF751E6264EA68D00EABEFC /* JuridicalPersonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751E5264EA68D00EABEFC /* JuridicalPersonDto.swift */; };
 		CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EF264F117700EABEFC /* Gerencianet.swift */; };
 		CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */; };
 		CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F3264F119A00EABEFC /* HeadersFactory.swift */; };
@@ -72,8 +65,6 @@
 		CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899E264AF7CE00D361B0 /* UserModel.swift */; };
 		CAFC89A2264B012800D361B0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A1264B012800D361B0 /* APIError.swift */; };
 		CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */; };
-		CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */; };
-		CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A9264B195500D361B0 /* UserDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +93,6 @@
 		83AD70706259383F52D7FC47 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BFB526D55251AA27FC467449 /* Pods-EmitirBoleto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.release.xcconfig"; sourceTree = "<group>"; };
 		CA2555342652926900F75E20 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		CA2555362652A86E00F75E20 /* AddressDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressDto.swift; sourceTree = "<group>"; };
 		CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 		CA25553D2652F7A100F75E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CA25553F2652FA5C00F75E20 /* ChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeViewModel.swift; sourceTree = "<group>"; };
@@ -142,21 +132,15 @@
 		CABCA919264AC307007AE005 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		CABCA91D264AC43A007AE005 /* BankingBilletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletModel.swift; sourceTree = "<group>"; };
 		CABCA91F264AC67F007AE005 /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
-		CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponse.swift; sourceTree = "<group>"; };
+		CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponseModel.swift; sourceTree = "<group>"; };
 		CABCA923264ACFAD007AE005 /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
 		CABCA925264AD220007AE005 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		CABCA92A264AD46E007AE005 /* PaymentGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGateway.swift; sourceTree = "<group>"; };
-		CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponse.swift; sourceTree = "<group>"; };
+		CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponseModel.swift; sourceTree = "<group>"; };
 		CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepModel.swift; sourceTree = "<group>"; };
 		CAD3AEC1264BF33300DD0DCB /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
-		CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDto.swift; sourceTree = "<group>"; };
 		CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
-		CAD3AED0264C059800DD0DCB /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuridicalPersonModel.swift; sourceTree = "<group>"; };
-		CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletDto.swift; sourceTree = "<group>"; };
-		CAF751E1264E9D9E00EABEFC /* ItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDto.swift; sourceTree = "<group>"; };
-		CAF751E3264E9DB500EABEFC /* ShippingDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingDto.swift; sourceTree = "<group>"; };
-		CAF751E5264EA68D00EABEFC /* JuridicalPersonDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuridicalPersonDto.swift; sourceTree = "<group>"; };
 		CAF751EF264F117700EABEFC /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
 		CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetEndpoints.swift; sourceTree = "<group>"; };
 		CAF751F3264F119A00EABEFC /* HeadersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersFactory.swift; sourceTree = "<group>"; };
@@ -169,8 +153,6 @@
 		CAFC899E264AF7CE00D361B0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CAFC89A1264B012800D361B0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStep.swift; sourceTree = "<group>"; };
-		CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepDto.swift; sourceTree = "<group>"; };
-		CAFC89A9264B195500D361B0 /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 		F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoletoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98C064082B60A0DD6208CF5 /* Pods-EmitirBoleto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,8 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD3AEC7264BF93000DD0DCB /* Helpers */,
-				CAD3AEC8264BFDB400DD0DCB /* SharedData */,
-				CABCA901264AB08D007AE005 /* Infra */,
+				CABCA901264AB08D007AE005 /* Infrastructure */,
 				CABCA905264AB0DD007AE005 /* Adapters */,
 				CABCA900264AB086007AE005 /* Core */,
 				CABCA8FF264AB080007AE005 /* Scenes */,
@@ -364,13 +345,13 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		CABCA901264AB08D007AE005 /* Infra */ = {
+		CABCA901264AB08D007AE005 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				CA87DF4626543A9C0074A161 /* HTTP */,
 				CA87DF4726543AA30074A161 /* CoreData */,
 			);
-			path = Infra;
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		CABCA902264AB094007AE005 /* Models */ = {
@@ -380,6 +361,7 @@
 				CABCA910264AB83E007AE005 /* Customer */,
 				CABCA91C264AC42C007AE005 /* Charge */,
 				CAFC89A0264AFF3A00D361B0 /* Error */,
+				CABCA933264ADDA4007AE005 /* Responses */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,7 +391,6 @@
 			children = (
 				CA87DF9726545EFE0074A161 /* Database */,
 				CAF751EE264F116400EABEFC /* Gerencianet */,
-				CAFC89A8264B10A600D361B0 /* Data */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -454,8 +435,8 @@
 		CABCA933264ADDA4007AE005 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */,
-				CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */,
+				CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */,
+				CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -470,43 +451,6 @@
 				CA25553D2652F7A100F75E20 /* Constants.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		CAD3AEC8264BFDB400DD0DCB /* SharedData */ = {
-			isa = PBXGroup;
-			children = (
-				CABCA933264ADDA4007AE005 /* Responses */,
-			);
-			path = SharedData;
-			sourceTree = "<group>";
-		};
-		CAF751E7264EA6CE00EABEFC /* User */ = {
-			isa = PBXGroup;
-			children = (
-				CAFC89A9264B195500D361B0 /* UserDto.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		CAF751E8264EA6D100EABEFC /* Customer */ = {
-			isa = PBXGroup;
-			children = (
-				CA2555362652A86E00F75E20 /* AddressDto.swift */,
-				CAF751E5264EA68D00EABEFC /* JuridicalPersonDto.swift */,
-				CAD3AEC5264BF8AB00DD0DCB /* CustomerDto.swift */,
-			);
-			path = Customer;
-			sourceTree = "<group>";
-		};
-		CAF751E9264EA6D700EABEFC /* Charge */ = {
-			isa = PBXGroup;
-			children = (
-				CAF751E1264E9D9E00EABEFC /* ItemDto.swift */,
-				CAF751E3264E9DB500EABEFC /* ShippingDto.swift */,
-				CAD3AEE2264C2A6100DD0DCB /* BankingBilletDto.swift */,
-				CAFC89A5264B081C00D361B0 /* ChargeOneStepDto.swift */,
-			);
-			path = Charge;
 			sourceTree = "<group>";
 		};
 		CAF751EE264F116400EABEFC /* Gerencianet */ = {
@@ -544,20 +488,9 @@
 		CAFC89A0264AFF3A00D361B0 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3AED0264C059800DD0DCB /* DomainError.swift */,
 				CAFC89A1264B012800D361B0 /* APIError.swift */,
 			);
 			path = Error;
-			sourceTree = "<group>";
-		};
-		CAFC89A8264B10A600D361B0 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				CAF751E7264EA6CE00EABEFC /* User */,
-				CAF751E8264EA6D100EABEFC /* Customer */,
-				CAF751E9264EA6D700EABEFC /* Charge */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		CAFC89AB264B1B4100D361B0 /* User */ = {
@@ -810,16 +743,12 @@
 				CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */,
 				CABCA90B264AB3E5007AE005 /* AddressModel.swift in Sources */,
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
-				CAF751E2264E9D9E00EABEFC /* ItemDto.swift in Sources */,
-				CAD3AEE3264C2A6100DD0DCB /* BankingBilletDto.swift in Sources */,
 				CAFC89A2264B012800D361B0 /* APIError.swift in Sources */,
-				CAFC89AA264B195500D361B0 /* UserDto.swift in Sources */,
 				CA87DF9B2654755D0074A161 /* DataMapper.swift in Sources */,
-				CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */,
+				CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */,
 				CA87DF9326545BE30074A161 /* JuridicalPerson+CoreDataProperties.swift in Sources */,
 				CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */,
 				CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */,
-				CAF751E4264E9DB500EABEFC /* ShippingDto.swift in Sources */,
 				CA2555352652926900F75E20 /* APIConstants.swift in Sources */,
 				CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */,
 				CAF751FE264F158400EABEFC /* HTTPAlamofireClient.swift in Sources */,
@@ -827,17 +756,12 @@
 				CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */,
 				CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */,
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
-				CAF751E6264EA68D00EABEFC /* JuridicalPersonDto.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
-				CAFC89A6264B081C00D361B0 /* ChargeOneStepDto.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
 				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,
 				CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */,
 				CA87DF9926545F270074A161 /* CoreDataCustomerRepository.swift in Sources */,
 				CA87DF9526545BE30074A161 /* Address+CoreDataProperties.swift in Sources */,
-				CAD3AED1264C059800DD0DCB /* DomainError.swift in Sources */,
-				CA2555372652A86E00F75E20 /* AddressDto.swift in Sources */,
-				CAD3AEC6264BF8AB00DD0DCB /* CustomerDto.swift in Sources */,
 				CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */,
 				CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */,
 				CA2555402652FA5C00F75E20 /* ChargeViewModel.swift in Sources */,
@@ -862,7 +786,7 @@
 				CA87DF9E265480E70074A161 /* Item+CoreDataClass.swift in Sources */,
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
 				CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */,
-				CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */,
+				CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */,
 				CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
 			);

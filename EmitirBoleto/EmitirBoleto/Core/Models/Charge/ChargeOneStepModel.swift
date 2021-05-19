@@ -1,11 +1,11 @@
 //
-//  charge.swift
+//  ChargeOneStepModel.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
 //
 
-struct ChargeOneStepModel {
+struct ChargeOneStepModel: Serializable {
     private(set) var items: [ItemModel]
     private(set) var shippings: [ShippingModel]
     private(set) var bankingBillet: BankingBilletModel
@@ -29,5 +29,11 @@ struct ChargeOneStepModel {
         value += shippings.map({ $0.value }).reduce(0, +)
         value += items.map({ $0.value * $0.amount }).reduce(0, +)
         return value
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case items
+        case shippings
+        case bankingBillet = "banking_billet"
     }
 }

@@ -1,11 +1,12 @@
 //
-//  Feedback.swift
+//  ChargeOneStepResponseModel.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ChargeOneStepResponse: Serializable {
+struct ChargeOneStepResponseModel: Serializable {
+    
     let code: Int
     let data: ResponseData
     
@@ -24,6 +25,7 @@ struct ChargeOneStepResponse: Serializable {
 }
 
 struct ResponseData: Serializable {
+    
     let barcode: String
     let link: String
     let pdf: Pdf
@@ -64,6 +66,7 @@ struct ResponseData: Serializable {
 }
 
 struct Pdf: Serializable {
+    
     let charge: String
     
     init(_ charge: String) {

@@ -1,5 +1,5 @@
 //
-//  AuthenticatorManager.swift
+//  ScheduleAuthentication.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 17/05/21.
@@ -8,6 +8,7 @@
 import Foundation
 
 class ScheduleAuthentication {
+    
     private let paymentGateway: PaymentGateway
     private var timer: RepeatingTimer?
     

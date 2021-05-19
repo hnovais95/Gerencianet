@@ -6,6 +6,7 @@
 //
 
 class Authenticate {
+    
     private let paymentGateway: PaymentGateway
     
     init(paymentGateway: PaymentGateway) {
@@ -13,13 +14,16 @@ class Authenticate {
     }
     
     func execute(user: UserModel,
-                 completion: @escaping (Result<AuthorizeResponse, APIError>) -> Void) {
-        paymentGateway.authorize(user: UserDto(user)) { result in            
+                 completion: @escaping (Result<AuthorizeResponseModel, APIError>) -> Void) {
+        
+        paymentGateway.authorize(clientId: user.clientId, clientSecret: user.clientSecret) { result in            
             switch result {
             case .success(let response):
+                print("Autenticado.")
                 user.setToken("\(response.tokenType) \(response.accessToken)")
                 completion(.success(response))
             case .failure(let error):
+                print("Erro ao autenticar: \(error.localizedDescription).")
                 completion(.failure(error))
             }
         }

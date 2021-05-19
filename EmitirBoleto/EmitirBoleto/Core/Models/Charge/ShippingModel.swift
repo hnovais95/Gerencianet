@@ -1,11 +1,11 @@
 //
-//  Shipping.swift
+//  ShippingModel.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ShippingModel {
+struct ShippingModel: Serializable {
     let name: String
     let value: Int
     

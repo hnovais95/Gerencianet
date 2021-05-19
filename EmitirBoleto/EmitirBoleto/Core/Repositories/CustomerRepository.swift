@@ -6,6 +6,7 @@
 //
 
 protocol CustomerRepository {
+    
     func getAll() -> [CustomerModel]
     func save(_ data: CustomerModel)
 }

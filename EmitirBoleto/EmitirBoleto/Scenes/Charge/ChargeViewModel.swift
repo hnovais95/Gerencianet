@@ -14,41 +14,34 @@ class ChargeViewModel {
     private let itemRepository: ItemRepository = CoreDataItemRepository()
     
     func chargeOneStep(data: ChargeOneStepModel) {
-        
         let chargeOneStep = ChargeOneStep(paymentGateway: gerencianetClient)
         
         chargeOneStep.execute(user: UserModel.shared, data: data) { [unowned self] result in
             
             switch result {
             case .success(let response):
-                print("Boleto emitido com sucesso. ChargeId:\(response.data.chargeId)")
                 self.costumerRepository.save(data.bankingBillet.customer!)
-                self.itemRepository.save(data.items[0])
-                print("Passou")
+                for item in data.items {
+                    self.itemRepository.save(item)
+                }
             case .failure(let error):
                 if error == .unauthorized {
-                    print("Unauthorize.")
                     self.authenticateAndChargeOneStep(data: data)
-                } else {
-                    print(error.localizedDescription)
-                }
-                
+                }                
             }
         }
     }
     
     private func authenticateAndChargeOneStep(data: ChargeOneStepModel) {
-        
         let authenticateAndChargeOneStep = AuthenticateAndChargeOneStep(paymentGateway: gerencianetClient)
         
         authenticateAndChargeOneStep.execute(user: UserModel.shared, data: data) { [unowned self] result in
             
             switch result {
             case .success(let response):
-                print("Boleto emitido com sucesso. ChargeId:\(response.data.chargeId)")
                 self.costumerRepository.save(data.bankingBillet.customer!)
             case .failure(let error):
-                print(error.localizedDescription)
+                break
             }
         }
     }

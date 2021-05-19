@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Serializable.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 12/05/21.
@@ -10,6 +10,7 @@ import Foundation
 public protocol Serializable: Codable, Equatable {}
 
 public extension Serializable {
+    
     func toData() -> Data?  {
         return try? JSONEncoder().encode(self)
     }
