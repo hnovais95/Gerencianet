@@ -20,14 +20,13 @@ class ChargeViewModel {
             
             switch result {
             case .success(let response):
-                self.costumerRepository.save(data.bankingBillet.customer!)
-                for item in data.items {
-                    self.itemRepository.save(item)
-                }
+                break
             case .failure(let error):
                 if error == .unauthorized {
                     self.authenticateAndChargeOneStep(data: data)
-                }                
+                } else {
+                    print(error.localizedDescription)
+                }
             }
         }
     }
@@ -39,9 +38,9 @@ class ChargeViewModel {
             
             switch result {
             case .success(let response):
-                self.costumerRepository.save(data.bankingBillet.customer!)
-            case .failure(let error):
                 break
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

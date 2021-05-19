@@ -20,10 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         scheduleAuthentication = ScheduleAuthentication(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
         scheduleAuthentication?.execute()
         
-        for customer in CoreDataCustomerRepository().getAll() {
-            print("\(customer.name) \(customer.address?.street)")
-        }
-        
         return true
     }
 
