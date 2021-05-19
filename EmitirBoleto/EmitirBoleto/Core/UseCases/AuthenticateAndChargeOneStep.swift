@@ -16,28 +16,17 @@ class AuthenticateAndChargeOneStep {
     
     func execute(user: UserModel,
                  data: ChargeOneStepModel,
-                 completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {
-        let authenticator = AuthenticationManager(paymentGateway: paymentGateway)
-        let authenticatorGroup = DispatchGroup()
-        
-        authenticatorGroup.enter()
-        authenticator.authenticate(user: UserModel.shared) { result in
-            
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            default:
-                break
-            }
-            
-            authenticatorGroup.leave()
+                 completion: @escaping (Result<ChargeOneStepResponse, APIError>) -> Void) {        
+        let authenticate = Authenticate(paymentGateway: paymentGateway)
+        let authenticateGroup = DispatchGroup()
+        authenticateGroup.enter()
+        authenticate.execute(user: UserModel.shared) { _ in
+            authenticateGroup.leave()
         }
         
-        authenticatorGroup.notify(queue: DispatchQueue.main) {
+        authenticateGroup.notify(queue: DispatchQueue.main) {
             let chargeOneStep = ChargeOneStep(paymentGateway: self.paymentGateway)
-            
             chargeOneStep.execute(user: UserModel.shared, data: data, completion: { result in
-                
                 switch result {
                 case .success(let response):
                     completion(.success(response))

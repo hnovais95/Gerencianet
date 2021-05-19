@@ -7,5 +7,5 @@
 
 protocol CustomerRepository {
     func getAll() -> [CustomerModel]
-    func save(_ person: CustomerDto)
+    func save(_ data: CustomerModel)
 }

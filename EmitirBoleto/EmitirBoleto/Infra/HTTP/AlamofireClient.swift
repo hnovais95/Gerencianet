@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class AlamofireClient: HTTPAlamofireClient {
+    
     func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
               completion: @escaping (Result<Data?, APIError>) -> Void) {
         

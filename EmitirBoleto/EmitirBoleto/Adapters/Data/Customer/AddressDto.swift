@@ -5,6 +5,8 @@
 //  Created by Heitor Novais | Gerencianet on 17/05/21.
 //
 
+import CoreData
+
 struct AddressDto: Serializable {
     let street: String
     let number: Int

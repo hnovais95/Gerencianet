@@ -13,4 +13,11 @@ struct Constants {
         static let clientSecret = "Client_Secret_35f3fbcd52bfb705701e5cf769501d8b8c32f0a8"
         static let tokenUpdateInterval = TimeInterval(590)
     }
+    
+    struct EntityName {
+        static let customer = "Customer"
+        static let juridicalPerson = "JuridicalPerson"
+        static let address = "Address"
+        static let item = "Item"
+    }
 }

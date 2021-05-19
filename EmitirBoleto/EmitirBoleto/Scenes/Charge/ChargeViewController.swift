@@ -30,11 +30,11 @@ class ChargeViewController: UIViewController {
         chargeButton.addTarget(self, action: #selector(chargeButtonHandle), for: .touchUpInside)
         
         // MARK: Init customer
-        address = AddressModel("Rua JK", 1, "Bauxita", "35400000", "Ouro Preto", "A", "MG")
-        juridicalPerson = JuridicalPersonModel("HN Automação", "74926158000123")
-        customer = CustomerModel("Heitor Novais", "46282921678", "31985624589", "1995-12-01", "email@dominio.com", juridicalPerson)
+        address = AddressModel("Rua da Sorte", 1, "Jardim Alvorada", "35400000", "Ouro Preto", "A", "MG")
+        //juridicalPerson = JuridicalPersonModel("Novais Automação", "74926158000123")
+        customer = CustomerModel("Marlon Rafael", "46282921678", "31985624589", "1995-12-01", "email@dominio.com"/*, juridicalPerson*/)
         // MARK: Init charge data
-        item = ItemModel("Produto 1", 10000, 2)
+        item = ItemModel("Produto 2", 10000, 2)
         shipping = ShippingModel("Correios", 2000)
         bankingBillet = BankingBilletModel(customer: customer, expireAt: "2021-10-30")
         charge = ChargeOneStepModel(bankingBillet: bankingBillet)
@@ -44,10 +44,9 @@ class ChargeViewController: UIViewController {
     
     @objc
     func authenticateButtonHandle() {
-        let authenticate = AuthenticationManager(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
+        let authenticate = Authenticate(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
         
-        authenticate.authenticate(user: UserModel.shared) { [weak self] result in
-            
+        authenticate.execute(user: UserModel.shared) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.authenticateLabel.text = response.accessToken

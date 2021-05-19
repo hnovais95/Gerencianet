@@ -8,8 +8,8 @@
 struct CustomerModel {
     let name: String
     let cpf: String
-    let birth: String
     let phoneNumber: String
+    let birth: String
     let email: String
     let address: AddressModel?
     let juridicalPerson: JuridicalPersonModel?
