@@ -14,11 +14,12 @@ class CoreDataCustomerRepository: CustomerRepository {
         var models = [CustomerModel]()
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Customer>(entityName: Constants.EntityName.customer)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
             let customers = try context.fetch(fetchRequest)
             for customer in customers {
-                if let model = DataMapper.map(from: customer, to: CustomerModel.self) {
+                if let model = EntityMapper.map(from: customer, to: CustomerModel.self) {
                     models.append(model)
                 }
             }
@@ -35,9 +36,14 @@ class CoreDataCustomerRepository: CustomerRepository {
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
-        let customer = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.customer, into: context) as! Customer
-        var juridicalPerson: JuridicalPerson?
-        var address: Address?
+        let fetchResult = fetch(byCpf: data.cpf)
+        
+        var customer: Customer
+        if fetchResult == nil {
+            customer = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.customer, into: context) as! Customer
+        } else {
+            customer = fetchResult!
+        }
         
         customer.name = data.name
         customer.cpf = data.cpf
@@ -45,16 +51,26 @@ class CoreDataCustomerRepository: CustomerRepository {
         customer.phoneNumber = data.phoneNumber
         customer.email = data.email
         
+        var juridicalPerson: JuridicalPerson?
         if data.juridicalPerson != nil {
-            juridicalPerson = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.juridicalPerson, into: context) as? JuridicalPerson
-            customer.juridicalPerson = juridicalPerson
+            
+            if fetchResult == nil {
+                juridicalPerson = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.juridicalPerson, into: context) as? JuridicalPerson
+                customer.juridicalPerson = juridicalPerson
+            }
+            
             customer.juridicalPerson?.corporateName = data.juridicalPerson?.corporateName
             customer.juridicalPerson?.cnpj = data.juridicalPerson?.cnpj
         }
         
+        var address: Address?
         if data.address != nil {
-            address = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.address, into: context) as? Address
-            customer.address = address
+            
+            if fetchResult == nil {
+                address = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.address, into: context) as? Address
+                customer.address = address
+            }
+            
             customer.address?.street = data.address?.street
             customer.address?.number = data.address != nil ? Int16(data.address!.number) : 0
             customer.address?.complement = data.address?.complement
@@ -64,11 +80,32 @@ class CoreDataCustomerRepository: CustomerRepository {
             customer.address?.state = data.address?.state
         }
         
-        do {
-            try CoreDataManager.shared.saveContext()
-            print("Cliente salvo com sucesso.")
-        } catch let error {
-            print("Erro ao salvar cliente: \(error)")
+        if context.hasChanges {
+            do {
+                try context.save()
+                print("Cliente salvo com sucesso.")
+            } catch let error {
+                print("Erro ao salvar cliente: \(error)")
+            }
         }
+    }
+    
+    private func fetch(byCpf cpf: String) -> Customer? {
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let customerfetchRequest = NSFetchRequest<Customer>(entityName: Constants.EntityName.customer)
+        customerfetchRequest.predicate = NSPredicate(format: "cpf == %@", cpf)        
+        customerfetchRequest.fetchLimit = 1
+        
+        do {
+            let customers = try context.fetch(customerfetchRequest)
+            let customer = customers.first
+            return customer
+        } catch let error {
+            print("Erro ao recuperar cliente: \(error)")
+        }
+        
+        return nil
     }
 }

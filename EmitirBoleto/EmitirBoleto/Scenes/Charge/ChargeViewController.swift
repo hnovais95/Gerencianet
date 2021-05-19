@@ -31,7 +31,7 @@ class ChargeViewController: UIViewController {
         chargeButton.addTarget(self, action: #selector(chargeButtonHandle), for: .touchUpInside)
         
         // MARK: Init customer
-        address = AddressModel("Rua da Sorte", 1, "Jardim Alvorada", "35400000", "Ouro Preto", "A", "MG")
+        address = AddressModel("Rua JK", 1, "Jardim Alvorada", "35400000", "Ouro Preto", "A", "MG")
         //juridicalPerson = JuridicalPersonModel("Novais Automação", "74926158000123")
         customer = CustomerModel("Marlon Rafael", "46282921678", "31985624589", "1995-12-01", "email@dominio.com", address, juridicalPerson)
         // MARK: Init charge data

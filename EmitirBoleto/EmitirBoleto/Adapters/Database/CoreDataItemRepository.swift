@@ -14,11 +14,12 @@ class CoreDataItemRepository: ItemRepository {
         var models = [ItemModel]()
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Item>(entityName: Constants.EntityName.item)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
             let itens = try context.fetch(fetchRequest)
             for item in itens {
-                if let model = DataMapper.map(from: item, to: ItemModel.self) {
+                if let model = EntityMapper.map(from: item, to: ItemModel.self) {
                     models.append(model)
                 }
             }
@@ -35,16 +36,44 @@ class CoreDataItemRepository: ItemRepository {
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
-        let item = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.item, into: context) as! Item
+        let fetchResult = fetch(byName: data.name, andValue: Int32(data.value))
+        
+        var item: Item
+        if fetchResult != nil {
+            item = fetchResult!
+        } else {
+            item = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.item, into: context) as! Item
+        }
         
         item.name = data.name
         item.value = Int32(data.value)
         
-        do {
-            try CoreDataManager.shared.saveContext()
-            print("Item salvo com sucesso.")
-        } catch let error {
-            print("Erro ao salvar item: \(error)")
+        if context.hasChanges {
+            do {
+                try context.save()
+                print("Item salvo com sucesso.")
+            } catch let error {
+                print("Erro ao salvar item: \(error)")
+            }
         }
+    }
+    
+    private func fetch(byName name: String, andValue value: Int32) -> Item? {
+        
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<Item>(entityName: Constants.EntityName.item)
+        fetchRequest.predicate = NSPredicate(format: "name == %@ AND value == %i", name)
+        fetchRequest.fetchLimit = 1
+        
+        do {
+            let items = try context.fetch(fetchRequest)
+            let item = items.first
+            return item
+        } catch let error {
+            print("Erro ao recuperar item: \(error)")
+        }
+        
+        return nil
     }
 }

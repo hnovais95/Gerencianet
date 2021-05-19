@@ -7,7 +7,7 @@
 
 import CoreData
 
-class DataMapper {
+class EntityMapper {
     
     static func map<T>(from data: NSManagedObject, to type: T.Type) -> T? {
         

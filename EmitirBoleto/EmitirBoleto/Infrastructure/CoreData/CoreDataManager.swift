@@ -24,13 +24,7 @@ class CoreDataManager {
         })
         
         return container
-    }()
-    
-    func saveContext() throws {
-        let context = persistentContainer.viewContext
-        try context.save()
-    }
-    
+    }()    
 }
 
 extension CoreDataManager: NSCopying {

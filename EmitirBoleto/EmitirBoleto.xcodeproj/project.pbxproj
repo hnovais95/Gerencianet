@@ -26,7 +26,7 @@
 		CA87DF9426545BE30074A161 /* Address+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF8E26545BE30074A161 /* Address+CoreDataClass.swift */; };
 		CA87DF9526545BE30074A161 /* Address+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF8F26545BE30074A161 /* Address+CoreDataProperties.swift */; };
 		CA87DF9926545F270074A161 /* CoreDataCustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9826545F270074A161 /* CoreDataCustomerRepository.swift */; };
-		CA87DF9B2654755D0074A161 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9A2654755D0074A161 /* DataMapper.swift */; };
+		CA87DF9B2654755D0074A161 /* EntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9A2654755D0074A161 /* EntityMapper.swift */; };
 		CA87DF9E265480E70074A161 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9C265480E70074A161 /* Item+CoreDataClass.swift */; };
 		CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */; };
 		CA87DFA2265497C90074A161 /* CoreDataItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */; };
@@ -108,7 +108,7 @@
 		CA87DF8E26545BE30074A161 /* Address+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA87DF8F26545BE30074A161 /* Address+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA87DF9826545F270074A161 /* CoreDataCustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCustomerRepository.swift; sourceTree = "<group>"; };
-		CA87DF9A2654755D0074A161 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		CA87DF9A2654755D0074A161 /* EntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityMapper.swift; sourceTree = "<group>"; };
 		CA87DF9C265480E70074A161 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItemRepository.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		CA87DFA0265497930074A161 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CA87DF9A2654755D0074A161 /* DataMapper.swift */,
+				CA87DF9A2654755D0074A161 /* EntityMapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -389,8 +389,8 @@
 		CABCA905264AB0DD007AE005 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				CA87DF9726545EFE0074A161 /* Database */,
 				CAF751EE264F116400EABEFC /* Gerencianet */,
+				CA87DF9726545EFE0074A161 /* Database */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -744,7 +744,7 @@
 				CABCA90B264AB3E5007AE005 /* AddressModel.swift in Sources */,
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
 				CAFC89A2264B012800D361B0 /* APIError.swift in Sources */,
-				CA87DF9B2654755D0074A161 /* DataMapper.swift in Sources */,
+				CA87DF9B2654755D0074A161 /* EntityMapper.swift in Sources */,
 				CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */,
 				CA87DF9326545BE30074A161 /* JuridicalPerson+CoreDataProperties.swift in Sources */,
 				CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */,
