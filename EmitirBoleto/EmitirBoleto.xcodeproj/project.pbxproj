@@ -55,6 +55,8 @@
 		CAC0F12926568FAD00D98492 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */; };
 		CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */; };
 		CAC0F12D26569B9A00D98492 /* CustomerViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12C26569B9A00D98492 /* CustomerViewController+Extensions.swift */; };
+		CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12F2656EAB700D98492 /* SearchCustomerViewController.swift */; };
+		CAC0F1322656EAB700D98492 /* SearchCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC0F1302656EAB700D98492 /* SearchCustomerViewController.xib */; };
 		CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */; };
 		CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC1264BF33300DD0DCB /* Serializable.swift */; };
 		CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */; };
@@ -149,6 +151,8 @@
 		CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		CAC0F12C26569B9A00D98492 /* CustomerViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomerViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CAC0F12F2656EAB700D98492 /* SearchCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomerViewController.swift; sourceTree = "<group>"; };
+		CAC0F1302656EAB700D98492 /* SearchCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCustomerViewController.xib; sourceTree = "<group>"; };
 		CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepModel.swift; sourceTree = "<group>"; };
 		CAD3AEC1264BF33300DD0DCB /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 		CABCA8FF264AB080007AE005 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CAC0F12E2656EA9B00D98492 /* SearchCustomer */,
 				CABB5FC6265566640079FFDF /* Customer */,
 				CA2555412653268E00F75E20 /* Charge */,
 			);
@@ -471,6 +476,15 @@
 				CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		CAC0F12E2656EA9B00D98492 /* SearchCustomer */ = {
+			isa = PBXGroup;
+			children = (
+				CAC0F12F2656EAB700D98492 /* SearchCustomerViewController.swift */,
+				CAC0F1302656EAB700D98492 /* SearchCustomerViewController.xib */,
+			);
+			path = SearchCustomer;
 			sourceTree = "<group>";
 		};
 		CAD3AEC7264BF93000DD0DCB /* Helpers */ = {
@@ -643,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC0F1322656EAB700D98492 /* SearchCustomerViewController.xib in Resources */,
 				CABB5FCA265566940079FFDF /* CustomerViewController.xib in Resources */,
 				CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */,
 				CABCA8DA264AB04E007AE005 /* LaunchScreen.storyboard in Resources */,
@@ -818,6 +833,7 @@
 				CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */,
 				CA87DF9126545BE30074A161 /* Customer+CoreDataProperties.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
+				CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */,
 				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */,
 				CA2555452653300B00F75E20 /* ScheduleAuthentication.swift in Sources */,
