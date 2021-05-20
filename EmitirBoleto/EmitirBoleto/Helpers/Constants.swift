@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
     
@@ -20,5 +21,12 @@ struct Constants {
         static let juridicalPerson = "JuridicalPerson"
         static let address = "Address"
         static let item = "Item"
+    }
+    
+    struct Color {
+        static let laranja = UIColor.init(rgb: 0xF36F36)
+        static let azul = UIColor.init(rgb: 0x00B4C5)
+        static let cinzaClaro = UIColor.init(rgb: 0xB8B8B8)
+        static let cinzaEscuro = UIColor.init(rgb: 0x707070)
     }
 }
