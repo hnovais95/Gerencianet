@@ -52,6 +52,9 @@
 		CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA925264AD220007AE005 /* ItemRepository.swift */; };
 		CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA92A264AD46E007AE005 /* PaymentGateway.swift */; };
 		CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */; };
+		CAC0F12926568FAD00D98492 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */; };
+		CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */; };
+		CAC0F12D26569B9A00D98492 /* CustomerViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12C26569B9A00D98492 /* CustomerViewController+Extensions.swift */; };
 		CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */; };
 		CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC1264BF33300DD0DCB /* Serializable.swift */; };
 		CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */; };
@@ -143,6 +146,9 @@
 		CABCA925264AD220007AE005 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		CABCA92A264AD46E007AE005 /* PaymentGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGateway.swift; sourceTree = "<group>"; };
 		CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponseModel.swift; sourceTree = "<group>"; };
+		CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		CAC0F12C26569B9A00D98492 /* CustomerViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomerViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CAD3AEBC264BEAC400DD0DCB /* ChargeOneStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepModel.swift; sourceTree = "<group>"; };
 		CAD3AEC1264BF33300DD0DCB /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 			children = (
 				CABB5FC7265566940079FFDF /* CustomerViewController.swift */,
 				CABB5FC8265566940079FFDF /* CustomerViewController.xib */,
+				CAC0F12C26569B9A00D98492 /* CustomerViewController+Extensions.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -474,6 +481,8 @@
 				CA449BAF264D67100071AEF0 /* String+Extensions.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
 				CA25553D2652F7A100F75E20 /* Constants.swift */,
+				CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */,
+				CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -766,9 +775,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */,
+				CAC0F12D26569B9A00D98492 /* CustomerViewController+Extensions.swift in Sources */,
 				CABCA90B264AB3E5007AE005 /* AddressModel.swift in Sources */,
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
 				CAFC89A2264B012800D361B0 /* APIError.swift in Sources */,
+				CAC0F12926568FAD00D98492 /* UIColor+Extensions.swift in Sources */,
 				CA87DF9B2654755D0074A161 /* EntityMapper.swift in Sources */,
 				CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */,
 				CA87DF9326545BE30074A161 /* JuridicalPerson+CoreDataProperties.swift in Sources */,
@@ -815,6 +826,7 @@
 				CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */,
 				CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */,
 				CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */,
+				CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */,
 				CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
 			);

@@ -8,11 +8,17 @@
 import UIKit
 
 class CustomerViewController: UIViewController {
-
+    
+    @IBOutlet weak var entityTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSegmentedControl()
+        setupButtons()
 
-        // Do any additional setup after loading the view.
     }
 
 
@@ -27,3 +33,5 @@ class CustomerViewController: UIViewController {
     */
 
 }
+
+
