@@ -115,8 +115,8 @@
                                 <constraint firstItem="zrY-6f-bgb" firstAttribute="width" secondItem="DFM-pW-bTe" secondAttribute="width" multiplier="0.411255" id="Uvj-lG-mQW"/>
                             </constraints>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-mR-LRM" userLabel="Address Stack View">
-                            <rect key="frame" x="154" y="328" width="229.33333333333334" height="79.333333333333329"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-mR-LRM" userLabel="State Stack View">
+                            <rect key="frame" x="154" y="328" width="229.33333333333334" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço (Logradiura/Rua/Avenida)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxY-WG-xl9">
                                     <rect key="frame" x="0.0" y="0.0" width="229.33333333333334" height="15.666666666666666"/>
@@ -130,28 +130,41 @@
                                         <constraint firstAttribute="height" constant="1" id="0d7-Zh-4xU"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-CI-hvD" userLabel="Address Text Field">
-                                    <rect key="frame" x="0.0" y="28.666666666666671" width="229.33333333333334" height="17.333333333333329"/>
-                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uiw-p4-2Y8" userLabel="Text Field-Button Stack View">
+                                    <rect key="frame" x="0.0" y="28.666666666666671" width="229.33333333333334" height="8"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-CI-hvD" userLabel="Address Text Field">
+                                            <rect key="frame" x="0.0" y="0.0" width="216.33333333333334" height="8"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1l-VY-rfT" userLabel="Push Down Button">
+                                            <rect key="frame" x="221.33333333333334" y="0.0" width="8" height="8"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="eli-dH-Wco"/>
+                                                <constraint firstAttribute="width" constant="8" id="yue-hl-Ikx"/>
+                                            </constraints>
+                                            <state key="normal" image="push_down"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZU6-pI-DYF" userLabel="White Space View">
-                                    <rect key="frame" x="0.0" y="52" width="229.33333333333334" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="42.666666666666664" width="229.33333333333334" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="5de-Cq-ySP"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-us-XMc" userLabel="Validation View">
-                                    <rect key="frame" x="0.0" y="58" width="229.33333333333334" height="1"/>
+                                    <rect key="frame" x="0.0" y="48.666666666666664" width="229.33333333333334" height="1"/>
                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="X4p-gd-TF9"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-Si-sl4">
-                                    <rect key="frame" x="0.0" y="65" width="229.33333333333334" height="14.333333333333329"/>
+                                    <rect key="frame" x="0.0" y="55.666666666666664" width="229.33333333333334" height="14.333333333333336"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -174,6 +187,7 @@
         </view>
     </objects>
     <resources>
+        <image name="push_down" width="8" height="9"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
