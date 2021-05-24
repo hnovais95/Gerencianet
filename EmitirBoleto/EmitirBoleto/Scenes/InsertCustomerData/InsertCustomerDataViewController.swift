@@ -1,13 +1,27 @@
 //
-//  CustomerViewController+Extensions.swift
+//  CustomerViewController.swift
 //  EmitirBoleto
 //
-//  Created by Heitor Novais | Gerencianet on 20/05/21.
+//  Created by Heitor Novais | Gerencianet on 19/05/21.
 //
 
 import UIKit
 
-extension CustomerViewController {
+class InsertCustomerDataViewController: UIViewController {
+    
+    @IBOutlet weak var entityTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupSegmentedControl()
+        setupButtons()
+    }
+}
+
+extension InsertCustomerDataViewController {
     
     func setupSegmentedControl() {
         entityTypeSegmentedControl.layer.borderWidth = 1.0
@@ -20,9 +34,6 @@ extension CustomerViewController {
         entityTypeSegmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         entityTypeSegmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
     }
-}
-
-extension CustomerViewController {
     
     func setupButtons() {
         backButton.layer.borderWidth = 1.0
@@ -34,3 +45,5 @@ extension CustomerViewController {
         nextButton.setTitleColor(UIColor.white, for: .normal)
     }
 }
+
+

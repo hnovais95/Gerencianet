@@ -6,6 +6,7 @@
 //
 
 struct ChargeOneStepModel: Serializable {
+    
     private(set) var items: [ItemModel]
     private(set) var shippings: [ShippingModel]
     private(set) var bankingBillet: BankingBilletModel
@@ -22,13 +23,6 @@ struct ChargeOneStepModel: Serializable {
     
     mutating func add(shipping: ShippingModel) {
         shippings.append(shipping)
-    }
-    
-    func getValue() -> Int {
-        var value = 0
-        value += shippings.map({ $0.value }).reduce(0, +)
-        value += items.map({ $0.value * $0.amount }).reduce(0, +)
-        return value
     }
     
     private enum CodingKeys: String, CodingKey {

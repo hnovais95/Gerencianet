@@ -6,6 +6,7 @@
 //
 
 struct ShippingModel: Serializable {
+    
     let name: String
     let value: Int
     

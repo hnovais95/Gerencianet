@@ -6,6 +6,7 @@
 //
 
 struct BankingBilletModel: Serializable {
+    
     var customer: CustomerModel?
     let expireAt: String
     
