@@ -11,6 +11,6 @@ protocol PaymentGateway {
                    completion: @escaping (Result<AuthorizeResponseModel, APIError>) -> Void)
     
     func createChargeOneStep(token: String,
-                                    data: ChargeOneStepModel,
-                                    completion: @escaping (Result<ChargeOneStepResponseModel, APIError>) -> Void)
+                             data: ChargeOneStepModel,
+                             completion: @escaping (Result<ChargeOneStepResponseModel, APIError>) -> Void)
 }

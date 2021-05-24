@@ -8,6 +8,7 @@
 import Foundation
 
 extension Gerencianet {
+    
     func createChargeOneStep(token: String,
                              data: ChargeOneStepModel,
                              completion: @escaping (Result<ChargeOneStepResponseModel, APIError>) -> Void) {

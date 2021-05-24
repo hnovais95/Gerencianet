@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = AddItemsViewController()//CustomerViewController()
+        let vc = BasePopupItemViewController()
         navigationController.pushViewController(vc, animated: false)
     }
 }

@@ -28,6 +28,10 @@
 		CA6DE09A265BE21600FC5D19 /* ItemDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE098265BE21600FC5D19 /* ItemDetailsTableViewCell.xib */; };
 		CA6DE09D265C078E00FC5D19 /* AddItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6DE09B265C078E00FC5D19 /* AddItemsViewController.swift */; };
 		CA6DE09E265C078E00FC5D19 /* AddItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE09C265C078E00FC5D19 /* AddItemsViewController.xib */; };
+		CA6DE0A2265C2DB300FC5D19 /* EmptyItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6DE0A0265C2DB300FC5D19 /* EmptyItemTableViewCell.swift */; };
+		CA6DE0A3265C2DB300FC5D19 /* EmptyItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE0A1265C2DB300FC5D19 /* EmptyItemTableViewCell.xib */; };
+		CA6DE0AA265C515900FC5D19 /* BasePopupItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6DE0A8265C515900FC5D19 /* BasePopupItemViewController.swift */; };
+		CA6DE0AB265C515900FC5D19 /* BasePopupItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE0A9265C515900FC5D19 /* BasePopupItemViewController.xib */; };
 		CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF442653E02C0074A161 /* Authenticate.swift */; };
 		CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF4826543BEC0074A161 /* CoreDataManager.swift */; };
 		CA87DF9026545BE30074A161 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF8A26545BE30074A161 /* Customer+CoreDataClass.swift */; };
@@ -130,6 +134,10 @@
 		CA6DE098265BE21600FC5D19 /* ItemDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		CA6DE09B265C078E00FC5D19 /* AddItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsViewController.swift; sourceTree = "<group>"; };
 		CA6DE09C265C078E00FC5D19 /* AddItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemsViewController.xib; sourceTree = "<group>"; };
+		CA6DE0A0265C2DB300FC5D19 /* EmptyItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyItemTableViewCell.swift; sourceTree = "<group>"; };
+		CA6DE0A1265C2DB300FC5D19 /* EmptyItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyItemTableViewCell.xib; sourceTree = "<group>"; };
+		CA6DE0A8265C515900FC5D19 /* BasePopupItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupItemViewController.swift; sourceTree = "<group>"; };
+		CA6DE0A9265C515900FC5D19 /* BasePopupItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasePopupItemViewController.xib; sourceTree = "<group>"; };
 		CA87DF442653E02C0074A161 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		CA87DF4826543BEC0074A161 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CA87DF8A26545BE30074A161 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -309,12 +317,23 @@
 		CA29B52B26586B5F004BCBFD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CADE843E265BDBF60020BEC3 /* ItemActionsTableViewCell.swift */,
-				CADE843F265BDBF60020BEC3 /* ItemActionsTableViewCell.xib */,
+				CA6DE0A0265C2DB300FC5D19 /* EmptyItemTableViewCell.swift */,
+				CA6DE0A1265C2DB300FC5D19 /* EmptyItemTableViewCell.xib */,
 				CA6DE097265BE21600FC5D19 /* ItemDetailsTableViewCell.swift */,
 				CA6DE098265BE21600FC5D19 /* ItemDetailsTableViewCell.xib */,
+				CADE843E265BDBF60020BEC3 /* ItemActionsTableViewCell.swift */,
+				CADE843F265BDBF60020BEC3 /* ItemActionsTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CA6DE09F265C2CBF00FC5D19 /* PopupItem */ = {
+			isa = PBXGroup;
+			children = (
+				CA6DE0A8265C515900FC5D19 /* BasePopupItemViewController.swift */,
+				CA6DE0A9265C515900FC5D19 /* BasePopupItemViewController.xib */,
+			);
+			path = PopupItem;
 			sourceTree = "<group>";
 		};
 		CA87DF4626543A9C0074A161 /* HTTP */ = {
@@ -451,6 +470,7 @@
 				CABB5FC6265566640079FFDF /* InsertCustomerData */,
 				CAC0F12E2656EA9B00D98492 /* SearchCustomer */,
 				CA29B52626585C2A004BCBFD /* AddItems */,
+				CA6DE09F265C2CBF00FC5D19 /* PopupItem */,
 				CA29B51726584FCB004BCBFD /* SearchItem */,
 				CA2555412653268E00F75E20 /* Charge */,
 			);
@@ -749,7 +769,9 @@
 				CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */,
 				CABCA8DA264AB04E007AE005 /* LaunchScreen.storyboard in Resources */,
 				CA6DE09A265BE21600FC5D19 /* ItemDetailsTableViewCell.xib in Resources */,
+				CA6DE0A3265C2DB300FC5D19 /* EmptyItemTableViewCell.xib in Resources */,
 				CA6DE09E265C078E00FC5D19 /* AddItemsViewController.xib in Resources */,
+				CA6DE0AB265C515900FC5D19 /* BasePopupItemViewController.xib in Resources */,
 				CA29B514265815F9004BCBFD /* CustomerTableViewCell.xib in Resources */,
 				CABCA8D7264AB04E007AE005 /* Assets.xcassets in Resources */,
 			);
@@ -903,6 +925,7 @@
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
 				CABB5FC9265566940079FFDF /* InsertCustomerDataViewController.swift in Sources */,
 				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,
+				CA6DE0AA265C515900FC5D19 /* BasePopupItemViewController.swift in Sources */,
 				CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */,
 				CA87DF9926545F270074A161 /* CoreDataCustomerRepository.swift in Sources */,
 				CA87DF9526545BE30074A161 /* Address+CoreDataProperties.swift in Sources */,
@@ -923,6 +946,7 @@
 				CA25553E2652F7A100F75E20 /* Constants.swift in Sources */,
 				CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */,
 				CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */,
+				CA6DE0A2265C2DB300FC5D19 /* EmptyItemTableViewCell.swift in Sources */,
 				CA29B513265815F9004BCBFD /* CustomerTableViewCell.swift in Sources */,
 				CA87DF9126545BE30074A161 /* Customer+CoreDataProperties.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
@@ -1112,6 +1136,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZF258QDQ5C;
 				INFOPLIST_FILE = EmitirBoleto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1132,6 +1157,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZF258QDQ5C;
 				INFOPLIST_FILE = EmitirBoleto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

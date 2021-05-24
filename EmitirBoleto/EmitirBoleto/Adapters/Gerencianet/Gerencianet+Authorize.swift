@@ -7,6 +7,7 @@
 
 
 extension Gerencianet {
+    
     func authorize(clientId: String,
                    clientSecret: String,
                    completion: @escaping (Result<AuthorizeResponseModel, APIError>) -> Void) {

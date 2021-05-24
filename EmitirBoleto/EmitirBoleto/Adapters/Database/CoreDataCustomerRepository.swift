@@ -10,7 +10,6 @@ import CoreData
 class CoreDataCustomerRepository: CustomerRepository {
     
     func getAll() -> [CustomerModel] {
-        
         var models = [CustomerModel]()
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Customer>(entityName: Constants.EntityName.customer)
@@ -32,8 +31,7 @@ class CoreDataCustomerRepository: CustomerRepository {
         return models
     }
     
-    func save(_ data: CustomerModel) {
-        
+    func save(_ data: CustomerModel) {        
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
         let fetchResult = fetch(byCpf: data.cpf)
