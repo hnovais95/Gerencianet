@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = BasePopupItemViewController()
+        let vc = FailureViewController()
         navigationController.pushViewController(vc, animated: false)
     }
 }
