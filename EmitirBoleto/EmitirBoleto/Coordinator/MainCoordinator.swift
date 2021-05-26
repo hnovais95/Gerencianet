@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = FailureViewController()
+        let vc = InsertCustomerViewController()
         navigationController.pushViewController(vc, animated: false)
     }
 }

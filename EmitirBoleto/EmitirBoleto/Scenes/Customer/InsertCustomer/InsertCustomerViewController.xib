@@ -12,9 +12,51 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="EmitirBoleto" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="9vO-SX-kCt" id="8X1-Ng-ZaS"/>
+                <outlet property="cityTextField" destination="Pg4-nP-aiN" id="2TY-wc-bBR"/>
+                <outlet property="cityValidationMessageLabel" destination="zrN-O8-4QL" id="ssl-aZ-PoE"/>
+                <outlet property="cityValidationView" destination="Leh-bW-BBq" id="dxY-nf-jPR"/>
+                <outlet property="cnpjTextField" destination="34S-Xn-k7U" id="mXo-X8-5Gs"/>
+                <outlet property="cnpjValidationMessageLabel" destination="tH1-Mb-FAF" id="nV2-So-eqe"/>
+                <outlet property="cnpjValidationView" destination="Deu-u0-qUk" id="ras-RE-G6b"/>
+                <outlet property="complementTextField" destination="5ti-Gp-VAA" id="Ud9-d2-XbQ"/>
+                <outlet property="complementValidationMessageLabel" destination="9tL-dz-6Sv" id="CFN-FA-Do0"/>
+                <outlet property="complementValidationView" destination="Xz9-Iu-Doz" id="Vxj-e4-F8n"/>
+                <outlet property="corporateNameTextField" destination="Ad0-Nu-kaX" id="Htg-Am-6Ps"/>
+                <outlet property="corporateNameValidationMessageLabel" destination="wPs-6o-8Ih" id="ON7-A7-QPZ"/>
+                <outlet property="corporateNameValidationView" destination="Xbs-mn-8sK" id="DrQ-O6-OJF"/>
+                <outlet property="cpfTextField" destination="azG-JF-mgD" id="w1s-Yh-Hx5"/>
+                <outlet property="cpfValidationMessageLabel" destination="EAe-OR-73k" id="cE2-C0-GHB"/>
+                <outlet property="cpfValidationView" destination="lGX-So-crK" id="iXV-XR-pIy"/>
+                <outlet property="emailTextField" destination="vXU-dC-Cqo" id="GKY-C4-cKl"/>
+                <outlet property="emailValidationMessageLabel" destination="7gf-Xp-b1P" id="ucW-LR-yhW"/>
+                <outlet property="emailValidationView" destination="0bs-8j-tf5" id="mvW-PJ-Qw6"/>
                 <outlet property="entityTypeSegmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
+                <outlet property="juridicalPersonStackView" destination="qQl-pb-qRG" id="BuA-c6-D2T"/>
+                <outlet property="nameTextField" destination="c07-8A-eJz" id="Bsu-jj-wBd"/>
+                <outlet property="nameValidationMessageLabel" destination="x3p-i3-t2R" id="6rv-m3-Mm8"/>
+                <outlet property="nameValidationView" destination="lGX-So-crK" id="Dpg-8T-0dT"/>
+                <outlet property="neighborhoodTextField" destination="4Ie-qM-Fox" id="pyM-WG-2Hb"/>
+                <outlet property="neighborhoodValidationMessageLabel" destination="RBO-Vv-qGl" id="Wvu-IZ-RDg"/>
+                <outlet property="neighborhoodValidationView" destination="Mzq-4e-Cws" id="R9k-tr-fYD"/>
                 <outlet property="nextButton" destination="CLo-hR-pVo" id="GP2-yI-CI4"/>
+                <outlet property="numberTextField" destination="Oh2-XB-JiM" id="MfW-Ui-Hv7"/>
+                <outlet property="numberValidationMessageLabel" destination="6Ki-M8-l9c" id="0ba-07-npg"/>
+                <outlet property="numberValidationView" destination="txu-Te-pfa" id="lbu-R5-oyv"/>
+                <outlet property="phoneNumberTextField" destination="X2q-mc-Y8M" id="NbD-Ct-cwA"/>
+                <outlet property="phoneNumberValidationMessageLabel" destination="coj-L7-JSM" id="N76-D3-wff"/>
+                <outlet property="phoneNumberValidationView" destination="TbZ-FN-nYO" id="f6n-HP-ouU"/>
+                <outlet property="showAdditionalFieldsSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
+                <outlet property="stateButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
+                <outlet property="stateTextField" destination="IKl-xx-EUe" id="SOY-t9-bAJ"/>
+                <outlet property="stateValidationMessageLabel" destination="Miu-wP-sbF" id="jFG-Jh-zpy"/>
+                <outlet property="stateValidationView" destination="suj-Ib-C0i" id="VdE-am-Af1"/>
+                <outlet property="streetTextField" destination="0FN-bO-0Dt" id="R5o-3a-ipC"/>
+                <outlet property="streetValidationMessageLabel" destination="wJ6-S3-NfQ" id="XU7-dL-FKe"/>
+                <outlet property="streetValidationView" destination="843-JV-FHS" id="NSw-0B-p7J"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zipcodeTextField" destination="k73-lw-55b" id="FMh-Ie-H4T"/>
+                <outlet property="zipcodeValidationMessageLabel" destination="xDs-Q9-4ZV" id="12v-WJ-4cE"/>
+                <outlet property="zipcodeValidationView" destination="Z3I-fc-za2" id="xzf-AQ-LCO"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -197,7 +239,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-pb-qRG">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-pb-qRG" userLabel="Juridical Person Stack View">
                                             <rect key="frame" x="0.0" y="180.66666666666669" width="384.66666666666669" height="169.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LoA-l8-GvS" userLabel="Corporate Name Stack View">
