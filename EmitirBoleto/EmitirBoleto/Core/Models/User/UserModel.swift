@@ -7,7 +7,8 @@
 
 import Foundation
 
-class UserModel: Equatable {
+class UserModel {
+    
     private(set) var clientId: String
     private(set) var clientSecret: String
     private let concurrentTokenQueue = DispatchQueue(label: "concurrentToken", attributes: .concurrent)
@@ -43,10 +44,6 @@ class UserModel: Equatable {
             
             self.unsafeToken = token
         }
-    }
-    
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.clientId == rhs.clientId
     }
 }
 

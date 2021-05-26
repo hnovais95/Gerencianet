@@ -7,19 +7,36 @@
 
 import Foundation
 
-struct InsertCustomerViewModel {
+class InsertCustomerViewModel {
     
-    dynamic var name: String = ""
-    dynamic var cpf: String = ""
-    dynamic var corporateName: String?
-    dynamic var cnpj: String?
-    dynamic var phoneNumber: String = ""
-    dynamic var email: String = ""
-    dynamic var street: String?
-    dynamic var number: Int?
-    dynamic var complement: String?
-    dynamic var neighborhood: String?
-    dynamic var zipcode: String?
-    dynamic var state: String?
-    dynamic var city: String?
+    var name: String = ""
+    var cpf: String = ""
+    var corporateName: String = ""
+    var cnpj: String = ""
+    var phoneNumber: String = ""
+    var email: String = ""
+    var street: String = ""
+    var number: Int?
+    var complement: String = ""
+    var neighborhood: String = ""
+    var zipcode: String = ""
+    var state: String = ""
+    var city: String = ""
+    
+    var isJuridicalPerson: Bool = false
+    var includeAddress: Bool = false    
+    
+    func getCustomer() -> CustomerModel {
+        var juridicalPerson: JuridicalPersonModel?
+        if isJuridicalPerson {
+            juridicalPerson = JuridicalPersonModel(corporateName, cnpj)
+        }
+        
+        var address: AddressModel?
+        if includeAddress {
+            address = AddressModel(street, number!, neighborhood, zipcode, city, complement, state)
+        }
+        
+        return CustomerModel(name, cpf, phoneNumber, "2000-01-01", email, address, juridicalPerson)
+    }
 }

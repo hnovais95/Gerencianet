@@ -9,11 +9,12 @@ import UIKit
 
 class InsertCustomerViewController: UIViewController {
     
-    private var viewModel: InsertCustomerViewModel = InsertCustomerViewModel()
+    private var viewModel = InsertCustomerViewModel()
     
-    @IBOutlet weak var entityTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var additionalFieldsSwitch: UISwitch!
     @IBOutlet weak var juridicalPersonStackView: UIStackView!
-    @IBOutlet weak var showAdditionalFieldsSwitch: UISwitch!
+    @IBOutlet weak var additionalFieldsStackView: UIStackView!
     
     @IBOutlet weak var nameValidationView: UIView!
     @IBOutlet weak var cpfValidationView: UIView!
@@ -64,24 +65,42 @@ class InsertCustomerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSegmentedControl()
-        setupButtons()
-        setupTextFields()
-    }
-    
-    private func setupSegmentedControl() {
-        entityTypeSegmentedControl.layer.borderWidth = 1.0
-        entityTypeSegmentedControl.layer.borderColor = Constants.Color.azul.cgColor
-        entityTypeSegmentedControl.layer.masksToBounds = true
+        segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChanged(_:)), for: .valueChanged)
+        additionalFieldsSwitch.addTarget(self, action: #selector(handleSwitchChanged(_:)), for: .valueChanged)
         
-        entityTypeSegmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
-        entityTypeSegmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azul), for: .selected, barMetrics: .default)
-
-        entityTypeSegmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        entityTypeSegmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
+        setupLayout()
+        bindTextFields()
     }
     
-    private func setupButtons() {
+    @objc
+    private func handleSegmentedControlChanged(_ sender: UISegmentedControl) {
+        juridicalPersonStackView.isHidden = sender.selectedSegmentIndex == 0
+        viewModel.isJuridicalPerson = sender.selectedSegmentIndex == 0
+    }
+    
+    @objc
+    private func handleSwitchChanged(_ sender: UISwitch) {
+        additionalFieldsStackView.isHidden = !sender.isOn
+        viewModel.includeAddress = sender.isOn
+    }
+    
+    private func setupLayout() {
+        setupLayoutSegmentedControl()
+        setupLayoutButtons()
+        setupInitialStateOfControls()
+    }
+    
+    private func setupLayoutSegmentedControl() {
+        segmentedControl.layer.borderWidth = 1.0
+        segmentedControl.layer.borderColor = Constants.Color.azul.cgColor
+        segmentedControl.layer.masksToBounds = true
+        segmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azul), for: .selected, barMetrics: .default)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
+    }
+    
+    private func setupLayoutButtons() {
         backButton.layer.borderWidth = 1.0
         backButton.layer.borderColor = Constants.Color.laranja.cgColor
         
@@ -91,9 +110,36 @@ class InsertCustomerViewController: UIViewController {
         nextButton.setTitleColor(UIColor.white, for: .normal)
     }
     
-    private func setupTextFields() {
-        nameTextField.bind { [weak self] in self?.viewModel.name = $0 }
+    private func setupInitialStateOfControls() {
+        additionalFieldsStackView.isHidden = true
+        additionalFieldsSwitch.isOn = false
+        
+        juridicalPersonStackView.isHidden = true
+        segmentedControl.selectedSegmentIndex = 0
+    }
+    
+    private func bindTextFields() {
+        nameTextField.bind { [weak self] in
+            if Validator.isValid(.name, value: $0) {
+                self?.viewModel.name = $0
+                self?.nameValidationView.backgroundColor = UIColor.green
+                self?.nameValidationMessageLabel.alpha = 1
+            } else {
+                self?.nameValidationView.backgroundColor = UIColor.red
+                self?.nameValidationMessageLabel.alpha = 0
+            }
+        }
+        cpfTextField.bind { [weak self] in self?.viewModel.cpf = $0 }
+        corporateNameTextField.bind { [weak self] in self?.viewModel.corporateName = $0 }
+        cnpjTextField.bind { [weak self] in self?.viewModel.cnpj = $0 }
+        phoneNumberTextField.bind { [weak self] in self?.viewModel.phoneNumber = $0 }
+        emailTextField.bind { [weak self] in self?.viewModel.email = $0 }
+        streetTextField.bind { [weak self] in self?.viewModel.street = $0 }
+        numberTextField.bind { [weak self] in self?.viewModel.number = Int($0) }
+        complementTextField.bind { [weak self] in self?.viewModel.complement = $0 }
+        neighborhoodTextField.bind { [weak self] in self?.viewModel.neighborhood = $0 }
+        zipcodeTextField.bind { [weak self] in self?.viewModel.zipcode = $0 }
+        stateTextField.bind { [weak self] in self?.viewModel.state = $0 }
+        cityTextField.bind { [weak self] in self?.viewModel.city = $0 }
     }
 }
-
-

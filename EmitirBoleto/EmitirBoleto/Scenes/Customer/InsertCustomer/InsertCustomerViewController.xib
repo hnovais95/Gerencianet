@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="EmitirBoleto" customModuleProvider="target">
             <connections>
+                <outlet property="additionalFieldsStackView" destination="Au0-JG-xGm" id="I50-Ew-Xsx"/>
+                <outlet property="additionalFieldsSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
                 <outlet property="backButton" destination="9vO-SX-kCt" id="8X1-Ng-ZaS"/>
                 <outlet property="cityTextField" destination="Pg4-nP-aiN" id="2TY-wc-bBR"/>
                 <outlet property="cityValidationMessageLabel" destination="zrN-O8-4QL" id="ssl-aZ-PoE"/>
@@ -30,7 +31,6 @@
                 <outlet property="emailTextField" destination="vXU-dC-Cqo" id="GKY-C4-cKl"/>
                 <outlet property="emailValidationMessageLabel" destination="7gf-Xp-b1P" id="ucW-LR-yhW"/>
                 <outlet property="emailValidationView" destination="0bs-8j-tf5" id="mvW-PJ-Qw6"/>
-                <outlet property="entityTypeSegmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
                 <outlet property="juridicalPersonStackView" destination="qQl-pb-qRG" id="BuA-c6-D2T"/>
                 <outlet property="nameTextField" destination="c07-8A-eJz" id="Bsu-jj-wBd"/>
                 <outlet property="nameValidationMessageLabel" destination="x3p-i3-t2R" id="6rv-m3-Mm8"/>
@@ -45,7 +45,7 @@
                 <outlet property="phoneNumberTextField" destination="X2q-mc-Y8M" id="NbD-Ct-cwA"/>
                 <outlet property="phoneNumberValidationMessageLabel" destination="coj-L7-JSM" id="N76-D3-wff"/>
                 <outlet property="phoneNumberValidationView" destination="TbZ-FN-nYO" id="f6n-HP-ouU"/>
-                <outlet property="showAdditionalFieldsSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
+                <outlet property="segmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
                 <outlet property="stateButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
                 <outlet property="stateTextField" destination="IKl-xx-EUe" id="SOY-t9-bAJ"/>
                 <outlet property="stateValidationMessageLabel" destination="Miu-wP-sbF" id="jFG-Jh-zpy"/>
