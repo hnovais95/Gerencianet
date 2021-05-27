@@ -61,7 +61,7 @@
 		CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */; };
 		CA87DFA2265497C90074A161 /* CoreDataItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */; };
 		CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D3264AB04D007AE005 /* EmitirBoleto.xcdatamodeld */; };
-		CA8A569F2660476800E95AB5 /* StatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A569E2660476800E95AB5 /* StatePickerView.swift */; };
+		CA8A569F2660476800E95AB5 /* StatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A569E2660476800E95AB5 /* StatePickerViewController.swift */; };
 		CA8A56A126604B7700E95AB5 /* SearchCustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
@@ -183,7 +183,7 @@
 		CA87DF9C265480E70074A161 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA87DF9D265480E70074A161 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItemRepository.swift; sourceTree = "<group>"; };
-		CA8A569E2660476800E95AB5 /* StatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerView.swift; sourceTree = "<group>"; };
+		CA8A569E2660476800E95AB5 /* StatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerViewController.swift; sourceTree = "<group>"; };
 		CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomerViewModel.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
@@ -546,7 +546,7 @@
 				CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */,
 				CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */,
 				CA04B5DE265E7B6F00C759CA /* InsertCustomerViewModel.swift */,
-				CA8A569E2660476800E95AB5 /* StatePickerView.swift */,
+				CA8A569E2660476800E95AB5 /* StatePickerViewController.swift */,
 			);
 			path = InsertCustomer;
 			sourceTree = "<group>";
@@ -1072,7 +1072,7 @@
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
 				CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */,
-				CA8A569F2660476800E95AB5 /* StatePickerView.swift in Sources */,
+				CA8A569F2660476800E95AB5 /* StatePickerViewController.swift in Sources */,
 				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,
 				CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */,
 				CA87DF9926545F270074A161 /* CoreDataCustomerRepository.swift in Sources */,

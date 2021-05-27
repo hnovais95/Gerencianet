@@ -9,6 +9,8 @@ import UIKit
 
 class AddItemPopupViewController: UIViewController {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -18,6 +20,9 @@ class AddItemPopupViewController: UIViewController {
     @IBOutlet weak var increaseButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,27 @@ class AddItemPopupViewController: UIViewController {
         setupLayout()
         setupButtons()
     }
+    
+    
+    // MARK: Layout
+    
+    func setupLayout() {
+        popupView.layer.cornerRadius = CGFloat(6)
+        popupView.layer.masksToBounds = true
+    }
+    
+    func setupButtons() {
+        cancelButton.layer.borderWidth = 1.0
+        cancelButton.layer.borderColor = Constants.Color.laranja.cgColor
+        
+        addButton.layer.borderWidth = 1.0
+        addButton.layer.borderColor = Constants.Color.laranja.cgColor
+        addButton.backgroundColor = Constants.Color.laranja
+        addButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
+    // MARK: Handlers
     
     @objc
     func handleDecreaseButton(sender: UIButton) {
@@ -51,24 +77,6 @@ class AddItemPopupViewController: UIViewController {
     @objc
     func handlePerformActionButton(sender: UIButton) {
         
-    }
-}
-
-extension AddItemPopupViewController {
-    
-    func setupLayout() {
-        popupView.layer.cornerRadius = CGFloat(6)
-        popupView.layer.masksToBounds = true
-    }
-    
-    func setupButtons() {
-        cancelButton.layer.borderWidth = 1.0
-        cancelButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        addButton.layer.borderWidth = 1.0
-        addButton.layer.borderColor = Constants.Color.laranja.cgColor
-        addButton.backgroundColor = Constants.Color.laranja
-        addButton.setTitleColor(UIColor.white, for: .normal)
     }
 }
 

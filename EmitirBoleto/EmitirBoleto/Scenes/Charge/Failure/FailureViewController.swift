@@ -8,17 +8,22 @@
 import UIKit
 
 class FailureViewController: UIViewController {
+    
+    // MARK: Outlets
 
     @IBOutlet weak var backButton: UIButton!
+    
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupButton()
     }
-}
-
-extension FailureViewController {
+    
+    
+    // MARK: Layout
     
     func setupButton() {
         backButton.layer.borderWidth = 1.0

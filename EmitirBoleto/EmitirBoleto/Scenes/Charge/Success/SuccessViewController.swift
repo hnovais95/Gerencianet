@@ -8,20 +8,25 @@
 import UIKit
 
 class SuccessViewController: UIViewController {
+    
+    // MARK: Outlets
 
     @IBOutlet weak var copyBarcodeButton: UIButton!
     @IBOutlet weak var shareLinkButton: UIButton!
     @IBOutlet weak var showBankingBilletButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
+    
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupButtons()
     }
-}
-
-extension SuccessViewController {
+    
+    
+    // MARK: Layout
     
     func setupButtons() {
         copyBarcodeButton.layer.borderWidth = 1.0

@@ -10,12 +10,12 @@ protocol StatePickerViewDelegate: AnyObject {
     func didSelectState(state: String)
 }
 
-class StatePickerView: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+class StatePickerViewController: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    private let states = [ "AC", "AL", "AM", "AP", "BA", "CE", "DF",
-                         "ES", "GO", "MA", "MT", "MS", "MG", "PA",
-                         "PB", "PR", "PE", "PI", "RJ", "RN", "RO",
-                         "RS", "RR", "SC", "SE", "SP", "TO"]
+    private let states = ["AC", "AL", "AM", "AP", "BA", "CE", "DF",
+                          "ES", "GO", "MA", "MT", "MS", "MG", "PA",
+                          "PB", "PR", "PE", "PI", "RJ", "RN", "RO",
+                          "RS", "RR", "SC", "SE", "SP", "TO"]
     
     weak var delegate: StatePickerViewDelegate?
     

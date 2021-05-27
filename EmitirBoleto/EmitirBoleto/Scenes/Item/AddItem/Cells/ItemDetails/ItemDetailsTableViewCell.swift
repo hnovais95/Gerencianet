@@ -7,12 +7,17 @@
 
 import UIKit
 
-class ItemDetailsTableViewCell: UITableViewCell {
+class ItemDetailsTableViewCell: UITableViewCell {    
+    
+    // MARK: Initializer
     
     static let identifier = "ItemDetailsTableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+    
+    
+    // MARK: Outlets
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -20,20 +25,23 @@ class ItemDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var view: UIView!
     
+    
+    // MARK: Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    
+    // MARK: Layout
     
     func setupLayout() {
         view.layer.borderWidth = 1.0
         view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
     }
+    
+    
+    // MARK: Handlers
     
     func prepare(with item: ItemModel) {
         nameLabel.text = item.name

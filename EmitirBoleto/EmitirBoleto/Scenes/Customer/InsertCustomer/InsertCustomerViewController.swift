@@ -9,6 +9,8 @@ import UIKit
 
 class InsertCustomerViewController: UIViewController {
     
+    // MARK: Outlets
+    
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet var errorMessageLabels: [UILabel]!
@@ -23,14 +25,23 @@ class InsertCustomerViewController: UIViewController {
     @IBOutlet weak var juridicalPersonStackView: UIStackView!
     @IBOutlet weak var addressStackView: UIStackView!
     
+    
+    // MARK: Member types
+    
     private enum FieldType: Int {
         case name, cpf, corporateName, cnpj, phoneNumber, email,
              street, number, complement, neighborhood, zipcode, state, city
     }
     
+    
+    // MARK: Member variables
+    
     weak var coordinator: MainCoordinator?
     private var viewModel = InsertCustomerViewModel()
-    private var statePickerView = StatePickerView()
+    private var statePickerView = StatePickerViewController()
+    
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +65,51 @@ class InsertCustomerViewController: UIViewController {
         
         UITextField.clearStoredCallbacksTextEditingChanged()
     }
+    
+    
+    // MARK: Layout
+    
+    private func setupLayout() {
+        setupInitialStateOfComponents()
+        setupLayoutSegmentedControl()
+        setupLayoutButtons()
+    }
+    
+    private func setupLayoutSegmentedControl() {
+        segmentedControl.layer.borderWidth = 1.0
+        segmentedControl.layer.borderColor = Constants.Color.azul.cgColor
+        segmentedControl.layer.masksToBounds = true
+        segmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azul), for: .selected, barMetrics: .default)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
+    }
+    
+    private func setupLayoutButtons() {
+        backButton.layer.borderWidth = 1.0
+        backButton.layer.borderColor = Constants.Color.laranja.cgColor
+        
+        nextButton.layer.borderWidth = 1.0
+        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
+        nextButton.backgroundColor = Constants.Color.cinzaClaro
+        nextButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    private func setupInitialStateOfComponents() {
+        juridicalPersonStackView.isHidden = true
+        addressStackView.isHidden = true
+        addressSwitch.setOn(false, animated: false)
+        segmentedControl.selectedSegmentIndex = 0
+        setupNextButtonState()
+    }
+    
+    private func setupNextButtonState() {
+        nextButton.isEnabled = viewModel.isValid
+        nextButton.isHighlighted = !viewModel.isValid
+    }
+    
+    
+    // MARK: Handlers
     
     private func observeEvents() {
         viewModel.validatedField = { [weak self] result, indexField in
@@ -114,44 +170,8 @@ class InsertCustomerViewController: UIViewController {
         textFields[FieldType.state.rawValue].becomeFirstResponder()
     }
     
-    private func setupLayout() {
-        setupInitialStateOfComponents()
-        setupLayoutSegmentedControl()
-        setupLayoutButtons()
-    }
     
-    private func setupLayoutSegmentedControl() {
-        segmentedControl.layer.borderWidth = 1.0
-        segmentedControl.layer.borderColor = Constants.Color.azul.cgColor
-        segmentedControl.layer.masksToBounds = true
-        segmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
-        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azul), for: .selected, barMetrics: .default)
-        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
-    }
-    
-    private func setupLayoutButtons() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        nextButton.backgroundColor = Constants.Color.cinzaClaro
-        nextButton.setTitleColor(UIColor.white, for: .normal)
-    }
-    
-    private func setupInitialStateOfComponents() {
-        juridicalPersonStackView.isHidden = true
-        addressStackView.isHidden = true
-        addressSwitch.setOn(false, animated: false)
-        segmentedControl.selectedSegmentIndex = 0
-        setupNextButtonState()
-    }
-    
-    private func setupNextButtonState() {
-        nextButton.isEnabled = viewModel.isValid
-        nextButton.isHighlighted = !viewModel.isValid
-    }
+    // MARK: Data binding
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
@@ -241,9 +261,12 @@ class InsertCustomerViewController: UIViewController {
     }
 }
 
+
+// MARK: Delegates
+
 extension InsertCustomerViewController: SearchCustomerDelegate {
     
-    func didFindCustomer(customer: CustomerModel) {
+    func didSelectCustomer(customer: CustomerModel) {
         textFields[FieldType.name.rawValue].replace(withText: customer.name)
         textFields[FieldType.cpf.rawValue].replace(withText: customer.cpf)
         textFields[FieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)

@@ -9,14 +9,12 @@ import UIKit
 
 protocol SearchCustomerDelegate: AnyObject {
     
-    func didFindCustomer(customer: CustomerModel)
+    func didSelectCustomer(customer: CustomerModel)
 }
 
 class SearchCustomerViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
-    weak var delegate: SearchCustomerDelegate?
-    private let viewModel = SearchCustomerViewModel()
+    // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -26,7 +24,16 @@ class SearchCustomerViewController: UIViewController {
         }
     }
     
-    var customers: [CustomerModel] = []
+    
+    // MARK: Member variables
+    
+    weak var coordinator: MainCoordinator?
+    weak var delegate: SearchCustomerDelegate?
+    private let viewModel = SearchCustomerViewModel()
+    private var customers: [CustomerModel] = []
+    
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,9 @@ class SearchCustomerViewController: UIViewController {
         }
     }
 }
+
+
+// MARK: Delegates
 
 extension SearchCustomerViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -53,7 +63,7 @@ extension SearchCustomerViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customer = customers[indexPath.row]
-        delegate?.didFindCustomer(customer: customer)
+        delegate?.didSelectCustomer(customer: customer)
         coordinator?.dismiss()
     }
 }

@@ -9,9 +9,7 @@ import UIKit
 
 class AddItemViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
-    var customer: CustomerModel?
-    var items: [ItemModel] = []
+    // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -23,6 +21,16 @@ class AddItemViewController: UIViewController {
     }
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    
+    
+    // MARK: Member variables
+    
+    weak var coordinator: MainCoordinator?
+    var customer: CustomerModel?
+    private var items: [ItemModel] = []
+    
+    
+    // MARK: Life Cycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +40,22 @@ class AddItemViewController: UIViewController {
         
         setupButtons()
     }
+    
+    
+    // MARK: Layout
+    
+    func setupButtons() {
+        backButton.layer.borderWidth = 1.0
+        backButton.layer.borderColor = Constants.Color.laranja.cgColor
+        
+        nextButton.layer.borderWidth = 1.0
+        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
+        nextButton.backgroundColor = Constants.Color.cinzaClaro
+        nextButton.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    
+    // MARK: Handlers
     
     @objc
     private func handleTapBackButton(_ sender: UIButton) {
@@ -44,18 +68,8 @@ class AddItemViewController: UIViewController {
     }
 }
 
-extension AddItemViewController {
-    
-    func setupButtons() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        nextButton.backgroundColor = Constants.Color.cinzaClaro
-        nextButton.setTitleColor(UIColor.white, for: .normal)
-    }
-}
+
+// MARK: Delegates
 
 extension AddItemViewController: UITableViewDelegate, UITableViewDataSource {
     

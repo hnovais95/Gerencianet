@@ -8,6 +8,8 @@
 import UIKit
 
 class BankingBilletViewController: UIViewController {
+    
+    // MARK: Outlets
 
     @IBOutlet weak var expireAtTextField: UITextField!
     @IBOutlet weak var shippingTextField: UITextField!
@@ -22,15 +24,17 @@ class BankingBilletViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var chargeButton: UIButton!
     
+    
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupButtons()
     }
-
-}
-
-extension BankingBilletViewController {
+    
+    
+    // MARK: Layout
     
     func setupButtons() {
         backButton.layer.borderWidth = 1.0

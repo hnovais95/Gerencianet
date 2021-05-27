@@ -9,6 +9,8 @@ import UIKit
 
 class SearchItemViewController: UIViewController {
     
+    // MARK: Outlets
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(ItemTableViewCell.nib(), forCellReuseIdentifier: ItemTableViewCell.identifier)
@@ -16,12 +18,21 @@ class SearchItemViewController: UIViewController {
         }
     }
     
-    var items: [ItemModel] = []
+    
+    // MARK: Member variables
+    
+    private var items: [ItemModel] = []
+    
+    
+    // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
+
+
+// MARK: Delegates
 
 extension SearchItemViewController: UITableViewDelegate, UITableViewDataSource {
     
