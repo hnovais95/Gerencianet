@@ -9,6 +9,10 @@ import UIKit
 
 class AddItemViewController: UIViewController {
     
+    weak var coordinator: MainCoordinator?
+    var customer: CustomerModel?
+    var items: [ItemModel] = []
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(EmptyItemTableViewCell.nib(), forCellReuseIdentifier: EmptyItemTableViewCell.identifier)
@@ -19,13 +23,24 @@ class AddItemViewController: UIViewController {
     }
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    
-    var items: [ItemModel] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backButton.addTarget(self, action: #selector(handleTapBackButton(_:)), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(handleTapNextButton(_:)), for: .touchUpInside)
+        
         setupButtons()
+    }
+    
+    @objc
+    private func handleTapBackButton(_ sender: UIButton) {
+        coordinator?.back()
+    }
+    
+    @objc
+    private func handleTapNextButton(_ sender: UIButton) {
+       // implementação
     }
 }
 

@@ -18,6 +18,29 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = InsertCustomerViewController()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func searchCustomer(to delegate: SearchCustomerDelegate) {
+        let vc = SearchCustomerViewController()
+        vc.delegate = delegate
+        vc.coordinator = self
+        navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func addItems(to customer: CustomerModel) {
+        let vc = AddItemViewController()
+        vc.customer = customer
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func back() {
+        navigationController.popViewController(animated: true)
+    }
+    
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }

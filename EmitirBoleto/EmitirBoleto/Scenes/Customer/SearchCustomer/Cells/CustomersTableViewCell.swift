@@ -9,7 +9,7 @@ import UIKit
 
 class CustomersTableViewCell: UITableViewCell {
     
-    static let identifier = "CustomerTableViewCell"
+    static let identifier = "CustomersTableViewCell"
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -22,16 +22,14 @@ class CustomersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupLayout()
+    }
+    
+    private func setupLayout() {
         iconView.layer.borderWidth = 1.0
         iconView.layer.borderColor = Constants.Color.azul.cgColor
         iconView.layer.masksToBounds = true
         iconView.layer.cornerRadius = iconView.frame.width / 2
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func prepare(with customer: CustomerModel) {

@@ -8,30 +8,6 @@
 import Foundation
 import UIKit
 
-extension UITextField {
-    
-    private static var storedCallbackTextEditingChanged = WeakDictionary<UITextField, ((String) -> Void)?>()
-    
-    var textEdited: ((String) -> Void)? {
-        get {
-            return UITextField.storedCallbackTextEditingChanged.get(forKey: self) ?? nil
-        }
-        set {
-            UITextField.storedCallbackTextEditingChanged.set(forKey: self, object: newValue)
-        }
-    }
-    
-    func bind(completion: @escaping (String) -> Void) {
-        textEdited = completion
-        addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
-    }
-    
-    @objc func textFieldEditingChanged(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        textEdited?(text)
-    }
-}
-
 private class WeakHolder<T: AnyObject>: Hashable {
     
     weak var object: T?
@@ -84,3 +60,40 @@ class WeakDictionary<T1: AnyObject, T2> {
         }
     }
 }
+
+extension UITextField {
+    
+    private static var storedCallbackTextEditingChanged = WeakDictionary<UITextField, ((String) -> Void)?>()
+    
+    var textEdited: ((String) -> Void)? {
+        get {
+            return UITextField.storedCallbackTextEditingChanged.get(forKey: self) ?? nil
+        }
+        set {
+            UITextField.storedCallbackTextEditingChanged.set(forKey: self, object: newValue)
+        }
+    }
+    
+    func bind(completion: @escaping (String) -> Void) {
+        textEdited = completion
+        addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldEditingChanged(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        textEdited?(text)
+    }
+    
+    static func clearStoredCallbacksTextEditingChanged() {
+        UITextField.storedCallbackTextEditingChanged.clean()
+    }
+}
+
+extension UITextField {
+    
+    func replace(withText text: String) {
+        self.text = ""
+        self.insertText(text)
+    }
+}
+

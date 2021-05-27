@@ -10,53 +10,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="EmitirBoleto" customModuleProvider="target">
             <connections>
-                <outlet property="additionalFieldsStackView" destination="Au0-JG-xGm" id="I50-Ew-Xsx"/>
-                <outlet property="additionalFieldsSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
+                <outlet property="addressStackView" destination="Au0-JG-xGm" id="I50-Ew-Xsx"/>
+                <outlet property="addressSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
                 <outlet property="backButton" destination="9vO-SX-kCt" id="8X1-Ng-ZaS"/>
-                <outlet property="cityTextField" destination="Pg4-nP-aiN" id="2TY-wc-bBR"/>
-                <outlet property="cityValidationMessageLabel" destination="zrN-O8-4QL" id="ssl-aZ-PoE"/>
-                <outlet property="cityValidationView" destination="Leh-bW-BBq" id="dxY-nf-jPR"/>
-                <outlet property="cnpjTextField" destination="34S-Xn-k7U" id="mXo-X8-5Gs"/>
-                <outlet property="cnpjValidationMessageLabel" destination="tH1-Mb-FAF" id="nV2-So-eqe"/>
-                <outlet property="cnpjValidationView" destination="Deu-u0-qUk" id="ras-RE-G6b"/>
-                <outlet property="complementTextField" destination="5ti-Gp-VAA" id="Ud9-d2-XbQ"/>
-                <outlet property="complementValidationMessageLabel" destination="9tL-dz-6Sv" id="CFN-FA-Do0"/>
-                <outlet property="complementValidationView" destination="Xz9-Iu-Doz" id="Vxj-e4-F8n"/>
-                <outlet property="corporateNameTextField" destination="Ad0-Nu-kaX" id="Htg-Am-6Ps"/>
-                <outlet property="corporateNameValidationMessageLabel" destination="wPs-6o-8Ih" id="ON7-A7-QPZ"/>
-                <outlet property="corporateNameValidationView" destination="Xbs-mn-8sK" id="DrQ-O6-OJF"/>
-                <outlet property="cpfTextField" destination="azG-JF-mgD" id="w1s-Yh-Hx5"/>
-                <outlet property="cpfValidationMessageLabel" destination="EAe-OR-73k" id="cE2-C0-GHB"/>
-                <outlet property="cpfValidationView" destination="lGX-So-crK" id="iXV-XR-pIy"/>
-                <outlet property="emailTextField" destination="vXU-dC-Cqo" id="GKY-C4-cKl"/>
-                <outlet property="emailValidationMessageLabel" destination="7gf-Xp-b1P" id="ucW-LR-yhW"/>
-                <outlet property="emailValidationView" destination="0bs-8j-tf5" id="mvW-PJ-Qw6"/>
                 <outlet property="juridicalPersonStackView" destination="qQl-pb-qRG" id="BuA-c6-D2T"/>
-                <outlet property="nameTextField" destination="c07-8A-eJz" id="Bsu-jj-wBd"/>
-                <outlet property="nameValidationMessageLabel" destination="x3p-i3-t2R" id="6rv-m3-Mm8"/>
-                <outlet property="nameValidationView" destination="lGX-So-crK" id="Dpg-8T-0dT"/>
-                <outlet property="neighborhoodTextField" destination="4Ie-qM-Fox" id="pyM-WG-2Hb"/>
-                <outlet property="neighborhoodValidationMessageLabel" destination="RBO-Vv-qGl" id="Wvu-IZ-RDg"/>
-                <outlet property="neighborhoodValidationView" destination="Mzq-4e-Cws" id="R9k-tr-fYD"/>
                 <outlet property="nextButton" destination="CLo-hR-pVo" id="GP2-yI-CI4"/>
-                <outlet property="numberTextField" destination="Oh2-XB-JiM" id="MfW-Ui-Hv7"/>
-                <outlet property="numberValidationMessageLabel" destination="6Ki-M8-l9c" id="0ba-07-npg"/>
-                <outlet property="numberValidationView" destination="txu-Te-pfa" id="lbu-R5-oyv"/>
-                <outlet property="phoneNumberTextField" destination="X2q-mc-Y8M" id="NbD-Ct-cwA"/>
-                <outlet property="phoneNumberValidationMessageLabel" destination="coj-L7-JSM" id="N76-D3-wff"/>
-                <outlet property="phoneNumberValidationView" destination="TbZ-FN-nYO" id="f6n-HP-ouU"/>
+                <outlet property="searchCustomerButton" destination="4xX-DS-ImK" id="Prm-wA-FGo"/>
                 <outlet property="segmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
-                <outlet property="stateButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
-                <outlet property="stateTextField" destination="IKl-xx-EUe" id="SOY-t9-bAJ"/>
-                <outlet property="stateValidationMessageLabel" destination="Miu-wP-sbF" id="jFG-Jh-zpy"/>
-                <outlet property="stateValidationView" destination="suj-Ib-C0i" id="VdE-am-Af1"/>
-                <outlet property="streetTextField" destination="0FN-bO-0Dt" id="R5o-3a-ipC"/>
-                <outlet property="streetValidationMessageLabel" destination="wJ6-S3-NfQ" id="XU7-dL-FKe"/>
-                <outlet property="streetValidationView" destination="843-JV-FHS" id="NSw-0B-p7J"/>
+                <outlet property="statePickerButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="zipcodeTextField" destination="k73-lw-55b" id="FMh-Ie-H4T"/>
-                <outlet property="zipcodeValidationMessageLabel" destination="xDs-Q9-4ZV" id="12v-WJ-4cE"/>
-                <outlet property="zipcodeValidationView" destination="Z3I-fc-za2" id="xzf-AQ-LCO"/>
+                <outletCollection property="textFields" destination="c07-8A-eJz" collectionClass="NSMutableArray" id="e1O-3R-xft"/>
+                <outletCollection property="textFields" destination="azG-JF-mgD" collectionClass="NSMutableArray" id="BDT-Dq-MhD"/>
+                <outletCollection property="textFields" destination="Ad0-Nu-kaX" collectionClass="NSMutableArray" id="HeV-7n-ofh"/>
+                <outletCollection property="textFields" destination="34S-Xn-k7U" collectionClass="NSMutableArray" id="Kwq-jt-AeC"/>
+                <outletCollection property="textFields" destination="X2q-mc-Y8M" collectionClass="NSMutableArray" id="Wf1-P7-GPb"/>
+                <outletCollection property="textFields" destination="vXU-dC-Cqo" collectionClass="NSMutableArray" id="mcJ-zl-PuZ"/>
+                <outletCollection property="textFields" destination="0FN-bO-0Dt" collectionClass="NSMutableArray" id="uZd-b0-f3K"/>
+                <outletCollection property="textFields" destination="Oh2-XB-JiM" collectionClass="NSMutableArray" id="GUc-rX-F2A"/>
+                <outletCollection property="textFields" destination="5ti-Gp-VAA" collectionClass="NSMutableArray" id="N4N-wH-71j"/>
+                <outletCollection property="textFields" destination="4Ie-qM-Fox" collectionClass="NSMutableArray" id="aCr-qV-g1n"/>
+                <outletCollection property="textFields" destination="k73-lw-55b" collectionClass="NSMutableArray" id="IOK-Ch-sdg"/>
+                <outletCollection property="textFields" destination="IKl-xx-EUe" collectionClass="NSMutableArray" id="Fr4-yv-8gj"/>
+                <outletCollection property="textFields" destination="Pg4-nP-aiN" collectionClass="NSMutableArray" id="qyJ-gr-rOm"/>
+                <outletCollection property="validationViews" destination="2gH-Ju-2wx" collectionClass="NSMutableArray" id="scx-AV-gZk"/>
+                <outletCollection property="validationViews" destination="lGX-So-crK" collectionClass="NSMutableArray" id="yNJ-g7-zBB"/>
+                <outletCollection property="validationViews" destination="Xbs-mn-8sK" collectionClass="NSMutableArray" id="DZN-In-Su8"/>
+                <outletCollection property="errorMessageLabels" destination="x3p-i3-t2R" collectionClass="NSMutableArray" id="z0N-os-mxd"/>
+                <outletCollection property="errorMessageLabels" destination="EAe-OR-73k" collectionClass="NSMutableArray" id="bAM-ag-X1x"/>
+                <outletCollection property="errorMessageLabels" destination="wPs-6o-8Ih" collectionClass="NSMutableArray" id="dvE-72-1rn"/>
+                <outletCollection property="errorMessageLabels" destination="tH1-Mb-FAF" collectionClass="NSMutableArray" id="2Z2-Cj-xGs"/>
+                <outletCollection property="errorMessageLabels" destination="LiD-FT-mez" collectionClass="NSMutableArray" id="nBg-bp-eRq"/>
+                <outletCollection property="errorMessageLabels" destination="7gf-Xp-b1P" collectionClass="NSMutableArray" id="OL5-L9-Fzw"/>
+                <outletCollection property="errorMessageLabels" destination="wJ6-S3-NfQ" collectionClass="NSMutableArray" id="59g-Rh-YQq"/>
+                <outletCollection property="errorMessageLabels" destination="6Ki-M8-l9c" collectionClass="NSMutableArray" id="28o-tz-jU4"/>
+                <outletCollection property="errorMessageLabels" destination="9tL-dz-6Sv" collectionClass="NSMutableArray" id="W6c-ds-MTk"/>
+                <outletCollection property="errorMessageLabels" destination="RBO-Vv-qGl" collectionClass="NSMutableArray" id="bdv-5E-B7T"/>
+                <outletCollection property="errorMessageLabels" destination="xDs-Q9-4ZV" collectionClass="NSMutableArray" id="EOb-vO-WPy"/>
+                <outletCollection property="errorMessageLabels" destination="Miu-wP-sbF" collectionClass="NSMutableArray" id="JmT-KM-hnD"/>
+                <outletCollection property="errorMessageLabels" destination="zrN-O8-4QL" collectionClass="NSMutableArray" id="4Dw-uv-MCR"/>
+                <outletCollection property="validationViews" destination="Deu-u0-qUk" collectionClass="NSMutableArray" id="UE8-RP-CG4"/>
+                <outletCollection property="validationViews" destination="TbZ-FN-nYO" collectionClass="NSMutableArray" id="hjE-aR-2gY"/>
+                <outletCollection property="validationViews" destination="0bs-8j-tf5" collectionClass="NSMutableArray" id="K3W-t4-A8j"/>
+                <outletCollection property="validationViews" destination="843-JV-FHS" collectionClass="NSMutableArray" id="odc-K8-aOT"/>
+                <outletCollection property="validationViews" destination="txu-Te-pfa" collectionClass="NSMutableArray" id="BHL-UR-WvN"/>
+                <outletCollection property="validationViews" destination="Xz9-Iu-Doz" collectionClass="NSMutableArray" id="HA5-qm-bZY"/>
+                <outletCollection property="validationViews" destination="Mzq-4e-Cws" collectionClass="NSMutableArray" id="752-KL-0ma"/>
+                <outletCollection property="validationViews" destination="Z3I-fc-za2" collectionClass="NSMutableArray" id="58f-AE-ghX"/>
+                <outletCollection property="validationViews" destination="suj-Ib-C0i" collectionClass="NSMutableArray" id="Y0V-CS-qyb"/>
+                <outletCollection property="validationViews" destination="Leh-bW-BBq" collectionClass="NSMutableArray" id="dIx-0a-4Ze"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -151,10 +152,10 @@
                             <rect key="frame" x="0.0" y="175" width="414" height="460"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BxS-6G-jtd" userLabel="Input Fields Stack View">
-                                    <rect key="frame" x="18" y="0.0" width="384.66666666666669" height="986.33333333333337"/>
+                                    <rect key="frame" x="18" y="0.0" width="384.66666666666669" height="987"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-0P-JaC" userLabel="Name Stack View">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="79.333333333333329"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4t-H1-vPz">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
@@ -168,28 +169,41 @@
                                                         <constraint firstAttribute="height" constant="1" id="2HJ-1L-Vxs"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz">
-                                                    <rect key="frame" x="0.0" y="28.666666666666657" width="384.66666666666669" height="17.333333333333329"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="blY-JE-wcK">
+                                                    <rect key="frame" x="0.0" y="28.666666666666657" width="384.66666666666669" height="18"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="360.66666666666669" height="18"/>
+                                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xX-DS-ImK">
+                                                            <rect key="frame" x="366.66666666666669" y="0.0" width="18" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="8vc-EH-i0N"/>
+                                                                <constraint firstAttribute="width" constant="18" id="THe-67-3We"/>
+                                                            </constraints>
+                                                            <state key="normal" backgroundImage="burger_button"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKf-xg-acW" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="52.666666666666657" width="384.66666666666669" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="Gqc-7p-YEV"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-Ju-2wx" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="58.666666666666657" width="384.66666666666669" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="dmS-jr-gRB"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3p-i3-t2R">
-                                                    <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="65.666666666666657" width="384.66666666666669" height="14.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -197,7 +211,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uFf-xM-qQD" userLabel="CPF Stack View">
-                                            <rect key="frame" x="0.0" y="90.333333333333314" width="384.66666666666669" height="79.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="91" width="384.66666666666669" height="79.333333333333314"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-Nx-MtK">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
@@ -240,7 +254,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-pb-qRG" userLabel="Juridical Person Stack View">
-                                            <rect key="frame" x="0.0" y="180.66666666666669" width="384.66666666666669" height="169.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="181.33333333333331" width="384.66666666666669" height="169.66666666666669"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LoA-l8-GvS" userLabel="Corporate Name Stack View">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="79.333333333333329"/>
@@ -252,13 +266,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sn-nH-arT" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="21.666666666666686" width="384.66666666666669" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="Ck7-Pq-gMu"/>
                                                             </constraints>
                                                         </view>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Gerencianet" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-Nu-kaX">
-                                                            <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -286,7 +300,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4GE-Zg-071" userLabel="CNPJ Name Stack View">
-                                                    <rect key="frame" x="0.0" y="90.333333333333314" width="384.66666666666669" height="79.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="90.333333333333371" width="384.66666666666669" height="79.333333333333314"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNPJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-hg-kGC">
                                                             <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
@@ -295,13 +309,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cz-eT-OPe" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="21.666666666666686" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="JLo-Mi-Q01"/>
                                                             </constraints>
                                                         </view>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00.000.000/0000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-Xn-k7U">
-                                                            <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -331,7 +345,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-gv-IyR" userLabel="Phone Number Stack View">
-                                            <rect key="frame" x="0.0" y="361.33333333333337" width="384.66666666666669" height="79.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="362" width="384.66666666666669" height="79.333333333333314"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42d-Gd-IdT">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
@@ -365,7 +379,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="gGj-YL-FNs"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coj-L7-JSM">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiD-FT-mez">
                                                     <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -374,7 +388,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="16q-3Y-VhZ" userLabel="Email Stack View">
-                                            <rect key="frame" x="0.0" y="451.66666666666663" width="384.66666666666669" height="88.666666666666629"/>
+                                            <rect key="frame" x="0.0" y="452.33333333333337" width="384.66666666666669" height="88.666666666666629"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-fT-Q7u">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
@@ -383,13 +397,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofE-js-0Qf" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="aDc-Zj-1vG"/>
                                                     </constraints>
                                                 </view>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: email@dominio.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-dC-Cqo">
-                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="384.66666666666669" height="17.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -419,14 +433,14 @@ para o cliente.</string>
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-lG-il6" userLabel="White Space View">
-                                            <rect key="frame" x="0.0" y="551.33333333333337" width="384.66666666666669" height="8"/>
+                                            <rect key="frame" x="0.0" y="552" width="384.66666666666669" height="8"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="CNw-dr-oqc"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMd-6p-saZ" userLabel="Show Additional Fields View">
-                                            <rect key="frame" x="0.0" y="570.33333333333337" width="384.66666666666669" height="31"/>
+                                            <rect key="frame" x="0.0" y="571" width="384.66666666666669" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exibir campos adicionais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZA-d1-jw4">
                                                     <rect key="frame" x="0.0" y="9" width="159.66666666666666" height="13"/>
@@ -451,14 +465,14 @@ para o cliente.</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-tU-IsQ" userLabel="White Space View">
-                                            <rect key="frame" x="0.0" y="612.33333333333337" width="384.66666666666669" height="8"/>
+                                            <rect key="frame" x="0.0" y="613" width="384.66666666666669" height="8"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="ktY-0o-T0t"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-JG-xGm" userLabel="Additional Fields View">
-                                            <rect key="frame" x="0.0" y="631.33333333333337" width="384.66666666666669" height="355"/>
+                                            <rect key="frame" x="0.0" y="632" width="384.66666666666669" height="355"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0g-RG-SBw" userLabel="Address Stack View">
                                                     <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="79.333333333333329"/>
@@ -504,7 +518,7 @@ para o cliente.</string>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5O5-Gm-vwY" userLabel="Number-Complement Stack View">
-                                                    <rect key="frame" x="0.0" y="90.333333333333258" width="384.66666666666669" height="79.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="90.333333333333371" width="384.66666666666669" height="79.333333333333314"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yQ8-6q-WKn" userLabel="Number Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="108" height="79.333333333333329"/>
@@ -516,13 +530,13 @@ para o cliente.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-yF-7xb" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="108" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="COS-m3-ygF"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-XB-JiM" userLabel="Number Text Field">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="17.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -559,13 +573,13 @@ para o cliente.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-n4-lZG" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="262.66666666666669" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="IZa-jt-O18"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-Gp-VAA" userLabel="Complement Style Text Field">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="17.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -610,33 +624,33 @@ para o cliente.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZN-jR-82C" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="108" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="TPX-YM-zRI"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-qM-Fox" userLabel="Neighborhood Text Field">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="108" height="17.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yi-Ky-8np" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52" width="108" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="52.000000000000114" width="108" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="NXC-vL-RxT"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-4e-Cws" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="58.000000000000114" width="108" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="HeC-kG-KU8"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-Vv-qGl">
-                                                                    <rect key="frame" x="0.0" y="65" width="108" height="14.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="65.000000000000114" width="108" height="14.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -653,33 +667,33 @@ para o cliente.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-wA-3Wc" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="262.66666666666669" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="awT-oe-UNq"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00000-000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k73-lw-55b">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="262.66666666666669" height="17.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-BW-IpR" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52" width="262.66666666666669" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="52.000000000000114" width="262.66666666666669" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="Iga-GP-HlW"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3I-fc-za2" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="58.000000000000114" width="262.66666666666669" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="M8m-hn-GBF"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDs-Q9-4ZV">
-                                                                    <rect key="frame" x="0.0" y="65" width="262.66666666666669" height="14.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="65.000000000000114" width="262.66666666666669" height="14.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -692,7 +706,7 @@ para o cliente.</string>
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-ce-L86" userLabel="State-City Stack View">
-                                                    <rect key="frame" x="0.0" y="270.99999999999989" width="384.66666666666669" height="84"/>
+                                                    <rect key="frame" x="0.0" y="271" width="384.66666666666669" height="84"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="96q-1U-un7" userLabel="State Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="108" height="84"/>
@@ -712,7 +726,7 @@ para o cliente.</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Vt-Os-nPZ" userLabel="Text Field-Button Stack View">
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="22"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="22"/>
                                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -823,7 +837,7 @@ para o cliente.</string>
                                         <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo">
+                                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo">
                                     <rect key="frame" x="200" y="0.0" width="182" height="44"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                     <state key="normal" title="AVANÇAR">
@@ -867,6 +881,7 @@ para o cliente.</string>
         </view>
     </objects>
     <resources>
+        <image name="burger_button" width="18" height="18"/>
         <image name="gn_logo" width="25" height="25"/>
         <image name="push_down" width="8" height="9"/>
         <systemColor name="systemBackgroundColor">

@@ -22,15 +22,17 @@ class ItemDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.view.layer.borderWidth = 1.0
-        self.view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupLayout() {
+        view.layer.borderWidth = 1.0
+        view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
     }
     
     func prepare(with item: ItemModel) {
