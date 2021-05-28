@@ -30,10 +30,23 @@ class MainCoordinator: Coordinator {
     }
     
     func addItems(to customer: CustomerModel) {
-        let vc = AddItemViewController()
-        vc.customer = customer
+        let vc = AddItemsViewController()
+        vc.setCustomer(customer)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func addItemPopup(to delegate: AddItemDelegate) {
+        let vc = AddItemPopupViewController()
+        vc.coordinator = self
+        navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func searchItem(to delegate: SearchItemDelegate) {
+        let vc = SearchItemViewController()
+        vc.delegate = delegate
+        vc.coordinator = self
+        navigationController.present(vc, animated: true, completion: nil)
     }
     
     func back() {
