@@ -33,7 +33,6 @@ class AddItemPopupViewController: UIViewController {
         self.addButton.addTarget(self, action: #selector(self.handlePerformActionButton(sender:)), for: .touchUpInside)
         
         setupLayout()
-        setupButtons()
     }
     
     
@@ -42,16 +41,6 @@ class AddItemPopupViewController: UIViewController {
     func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
-    }
-    
-    func setupButtons() {
-        cancelButton.layer.borderWidth = 1.0
-        cancelButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        addButton.layer.borderWidth = 1.0
-        addButton.layer.borderColor = Constants.Color.laranja.cgColor
-        addButton.backgroundColor = Constants.Color.laranja
-        addButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     

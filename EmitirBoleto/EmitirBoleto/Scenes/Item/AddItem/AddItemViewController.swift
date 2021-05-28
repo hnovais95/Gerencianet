@@ -19,8 +19,8 @@ class AddItemViewController: UIViewController {
             tableView.dataSource = self
         }
     }
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: BackButton!
+    @IBOutlet weak var nextButton: NextButton!
     
     
     // MARK: Member variables
@@ -37,21 +37,6 @@ class AddItemViewController: UIViewController {
         
         backButton.addTarget(self, action: #selector(handleTapBackButton(_:)), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(handleTapNextButton(_:)), for: .touchUpInside)
-        
-        setupButtons()
-    }
-    
-    
-    // MARK: Layout
-    
-    func setupButtons() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        nextButton.backgroundColor = Constants.Color.cinzaClaro
-        nextButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     

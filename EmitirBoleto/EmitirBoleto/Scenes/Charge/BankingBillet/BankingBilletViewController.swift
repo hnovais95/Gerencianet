@@ -21,28 +21,18 @@ class BankingBilletViewController: UIViewController {
     @IBOutlet weak var conditionalDiscountUnitTextField: UITextField!
     @IBOutlet weak var conditionalDiscountUnitSelectorButton: UIButton!
     @IBOutlet weak var conditionalDiscountAmountTextField: UITextField!
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var chargeButton: UIButton!
+    @IBOutlet weak var backButton: BackButton!
+    @IBOutlet weak var chargeButton: NextButton!
     
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupButtons()
     }
     
     
     // MARK: Layout
     
-    func setupButtons() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        chargeButton.layer.borderWidth = 1.0
-        chargeButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        chargeButton.backgroundColor = Constants.Color.cinzaClaro
-        chargeButton.setTitleColor(UIColor.white, for: .normal)
-    }
+    
 }

@@ -18,8 +18,8 @@ class UpdateItemPopupViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var decreaseButton: UIButton!
     @IBOutlet weak var increaseButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var cancelButton: BackButton!
+    @IBOutlet weak var updateButton: NextButton!
     
     
     // MARK: Life Cycle
@@ -33,7 +33,6 @@ class UpdateItemPopupViewController: UIViewController {
         self.updateButton.addTarget(self, action: #selector(self.handlePerformActionButton(sender:)), for: .touchUpInside)
         
         setupLayout()
-        setupButtons()
     }
     
     
@@ -42,16 +41,6 @@ class UpdateItemPopupViewController: UIViewController {
     func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
-    }
-    
-    func setupButtons() {
-        cancelButton.layer.borderWidth = 1.0
-        cancelButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        updateButton.layer.borderWidth = 1.0
-        updateButton.layer.borderColor = Constants.Color.laranja.cgColor
-        updateButton.backgroundColor = Constants.Color.laranja
-        updateButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     

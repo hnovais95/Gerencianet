@@ -11,7 +11,7 @@ class InsertCustomerViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet var errorMessageLabels: [UILabel]!
     
@@ -19,8 +19,8 @@ class InsertCustomerViewController: UIViewController {
     @IBOutlet weak var addressSwitch: UISwitch!
     @IBOutlet weak var searchCustomerButton: UIButton!
     @IBOutlet weak var statePickerButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var backButton: BackButton!
+    @IBOutlet weak var nextButton: NextButton!
     
     @IBOutlet weak var juridicalPersonStackView: UIStackView!
     @IBOutlet weak var addressStackView: UIStackView!
@@ -60,19 +60,14 @@ class InsertCustomerViewController: UIViewController {
         observeEvents()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        UITextField.clearStoredCallbacksTextEditingChanged()
-    }
-    
     
     // MARK: Layout
     
-    private func setupLayout() {
-        setupInitialStateOfComponents()
-        setupLayoutSegmentedControl()
-        setupLayoutButtons()
+    private func setupInitialStateOfComponents() {
+        juridicalPersonStackView.isHidden = true
+        addressStackView.isHidden = true
+        addressSwitch.setOn(false, animated: false)
+        segmentedControl.selectedSegmentIndex = 0
     }
     
     private func setupLayoutSegmentedControl() {
@@ -85,49 +80,31 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
     }
     
-    private func setupLayoutButtons() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-        
-        nextButton.layer.borderWidth = 1.0
-        nextButton.layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        nextButton.backgroundColor = Constants.Color.cinzaClaro
-        nextButton.setTitleColor(UIColor.white, for: .normal)
-    }
-    
-    private func setupInitialStateOfComponents() {
-        juridicalPersonStackView.isHidden = true
-        addressStackView.isHidden = true
-        addressSwitch.setOn(false, animated: false)
-        segmentedControl.selectedSegmentIndex = 0
-        setupNextButtonState()
-    }
-    
-    private func setupNextButtonState() {
-        nextButton.isEnabled = viewModel.isValid
-        nextButton.isHighlighted = !viewModel.isValid
+    private func setupLayout() {
+        setupInitialStateOfComponents()
+        setupLayoutSegmentedControl()
     }
     
     
     // MARK: Handlers
     
     private func observeEvents() {
-        viewModel.validatedField = { [weak self] result, indexField in
+        viewModel.validatedField = { [unowned self] result, indexField in
             guard let field = FieldType(rawValue: indexField) else { return }
-            guard let value = self?.textFields[field.rawValue].text else { return }
+            guard let value = textFields[field.rawValue].text else { return }
             
-            let validationLine = self?.validationViews[field.rawValue]
-            let errorMessage = field != .email ? self?.errorMessageLabels[field.rawValue] : nil
+            let validationLine = validationViews[field.rawValue]
+            let errorMessage = field != .email ? errorMessageLabels[field.rawValue] : nil
                
             if value.isEmpty {
-                validationLine?.backgroundColor = Constants.Color.cinzaClaro
+                validationLine.backgroundColor = Constants.Color.cinzaClaro
                 errorMessage?.alpha = 0
             }
             else if result == true {
-                validationLine?.backgroundColor = Constants.Color.verde
+                validationLine.backgroundColor = Constants.Color.verde
                 errorMessage?.alpha = 0
             } else {
-                validationLine?.backgroundColor = Constants.Color.vermelhoEscuro
+                validationLine.backgroundColor = Constants.Color.vermelhoEscuro
                 errorMessage?.alpha = 1
             }
         }
@@ -137,14 +114,12 @@ class InsertCustomerViewController: UIViewController {
     private func handleSegmentedControlChange(_ sender: UISegmentedControl) {
         juridicalPersonStackView.isHidden = sender.selectedSegmentIndex == 0
         viewModel.isJuridicalPerson = sender.selectedSegmentIndex == 1
-        setupNextButtonState()
     }
     
     @objc
     private func handleSwitchChange(_ sender: UISwitch) {
         addressStackView.isHidden = !sender.isOn
         viewModel.includeAddress = sender.isOn
-        setupNextButtonState()
     }
     
     @objc
@@ -181,79 +156,79 @@ class InsertCustomerViewController: UIViewController {
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.name = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .cpf:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.cpf = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .corporateName:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.corporateName = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .cnpj:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.cnpj = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .phoneNumber:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.phoneNumber = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .email:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.email = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .street:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.street = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .number:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.number = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .complement:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.complement = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .neighborhood:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.neighborhood = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .zipcode:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.zipcode = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .state:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.state = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .city:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.city = $0
-                        self?.setupNextButtonState()
+                        self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 }
             }

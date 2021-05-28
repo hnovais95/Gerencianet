@@ -9,7 +9,7 @@ import UIKit
 
 class TesteViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField! {
+    @IBOutlet weak var textField: BindingTextField! {
         didSet {
             self.textField.bind { self.label.text = $0 }
         }

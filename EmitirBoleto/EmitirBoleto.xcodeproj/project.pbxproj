@@ -63,6 +63,8 @@
 		CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D3264AB04D007AE005 /* EmitirBoleto.xcdatamodeld */; };
 		CA8A569F2660476800E95AB5 /* StatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A569E2660476800E95AB5 /* StatePickerViewController.swift */; };
 		CA8A56A126604B7700E95AB5 /* SearchCustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */; };
+		CA8A56A326610DED00E95AB5 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56A226610DED00E95AB5 /* BindingTextField.swift */; };
+		CA8A56AB2661377C00E95AB5 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -185,6 +187,8 @@
 		CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataItemRepository.swift; sourceTree = "<group>"; };
 		CA8A569E2660476800E95AB5 /* StatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePickerViewController.swift; sourceTree = "<group>"; };
 		CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomerViewModel.swift; sourceTree = "<group>"; };
+		CA8A56A226610DED00E95AB5 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
+		CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
@@ -739,6 +743,8 @@
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
 				CA3B2CFE265EC82A0081BF48 /* Validator.swift */,
+				CA8A56A226610DED00E95AB5 /* BindingTextField.swift */,
+				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
 				CA29B5252658584B004BCBFD /* Extensions */,
 			);
 			path = Helpers;
@@ -1047,6 +1053,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */,
+				CA8A56A326610DED00E95AB5 /* BindingTextField.swift in Sources */,
 				CA1859C1265D1804001F821C /* UpdateItemPopupViewController.swift in Sources */,
 				CADE8440265BDBF60020BEC3 /* ItemActionsTableViewCell.swift in Sources */,
 				CABCA90B264AB3E5007AE005 /* AddressModel.swift in Sources */,
@@ -1071,6 +1078,7 @@
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
+				CA8A56AB2661377C00E95AB5 /* CustomButtons.swift in Sources */,
 				CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */,
 				CA8A569F2660476800E95AB5 /* StatePickerViewController.swift in Sources */,
 				CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */,

@@ -11,22 +11,17 @@ class FailureViewController: UIViewController {
     
     // MARK: Outlets
 
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var backButton: BackButton!
     
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupButton()
     }
     
     
     // MARK: Layout
     
-    func setupButton() {
-        backButton.layer.borderWidth = 1.0
-        backButton.layer.borderColor = Constants.Color.laranja.cgColor
-    }
+    
 }

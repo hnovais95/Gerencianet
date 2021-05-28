@@ -14,7 +14,7 @@ class SuccessViewController: UIViewController {
     @IBOutlet weak var copyBarcodeButton: UIButton!
     @IBOutlet weak var shareLinkButton: UIButton!
     @IBOutlet weak var showBankingBilletButton: UIButton!
-    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: NextButton!
     
     
     // MARK: Life Cycle
@@ -38,7 +38,6 @@ class SuccessViewController: UIViewController {
         showBankingBilletButton.layer.borderWidth = 1.0
         showBankingBilletButton.layer.borderColor = Constants.Color.azul.cgColor
         
-        doneButton.layer.borderWidth = 1.0
-        doneButton.layer.borderColor = Constants.Color.laranja.cgColor
+        doneButton.setEnable(true)
     }
 }
