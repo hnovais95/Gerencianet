@@ -65,6 +65,7 @@
 		CA8A56A126604B7700E95AB5 /* SearchCustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */; };
 		CA8A56A326610DED00E95AB5 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56A226610DED00E95AB5 /* BindingTextField.swift */; };
 		CA8A56AB2661377C00E95AB5 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */; };
+		CA8A56AD26615EF100E95AB5 /* CaseIterable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56AC26615EF100E95AB5 /* CaseIterable+Extensions.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -189,6 +190,7 @@
 		CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomerViewModel.swift; sourceTree = "<group>"; };
 		CA8A56A226610DED00E95AB5 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
 		CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		CA8A56AC26615EF100E95AB5 /* CaseIterable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseIterable+Extensions.swift"; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */,
 				CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */,
 				CA04B5E0265E7E0800C759CA /* TextField+Extensions.swift */,
+				CA8A56AC26615EF100E95AB5 /* CaseIterable+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1109,6 +1112,7 @@
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
 				CA3B2CFF265EC82A0081BF48 /* Validator.swift in Sources */,
 				CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */,
+				CA8A56AD26615EF100E95AB5 /* CaseIterable+Extensions.swift in Sources */,
 				CA29B5242658583C004BCBFD /* Helper.swift in Sources */,
 				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA6DE099265BE21600FC5D19 /* ItemDetailsTableViewCell.swift in Sources */,

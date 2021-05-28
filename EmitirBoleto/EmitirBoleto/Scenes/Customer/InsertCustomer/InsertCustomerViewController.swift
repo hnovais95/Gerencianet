@@ -5,6 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 19/05/21.
 //
 
+import Foundation
 import UIKit
 
 class InsertCustomerViewController: UIViewController {
@@ -14,6 +15,7 @@ class InsertCustomerViewController: UIViewController {
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet var errorMessageLabels: [UILabel]!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var addressSwitch: UISwitch!
@@ -28,7 +30,7 @@ class InsertCustomerViewController: UIViewController {
     
     // MARK: Member types
     
-    private enum FieldType: Int {
+    private enum FieldType: Int, CaseIterable {
         case name, cpf, corporateName, cnpj, phoneNumber, email,
              street, number, complement, neighborhood, zipcode, state, city
     }
@@ -48,10 +50,10 @@ class InsertCustomerViewController: UIViewController {
         
         segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChange(_:)), for: .valueChanged)
         addressSwitch.addTarget(self, action: #selector(handleSwitchChange(_:)), for: .valueChanged)
-        nextButton.addTarget(self, action: #selector(handleTapNextButton(_:)), for: .touchUpInside)
-        searchCustomerButton.addTarget(self, action: #selector(handleTapSearchCustomerButton(_:)), for: .touchUpInside)
-        statePickerButton.addTarget(self, action: #selector(handleBeginSelectionState(_:)), for: .touchUpInside)
-        textFields[FieldType.state.rawValue].addTarget(self, action: #selector(handleBeginSelectionState(_:)), for: .editingDidBegin)
+        nextButton.addTarget(self, action: #selector(handleNextStep), for: .touchUpInside)
+        searchCustomerButton.addTarget(self, action: #selector(handleTapSearchCustomerButton), for: .touchUpInside)
+        statePickerButton.addTarget(self, action: #selector(handleBeginSelectionState), for: .touchUpInside)
+        textFields[FieldType.state.rawValue].addTarget(self, action: #selector(handleBeginSelectionState), for: .editingDidBegin)
         
         statePickerView.delegate = self
         
@@ -88,6 +90,10 @@ class InsertCustomerViewController: UIViewController {
     
     // MARK: Handlers
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     private func observeEvents() {
         viewModel.validatedField = { [unowned self] result, indexField in
             guard let field = FieldType(rawValue: indexField) else { return }
@@ -108,6 +114,10 @@ class InsertCustomerViewController: UIViewController {
                 errorMessage?.alpha = 1
             }
         }
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector (keyboardWillBeShown(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector (keyboardWillBeHidden(_ :)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc
@@ -123,7 +133,7 @@ class InsertCustomerViewController: UIViewController {
     }
     
     @objc
-    private func handleTapNextButton(_ sender: UIButton) {
+    private func handleNextStep() {
         if viewModel.isValid {
             let customer = viewModel.getCustomer()
             coordinator?.addItems(to: customer)
@@ -131,18 +141,38 @@ class InsertCustomerViewController: UIViewController {
     }
     
     @objc
-    private func handleTapSearchCustomerButton(_ sender: UIButton) {
+    private func handleTapSearchCustomerButton() {
         coordinator?.searchCustomer(to: self)
     }
     
     @objc
-    private func handleBeginSelectionState(_ sender: Any) {
+    private func handleBeginSelectionState() {
         let pickerView = UIPickerView()
         pickerView.delegate = statePickerView
         pickerView.dataSource = statePickerView
         textFields[FieldType.state.rawValue].inputView = pickerView
         textFields[FieldType.state.rawValue].tintColor = .clear
         textFields[FieldType.state.rawValue].becomeFirstResponder()
+    }
+    
+    @objc
+    private func keyboardWillBeShown(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
+        
+        guard let textField = textFields.filter({ $0.isFocused }).first else { return }
+        
+        scrollView.scrollRectToVisible(textField.frame, animated: true)
+    }
+    
+    @objc
+    private func keyboardWillBeHidden(_ notification: Notification) {
+        let contentInset = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
     }
     
     
@@ -231,6 +261,8 @@ class InsertCustomerViewController: UIViewController {
                         self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 }
+                
+                textField.delegate = self
             }
         }
     }
@@ -274,6 +306,33 @@ extension InsertCustomerViewController: StatePickerViewDelegate {
     
     func didSelectState(state: String) {
         textFields[FieldType.state.rawValue].replace(withText: state)
-        textFields[FieldType.state.rawValue].resignFirstResponder()
+        textFields[FieldType.city.rawValue].becomeFirstResponder()
+    }
+}
+
+extension InsertCustomerViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var field: FieldType?
+        for (index, _) in textFields.enumerated() {
+            if textFields[index] == textField {
+                field = FieldType(rawValue: index)
+            }
+        }
+        
+        guard var field = field else { return false }
+        
+        switch field {
+        case .email, .city:
+            handleNextStep()
+            textFields[field.rawValue].resignFirstResponder()
+        case .cpf, .cnpj, .phoneNumber, .number, .state:
+            textFields[field.rawValue].resignFirstResponder()
+        default:
+            field.next()
+            textFields[field.rawValue].becomeFirstResponder()
+        }
+        
+        return true
     }
 }

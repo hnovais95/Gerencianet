@@ -1,5 +1,5 @@
 //
-//  CustomButton.swift
+//  CustomButtons.swift
 //  EmitirBoleto
 //
 //  Created by Heitor Novais | Gerencianet on 28/05/21.

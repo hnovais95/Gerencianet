@@ -15,6 +15,7 @@
                 <outlet property="backButton" destination="9vO-SX-kCt" id="8X1-Ng-ZaS"/>
                 <outlet property="juridicalPersonStackView" destination="qQl-pb-qRG" id="BuA-c6-D2T"/>
                 <outlet property="nextButton" destination="CLo-hR-pVo" id="GP2-yI-CI4"/>
+                <outlet property="scrollView" destination="r53-wi-Ank" id="Jil-R3-b5e"/>
                 <outlet property="searchCustomerButton" destination="4xX-DS-ImK" id="Prm-wA-FGo"/>
                 <outlet property="segmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
                 <outlet property="statePickerButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
@@ -176,7 +177,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="360.66666666666669" height="18"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xX-DS-ImK">
                                                             <rect key="frame" x="366.66666666666669" y="0.0" width="18" height="18"/>
@@ -229,7 +230,7 @@
                                                     <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-bY-zYM" userLabel="White Space View">
                                                     <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -275,7 +276,7 @@
                                                             <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdK-Kh-dH7" userLabel="White Space View">
                                                             <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -318,7 +319,7 @@
                                                             <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvf-Tc-3kV" userLabel="White Space View">
                                                             <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -363,7 +364,7 @@
                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-Gg-cqg" userLabel="White Space View">
                                                     <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -406,7 +407,7 @@
                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgV-eU-i8x" userLabel="White Space View">
                                                     <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -493,7 +494,7 @@ para o cliente.</string>
                                                             <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj4-KT-c6T" userLabel="White Space View">
                                                             <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -539,7 +540,7 @@ para o cliente.</string>
                                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3B-Wr-Usz" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="52" width="108" height="0.0"/>
@@ -582,7 +583,7 @@ para o cliente.</string>
                                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-Ma-6Kc" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="52" width="262.66666666666669" height="0.0"/>
@@ -633,7 +634,7 @@ para o cliente.</string>
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yi-Ky-8np" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="52.000000000000114" width="108" height="0.0"/>
@@ -676,7 +677,7 @@ para o cliente.</string>
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-BW-IpR" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="52.000000000000114" width="262.66666666666669" height="0.0"/>
@@ -782,7 +783,7 @@ para o cliente.</string>
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="22"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eD6-Vj-m4i" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="56.666666666666742" width="262.66666666666669" height="0.0"/>
