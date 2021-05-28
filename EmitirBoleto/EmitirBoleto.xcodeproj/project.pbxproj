@@ -71,7 +71,6 @@
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
 		CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */; };
 		CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CA264AB04D007AE005 /* AppDelegate.swift */; };
-		CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */; };
 		CABCA8D7264AB04E007AE005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D6264AB04E007AE005 /* Assets.xcassets */; };
 		CABCA8DA264AB04E007AE005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABCA8D8264AB04E007AE005 /* LaunchScreen.storyboard */; };
 		CABCA8E5264AB04F007AE005 /* EmitirBoletoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA8E4264AB04F007AE005 /* EmitirBoletoTests.swift */; };
@@ -196,7 +195,6 @@
 		CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitirBoleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CABCA8D4264AB04D007AE005 /* EmitirBoleto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmitirBoleto.xcdatamodel; sourceTree = "<group>"; };
 		CABCA8D6264AB04E007AE005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABCA8D9264AB04E007AE005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -433,6 +431,7 @@
 			children = (
 				CA87DF4A265451200074A161 /* Entities */,
 				CA87DF4826543BEC0074A161 /* CoreDataManager.swift */,
+				CABCA8D3264AB04D007AE005 /* EmitirBoleto.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -550,11 +549,9 @@
 				CABB5FC32655647A0079FFDF /* Coordinator */,
 				CABCA8FF264AB080007AE005 /* Scenes */,
 				CABCA8CA264AB04D007AE005 /* AppDelegate.swift */,
-				CABCA8CC264AB04D007AE005 /* SceneDelegate.swift */,
 				CABCA8D6264AB04E007AE005 /* Assets.xcassets */,
 				CABCA8D8264AB04E007AE005 /* LaunchScreen.storyboard */,
 				CABCA8DB264AB04E007AE005 /* Info.plist */,
-				CABCA8D3264AB04D007AE005 /* EmitirBoleto.xcdatamodeld */,
 			);
 			path = EmitirBoleto;
 			sourceTree = "<group>";
@@ -1094,7 +1091,6 @@
 				CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */,
 				CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */,
 				CA0247F9265D7C7D00AE6F61 /* FailureViewController.swift in Sources */,
-				CABCA8CD264AB04D007AE005 /* SceneDelegate.swift in Sources */,
 				CA0247FD265D824400AE6F61 /* SuccessViewController.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
 			);
