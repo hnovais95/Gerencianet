@@ -36,17 +36,37 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func addItemPopup(to delegate: AddItemDelegate) {
-        let vc = AddItemPopupViewController()
-        vc.coordinator = self
-        navigationController.present(vc, animated: true, completion: nil)
-    }
-    
     func searchItem(to delegate: SearchItemDelegate) {
         let vc = SearchItemViewController()
         vc.delegate = delegate
         vc.coordinator = self
         navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func addItemPopup(to delegate: AddItemDelegate) {
+        let vc = AddItemPopupViewController()
+        vc.delegate = delegate
+        vc.coordinator = self
+        navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func editItemPopup(to delegate: AddItemDelegate) {
+        let vc = AddItemPopupViewController()
+        vc.coordinator = self
+        navigationController.present(vc, animated: true, completion: nil)
+    }
+    
+    func configureBankingBillet(to customer: CustomerModel, with items: [ItemModel]) {
+        let vc = BankingBilletViewController()
+        //vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func createCharge(to data: ChargeOneStepModel) {
+        let vc = LoadingViewController()
+        //vc.coordinator = self
+        //vc.setChargeData(data)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func back() {

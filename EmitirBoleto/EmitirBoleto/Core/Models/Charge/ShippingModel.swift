@@ -7,8 +7,8 @@
 
 struct ShippingModel: Serializable {
     
-    let name: String
-    let value: Int
+    private(set) var name: String
+    private(set) var value: Int
     
     init(_ name: String, _ value: Int) {
         self.name = name

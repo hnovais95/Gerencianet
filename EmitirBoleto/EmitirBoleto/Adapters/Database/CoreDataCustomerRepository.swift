@@ -45,7 +45,6 @@ class CoreDataCustomerRepository: CustomerRepository {
         
         customer.name = data.name
         customer.cpf = data.cpf
-        customer.birth = data.birth
         customer.phoneNumber = data.phoneNumber
         customer.email = data.email
         

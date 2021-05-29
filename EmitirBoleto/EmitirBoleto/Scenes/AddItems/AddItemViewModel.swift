@@ -12,8 +12,4 @@ class AddItemsViewModel {
     var isValid: Bool {
         return items.count > 0
     }
-    
-    func getItems() -> [ItemModel] {
-        return items
-    }
 }

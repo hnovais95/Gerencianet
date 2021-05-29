@@ -28,11 +28,6 @@ class AddItemsViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     private var viewModel = AddItemsViewModel()
-    private var items: [ItemModel] = [] {
-        didSet {
-            viewModel.items = items
-        }
-    }
     
     
     // MARK: Member methods
@@ -61,7 +56,10 @@ class AddItemsViewController: UIViewController {
     
     @objc
     private func handleTapNextButton(_ sender: UIButton) {
-       // implementação
+        if viewModel.isValid {
+            guard let customer = viewModel.customer else { return }
+            coordinator?.configureBankingBillet(to: customer, with: viewModel.items)
+        }
     }
 }
 
@@ -72,17 +70,17 @@ extension AddItemsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
         let minNumberOfCells = 2  //(empty cell or item detail cells) + item action cell
-        return max(minNumberOfCells, items.count + 1)
+        return max(minNumberOfCells, viewModel.items.count + 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         
-        if (items.count == 0) && (indexPath.row == 0) {
+        if (viewModel.items.count == 0) && (indexPath.row == 0) {
             cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.identifier) as! EmptyTableViewCell
-        } else if indexPath.row < items.count {
+        } else if indexPath.row < viewModel.items.count {
             cell = tableView.dequeueReusableCell(withIdentifier: ItemDetailsTableViewCell.identifier) as! ItemDetailsTableViewCell
-            let item = items[indexPath.section]
+            let item = viewModel.items[indexPath.section]
             (cell as! ItemDetailsTableViewCell).prepare(with: item)
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.identifier) as! ButtonsTableViewCell
@@ -94,23 +92,7 @@ extension AddItemsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func reloadData() {
         tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: items.count, section: 0), at: .bottom, animated: true)
-    }
-}
-
-extension AddItemsViewController: AddItemDelegate {
-    
-    func didAddItem(item: ItemModel) {
-        items.append(item)
-        reloadData()
-    }
-}
-
-extension AddItemsViewController: SearchItemDelegate {
-    
-    func didSelectItem(item: ItemModel) {
-        items.append(item)
-        reloadData()
+        tableView.scrollToRow(at: IndexPath(row: viewModel.items.count, section: 0), at: .bottom, animated: true)
     }
 }
 
@@ -122,5 +104,25 @@ extension AddItemsViewController: ButtonsCellDelegate {
     
     func didTapSearchItemButton() {
         coordinator?.searchItem(to: self)
+    }
+    
+    func addItem(_ item: ItemModel) {
+        viewModel.items.append(item)
+        reloadData()
+        nextButton.setEnable(viewModel.isValid)
+    }
+}
+
+extension AddItemsViewController: AddItemDelegate {
+    
+    func didAddItem(item: ItemModel) {
+        addItem(item)
+    }
+}
+
+extension AddItemsViewController: SearchItemDelegate {
+    
+    func didSelectItem(item: ItemModel) {
+        addItem(item)
     }
 }

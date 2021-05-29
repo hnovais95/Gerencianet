@@ -38,9 +38,19 @@ class CustomersTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         iconView.layer.borderWidth = 1.0
-        iconView.layer.borderColor = Constants.Color.azul.cgColor
         iconView.layer.masksToBounds = true
         iconView.layer.cornerRadius = iconView.frame.width / 2
+        iconView.layer.borderColor = Constants.Color.azulEscuro.cgColor
+    }
+    
+    private func setIconBackgroundColorToNaturalPerson() {
+        iconView.layer.backgroundColor = UIColor.white.cgColor
+        iconTitleLabel.textColor = Constants.Color.azulEscuro
+    }
+    
+    private func setIconBackgroundColorToJuridicalPerson() {
+        iconView.layer.backgroundColor = Constants.Color.azulClaro.cgColor
+        iconTitleLabel.textColor = UIColor.white
     }
     
     
@@ -48,8 +58,14 @@ class CustomersTableViewCell: UITableViewCell {
     
     func prepare(with customer: CustomerModel) {
         nameLabel.text = customer.name
-        identifierLabel.text = customer.isJuridicalPerson() ? customer.juridicalPerson?.cnpj : customer.cpf
+        identifierLabel.text = customer.isJuridicalPerson ? customer.juridicalPerson?.cnpj : customer.cpf
         iconTitleLabel.text = Helper.getInitialsName(customer.name)
+        
+        if customer.isJuridicalPerson {
+            setIconBackgroundColorToJuridicalPerson()
+        } else {
+            setIconBackgroundColorToNaturalPerson()
+        }
     }
 }
 

@@ -6,6 +6,8 @@ target 'EmitirBoleto' do
   use_frameworks!
 
   # Pods for EmitirBoleto
+  pod 'Alamofire'
+  pod 'CPF-CNPJ-Validator'
 
 
   target 'EmitirBoletoTests' do

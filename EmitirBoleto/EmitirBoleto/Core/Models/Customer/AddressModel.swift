@@ -7,20 +7,20 @@
 
 struct AddressModel: Serializable {
     
-    let street: String
-    let number: Int
-    let neighborhood: String
-    let zipCode: String
-    let city: String
-    let complement: String
-    let state: String
+    private(set) var street: String
+    private(set) var number: Int
+    private(set) var neighborhood: String
+    private(set) var zipCode: String
+    private(set) var city: String
+    private(set) var complement: String?
+    private(set) var state: String
     
     init(_ street: String,
          _ number: Int,
          _ neighborhood: String,
          _ zipCode: String,
          _ city: String,
-         _ complement: String,
+         _ complement: String? = nil,
          _ state: String) {
         self.street = street
         self.number = number

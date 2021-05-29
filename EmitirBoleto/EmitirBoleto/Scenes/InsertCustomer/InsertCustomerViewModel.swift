@@ -9,8 +9,6 @@ import Foundation
 
 class InsertCustomerViewModel {
     
-    private let validator = Validator()
-    
     var name: String = ""
     var cpf: String = ""
     var corporateName: String = ""
@@ -30,9 +28,9 @@ class InsertCustomerViewModel {
     var validatedField: (Bool, Int) -> () = { _,_  in }
     
     func validadeField(_ rawValueFieldType: Int, value: String) {
-        guard let type = Validator.ValidityType(rawValue: rawValueFieldType) else { return }
+        guard let type = CustomerValidityType(rawValue: rawValueFieldType) else { return }
         
-        let result = validator.isValid(type, value: value)
+        let result = Validator.isValid(type, value: value)
         validatedField(result, rawValueFieldType)
     }
     
@@ -44,10 +42,12 @@ class InsertCustomerViewModel {
         
         var address: AddressModel?
         if includeAddress {
+            let complement: String? = self.complement != "" ? self.complement : nil // complement is optional
             address = AddressModel(street, Int(number)!, neighborhood, zipcode, city, complement, state)
         }
         
-        return CustomerModel(name, cpf, phoneNumber, "2000-01-01", email, address, juridicalPerson)
+        let email: String? = self.email != "" ? self.email : nil // email is optional
+        return CustomerModel(name, cpf, phoneNumber, email, address, juridicalPerson)
     }
 }
 
@@ -56,8 +56,8 @@ extension InsertCustomerViewModel {
     var isValid: Bool {
         var isValidJuridicalPerson: Bool {
             if isJuridicalPerson {
-                return validator.isValid(.cnpj, value: cnpj)
-                    && validator.isValid(.corporateName, value: corporateName)
+                return Validator.isValid(CustomerValidityType.cnpj, value: cnpj)
+                    && Validator.isValid(CustomerValidityType.corporateName, value: corporateName)
             } else {
                 return true
             }
@@ -65,22 +65,22 @@ extension InsertCustomerViewModel {
         
         var isValidJuridicalAddress: Bool {
             if includeAddress {
-                return validator.isValid(.street, value: street)
-                    && validator.isValid(.number, value: number)
-                    && validator.isValid(.complement, value: complement)
-                    && validator.isValid(.neighborhood, value: neighborhood)
-                    && validator.isValid(.zipcode, value: zipcode)
-                    && validator.isValid(.state, value: state)
-                    && validator.isValid(.city, value: city)
+                return Validator.isValid(CustomerValidityType.street, value: street)
+                    && Validator.isValid(CustomerValidityType.number, value: number)
+                    && Validator.isValid(CustomerValidityType.complement, value: complement)
+                    && Validator.isValid(CustomerValidityType.neighborhood, value: neighborhood)
+                    && Validator.isValid(CustomerValidityType.zipcode, value: zipcode)
+                    && Validator.isValid(CustomerValidityType.state, value: state)
+                    && Validator.isValid(CustomerValidityType.city, value: city)
             } else {
                 return true
             }
         }
         
-        return validator.isValid(.name, value: name)
-            && validator.isValid(.cpf, value: cpf)
-            && validator.isValid(.phoneNumber, value: phoneNumber)
-            && validator.isValid(.email, value: email)
+        return Validator.isValid(CustomerValidityType.name, value: name)
+            && Validator.isValid(CustomerValidityType.cpf, value: cpf)
+            && Validator.isValid(CustomerValidityType.phoneNumber, value: phoneNumber)
+            && Validator.isValid(CustomerValidityType.email, value: email)
             && isValidJuridicalPerson
             && isValidJuridicalAddress
     }

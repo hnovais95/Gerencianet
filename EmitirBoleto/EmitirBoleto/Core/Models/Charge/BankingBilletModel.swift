@@ -7,8 +7,8 @@
 
 struct BankingBilletModel: Serializable {
     
-    var customer: CustomerModel?
-    let expireAt: String
+    private(set) var customer: CustomerModel?
+    private(set) var expireAt: String
     
     init(customer: CustomerModel? = nil, expireAt: String) {
         self.customer = customer

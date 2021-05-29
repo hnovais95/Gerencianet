@@ -66,6 +66,9 @@
 		CA8A56B12661749500E95AB5 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B02661749500E95AB5 /* AddItemViewModel.swift */; };
 		CA8A56B426617E4D00E95AB5 /* AddItemPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B326617E4D00E95AB5 /* AddItemPopupViewModel.swift */; };
 		CA8A56B626618D3D00E95AB5 /* SearchItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B526618D3D00E95AB5 /* SearchItemViewModel.swift */; };
+		CA8A56BB2661B1C900E95AB5 /* ValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */; };
+		CA8A56BD2661B20000E95AB5 /* CustomerValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */; };
+		CA8A56BF2661B2B100E95AB5 /* ItemValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -189,6 +192,9 @@
 		CA8A56B02661749500E95AB5 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 		CA8A56B326617E4D00E95AB5 /* AddItemPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopupViewModel.swift; sourceTree = "<group>"; };
 		CA8A56B526618D3D00E95AB5 /* SearchItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewModel.swift; sourceTree = "<group>"; };
+		CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityType.swift; sourceTree = "<group>"; };
+		CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerValidityType.swift; sourceTree = "<group>"; };
+		CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidityType.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
@@ -454,19 +460,19 @@
 		CA87DF9726545EFE0074A161 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				CA87DFA0265497930074A161 /* Helpers */,
+				CA87DFA0265497930074A161 /* Mappers */,
 				CA87DF9826545F270074A161 /* CoreDataCustomerRepository.swift */,
 				CA87DFA1265497C90074A161 /* CoreDataItemRepository.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
 		};
-		CA87DFA0265497930074A161 /* Helpers */ = {
+		CA87DFA0265497930074A161 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
 				CA87DF9A2654755D0074A161 /* EntityMapper.swift */,
 			);
-			path = Helpers;
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 		CA8A56B22661757300E95AB5 /* Components */ = {
@@ -494,6 +500,34 @@
 				CA1859C0265D1804001F821C /* EditItemPopupViewController.xib */,
 			);
 			path = EditItemPopup;
+			sourceTree = "<group>";
+		};
+		CA8A56B92661B1AB00E95AB5 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				CA8A56C12661B67D00E95AB5 /* ValidityTypes */,
+				CA3B2CFE265EC82A0081BF48 /* Validator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		CA8A56C02661B65E00E95AB5 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CA8A56A226610DED00E95AB5 /* BindingTextField.swift */,
+				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CA8A56C12661B67D00E95AB5 /* ValidityTypes */ = {
+			isa = PBXGroup;
+			children = (
+				CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */,
+				CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */,
+				CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */,
+			);
+			path = ValidityTypes;
 			sourceTree = "<group>";
 		};
 		CABB5FC32655647A0079FFDF /* Coordinator */ = {
@@ -708,9 +742,8 @@
 				CA25553D2652F7A100F75E20 /* Constants.swift */,
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
-				CA3B2CFE265EC82A0081BF48 /* Validator.swift */,
-				CA8A56A226610DED00E95AB5 /* BindingTextField.swift */,
-				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
+				CA8A56C02661B65E00E95AB5 /* UIComponents */,
+				CA8A56B92661B1AB00E95AB5 /* Validator */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -1056,6 +1089,7 @@
 				CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */,
 				CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */,
 				CA87DFA2265497C90074A161 /* CoreDataItemRepository.swift in Sources */,
+				CA8A56BF2661B2B100E95AB5 /* ItemValidityType.swift in Sources */,
 				CAF751F8264F129000EABEFC /* Gerencianet+Authorize.swift in Sources */,
 				CA87DF9426545BE30074A161 /* Address+CoreDataClass.swift in Sources */,
 				CAF751FA264F13B700EABEFC /* AlamofireClient.swift in Sources */,
@@ -1077,7 +1111,9 @@
 				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA6DE099265BE21600FC5D19 /* ItemDetailsTableViewCell.swift in Sources */,
 				CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */,
+				CA8A56BB2661B1C900E95AB5 /* ValidityType.swift in Sources */,
 				CA2555452653300B00F75E20 /* ScheduleAuthentication.swift in Sources */,
+				CA8A56BD2661B20000E95AB5 /* CustomerValidityType.swift in Sources */,
 				CA87DF9E265480E70074A161 /* Item+CoreDataClass.swift in Sources */,
 				CA8A56B12661749500E95AB5 /* AddItemViewModel.swift in Sources */,
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,

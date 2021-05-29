@@ -17,7 +17,6 @@ extension Customer {
     }
 
     @NSManaged public var phoneNumber: String?
-    @NSManaged public var birth: String?
     @NSManaged public var email: String?
     @NSManaged public var name: String?
     @NSManaged public var cpf: String?

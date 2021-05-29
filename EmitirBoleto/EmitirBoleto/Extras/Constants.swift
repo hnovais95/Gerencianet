@@ -25,7 +25,8 @@ struct Constants {
     
     struct Color {
         static let laranja = UIColor.init(rgb: 0xF36F36)
-        static let azul = UIColor.init(rgb: 0x00B4C5)
+        static let azulClaro = UIColor.init(rgb: 0x6BC7D1)
+        static let azulEscuro = UIColor.init(rgb: 0x00B4C5)
         static let cinzaClaro = UIColor.init(rgb: 0xB8B8B8)
         static let cinzaEscuro = UIColor.init(rgb: 0x707070)
         static let bege = UIColor.init(rgb: 0xC3A523)

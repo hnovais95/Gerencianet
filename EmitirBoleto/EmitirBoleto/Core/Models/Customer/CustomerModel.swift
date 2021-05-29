@@ -7,32 +7,29 @@
 
 struct CustomerModel: Serializable {
     
-    let name: String
-    let cpf: String
-    let phoneNumber: String
-    let birth: String
-    let email: String
-    let address: AddressModel?
-    let juridicalPerson: JuridicalPersonModel?
+    private(set) var name: String
+    private(set) var cpf: String
+    private(set) var phoneNumber: String
+    private(set) var email: String?
+    private(set) var address: AddressModel?
+    private(set) var juridicalPerson: JuridicalPersonModel?
+    
+    var isJuridicalPerson: Bool {
+        return juridicalPerson != nil
+    }
     
     init(_ name: String,
          _ cpf: String,
          _ phoneNumber: String,
-         _ birth: String,
-         _ email: String,
+         _ email: String? = nil,
          _ address: AddressModel? = nil,
          _ juridicalPerson: JuridicalPersonModel? = nil) {
         self.name = name
         self.cpf = cpf
-        self.birth = birth
         self.phoneNumber = phoneNumber
         self.email = email
         self.address = address
         self.juridicalPerson = juridicalPerson
-    }
-    
-    func isJuridicalPerson() -> Bool {
-        return juridicalPerson != nil
     }
     
     static func == (lhs: CustomerModel, rhs: CustomerModel) -> Bool {
@@ -40,12 +37,11 @@ struct CustomerModel: Serializable {
     }
     
     private enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case cpf = "cpf"
+        case name
+        case cpf
         case phoneNumber = "phone_number"
-        case birth = "birth"
-        case email = "email"
-        case address = "address"
+        case email
+        case address
         case juridicalPerson = "juridical_person"
     }
 }

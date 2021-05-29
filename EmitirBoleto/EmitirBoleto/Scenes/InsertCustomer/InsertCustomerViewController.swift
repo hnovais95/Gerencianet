@@ -74,12 +74,12 @@ class InsertCustomerViewController: UIViewController {
     
     private func setupLayoutSegmentedControl() {
         segmentedControl.layer.borderWidth = 1.0
-        segmentedControl.layer.borderColor = Constants.Color.azul.cgColor
+        segmentedControl.layer.borderColor = Constants.Color.azulEscuro.cgColor
         segmentedControl.layer.masksToBounds = true
         segmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
-        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azul), for: .selected, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azulEscuro), for: .selected, barMetrics: .default)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azul], for: .normal)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
     }
     
     private func setupLayout() {
@@ -124,12 +124,14 @@ class InsertCustomerViewController: UIViewController {
     private func handleSegmentedControlChange(_ sender: UISegmentedControl) {
         juridicalPersonStackView.isHidden = sender.selectedSegmentIndex == 0
         viewModel.isJuridicalPerson = sender.selectedSegmentIndex == 1
+        self.nextButton.setEnable(viewModel.isValid)
     }
     
     @objc
     private func handleSwitchChange(_ sender: UISwitch) {
         addressStackView.isHidden = !sender.isOn
         viewModel.includeAddress = sender.isOn
+        self.nextButton.setEnable(viewModel.isValid)
     }
     
     @objc
@@ -174,7 +176,6 @@ class InsertCustomerViewController: UIViewController {
         scrollView.contentInset = contentInset
         scrollView.scrollIndicatorInsets = contentInset
     }
-    
     
     // MARK: Data binding
     
@@ -277,7 +278,7 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
         textFields[CustomerFieldType.name.rawValue].replace(withText: customer.name)
         textFields[CustomerFieldType.cpf.rawValue].replace(withText: customer.cpf)
         textFields[CustomerFieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)
-        textFields[CustomerFieldType.email.rawValue].replace(withText: customer.email)
+        textFields[CustomerFieldType.email.rawValue].replace(withText: customer.email ?? "")
         
         if let juridicalPerson = customer.juridicalPerson {
             segmentedControl.selectedSegmentIndex = 1
@@ -285,6 +286,12 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
             
             textFields[CustomerFieldType.corporateName.rawValue].replace(withText: juridicalPerson.corporateName)
             textFields[CustomerFieldType.cnpj.rawValue].replace(withText: juridicalPerson.cnpj)
+        } else {
+            segmentedControl.selectedSegmentIndex = 0
+            handleSegmentedControlChange(segmentedControl)
+            
+            textFields[CustomerFieldType.corporateName.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.cnpj.rawValue].replace(withText: "")
         }
         
         if let address = customer.address {
@@ -293,11 +300,22 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
             
             textFields[CustomerFieldType.street.rawValue].replace(withText: address.street)
             textFields[CustomerFieldType.number.rawValue].replace(withText: address.number.description)
-            textFields[CustomerFieldType.complement.rawValue].replace(withText: address.complement)
+            textFields[CustomerFieldType.complement.rawValue].replace(withText: address.complement ?? "")
             textFields[CustomerFieldType.neighborhood.rawValue].replace(withText: address.neighborhood)
             textFields[CustomerFieldType.zipcode.rawValue].replace(withText: address.zipCode)
             textFields[CustomerFieldType.state.rawValue].replace(withText: address.state)
             textFields[CustomerFieldType.city.rawValue].replace(withText: address.city)
+        } else {
+            addressSwitch.setOn(false, animated: true)
+            handleSwitchChange(addressSwitch)
+            
+            textFields[CustomerFieldType.street.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.number.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.complement.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.neighborhood.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.zipcode.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.state.rawValue].replace(withText: "")
+            textFields[CustomerFieldType.city.rawValue].replace(withText: "")
         }
     }
 }

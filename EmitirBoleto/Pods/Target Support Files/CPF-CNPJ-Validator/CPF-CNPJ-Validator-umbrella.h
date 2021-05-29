@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ResolverVersionNumber;
-FOUNDATION_EXPORT const unsigned char ResolverVersionString[];
+FOUNDATION_EXPORT double CPF_CNPJ_ValidatorVersionNumber;
+FOUNDATION_EXPORT const unsigned char CPF_CNPJ_ValidatorVersionString[];
 

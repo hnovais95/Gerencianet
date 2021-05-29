@@ -23,7 +23,7 @@ class EntityMapper {
                                            data.address!.neighborhood!,
                                            data.address!.zipCode!,
                                            data.address!.city!,
-                                           data.address!.complement!,
+                                           data.address!.complement,
                                            data.address!.state!)
                 }
                 
@@ -36,8 +36,7 @@ class EntityMapper {
                 return CustomerModel(data.name!,
                                      data.cpf!,
                                      data.phoneNumber!,
-                                     data.birth!,
-                                     data.email!,
+                                     data.email,
                                      address,
                                      juridicalPerson) as? T
             }

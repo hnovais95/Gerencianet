@@ -7,8 +7,8 @@
 
 struct JuridicalPersonModel: Serializable {
     
-    let corporateName: String
-    let cnpj: String
+    private(set) var corporateName: String
+    private(set) var cnpj: String
     
     init(_ corporateName: String, _ cnpj: String) {
         self.corporateName = corporateName

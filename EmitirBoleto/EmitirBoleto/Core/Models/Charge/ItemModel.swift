@@ -7,9 +7,9 @@
 
 struct ItemModel: Serializable {
     
-    let name: String
-    let value: Int
-    var amount: Int
+    private(set) var name: String
+    private(set) var value: Int
+    private(set) var amount: Int
     var total: Int {
         return value * amount
     }
@@ -21,11 +21,7 @@ struct ItemModel: Serializable {
     }
     
     init(_ name: String, _ value: Int) {
-        self.init(name, value, 0)
-    }
-    
-    mutating func setAmount(_ amount: Int) {
-        self.amount = amount
+        self.init(name, value, 1)
     }
     
     static func == (lhs: ItemModel, rhs: ItemModel) -> Bool {
