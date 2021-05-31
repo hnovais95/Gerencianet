@@ -44,7 +44,7 @@ class EntityMapper {
             if data is Item {
                 let data = data as! Item
                 
-                return ItemModel(data.name!, Int(data.value), 0) as? T
+                return ItemModel(data.name!, Int(data.value)) as? T
             }
         default:
             return nil

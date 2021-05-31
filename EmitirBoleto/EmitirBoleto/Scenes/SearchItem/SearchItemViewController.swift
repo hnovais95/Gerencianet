@@ -9,7 +9,7 @@ import UIKit
 
 protocol SearchItemDelegate: AnyObject {
     
-    func didSelectItem(item: ItemModel)
+    func didSelectItem(_ item: ItemModel)
 }
 
 class SearchItemViewController: UIViewController {
@@ -36,8 +36,7 @@ class SearchItemViewController: UIViewController {
     weak var delegate: SearchItemDelegate?
     private var viewModel = SearchItemViewModel()
     private var items: [ItemModel] = []
-    
-    var filteredItems: [ItemModel] = []
+    private var filteredItems: [ItemModel] = []
     
     
     // MARK: Life Cycle
@@ -56,12 +55,12 @@ class SearchItemViewController: UIViewController {
 extension SearchItemViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return filteredItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.identifier) as! ItemTableViewCell
-        let item = items[indexPath.row]
+        let item = filteredItems[indexPath.row]
         cell.prepare(with: item)
         return cell
     }
@@ -69,7 +68,7 @@ extension SearchItemViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = filteredItems[indexPath.row]
-        delegate?.didSelectItem(item: item)
+        delegate?.didSelectItem(item)
         coordinator?.dismiss()
     }
 }

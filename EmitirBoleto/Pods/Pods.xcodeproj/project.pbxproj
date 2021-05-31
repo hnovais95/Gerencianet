@@ -101,7 +101,7 @@
 
 /* Begin PBXFileReference section */
 		011DFF63F37558C00B7B4727739F5FCF /* Pods-EmitirBoleto-EmitirBoletoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EmitirBoleto-EmitirBoletoUITests.modulemap"; sourceTree = "<group>"; };
-		1475B8B4EAA489EF58D91B000D0030D7 /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EmitirBoleto_EmitirBoletoUITests.framework; path = "Pods-EmitirBoleto-EmitirBoletoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1475B8B4EAA489EF58D91B000D0030D7 /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto_EmitirBoletoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE42F220431A1E47DE3E24918E8CD7A /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		1D9B9A70FFE93864240D0C11A0CE0696 /* Pods-EmitirBoleto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EmitirBoleto.modulemap"; sourceTree = "<group>"; };
 		1F4F61EB18B583EBC8F66D247DF5CCC7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		25FC39E3A3891E546235A962A0E6C775 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		292AE1EEBE2413970E88CABA7E25D6C1 /* Pods-EmitirBoleto-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EmitirBoleto-Info.plist"; sourceTree = "<group>"; };
 		2D66399EC2145F20201ED48832192737 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
-		35F5B25E4B1B237052CC582DA7AB2C14 /* Pods_EmitirBoleto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EmitirBoleto.framework; path = "Pods-EmitirBoleto.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35F5B25E4B1B237052CC582DA7AB2C14 /* Pods_EmitirBoleto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3736AF5D59655191563EB68C54FB0B9F /* CPF-CNPJ-Validator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CPF-CNPJ-Validator.release.xcconfig"; sourceTree = "<group>"; };
 		377A2BF303CBF829DFDCC008D07E0F3A /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		3B3A69ECD375DEAA713AF5F56A22A629 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		55EF073AB1CB51A5BF6E250106F3F59D /* Pods-EmitirBoleto-EmitirBoletoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EmitirBoleto-EmitirBoletoUITests-Info.plist"; sourceTree = "<group>"; };
 		56415C47BA2A2519D860D7DC6AA68EFA /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		5D02BC165DD56A140F5735F8554BBEBB /* Pods-EmitirBoleto-EmitirBoletoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EmitirBoleto-EmitirBoletoUITests-dummy.m"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCEC097D918AA8C25842CCFCC0E09D6 /* Pods-EmitirBoleto-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EmitirBoleto-umbrella.h"; sourceTree = "<group>"; };
 		5DE5B03E7E2B436D9324A7ADBAD21F58 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		63FD736BEB653F9A24A8AE9CD12E7C58 /* Pods-EmitirBoleto-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EmitirBoleto-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -140,16 +140,16 @@
 		771860F666A618FF88CC07131A201F7B /* Pods-EmitirBoleto-EmitirBoletoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EmitirBoleto-EmitirBoletoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		79D7191BC310452C7404F60A4801F1F3 /* CPF-CNPJ-Validator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CPF-CNPJ-Validator.debug.xcconfig"; sourceTree = "<group>"; };
 		81BE7D5139DBC207DF4DE24E26E50B63 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		866D8F99D50154CD616B2199F016DB67 /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EmitirBoletoTests.framework; path = "Pods-EmitirBoletoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		866D8F99D50154CD616B2199F016DB67 /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoletoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		9064B7FBCD1B9253FDF9ACB189B46D2B /* CPF_CNPJ_Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CPF_CNPJ_Validator.framework; path = "CPF-CNPJ-Validator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9064B7FBCD1B9253FDF9ACB189B46D2B /* CPF_CNPJ_Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPF_CNPJ_Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		911A3149754E2C9A420792C8F5930CAF /* Pods-EmitirBoletoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EmitirBoletoTests.release.xcconfig"; sourceTree = "<group>"; };
 		9514515624F6076CA2E401183DA347FD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		97000E41FD80D35699A1BC6F2B266132 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		998D96E98F1676E0BB9640D11DB7D43A /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A78219C25DCAA469584F495A9DAF3B3 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		9CE7803141382CEEBC528A4277541EF1 /* Pods-EmitirBoletoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EmitirBoletoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD92133F43F9765919D9D572EDB15AC /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		A477FCDCB67EFF746F78B4699347CDF3 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		A5A5D49BD7121D4503B643EFE900F489 /* Pods-EmitirBoletoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EmitirBoletoTests.modulemap"; sourceTree = "<group>"; };
@@ -281,7 +281,6 @@
 				C04D182F29E817B779D3ADD4B17BF43C /* Validation.swift */,
 				C9CB2BF0266FD46A9A1BD629CF8FBF47 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -420,7 +419,6 @@
 				F8EEDD1A6C1498759F471CC0F4DF715A /* CPF-CNPJ-Validator.swift */,
 				A7D75100773ECFB62815C7555C3C1EAB /* Support Files */,
 			);
-			name = "CPF-CNPJ-Validator";
 			path = "CPF-CNPJ-Validator";
 			sourceTree = "<group>";
 		};
@@ -873,7 +871,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CPF-CNPJ-Validator/CPF-CNPJ-Validator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CPF-CNPJ-Validator/CPF-CNPJ-Validator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -973,7 +971,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CPF-CNPJ-Validator/CPF-CNPJ-Validator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CPF-CNPJ-Validator/CPF-CNPJ-Validator-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,20 +7,48 @@
 
 import UIKit
 
+protocol EditItemDelegate: AnyObject {
+    
+    func didEditItem(_ oldItem: ItemModel, _ newItem: ItemModel)
+}
+
 class EditItemPopupViewController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var valueTextField: UITextField!
-    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet var textFields: [BindingTextField]!
+    @IBOutlet var validationViews: [UIView]!
+    @IBOutlet var errorMessageLabels: [UILabel]!
+ 
     @IBOutlet weak var decreaseButton: UIButton!
     @IBOutlet weak var increaseButton: UIButton!
     @IBOutlet weak var cancelButton: BackButton!
     @IBOutlet weak var editButton: NextButton!
     
+    @IBOutlet weak var popupView: UIView!
+    
+
+    // MARK: Member types
+    
+    private enum ItemFieldType: Int, CaseIterable {
+        case name, value, amount
+    }
+    
+    // MARK: Member variables
+    
+    weak var coordinator: MainCoordinator?
+    weak var delegate: EditItemDelegate?
+    private var viewModel = EditItemPopupViewModel()
+    
+    
+    // MARK: Public methods
+    
+    func setItem(_ item: ItemModel) {
+        viewModel.oldItem = item
+        textFields[ItemFieldType.name.rawValue].insertText(item.name)
+        textFields[ItemFieldType.value.rawValue].insertText(item.value.description)
+        textFields[ItemFieldType.amount.rawValue].replace(withText: item.amount.description)
+    }
     
     // MARK: Life Cycle
     
@@ -30,15 +58,17 @@ class EditItemPopupViewController: UIViewController {
         self.decreaseButton.addTarget(self, action: #selector(self.handleDecreaseButton(sender:)), for: .touchUpInside)
         self.increaseButton.addTarget(self, action: #selector(self.handleIncreaseButton(sender:)), for: .touchUpInside)
         self.cancelButton.addTarget(self, action: #selector(self.handleCancelButton(sender:)), for: .touchUpInside)
-        self.editButton.addTarget(self, action: #selector(self.handleEditButton(sender:)), for: .touchUpInside)
+        self.editButton.addTarget(self, action: #selector(self.handleEditItem), for: .touchUpInside)
         
         setupLayout()
+        bindTextFields()
+        observeEvents()
     }
     
     
-    // MARK: Life Cycle
+    // MARK: Layout
     
-    func setupLayout() {
+    private func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
     }
@@ -46,25 +76,117 @@ class EditItemPopupViewController: UIViewController {
     
     // MARK: Handlers
     
-    @objc
-    func handleDecreaseButton(sender: UIButton) {
-        guard let amount = (amountTextField.text as NSString?)?.integerValue else { return }
-        amountTextField.text = max(0, amount - 1).description
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    private func observeEvents() {
+        viewModel.validatedField = { [unowned self] result, indexField in
+            guard let field = ItemFieldType(rawValue: indexField) else { return }
+            guard let value = textFields[field.rawValue].text else { return }
+            
+            // there is no validation view and error message for amount field
+            let validationLine = field != .amount ? validationViews[field.rawValue] : nil
+            let errorMessage = field != .amount ? errorMessageLabels[field.rawValue] : nil
+               
+            if value.isEmpty {
+                validationLine?.backgroundColor = Constants.Color.cinzaClaro
+                errorMessage?.alpha = 0
+            }
+            else if result == true {
+                validationLine?.backgroundColor = Constants.Color.verde
+                errorMessage?.alpha = 0
+            } else {
+                validationLine?.backgroundColor = Constants.Color.vermelhoEscuro
+                errorMessage?.alpha = 1
+            }
+        }
     }
     
     @objc
-    func handleIncreaseButton(sender: UIButton) {
-        guard let amount = (amountTextField.text as NSString?)?.integerValue else { return }
-        amountTextField.text = max(0, amount + 1).description
+    private func handleDecreaseButton(sender: UIButton) {
+        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
     }
     
     @objc
-    func handleCancelButton(sender: UIButton) {
+    private func handleIncreaseButton(sender: UIButton) {
+        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
+    }
+    
+    @objc
+    private func handleCancelButton(sender: UIButton) {
+        coordinator?.dismiss()
+    }
+    
+    @objc
+    private func handleEditItem() {
+        guard let oldItem = viewModel.oldItem else { return }
+        let newItem = viewModel.getItem()
+        delegate?.didEditItem(oldItem, newItem)
+        coordinator?.dismiss()
+    }
+    
+    
+    // MARK: Data binding
+    
+    private func bindTextFields() {
+        for (index, textField) in textFields.enumerated() {
+            if let field = ItemFieldType(rawValue: index) {
+                switch field {
+                case .name:
+                    textField.bind { [weak self] in
+                        self?.viewModel.validadeField(field.rawValue, value: $0)
+                        self?.viewModel.name = $0
+                        self?.editButton.setEnable(self?.viewModel.isValid ?? false)
+                    }
+                case .value:
+                    textField.bind { [weak self] in
+                        self?.viewModel.validadeField(field.rawValue, value: $0)
+                        self?.viewModel.value = $0
+                        self?.editButton.setEnable(self?.viewModel.isValid ?? false)
+                    }
+                case .amount:
+                    textField.bind { [weak self] in
+                        self?.viewModel.validadeField(field.rawValue, value: $0)
+                        self?.viewModel.amount = $0
+                        self?.editButton.setEnable(self?.viewModel.isValid ?? false)
+                    }
+                }
+                
+                textField.delegate = self
+            }
+        }
+    }
+}
+
+
+// MARK: Delegates
+
+extension EditItemPopupViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        var field: ItemFieldType?
+        for (index, _) in textFields.enumerated() {
+            if textFields[index] == textField {
+                field = ItemFieldType(rawValue: index)
+            }
+        }
         
-    }
-    
-    @objc
-    func handleEditButton(sender: UIButton) {
+        guard var field = field else { return false }
         
+        switch field {
+        case .name:
+            field.next()
+            textFields[field.rawValue].becomeFirstResponder()
+        case .value:
+            handleEditItem()
+            textFields[field.rawValue].resignFirstResponder()
+        default:
+            break
+        }
+        
+        return true
     }
 }

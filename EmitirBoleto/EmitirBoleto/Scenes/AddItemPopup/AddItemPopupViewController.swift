@@ -9,7 +9,7 @@ import UIKit
 
 protocol AddItemDelegate: AnyObject {
     
-    func didAddItem(item: ItemModel)
+    func didAddItem(_ item: ItemModel)
 }
 
 class AddItemPopupViewController: UIViewController {
@@ -59,7 +59,7 @@ class AddItemPopupViewController: UIViewController {
     
     // MARK: Layout
     
-    func setupLayout() {
+    private func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
     }
@@ -95,26 +95,26 @@ class AddItemPopupViewController: UIViewController {
     }
     
     @objc
-    func handleDecreaseButton(sender: UIButton) {
+    private func handleDecreaseButton(sender: UIButton) {
         guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
         textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
     }
     
     @objc
-    func handleIncreaseButton(sender: UIButton) {
+    private func handleIncreaseButton(sender: UIButton) {
         guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
         textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
     }
     
     @objc
-    func handleCancelButton(sender: UIButton) {
+    private func handleCancelButton(sender: UIButton) {
         coordinator?.dismiss()
     }
     
     @objc
-    func handleAddItem() {
+    private func handleAddItem() {
         let item = viewModel.getItem()
-        delegate?.didAddItem(item: item)
+        delegate?.didAddItem(item)
         coordinator?.dismiss()
     }
     

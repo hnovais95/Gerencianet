@@ -1,15 +1,17 @@
 //
-//  AddItemPopupViewModel.swift
+//  EditItemPopupViewModel.swift
 //  EmitirBoleto
 //
-//  Created by Heitor Novais | Gerencianet on 28/05/21.
+//  Created by Heitor Novais | Gerencianet on 31/05/21.
 //
 
 import Foundation
 
-class AddItemPopupViewModel {
+class EditItemPopupViewModel {
     
     let validator = ItemValidator()
+    
+    var oldItem: ItemModel?
     
     var name: String = ""
     var value: String = ""

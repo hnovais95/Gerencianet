@@ -274,7 +274,7 @@ class InsertCustomerViewController: UIViewController {
 
 extension InsertCustomerViewController: SearchCustomerDelegate {
     
-    func didSelectCustomer(customer: CustomerModel) {
+    func didSelectCustomer(_ customer: CustomerModel) {
         textFields[CustomerFieldType.name.rawValue].replace(withText: customer.name)
         textFields[CustomerFieldType.cpf.rawValue].replace(withText: customer.cpf)
         textFields[CustomerFieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)

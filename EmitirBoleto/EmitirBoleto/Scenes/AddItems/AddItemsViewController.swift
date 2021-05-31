@@ -30,7 +30,7 @@ class AddItemsViewController: UIViewController {
     private var viewModel = AddItemsViewModel()
     
     
-    // MARK: Member methods
+    // MARK: Public methods
     
     func setCustomer(_ customer: CustomerModel) {
         viewModel.customer = customer
@@ -61,6 +61,24 @@ class AddItemsViewController: UIViewController {
             coordinator?.configureBankingBillet(to: customer, with: viewModel.items)
         }
     }
+    
+    private func addItem(_ item: ItemModel) {
+        viewModel.addItem(item)
+        reloadData()
+        nextButton.setEnable(viewModel.isValid)
+    }
+    
+    private func editItem(_ oldItem: ItemModel, _ newItem: ItemModel) {
+        viewModel.editItem(oldItem, newItem)
+        reloadData()
+        nextButton.setEnable(viewModel.isValid)
+    }
+    
+    private func removeItem(_ item: ItemModel) {
+        viewModel.removeItem(item)
+        reloadData()
+        nextButton.setEnable(viewModel.isValid)
+    }
 }
 
 
@@ -80,8 +98,9 @@ extension AddItemsViewController: UITableViewDelegate, UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.identifier) as! EmptyTableViewCell
         } else if indexPath.row < viewModel.items.count {
             cell = tableView.dequeueReusableCell(withIdentifier: ItemDetailsTableViewCell.identifier) as! ItemDetailsTableViewCell
-            let item = viewModel.items[indexPath.section]
+            let item = viewModel.items[indexPath.row]
             (cell as! ItemDetailsTableViewCell).prepare(with: item)
+            (cell as! ItemDetailsTableViewCell).delegate = self
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: ButtonsTableViewCell.identifier) as! ButtonsTableViewCell
             (cell as! ButtonsTableViewCell).delegate = self
@@ -105,24 +124,50 @@ extension AddItemsViewController: ButtonsCellDelegate {
     func didTapSearchItemButton() {
         coordinator?.searchItem(to: self)
     }
-    
-    func addItem(_ item: ItemModel) {
-        viewModel.items.append(item)
-        reloadData()
-        nextButton.setEnable(viewModel.isValid)
-    }
 }
 
 extension AddItemsViewController: AddItemDelegate {
     
-    func didAddItem(item: ItemModel) {
+    func didAddItem(_ item: ItemModel) {
         addItem(item)
     }
 }
 
 extension AddItemsViewController: SearchItemDelegate {
     
-    func didSelectItem(item: ItemModel) {
+    func didSelectItem(_ item: ItemModel) {
         addItem(item)
+    }
+}
+
+extension AddItemsViewController: ItemDetailsDelegate {
+    
+    func didLongPress(item: ItemModel) {
+        showActionSheet(item)
+    }    
+    
+    func showActionSheet(_ item: ItemModel) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let editAction = UIAlertAction(title: "Editar", style: .default) { [unowned self] _ in
+            self.coordinator?.editItemPopup(to: self, withItem: item)
+        }
+        let removeAction = UIAlertAction(title: "Remover", style: .destructive) { [unowned self] _ in
+            self.removeItem(item)
+        }
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        alertController.addAction(editAction)
+        alertController.addAction(removeAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)        
+    }
+}
+
+extension AddItemsViewController: EditItemDelegate {
+    
+    func didEditItem(_ oldItem: ItemModel, _ newItem: ItemModel) {
+        editItem(oldItem, newItem)
     }
 }

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ItemDetailsDelegate {
+    
+    func didLongPress(item: ItemModel)
+}
+
 class ItemDetailsTableViewCell: UITableViewCell {    
     
     // MARK: Initializer
@@ -26,12 +31,19 @@ class ItemDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var view: UIView!
     
     
+    // MARK: Member variables
+    
+    var item: ItemModel?
+    var delegate: ItemDetailsDelegate?
+    
+    
     // MARK: Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupLayout()
+        setupLongPressGesture()
     }
     
     
@@ -40,15 +52,30 @@ class ItemDetailsTableViewCell: UITableViewCell {
     func setupLayout() {
         view.layer.borderWidth = 1.0
         view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
+        selectionStyle = .none
+    }
+    
+    func setupLongPressGesture() {
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        longPressGesture.minimumPressDuration = 0.5 // 0.5 second press
+        longPressGesture.delegate = self
+        addGestureRecognizer(longPressGesture)
     }
     
     
     // MARK: Handlers
     
     func prepare(with item: ItemModel) {
+        self.item = item
         nameLabel.text = item.name
         valueLabel.text = Helper.getPrice(item.value)
         amountLabel.text = item.amount.description
         totalLabel.text = Helper.getPrice(item.total)
+    }
+    
+    @objc
+    func handleLongPress() {
+        guard let item = item else { return }
+        delegate?.didLongPress(item: item)
     }
 }

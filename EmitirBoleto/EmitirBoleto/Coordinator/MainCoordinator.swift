@@ -50,10 +50,12 @@ class MainCoordinator: Coordinator {
         navigationController.present(vc, animated: true, completion: nil)
     }
     
-    func editItemPopup(to delegate: AddItemDelegate) {
-        let vc = AddItemPopupViewController()
+    func editItemPopup(to delegate: EditItemDelegate, withItem item: ItemModel) {
+        let vc = EditItemPopupViewController()
+        vc.delegate = delegate
         vc.coordinator = self
         navigationController.present(vc, animated: true, completion: nil)
+        vc.setItem(item)
     }
     
     func configureBankingBillet(to customer: CustomerModel, with items: [ItemModel]) {

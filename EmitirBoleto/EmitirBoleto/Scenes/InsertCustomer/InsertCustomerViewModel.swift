@@ -9,6 +9,8 @@ import Foundation
 
 class InsertCustomerViewModel {
     
+    let validator = CustomerValidator()
+    
     var name: String = ""
     var cpf: String = ""
     var corporateName: String = ""
@@ -27,11 +29,9 @@ class InsertCustomerViewModel {
     
     var validatedField: (Bool, Int) -> () = { _,_  in }
     
-    func validadeField(_ rawValueFieldType: Int, value: String) {
-        guard let type = CustomerValidityType(rawValue: rawValueFieldType) else { return }
-        
-        let result = Validator.isValid(type, value: value)
-        validatedField(result, rawValueFieldType)
+    func validadeField(_ rawValue: Int, value: String) {
+        let isValid = validator.validate(rawValue, value)
+        validatedField(isValid, rawValue)
     }
     
     func getCustomer() -> CustomerModel {
@@ -49,15 +49,11 @@ class InsertCustomerViewModel {
         let email: String? = self.email != "" ? self.email : nil // email is optional
         return CustomerModel(name, cpf, phoneNumber, email, address, juridicalPerson)
     }
-}
-
-extension InsertCustomerViewModel {
     
     var isValid: Bool {
         var isValidJuridicalPerson: Bool {
             if isJuridicalPerson {
-                return Validator.isValid(CustomerValidityType.cnpj, value: cnpj)
-                    && Validator.isValid(CustomerValidityType.corporateName, value: corporateName)
+                return validator.validate(.corporateName, corporateName)
             } else {
                 return true
             }
@@ -65,22 +61,22 @@ extension InsertCustomerViewModel {
         
         var isValidJuridicalAddress: Bool {
             if includeAddress {
-                return Validator.isValid(CustomerValidityType.street, value: street)
-                    && Validator.isValid(CustomerValidityType.number, value: number)
-                    && Validator.isValid(CustomerValidityType.complement, value: complement)
-                    && Validator.isValid(CustomerValidityType.neighborhood, value: neighborhood)
-                    && Validator.isValid(CustomerValidityType.zipcode, value: zipcode)
-                    && Validator.isValid(CustomerValidityType.state, value: state)
-                    && Validator.isValid(CustomerValidityType.city, value: city)
+                return validator.validate(.street, street)
+                    && validator.validate(.number, number)
+                    && validator.validate(.complement, complement)
+                    && validator.validate(.neighborhood, neighborhood)
+                    && validator.validate(.zipcode, zipcode)
+                    && validator.validate(.state, state)
+                    && validator.validate(.city, city)
             } else {
                 return true
             }
         }
         
-        return Validator.isValid(CustomerValidityType.name, value: name)
-            && Validator.isValid(CustomerValidityType.cpf, value: cpf)
-            && Validator.isValid(CustomerValidityType.phoneNumber, value: phoneNumber)
-            && Validator.isValid(CustomerValidityType.email, value: email)
+        return validator.validate(.name, name)
+            && validator.validate(.cpf, cpf)
+            && validator.validate(.phoneNumber, phoneNumber)
+            && validator.validate(.email, email)
             && isValidJuridicalPerson
             && isValidJuridicalAddress
     }

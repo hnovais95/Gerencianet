@@ -24,6 +24,10 @@ struct ItemModel: Serializable {
         self.init(name, value, 1)
     }
     
+    mutating func increaseAmount(_ increment: Int = 1) {
+        amount += increment
+    }
+    
     static func == (lhs: ItemModel, rhs: ItemModel) -> Bool {
         return lhs.name == rhs.name && lhs.value == rhs.value
     }

@@ -9,7 +9,7 @@ import UIKit
 
 protocol SearchCustomerDelegate: AnyObject {
     
-    func didSelectCustomer(customer: CustomerModel)
+    func didSelectCustomer(_ customer: CustomerModel)
 }
 
 class SearchCustomerViewController: UIViewController {
@@ -70,7 +70,7 @@ extension SearchCustomerViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customer = filteredCustomers[indexPath.row]
-        delegate?.didSelectCustomer(customer: customer)
+        delegate?.didSelectCustomer(customer)
         coordinator?.dismiss()
     }
 }

@@ -36,7 +36,6 @@
 		CA29B52126585477004BCBFD /* SearchItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29B51F26585477004BCBFD /* SearchItemViewController.swift */; };
 		CA29B52226585477004BCBFD /* SearchItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA29B52026585477004BCBFD /* SearchItemViewController.xib */; };
 		CA29B5242658583C004BCBFD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29B5232658583C004BCBFD /* Helper.swift */; };
-		CA3B2CFF265EC82A0081BF48 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B2CFE265EC82A0081BF48 /* Validator.swift */; };
 		CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA449BAF264D67100071AEF0 /* String+Extensions.swift */; };
 		CA6DE099265BE21600FC5D19 /* ItemDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6DE097265BE21600FC5D19 /* ItemDetailsTableViewCell.swift */; };
 		CA6DE09A265BE21600FC5D19 /* ItemDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE098265BE21600FC5D19 /* ItemDetailsTableViewCell.xib */; };
@@ -66,9 +65,10 @@
 		CA8A56B12661749500E95AB5 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B02661749500E95AB5 /* AddItemViewModel.swift */; };
 		CA8A56B426617E4D00E95AB5 /* AddItemPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B326617E4D00E95AB5 /* AddItemPopupViewModel.swift */; };
 		CA8A56B626618D3D00E95AB5 /* SearchItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56B526618D3D00E95AB5 /* SearchItemViewModel.swift */; };
-		CA8A56BB2661B1C900E95AB5 /* ValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */; };
-		CA8A56BD2661B20000E95AB5 /* CustomerValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */; };
-		CA8A56BF2661B2B100E95AB5 /* ItemValidityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */; };
+		CA8F36742665191F00473673 /* ItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F36732665191F00473673 /* ItemValidator.swift */; };
+		CA8F367826651E6100473673 /* CustomerValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F367726651E6100473673 /* CustomerValidator.swift */; };
+		CA8F367B2665246600473673 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F367A2665246600473673 /* Validator.swift */; };
+		CA8F36822665609100473673 /* EditItemPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F36812665609100473673 /* EditItemPopupViewModel.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -163,7 +163,6 @@
 		CA29B51F26585477004BCBFD /* SearchItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewController.swift; sourceTree = "<group>"; };
 		CA29B52026585477004BCBFD /* SearchItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchItemViewController.xib; sourceTree = "<group>"; };
 		CA29B5232658583C004BCBFD /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		CA3B2CFE265EC82A0081BF48 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		CA449BAF264D67100071AEF0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CA6DE097265BE21600FC5D19 /* ItemDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		CA6DE098265BE21600FC5D19 /* ItemDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -192,9 +191,10 @@
 		CA8A56B02661749500E95AB5 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 		CA8A56B326617E4D00E95AB5 /* AddItemPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPopupViewModel.swift; sourceTree = "<group>"; };
 		CA8A56B526618D3D00E95AB5 /* SearchItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemViewModel.swift; sourceTree = "<group>"; };
-		CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityType.swift; sourceTree = "<group>"; };
-		CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerValidityType.swift; sourceTree = "<group>"; };
-		CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidityType.swift; sourceTree = "<group>"; };
+		CA8F36732665191F00473673 /* ItemValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidator.swift; sourceTree = "<group>"; };
+		CA8F367726651E6100473673 /* CustomerValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerValidator.swift; sourceTree = "<group>"; };
+		CA8F367A2665246600473673 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		CA8F36812665609100473673 /* EditItemPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemPopupViewModel.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
@@ -343,13 +343,13 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		CA0247F5265D79E300AE6F61 /* EmptyItem */ = {
+		CA0247F5265D79E300AE6F61 /* Empty */ = {
 			isa = PBXGroup;
 			children = (
 				CA6DE0A0265C2DB300FC5D19 /* EmptyTableViewCell.swift */,
 				CA6DE0A1265C2DB300FC5D19 /* EmptyTableViewCell.xib */,
 			);
-			path = EmptyItem;
+			path = Empty;
 			sourceTree = "<group>";
 		};
 		CA0247F6265D79F300AE6F61 /* ItemDetails */ = {
@@ -417,7 +417,7 @@
 		CA29B52B26586B5F004BCBFD /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CA0247F5265D79E300AE6F61 /* EmptyItem */,
+				CA0247F5265D79E300AE6F61 /* Empty */,
 				CA0247F6265D79F300AE6F61 /* ItemDetails */,
 				CA0247F4265D79D500AE6F61 /* Buttons */,
 			);
@@ -498,17 +498,19 @@
 			children = (
 				CA1859BF265D1804001F821C /* EditItemPopupViewController.swift */,
 				CA1859C0265D1804001F821C /* EditItemPopupViewController.xib */,
+				CA8F36812665609100473673 /* EditItemPopupViewModel.swift */,
 			);
 			path = EditItemPopup;
 			sourceTree = "<group>";
 		};
-		CA8A56B92661B1AB00E95AB5 /* Validator */ = {
+		CA8A56B92661B1AB00E95AB5 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A56C12661B67D00E95AB5 /* ValidityTypes */,
-				CA3B2CFE265EC82A0081BF48 /* Validator.swift */,
+				CA8F367A2665246600473673 /* Validator.swift */,
+				CA8F36732665191F00473673 /* ItemValidator.swift */,
+				CA8F367726651E6100473673 /* CustomerValidator.swift */,
 			);
-			path = Validator;
+			path = Validators;
 			sourceTree = "<group>";
 		};
 		CA8A56C02661B65E00E95AB5 /* UIComponents */ = {
@@ -518,16 +520,6 @@
 				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
 			);
 			path = UIComponents;
-			sourceTree = "<group>";
-		};
-		CA8A56C12661B67D00E95AB5 /* ValidityTypes */ = {
-			isa = PBXGroup;
-			children = (
-				CA8A56BA2661B1C900E95AB5 /* ValidityType.swift */,
-				CA8A56BC2661B20000E95AB5 /* CustomerValidityType.swift */,
-				CA8A56BE2661B2B100E95AB5 /* ItemValidityType.swift */,
-			);
-			path = ValidityTypes;
 			sourceTree = "<group>";
 		};
 		CABB5FC32655647A0079FFDF /* Coordinator */ = {
@@ -743,7 +735,7 @@
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
 				CA8A56C02661B65E00E95AB5 /* UIComponents */,
-				CA8A56B92661B1AB00E95AB5 /* Validator */,
+				CA8A56B92661B1AB00E95AB5 /* Validators */,
 			);
 			path = Extras;
 			sourceTree = "<group>";
@@ -814,6 +806,8 @@
 			dependencies = (
 			);
 			name = EmitirBoleto;
+			packageProductDependencies = (
+			);
 			productName = EmitirBoleto;
 			productReference = CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */;
 			productType = "com.apple.product-type.application";
@@ -888,6 +882,8 @@
 				Base,
 			);
 			mainGroup = CABCA8BE264AB04D007AE005;
+			packageReferences = (
+			);
 			productRefGroup = CABCA8C8264AB04D007AE005 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1049,6 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8F36742665191F00473673 /* ItemValidator.swift in Sources */,
 				CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */,
 				CA8A56A326610DED00E95AB5 /* BindingTextField.swift in Sources */,
 				CA1859C1265D1804001F821C /* EditItemPopupViewController.swift in Sources */,
@@ -1089,7 +1086,6 @@
 				CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */,
 				CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */,
 				CA87DFA2265497C90074A161 /* CoreDataItemRepository.swift in Sources */,
-				CA8A56BF2661B2B100E95AB5 /* ItemValidityType.swift in Sources */,
 				CAF751F8264F129000EABEFC /* Gerencianet+Authorize.swift in Sources */,
 				CA87DF9426545BE30074A161 /* Address+CoreDataClass.swift in Sources */,
 				CAF751FA264F13B700EABEFC /* AlamofireClient.swift in Sources */,
@@ -1104,16 +1100,14 @@
 				CA29B513265815F9004BCBFD /* CustomersTableViewCell.swift in Sources */,
 				CA87DF9126545BE30074A161 /* Customer+CoreDataProperties.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
-				CA3B2CFF265EC82A0081BF48 /* Validator.swift in Sources */,
 				CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */,
 				CA8A56AD26615EF100E95AB5 /* CaseIterable+Extensions.swift in Sources */,
 				CA29B5242658583C004BCBFD /* Helper.swift in Sources */,
 				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA6DE099265BE21600FC5D19 /* ItemDetailsTableViewCell.swift in Sources */,
+				CA8F36822665609100473673 /* EditItemPopupViewModel.swift in Sources */,
 				CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */,
-				CA8A56BB2661B1C900E95AB5 /* ValidityType.swift in Sources */,
 				CA2555452653300B00F75E20 /* ScheduleAuthentication.swift in Sources */,
-				CA8A56BD2661B20000E95AB5 /* CustomerValidityType.swift in Sources */,
 				CA87DF9E265480E70074A161 /* Item+CoreDataClass.swift in Sources */,
 				CA8A56B12661749500E95AB5 /* AddItemViewModel.swift in Sources */,
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
@@ -1129,6 +1123,8 @@
 				CA0247F9265D7C7D00AE6F61 /* FailureViewController.swift in Sources */,
 				CA0247FD265D824400AE6F61 /* SuccessViewController.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
+				CA8F367826651E6100473673 /* CustomerValidator.swift in Sources */,
+				CA8F367B2665246600473673 /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
