@@ -30,7 +30,7 @@ class EditItemPopupViewController: UIViewController {
 
     // MARK: Member types
     
-    private enum ItemFieldType: Int, CaseIterable {
+    private enum FieldType: Int, CaseIterable {
         case name, value, amount
     }
     
@@ -45,9 +45,9 @@ class EditItemPopupViewController: UIViewController {
     
     func setItem(_ item: ItemModel) {
         viewModel.oldItem = item
-        textFields[ItemFieldType.name.rawValue].insertText(item.name)
-        textFields[ItemFieldType.value.rawValue].insertText(item.value.description)
-        textFields[ItemFieldType.amount.rawValue].replace(withText: item.amount.description)
+        textFields[FieldType.name.rawValue].insertText(item.name)
+        textFields[FieldType.value.rawValue].insertText(item.value.description)
+        textFields[FieldType.amount.rawValue].replace(withText: item.amount.description)
     }
     
     // MARK: Life Cycle
@@ -57,8 +57,8 @@ class EditItemPopupViewController: UIViewController {
 
         self.decreaseButton.addTarget(self, action: #selector(self.handleDecreaseButton(sender:)), for: .touchUpInside)
         self.increaseButton.addTarget(self, action: #selector(self.handleIncreaseButton(sender:)), for: .touchUpInside)
-        self.cancelButton.addTarget(self, action: #selector(self.handleCancelButton(sender:)), for: .touchUpInside)
-        self.editButton.addTarget(self, action: #selector(self.handleEditItem), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(self.handleTapCancelButton(sender:)), for: .touchUpInside)
+        self.editButton.addTarget(self, action: #selector(self.handleTapEditItem), for: .touchUpInside)
         
         setupLayout()
         bindTextFields()
@@ -82,7 +82,7 @@ class EditItemPopupViewController: UIViewController {
     
     private func observeEvents() {
         viewModel.validatedField = { [unowned self] result, indexField in
-            guard let field = ItemFieldType(rawValue: indexField) else { return }
+            guard let field = FieldType(rawValue: indexField) else { return }
             guard let value = textFields[field.rawValue].text else { return }
             
             // there is no validation view and error message for amount field
@@ -105,23 +105,23 @@ class EditItemPopupViewController: UIViewController {
     
     @objc
     private func handleDecreaseButton(sender: UIButton) {
-        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
-        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
+        guard let amount = (textFields[FieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[FieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
     }
     
     @objc
     private func handleIncreaseButton(sender: UIButton) {
-        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
-        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
+        guard let amount = (textFields[FieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[FieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
     }
     
     @objc
-    private func handleCancelButton(sender: UIButton) {
+    private func handleTapCancelButton(sender: UIButton) {
         coordinator?.dismiss()
     }
     
     @objc
-    private func handleEditItem() {
+    private func handleTapEditItem() {
         guard let oldItem = viewModel.oldItem else { return }
         let newItem = viewModel.getItem()
         delegate?.didEditItem(oldItem, newItem)
@@ -133,7 +133,7 @@ class EditItemPopupViewController: UIViewController {
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
-            if let field = ItemFieldType(rawValue: index) {
+            if let field = FieldType(rawValue: index) {
                 switch field {
                 case .name:
                     textField.bind { [weak self] in
@@ -167,10 +167,10 @@ class EditItemPopupViewController: UIViewController {
 extension EditItemPopupViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        var field: ItemFieldType?
+        var field: FieldType?
         for (index, _) in textFields.enumerated() {
             if textFields[index] == textField {
-                field = ItemFieldType(rawValue: index)
+                field = FieldType(rawValue: index)
             }
         }
         
@@ -181,7 +181,6 @@ extension EditItemPopupViewController: UITextFieldDelegate {
             field.next()
             textFields[field.rawValue].becomeFirstResponder()
         case .value:
-            handleEditItem()
             textFields[field.rawValue].resignFirstResponder()
         default:
             break

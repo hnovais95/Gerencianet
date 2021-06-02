@@ -31,7 +31,7 @@ class MainCoordinator: Coordinator {
     
     func addItems(to customer: CustomerModel) {
         let vc = AddItemsViewController()
-        vc.setCustomer(customer)
+        vc.viewModel.setCustomer(customer)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
@@ -54,20 +54,22 @@ class MainCoordinator: Coordinator {
         let vc = EditItemPopupViewController()
         vc.delegate = delegate
         vc.coordinator = self
-        navigationController.present(vc, animated: true, completion: nil)
-        vc.setItem(item)
+        navigationController.present(vc, animated: true) {
+            vc.setItem(item)
+        }
     }
     
     func configureBankingBillet(to customer: CustomerModel, with items: [ItemModel]) {
         let vc = BankingBilletViewController()
-        //vc.coordinator = self
+        vc.viewModel.setCustomer(customer)
+        vc.viewModel.setItems(items)
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func createCharge(to data: ChargeOneStepModel) {
         let vc = LoadingViewController()
-        //vc.coordinator = self
-        //vc.setChargeData(data)
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     

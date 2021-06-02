@@ -9,14 +9,13 @@ import CPF_CNPJ_Validator
 
 struct CustomerValidator: Validator {
     
-    enum CustomerValidityType: Int{
+    enum CustomerValidityType: Int {
         case name, cpf, corporateName, cnpj, phoneNumber, email, street,
              number, complement, neighborhood, zipcode, state, city
     }    
     
     func validate(_ rawValue: Int, _ value: String) -> Bool {
-        guard let type = CustomerValidityType(rawValue: rawValue) else { return false }
-        
+        guard let type = CustomerValidityType(rawValue: rawValue) else { return false }        
         return validate(type, value)
     }
     

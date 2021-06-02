@@ -7,22 +7,28 @@
 
 struct ChargeOneStepModel: Serializable {
     
-    private(set) var items: [ItemModel]
-    private(set) var shippings: [ShippingModel]
     private(set) var bankingBillet: BankingBilletModel
+    private(set) var items: [ItemModel]?
+    private(set) var shippings: [ShippingModel]?
     
-    init(bankingBillet: BankingBilletModel) {
-        self.items = [ItemModel]()
-        self.shippings = [ShippingModel]()
+    init(bankingBillet: BankingBilletModel, items: [ItemModel], shippings: [ShippingModel]? = nil) {
         self.bankingBillet = bankingBillet
+        self.items = items
+        self.shippings = shippings
     }
     
     mutating func add(item: ItemModel) {
-        items.append(item)
+        if items == nil {
+            items = []
+        }
+        items?.append(item)
     }
     
     mutating func add(shipping: ShippingModel) {
-        shippings.append(shipping)
+        if shippings == nil {
+            shippings = []
+        }
+        shippings?.append(shipping)
     }
     
     private enum CodingKeys: String, CodingKey {

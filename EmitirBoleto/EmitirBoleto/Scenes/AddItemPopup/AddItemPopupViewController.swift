@@ -30,7 +30,7 @@ class AddItemPopupViewController: UIViewController {
     
     // MARK: Member types
     
-    private enum ItemFieldType: Int, CaseIterable {
+    private enum FieldType: Int, CaseIterable {
         case name, value, amount
     }
     
@@ -48,8 +48,8 @@ class AddItemPopupViewController: UIViewController {
 
         self.decreaseButton.addTarget(self, action: #selector(self.handleDecreaseButton(sender:)), for: .touchUpInside)
         self.increaseButton.addTarget(self, action: #selector(self.handleIncreaseButton(sender:)), for: .touchUpInside)
-        self.cancelButton.addTarget(self, action: #selector(self.handleCancelButton(sender:)), for: .touchUpInside)
-        self.addButton.addTarget(self, action: #selector(self.handleAddItem), for: .touchUpInside)
+        self.cancelButton.addTarget(self, action: #selector(self.handleTapCancelButton(sender:)), for: .touchUpInside)
+        self.addButton.addTarget(self, action: #selector(self.handleTapAddItem), for: .touchUpInside)
         
         setupLayout()
         bindTextFields()
@@ -73,7 +73,7 @@ class AddItemPopupViewController: UIViewController {
     
     private func observeEvents() {
         viewModel.validatedField = { [unowned self] result, indexField in
-            guard let field = ItemFieldType(rawValue: indexField) else { return }
+            guard let field = FieldType(rawValue: indexField) else { return }
             guard let value = textFields[field.rawValue].text else { return }
             
             // there is no validation view and error message for amount field
@@ -96,23 +96,23 @@ class AddItemPopupViewController: UIViewController {
     
     @objc
     private func handleDecreaseButton(sender: UIButton) {
-        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
-        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
+        guard let amount = (textFields[FieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[FieldType.amount.rawValue].replace(withText: max(1, amount - 1).description)
     }
     
     @objc
     private func handleIncreaseButton(sender: UIButton) {
-        guard let amount = (textFields[ItemFieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
-        textFields[ItemFieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
+        guard let amount = (textFields[FieldType.amount.rawValue].text as NSString?)?.integerValue else { return }
+        textFields[FieldType.amount.rawValue].replace(withText: max(1, amount + 1).description)
     }
     
     @objc
-    private func handleCancelButton(sender: UIButton) {
+    private func handleTapCancelButton(sender: UIButton) {
         coordinator?.dismiss()
     }
     
     @objc
-    private func handleAddItem() {
+    private func handleTapAddItem() {
         let item = viewModel.getItem()
         delegate?.didAddItem(item)
         coordinator?.dismiss()
@@ -123,7 +123,7 @@ class AddItemPopupViewController: UIViewController {
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
-            if let field = ItemFieldType(rawValue: index) {
+            if let field = FieldType(rawValue: index) {
                 switch field {
                 case .name:
                     textField.bind { [weak self] in
@@ -154,10 +154,10 @@ class AddItemPopupViewController: UIViewController {
 extension AddItemPopupViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        var field: ItemFieldType?
+        var field: FieldType?
         for (index, _) in textFields.enumerated() {
             if textFields[index] == textField {
-                field = ItemFieldType(rawValue: index)
+                field = FieldType(rawValue: index)
             }
         }
         
@@ -168,7 +168,6 @@ extension AddItemPopupViewController: UITextFieldDelegate {
             field.next()
             textFields[field.rawValue].becomeFirstResponder()
         case .value:
-            handleAddItem()
             textFields[field.rawValue].resignFirstResponder()
         default:
             break

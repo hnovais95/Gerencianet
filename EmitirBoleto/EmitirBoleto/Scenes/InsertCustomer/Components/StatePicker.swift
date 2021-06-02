@@ -4,20 +4,21 @@
 //
 //  Created by Heitor Novais | Gerencianet on 27/05/21.
 //
+
 import UIKit
 
-protocol StatePickerViewDelegate: AnyObject {
+protocol StatePickerDelegate: AnyObject {
     func didSelectState(state: String)
 }
 
-class StatePickerViewController: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+class StatePicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
     private let states = ["AC", "AL", "AM", "AP", "BA", "CE", "DF",
                           "ES", "GO", "MA", "MT", "MS", "MG", "PA",
                           "PB", "PR", "PE", "PI", "RJ", "RN", "RO",
                           "RS", "RR", "SC", "SE", "SP", "TO"]
     
-    weak var delegate: StatePickerViewDelegate?
+    weak var delegate: StatePickerDelegate?
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

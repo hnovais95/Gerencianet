@@ -42,11 +42,11 @@ class InsertCustomerViewModel {
         
         var address: AddressModel?
         if includeAddress {
-            let complement: String? = self.complement != "" ? self.complement : nil // complement is optional
+            let complement: String? = !self.complement.isEmpty ? self.complement : nil // complement is optional
             address = AddressModel(street, Int(number)!, neighborhood, zipcode, city, complement, state)
         }
         
-        let email: String? = self.email != "" ? self.email : nil // email is optional
+        let email: String? = !self.email.isEmpty ? self.email : nil // email is optional
         return CustomerModel(name, cpf, phoneNumber, email, address, juridicalPerson)
     }
     

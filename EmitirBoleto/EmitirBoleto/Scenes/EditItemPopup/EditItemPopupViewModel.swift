@@ -15,7 +15,7 @@ class EditItemPopupViewModel {
     
     var name: String = ""
     var value: String = ""
-    var amount: String = "1" // default minimum value
+    var amount: String = ""
     
     var isValid: Bool {
         return validator.validate(.name, name)

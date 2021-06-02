@@ -13,6 +13,10 @@ class LoadingViewController: UIViewController {
     
     
     
+    // MARK: Member variables
+    weak var coordinator: MainCoordinator?
+    private var viewModel = LoadingViewModel()
+    
     
     // MARK: Life Cycle
 

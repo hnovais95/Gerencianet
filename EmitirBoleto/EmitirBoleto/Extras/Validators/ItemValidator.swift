@@ -5,9 +5,6 @@
 //  Created by Heitor Novais | Gerencianet on 31/05/21.
 //
 
-import Foundation
-
-
 struct ItemValidator: Validator {
     
     enum ItemValidityType: Int {
@@ -15,8 +12,7 @@ struct ItemValidator: Validator {
     }
     
     func validate(_ rawValue: Int, _ value: String) -> Bool {
-        guard let type = ItemValidityType(rawValue: rawValue) else { return false }
-        
+        guard let type = ItemValidityType(rawValue: rawValue) else { return false }        
         return validate(type, value)
     }
     

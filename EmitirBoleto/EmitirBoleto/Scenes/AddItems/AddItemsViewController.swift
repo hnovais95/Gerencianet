@@ -18,6 +18,7 @@ class AddItemsViewController: UIViewController {
             tableView.register(ButtonsTableViewCell.nib(), forCellReuseIdentifier: ButtonsTableViewCell.identifier)
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.allowsSelection = false
         }
     }
     @IBOutlet weak var backButton: BackButton!
@@ -27,14 +28,7 @@ class AddItemsViewController: UIViewController {
     // MARK: Member variables
     
     weak var coordinator: MainCoordinator?
-    private var viewModel = AddItemsViewModel()
-    
-    
-    // MARK: Public methods
-    
-    func setCustomer(_ customer: CustomerModel) {
-        viewModel.customer = customer
-    }
+    var viewModel = AddItemsViewModel()
     
     
     // MARK: Life Cycle

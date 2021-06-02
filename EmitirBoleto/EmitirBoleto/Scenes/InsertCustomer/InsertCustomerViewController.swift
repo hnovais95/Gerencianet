@@ -30,7 +30,7 @@ class InsertCustomerViewController: UIViewController {
     
     // MARK: Member types
     
-    private enum CustomerFieldType: Int, CaseIterable {
+    private enum FieldType: Int, CaseIterable {
         case name, cpf, corporateName, cnpj, phoneNumber, email,
              street, number, complement, neighborhood, zipcode, state, city
     }
@@ -40,7 +40,7 @@ class InsertCustomerViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     private var viewModel = InsertCustomerViewModel()
-    private var statePickerView = StatePickerViewController()
+    private var statePicker = StatePicker()
     
     
     // MARK: Life Cycle
@@ -48,14 +48,13 @@ class InsertCustomerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChange(_:)), for: .valueChanged)
-        addressSwitch.addTarget(self, action: #selector(handleSwitchChange(_:)), for: .valueChanged)
-        nextButton.addTarget(self, action: #selector(handleNextStep), for: .touchUpInside)
-        searchCustomerButton.addTarget(self, action: #selector(handleTapSearchCustomerButton), for: .touchUpInside)
-        statePickerButton.addTarget(self, action: #selector(handleBeginSelectionState), for: .touchUpInside)
-        textFields[CustomerFieldType.state.rawValue].addTarget(self, action: #selector(handleBeginSelectionState), for: .editingDidBegin)
+        self.segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChange(_:)), for: .valueChanged)
+        self.addressSwitch.addTarget(self, action: #selector(handleSwitchChange(_:)), for: .valueChanged)
+        self.nextButton.addTarget(self, action: #selector(handleNextStep), for: .touchUpInside)
+        self.searchCustomerButton.addTarget(self, action: #selector(handleTapSearchCustomerButton), for: .touchUpInside)
+        self.statePickerButton.addTarget(self, action: #selector(handleTapStatePickerButton), for: .touchUpInside)
         
-        statePickerView.delegate = self
+        statePicker.delegate = self
         
         setupLayout()
         bindTextFields()
@@ -65,11 +64,22 @@ class InsertCustomerViewController: UIViewController {
     
     // MARK: Layout
     
-    private func setupInitialStateOfComponents() {
+    private func setupLayout() {
+        setupLayoutSegmentedControl()
+    }
+    
+    private func setupComponents() {
         juridicalPersonStackView.isHidden = true
+        
         addressStackView.isHidden = true
         addressSwitch.setOn(false, animated: false)
+        
         segmentedControl.selectedSegmentIndex = 0
+        
+        textFields[FieldType.state.rawValue].tintColor = .clear
+        textFields[FieldType.state.rawValue].inputView = createStatePickerView()        
+        
+        setupComponents()
     }
     
     private func setupLayoutSegmentedControl() {
@@ -82,9 +92,11 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
     }
     
-    private func setupLayout() {
-        setupInitialStateOfComponents()
-        setupLayoutSegmentedControl()
+    private func createStatePickerView() -> UIPickerView {
+        let pickerView = UIPickerView()
+        pickerView.delegate = statePicker
+        pickerView.dataSource = statePicker
+        return pickerView
     }
     
     
@@ -96,7 +108,7 @@ class InsertCustomerViewController: UIViewController {
     
     private func observeEvents() {
         viewModel.validatedField = { [unowned self] result, indexField in
-            guard let field = CustomerFieldType(rawValue: indexField) else { return }
+            guard let field = FieldType(rawValue: indexField) else { return }
             guard let value = textFields[field.rawValue].text else { return }
             
             let validationLine = validationViews[field.rawValue]
@@ -148,13 +160,8 @@ class InsertCustomerViewController: UIViewController {
     }
     
     @objc
-    private func handleBeginSelectionState() {
-        let pickerView = UIPickerView()
-        pickerView.delegate = statePickerView
-        pickerView.dataSource = statePickerView
-        textFields[CustomerFieldType.state.rawValue].inputView = pickerView
-        textFields[CustomerFieldType.state.rawValue].tintColor = .clear
-        textFields[CustomerFieldType.state.rawValue].becomeFirstResponder()
+    private func handleTapStatePickerButton() {
+        textFields[FieldType.state.rawValue].becomeFirstResponder()
     }
     
     @objc
@@ -181,7 +188,7 @@ class InsertCustomerViewController: UIViewController {
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
-            if let field = CustomerFieldType(rawValue: index) {
+            if let field = FieldType(rawValue: index) {
                 switch field {
                 case .name:
                     textField.bind { [weak self] in
@@ -275,76 +282,73 @@ class InsertCustomerViewController: UIViewController {
 extension InsertCustomerViewController: SearchCustomerDelegate {
     
     func didSelectCustomer(_ customer: CustomerModel) {
-        textFields[CustomerFieldType.name.rawValue].replace(withText: customer.name)
-        textFields[CustomerFieldType.cpf.rawValue].replace(withText: customer.cpf)
-        textFields[CustomerFieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)
-        textFields[CustomerFieldType.email.rawValue].replace(withText: customer.email ?? "")
+        textFields[FieldType.name.rawValue].replace(withText: customer.name)
+        textFields[FieldType.cpf.rawValue].replace(withText: customer.cpf)
+        textFields[FieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)
+        textFields[FieldType.email.rawValue].replace(withText: customer.email ?? "")
         
         if let juridicalPerson = customer.juridicalPerson {
             segmentedControl.selectedSegmentIndex = 1
             handleSegmentedControlChange(segmentedControl)
             
-            textFields[CustomerFieldType.corporateName.rawValue].replace(withText: juridicalPerson.corporateName)
-            textFields[CustomerFieldType.cnpj.rawValue].replace(withText: juridicalPerson.cnpj)
+            textFields[FieldType.corporateName.rawValue].replace(withText: juridicalPerson.corporateName)
+            textFields[FieldType.cnpj.rawValue].replace(withText: juridicalPerson.cnpj)
         } else {
             segmentedControl.selectedSegmentIndex = 0
             handleSegmentedControlChange(segmentedControl)
             
-            textFields[CustomerFieldType.corporateName.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.cnpj.rawValue].replace(withText: "")
+            textFields[FieldType.corporateName.rawValue].replace(withText: "")
+            textFields[FieldType.cnpj.rawValue].replace(withText: "")
         }
         
         if let address = customer.address {
             addressSwitch.setOn(true, animated: true)
             handleSwitchChange(addressSwitch)
             
-            textFields[CustomerFieldType.street.rawValue].replace(withText: address.street)
-            textFields[CustomerFieldType.number.rawValue].replace(withText: address.number.description)
-            textFields[CustomerFieldType.complement.rawValue].replace(withText: address.complement ?? "")
-            textFields[CustomerFieldType.neighborhood.rawValue].replace(withText: address.neighborhood)
-            textFields[CustomerFieldType.zipcode.rawValue].replace(withText: address.zipCode)
-            textFields[CustomerFieldType.state.rawValue].replace(withText: address.state)
-            textFields[CustomerFieldType.city.rawValue].replace(withText: address.city)
+            textFields[FieldType.street.rawValue].replace(withText: address.street)
+            textFields[FieldType.number.rawValue].replace(withText: address.number.description)
+            textFields[FieldType.complement.rawValue].replace(withText: address.complement ?? "")
+            textFields[FieldType.neighborhood.rawValue].replace(withText: address.neighborhood)
+            textFields[FieldType.zipcode.rawValue].replace(withText: address.zipCode)
+            textFields[FieldType.state.rawValue].replace(withText: address.state)
+            textFields[FieldType.city.rawValue].replace(withText: address.city)
         } else {
             addressSwitch.setOn(false, animated: true)
             handleSwitchChange(addressSwitch)
             
-            textFields[CustomerFieldType.street.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.number.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.complement.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.neighborhood.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.zipcode.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.state.rawValue].replace(withText: "")
-            textFields[CustomerFieldType.city.rawValue].replace(withText: "")
+            textFields[FieldType.street.rawValue].replace(withText: "")
+            textFields[FieldType.number.rawValue].replace(withText: "")
+            textFields[FieldType.complement.rawValue].replace(withText: "")
+            textFields[FieldType.neighborhood.rawValue].replace(withText: "")
+            textFields[FieldType.zipcode.rawValue].replace(withText: "")
+            textFields[FieldType.state.rawValue].replace(withText: "")
+            textFields[FieldType.city.rawValue].replace(withText: "")
         }
     }
 }
 
-extension InsertCustomerViewController: StatePickerViewDelegate {
+extension InsertCustomerViewController: StatePickerDelegate {
     
     func didSelectState(state: String) {
-        textFields[CustomerFieldType.state.rawValue].replace(withText: state)
-        textFields[CustomerFieldType.city.rawValue].becomeFirstResponder()
+        textFields[FieldType.city.rawValue].becomeFirstResponder()
+        textFields[FieldType.state.rawValue].replace(withText: state)
     }
 }
 
 extension InsertCustomerViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        var field: CustomerFieldType?
+        var field: FieldType?
         for (index, _) in textFields.enumerated() {
             if textFields[index] == textField {
-                field = CustomerFieldType(rawValue: index)
+                field = FieldType(rawValue: index)
             }
         }
         
         guard var field = field else { return false }
         
         switch field {
-        case .email, .city:
-            handleNextStep()
-            textFields[field.rawValue].resignFirstResponder()
-        case .cpf, .cnpj, .phoneNumber, .number, .state:
+        case .email, .cpf, .cnpj, .phoneNumber, .number, .state, .city:
             textFields[field.rawValue].resignFirstResponder()
         default:
             field.next()

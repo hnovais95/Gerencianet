@@ -34,9 +34,4 @@ struct Constants {
         static let vermelhoClaro = UIColor.init(rgb: 0xB80610)
         static let vermelhoEscuro = UIColor.init(rgb: 0xBF5259)
     }
-    
-    static let states = [ "AC", "AL", "AM", "AP", "BA", "CE", "DF",
-                         "ES", "GO", "MA", "MT", "MS", "MG", "PA",
-                         "PB", "PR", "PE", "PI", "RJ", "RN", "RO",
-                         "RS", "RR", "SC", "SE", "SP", "TO"]
 }

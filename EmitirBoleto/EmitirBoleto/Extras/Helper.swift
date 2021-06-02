@@ -27,6 +27,23 @@ struct Helper {
     }
     
     static func getPrice(_ value: Int) -> String {
-        return String(format: "R$ %.2f", Double(value) / 100.0).replacingOccurrences(of: ".", with: ",")
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "pt_BR")
+        return formatter.string(from: NSNumber(value: value)) ?? formatter.string(from: 0)!
+    }
+    
+    // dd/MM/yyyy -> yyyy-MM-dd
+    static func convertDate(_ date: String) -> String? {
+        let array = date.split(separator: #"/"#)
+        if array.count == 3 {
+            let year = array[2]
+            let month = array[1]
+            let day = array[0]
+            return "\(year)-\(month)-\(day)"
+        } else {
+            return nil
+        }
     }
 }
