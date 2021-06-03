@@ -68,6 +68,10 @@
 		CA8F367B2665246600473673 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F367A2665246600473673 /* Validator.swift */; };
 		CA8F36822665609100473673 /* EditItemPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F36812665609100473673 /* EditItemPopupViewModel.swift */; };
 		CA90CF542667A73C008383D2 /* DiscountTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90CF532667A73C008383D2 /* DiscountTypePicker.swift */; };
+		CA90CF5A26681843008383D2 /* Notification.Name+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90CF5926681843008383D2 /* Notification.Name+Extensions.swift */; };
+		CA90CF5C266828A9008383D2 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90CF5B266828A9008383D2 /* ErrorResponse.swift */; };
+		CA90CF5F26682F19008383D2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90CF5E26682F19008383D2 /* NetworkError.swift */; };
+		CA90CF62266830A0008383D2 /* GerencianetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90CF61266830A0008383D2 /* GerencianetError.swift */; };
 		CAA44D8226665A5F002BA48F /* BankingBilletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA44D8026665A5F002BA48F /* BankingBilletViewController.swift */; };
 		CAA44D8326665A5F002BA48F /* BankingBilletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA44D8126665A5F002BA48F /* BankingBilletViewController.xib */; };
 		CAA44D8526667F99002BA48F /* BankingBilletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA44D8426667F99002BA48F /* BankingBilletViewModel.swift */; };
@@ -89,11 +93,11 @@
 		CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA919264AC307007AE005 /* ItemModel.swift */; };
 		CABCA91E264AC43A007AE005 /* BankingBilletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA91D264AC43A007AE005 /* BankingBilletModel.swift */; };
 		CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA91F264AC67F007AE005 /* ShippingModel.swift */; };
-		CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */; };
+		CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */; };
 		CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA923264ACFAD007AE005 /* CustomerRepository.swift */; };
 		CABCA926264AD220007AE005 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA925264AD220007AE005 /* ItemRepository.swift */; };
 		CABCA92B264AD46E007AE005 /* PaymentGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA92A264AD46E007AE005 /* PaymentGateway.swift */; };
-		CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */; };
+		CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */; };
 		CAC0F12926568FAD00D98492 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */; };
 		CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */; };
 		CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC0F12F2656EAB700D98492 /* SearchCustomerViewController.swift */; };
@@ -110,11 +114,10 @@
 		CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F5264F11A700EABEFC /* BodyFactory.swift */; };
 		CAF751F8264F129000EABEFC /* Gerencianet+Authorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */; };
 		CAF751FA264F13B700EABEFC /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F9264F13B700EABEFC /* AlamofireClient.swift */; };
-		CAF751FE264F158400EABEFC /* HTTPAlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751FD264F158400EABEFC /* HTTPAlamofireClient.swift */; };
+		CAF751FE264F158400EABEFC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751FD264F158400EABEFC /* HTTPClient.swift */; };
 		CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */; };
 		CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF75201264F270C00EABEFC /* APIConfigurations.swift */; };
 		CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899E264AF7CE00D361B0 /* UserModel.swift */; };
-		CAFC89A2264B012800D361B0 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A1264B012800D361B0 /* APIError.swift */; };
 		CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +203,10 @@
 		CA8F367A2665246600473673 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		CA8F36812665609100473673 /* EditItemPopupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemPopupViewModel.swift; sourceTree = "<group>"; };
 		CA90CF532667A73C008383D2 /* DiscountTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountTypePicker.swift; sourceTree = "<group>"; };
+		CA90CF5926681843008383D2 /* Notification.Name+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extensions.swift"; sourceTree = "<group>"; };
+		CA90CF5B266828A9008383D2 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CA90CF5E26682F19008383D2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CA90CF61266830A0008383D2 /* GerencianetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetError.swift; sourceTree = "<group>"; };
 		CAA44D8026665A5F002BA48F /* BankingBilletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletViewController.swift; sourceTree = "<group>"; };
 		CAA44D8126665A5F002BA48F /* BankingBilletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankingBilletViewController.xib; sourceTree = "<group>"; };
 		CAA44D8426667F99002BA48F /* BankingBilletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletViewModel.swift; sourceTree = "<group>"; };
@@ -228,11 +235,11 @@
 		CABCA919264AC307007AE005 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		CABCA91D264AC43A007AE005 /* BankingBilletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletModel.swift; sourceTree = "<group>"; };
 		CABCA91F264AC67F007AE005 /* ShippingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingModel.swift; sourceTree = "<group>"; };
-		CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponseModel.swift; sourceTree = "<group>"; };
+		CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponse.swift; sourceTree = "<group>"; };
 		CABCA923264ACFAD007AE005 /* CustomerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRepository.swift; sourceTree = "<group>"; };
 		CABCA925264AD220007AE005 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		CABCA92A264AD46E007AE005 /* PaymentGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGateway.swift; sourceTree = "<group>"; };
-		CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponseModel.swift; sourceTree = "<group>"; };
+		CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeResponse.swift; sourceTree = "<group>"; };
 		CAC0F12826568FAD00D98492 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		CAC0F12F2656EAB700D98492 /* SearchCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomerViewController.swift; sourceTree = "<group>"; };
@@ -249,11 +256,10 @@
 		CAF751F5264F11A700EABEFC /* BodyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFactory.swift; sourceTree = "<group>"; };
 		CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authorize.swift"; sourceTree = "<group>"; };
 		CAF751F9264F13B700EABEFC /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
-		CAF751FD264F158400EABEFC /* HTTPAlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAlamofireClient.swift; sourceTree = "<group>"; };
+		CAF751FD264F158400EABEFC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+ChargeOneStep.swift"; sourceTree = "<group>"; };
 		CAF75201264F270C00EABEFC /* APIConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurations.swift; sourceTree = "<group>"; };
 		CAFC899E264AF7CE00D361B0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		CAFC89A1264B012800D361B0 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStep.swift; sourceTree = "<group>"; };
 		F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoletoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98C064082B60A0DD6208CF5 /* Pods-EmitirBoleto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.debug.xcconfig"; sourceTree = "<group>"; };
@@ -414,6 +420,7 @@
 				CAC0F12A2656951B00D98492 /* UIImage+Extensions.swift */,
 				CA04B5E0265E7E0800C759CA /* TextField+Extensions.swift */,
 				CA8A56AC26615EF100E95AB5 /* CaseIterable+Extensions.swift */,
+				CA90CF5926681843008383D2 /* Notification.Name+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -546,6 +553,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CA90CF5D26682F02008383D2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CA90CF5E26682F19008383D2 /* NetworkError.swift */,
+				CA90CF5B266828A9008383D2 /* ErrorResponse.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		CAA44D8C266694D8002BA48F /* BankingBillet */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +635,7 @@
 			children = (
 				CA29B5252658584B004BCBFD /* Extensions */,
 				CAD3AEC7264BF93000DD0DCB /* Extras */,
+				CA90CF5D26682F02008383D2 /* Common */,
 				CABCA901264AB08D007AE005 /* Infrastructure */,
 				CABCA905264AB0DD007AE005 /* Adapters */,
 				CABCA900264AB086007AE005 /* Core */,
@@ -696,8 +713,7 @@
 				CAA44D8E26669511002BA48F /* Shipping */,
 				CAA44D8C266694D8002BA48F /* BankingBillet */,
 				CABCA91C264AC42C007AE005 /* Charge */,
-				CABCA933264ADDA4007AE005 /* Responses */,
-				CAFC89A0264AFF3A00D361B0 /* Error */,
+				CAC348D026690D3A001E28FE /* Responses */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -757,15 +773,6 @@
 			path = Ports;
 			sourceTree = "<group>";
 		};
-		CABCA933264ADDA4007AE005 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				CABCA931264ADBE2007AE005 /* AuthorizeResponseModel.swift */,
-				CABCA921264AC82C007AE005 /* ChargeOneStepResponseModel.swift */,
-			);
-			path = Responses;
-			sourceTree = "<group>";
-		};
 		CAC0F12E2656EA9B00D98492 /* SearchCustomer */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +782,15 @@
 				CA8A56A026604B7700E95AB5 /* SearchCustomerViewModel.swift */,
 			);
 			path = SearchCustomer;
+			sourceTree = "<group>";
+		};
+		CAC348D026690D3A001E28FE /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				CABCA931264ADBE2007AE005 /* AuthorizeResponse.swift */,
+				CABCA921264AC82C007AE005 /* ChargeOneStepResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		CAD3AEC7264BF93000DD0DCB /* Extras */ = {
@@ -796,6 +812,7 @@
 				CAF75204264F28CB00EABEFC /* Helpers */,
 				CAF75203264F289400EABEFC /* Contracts */,
 				CAF751EF264F117700EABEFC /* Gerencianet.swift */,
+				CA90CF61266830A0008383D2 /* GerencianetError.swift */,
 				CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */,
 				CAF751F7264F129000EABEFC /* Gerencianet+Authorize.swift */,
 				CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */,
@@ -806,7 +823,7 @@
 		CAF75203264F289400EABEFC /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
-				CAF751FD264F158400EABEFC /* HTTPAlamofireClient.swift */,
+				CAF751FD264F158400EABEFC /* HTTPClient.swift */,
 				CAF75201264F270C00EABEFC /* APIConfigurations.swift */,
 			);
 			path = Contracts;
@@ -820,14 +837,6 @@
 				CAF751F5264F11A700EABEFC /* BodyFactory.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		CAFC89A0264AFF3A00D361B0 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				CAFC89A1264B012800D361B0 /* APIError.swift */,
-			);
-			path = Error;
 			sourceTree = "<group>";
 		};
 		CAFC89AB264B1B4100D361B0 /* User */ = {
@@ -1103,11 +1112,11 @@
 				CABCA90B264AB3E5007AE005 /* AddressModel.swift in Sources */,
 				CABCA91A264AC307007AE005 /* ItemModel.swift in Sources */,
 				CA29B52126585477004BCBFD /* SearchItemViewController.swift in Sources */,
-				CAFC89A2264B012800D361B0 /* APIError.swift in Sources */,
 				CA29B51D26585190004BCBFD /* ItemTableViewCell.swift in Sources */,
 				CAC0F12926568FAD00D98492 /* UIColor+Extensions.swift in Sources */,
 				CA87DF9B2654755D0074A161 /* EntityMapper.swift in Sources */,
-				CABCA922264AC82C007AE005 /* ChargeOneStepResponseModel.swift in Sources */,
+				CABCA922264AC82C007AE005 /* ChargeOneStepResponse.swift in Sources */,
+				CA90CF5C266828A9008383D2 /* ErrorResponse.swift in Sources */,
 				CA04B5E1265E7E0800C759CA /* TextField+Extensions.swift in Sources */,
 				CA87DF9326545BE30074A161 /* JuridicalPerson+CoreDataProperties.swift in Sources */,
 				CAA44D8726668DED002BA48F /* LoadingViewModel.swift in Sources */,
@@ -1116,11 +1125,12 @@
 				CABCA924264ACFAD007AE005 /* CustomerRepository.swift in Sources */,
 				CA2555352652926900F75E20 /* APIConstants.swift in Sources */,
 				CAD3AEBD264BEAC400DD0DCB /* ChargeOneStepModel.swift in Sources */,
-				CAF751FE264F158400EABEFC /* HTTPAlamofireClient.swift in Sources */,
+				CAF751FE264F158400EABEFC /* HTTPClient.swift in Sources */,
 				CA04B5DF265E7B6F00C759CA /* InsertCustomerViewModel.swift in Sources */,
 				CABCA91E264AC43A007AE005 /* BankingBilletModel.swift in Sources */,
 				CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */,
 				CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */,
+				CA90CF5F26682F19008383D2 /* NetworkError.swift in Sources */,
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
@@ -1149,6 +1159,7 @@
 				CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */,
 				CA25553E2652F7A100F75E20 /* Constants.swift in Sources */,
 				CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */,
+				CA90CF5A26681843008383D2 /* Notification.Name+Extensions.swift in Sources */,
 				CAA44D8526667F99002BA48F /* BankingBilletViewModel.swift in Sources */,
 				CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */,
 				CA6DE0A2265C2DB300FC5D19 /* EmptyTableViewCell.swift in Sources */,
@@ -1169,7 +1180,8 @@
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
 				CA0247EC265D776900AE6F61 /* LoadingViewController.swift in Sources */,
 				CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */,
-				CABCA932264ADBE2007AE005 /* AuthorizeResponseModel.swift in Sources */,
+				CABCA932264ADBE2007AE005 /* AuthorizeResponse.swift in Sources */,
+				CA90CF62266830A0008383D2 /* GerencianetError.swift in Sources */,
 				CA8A56A126604B7700E95AB5 /* SearchCustomerViewModel.swift in Sources */,
 				CA1859C5265D1A91001F821C /* AddItemPopupViewController.swift in Sources */,
 				CA6DE09D265C078E00FC5D19 /* AddItemsViewController.swift in Sources */,

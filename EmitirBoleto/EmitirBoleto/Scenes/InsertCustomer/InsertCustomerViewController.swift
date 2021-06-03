@@ -10,7 +10,7 @@ import UIKit
 
 class InsertCustomerViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
@@ -28,7 +28,7 @@ class InsertCustomerViewController: UIViewController {
     @IBOutlet weak var addressStackView: UIStackView!
     
     
-    // MARK: Member types
+    // MARK: - Member types
     
     private enum FieldType: Int, CaseIterable {
         case name, cpf, corporateName, cnpj, phoneNumber, email,
@@ -36,7 +36,7 @@ class InsertCustomerViewController: UIViewController {
     }
     
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     private var viewModel = InsertCustomerViewModel()
@@ -62,23 +62,10 @@ class InsertCustomerViewController: UIViewController {
     }
     
     
-    // MARK: Layout
+    // MARK: - Layout
     
     private func setupLayout() {
         setupLayoutSegmentedControl()
-    }
-    
-    private func setupComponents() {
-        juridicalPersonStackView.isHidden = true
-        
-        addressStackView.isHidden = true
-        addressSwitch.setOn(false, animated: false)
-        
-        segmentedControl.selectedSegmentIndex = 0
-        
-        textFields[FieldType.state.rawValue].tintColor = .clear
-        textFields[FieldType.state.rawValue].inputView = createStatePickerView()        
-        
         setupComponents()
     }
     
@@ -92,6 +79,18 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
     }
     
+    private func setupComponents() {
+        juridicalPersonStackView.isHidden = true
+        
+        addressStackView.isHidden = true
+        addressSwitch.setOn(false, animated: false)
+        
+        segmentedControl.selectedSegmentIndex = 0
+        
+        textFields[FieldType.state.rawValue].tintColor = .clear
+        textFields[FieldType.state.rawValue].inputView = createStatePickerView()
+    }
+    
     private func createStatePickerView() -> UIPickerView {
         let pickerView = UIPickerView()
         pickerView.delegate = statePicker
@@ -100,7 +99,7 @@ class InsertCustomerViewController: UIViewController {
     }
     
     
-    // MARK: Handlers
+    // MARK: - Handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -184,7 +183,7 @@ class InsertCustomerViewController: UIViewController {
         scrollView.scrollIndicatorInsets = contentInset
     }
     
-    // MARK: Data binding
+    // MARK: - Data binding
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
@@ -277,7 +276,7 @@ class InsertCustomerViewController: UIViewController {
 }
 
 
-// MARK: Delegates
+// MARK: - Delegates
 
 extension InsertCustomerViewController: SearchCustomerDelegate {
     

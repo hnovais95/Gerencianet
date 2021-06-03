@@ -9,23 +9,53 @@ import Foundation
 
 class BankingBilletViewModel {
     
-    var validator = BankingBilletValidator()
+    private var validator = BankingBilletValidator()
     
-    private(set) var customer: CustomerModel?
-    private(set) var items: [ItemModel]?
+    var customer: CustomerModel?
+    var items: [ItemModel]?
     
     var expireAt: String = ""
     var shippingValue: String = ""
-    var discountType: String = "currency" // default value
+    var discountType: String = "percentage"
     var discountValue: String = ""
-    var conditionalDiscountType: String = "currency" // default value
+    var conditionalDiscountType: String = "percentage"
     var conditionalDiscountValue: String = ""
     var conditionalDiscountDeadline: String = ""
     var message: String = ""
     
+    var total: String {
+        let sumValue = items?.map({ $0.value }).reduce(0, +) ?? 0
+        print("SumValue: \(sumValue)")
+        let discount = calculateDiscount()
+        print("Discount: \(discount)")
+        return Helper.getPrice(max(0, (sumValue - discount)))
+    }
+    
+    private func calculateDiscount() -> Int {
+        let sumValue = items?.map({ $0.value }).reduce(0, +) ?? 0
+        
+        var discount = 0.0
+        if discountType == "currency" {
+            discount += Double(discountValue) ?? 0.0
+        } else
+        {
+            discount += (Double(discountValue) ?? 0.0) / 100 * Double(sumValue)
+        }
+        
+        var conditionalDiscount = 0.0
+        if discountType == "currency" {
+            conditionalDiscount += Double(conditionalDiscountValue) ?? 0.0
+        } else
+        {
+            conditionalDiscount += (Double(conditionalDiscountValue) ?? 0) / 100 * Double(sumValue)
+        }
+        
+        return Int((discount + conditionalDiscount).rounded())
+    }
+    
     var isValid: Bool {
-        return validator.validate(.expireAt, expireAt)
-            && validator.validate(.shippingValue, shippingValue)
+        return //validator.validate(.expireAt, expireAt)
+            /*&&*/ validator.validate(.shippingValue, shippingValue)
             && validator.validate(.discountType, discountType)
             && validator.validate(.discountValue, discountValue)
             && validator.validate(.conditionalDiscountType, conditionalDiscountType)
@@ -38,14 +68,6 @@ class BankingBilletViewModel {
     func validadeField(_ rawValue: Int, value: String) {
         let isValid = validator.validate(rawValue, value)
         validatedField(isValid, rawValue)
-    }
-    
-    func setCustomer(_ customer: CustomerModel) {
-        self.customer = customer
-    }
-    
-    func setItems(_ items: [ItemModel]) {
-        self.items = items
     }
     
     private func getBankingBillet() -> BankingBilletModel {
@@ -79,15 +101,5 @@ class BankingBilletViewModel {
         let shippings = getShippings()
         
         return ChargeOneStepModel(bankingBillet: bankingBillet, items: items!, shippings: shippings)
-    }
-    
-    func generateCharge() {
-        let data = getChargeData()        
-        
-        let paymentGateway = Gerencianet(httpClient: AlamofireClient())
-        let charge = ChargeOneStep(paymentGateway: paymentGateway)
-        charge.execute(user: UserModel.shared, data: data) { _ in
-            print("Executou cobrança.")
-        }
     }
 }

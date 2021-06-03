@@ -31,17 +31,30 @@ struct Helper {
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: NSNumber(value: value)) ?? formatter.string(from: 0)!
+        return formatter.string(from: NSNumber(value: value / 100)) ?? formatter.string(from: 0)!
     }
     
     // dd/MM/yyyy -> yyyy-MM-dd
-    static func convertDate(_ date: String) -> String? {
+    static func convertDateToReverseFormat(_ date: String) -> String? {
         let array = date.split(separator: #"/"#)
         if array.count == 3 {
             let year = array[2]
             let month = array[1]
             let day = array[0]
             return "\(year)-\(month)-\(day)"
+        } else {
+            return nil
+        }
+    }
+    
+    // yyyy-MM-dd -> dd/MM/yyyy
+    static func convertDateToNormalFormat(_ date: String) -> String? {        
+        let array = date.split(separator: "-")
+        if array.count == 3 {
+            let year = array[0]
+            let month = array[1]
+            let day = array[2]
+            return "\(day)/\(month)/\(year)"
         } else {
             return nil
         }

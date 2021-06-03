@@ -20,7 +20,7 @@ class ScheduleAuthentication {
         timer = RepeatingTimer(timeInterval: timeInterval)
         self.timer?.eventHandler = { [unowned self] in
             let authenticate = Authenticate(paymentGateway: self.paymentGateway)
-            authenticate.execute(user: UserModel.shared, completion: { _ in return })
+            authenticate.execute(user: UserModel.shared)
         }
         self.timer?.resume()
     }

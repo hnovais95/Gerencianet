@@ -31,7 +31,7 @@ class MainCoordinator: Coordinator {
     
     func addItems(to customer: CustomerModel) {
         let vc = AddItemsViewController()
-        vc.viewModel.setCustomer(customer)
+        vc.setRequiredData(customer)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
@@ -61,15 +61,30 @@ class MainCoordinator: Coordinator {
     
     func configureBankingBillet(to customer: CustomerModel, with items: [ItemModel]) {
         let vc = BankingBilletViewController()
-        vc.viewModel.setCustomer(customer)
-        vc.viewModel.setItems(items)
+        vc.setRequiredData(customer, items)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func createCharge(to data: ChargeOneStepModel) {
+    func createCharge(withData data: ChargeOneStepModel) {
         let vc = LoadingViewController()
+        vc.setRequiredData(data)
         vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showBankingBillet(to customer: String, withResponse response: ChargeOneStepResponse) {
+        let vc = SuccessViewController()
+        vc.coordinator = self
+        vc.customer = customer
+        vc.response = response
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showErrorMessage(withMessage message: String) {
+        let vc = FailureViewController()
+        vc.coordinator = self
+        vc.message = message
         navigationController.pushViewController(vc, animated: true)
     }
     

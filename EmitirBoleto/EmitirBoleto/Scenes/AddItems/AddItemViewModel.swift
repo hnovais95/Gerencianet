@@ -7,7 +7,7 @@
 
 class AddItemsViewModel {
     
-    private(set) var customer: CustomerModel?
+    var customer: CustomerModel?
     private(set) var items: [ItemModel] = []
     
     var isValid: Bool {
@@ -39,9 +39,5 @@ class AddItemsViewModel {
             items[firstIndex].increaseAmount(items[lastIndex].amount)
             items.remove(at: lastIndex)
         }
-    }
-    
-    func setCustomer(_ customer: CustomerModel) {
-        self.customer = customer
     }
 }

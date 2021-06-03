@@ -34,4 +34,10 @@ struct Constants {
         static let vermelhoClaro = UIColor.init(rgb: 0xB80610)
         static let vermelhoEscuro = UIColor.init(rgb: 0xBF5259)
     }
+    
+    struct ErrorMessage {
+        static let `default` = "Falha inesperada! Por favor tente novamente."
+        static let noConnectivity = "Falha de conexão. Verifique a conexão com a internet."
+        static let responseBuilding = "Falha ao apresentar informações do boleto. Verifique o histório de emissões."
+    }
 }

@@ -28,7 +28,14 @@ class AddItemsViewController: UIViewController {
     // MARK: Member variables
     
     weak var coordinator: MainCoordinator?
-    var viewModel = AddItemsViewModel()
+    private var viewModel = AddItemsViewModel()
+    
+    
+    // MARK: Public methods
+    
+    func setRequiredData(_ customer: CustomerModel) {
+        viewModel.customer = customer
+    }
     
     
     // MARK: Life Cycle

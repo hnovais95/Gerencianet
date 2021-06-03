@@ -14,6 +14,7 @@ class BankingBilletViewController: UIViewController {
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var totalLabel: UILabel!
     
     @IBOutlet weak var additionalFieldsSwitch: UISwitch!
     @IBOutlet weak var backButton: BackButton!
@@ -37,9 +38,17 @@ class BankingBilletViewController: UIViewController {
     // MARK: Member variables
     
     weak var coordinator: MainCoordinator?
-    var viewModel = BankingBilletViewModel()
+    private var viewModel = BankingBilletViewModel()
     private var discountTypePicker = DiscountTypePicker()
     private var conditionalDiscountTypePicker = DiscountTypePicker()
+    
+    
+    // MARK: Public methods
+    
+    func setRequiredData(_ customer: CustomerModel, _ items: [ItemModel]) {
+        viewModel.customer = customer
+        viewModel.items = items
+    }
     
         
     // MARK: Life Cycle
@@ -84,6 +93,7 @@ class BankingBilletViewController: UIViewController {
         textFields[FieldType.conditionalDiscountType.rawValue].tintColor = .clear
         textFields[FieldType.expireAt.rawValue].tintColor = .clear
         textFields[FieldType.contitionalDiscountDeadline.rawValue].tintColor = .clear
+        totalLabel.text = viewModel.total
         
         // Setup pickers
         textFields[FieldType.discountType.rawValue].inputView = createDiscountTypePicker(with: discountTypePicker)
@@ -172,9 +182,8 @@ class BankingBilletViewController: UIViewController {
     @objc
     private func handleTapChargeButton() {
         if viewModel.isValid {
-            /*let chargeData = viewModel.getChargeData()
-            coordinator?.createCharge(to: chargeData)*/
-            viewModel.generateCharge()
+            let data = viewModel.getChargeData()
+            coordinator?.createCharge(withData: data)
         }
     }
     
@@ -227,14 +236,15 @@ class BankingBilletViewController: UIViewController {
                 switch field {
                 case .expireAt:
                     textField.bind { [weak self] in
-                         self?.viewModel.validadeField(field.rawValue, value: Helper.convertDate($0) ?? $0)
-                        self?.viewModel.expireAt = Helper.convertDate($0) ?? $0
+                        self?.viewModel.validadeField(field.rawValue, value: Helper.convertDateToReverseFormat($0) ?? $0)
+                        self?.viewModel.expireAt = Helper.convertDateToReverseFormat($0) ?? $0
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .shippingValue:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.shippingValue = $0
+                        self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .discountType:
@@ -242,12 +252,14 @@ class BankingBilletViewController: UIViewController {
                         let value = $0 == "R$" ? "currency" : "percentage"
                         self?.viewModel.validadeField(field.rawValue, value: value)
                         self?.viewModel.discountType =  value
+                        self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .discountValue:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.discountValue = $0
+                        self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .conditionalDiscountType:
@@ -255,18 +267,20 @@ class BankingBilletViewController: UIViewController {
                         let value = $0 == "R$" ? "currency" : "percentage"
                         self?.viewModel.validadeField(field.rawValue, value: value)
                         self?.viewModel.conditionalDiscountType = value
+                        self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .contitionalDiscountValue:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.conditionalDiscountValue = $0
+                        self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .contitionalDiscountDeadline:
                     textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: Helper.convertDate($0) ?? $0)
-                        self?.viewModel.conditionalDiscountDeadline = Helper.convertDate($0) ?? $0
+                        self?.viewModel.validadeField(field.rawValue, value: Helper.convertDateToReverseFormat($0) ?? $0)
+                        self?.viewModel.conditionalDiscountDeadline = Helper.convertDateToReverseFormat($0) ?? $0
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 }

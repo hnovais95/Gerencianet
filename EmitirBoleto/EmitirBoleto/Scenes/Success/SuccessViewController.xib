@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,11 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessViewController" customModule="EmitirBoleto" customModuleProvider="target">
             <connections>
+                <outlet property="barcodeTextView" destination="xCA-Rp-eR9" id="zaJ-PY-4fj"/>
                 <outlet property="copyBarcodeButton" destination="kZ1-Wa-ifC" id="xMb-Co-QwK"/>
                 <outlet property="doneButton" destination="zbF-l8-Xj2" id="LGI-gh-56w"/>
                 <outlet property="shareLinkButton" destination="d6g-rV-7Bl" id="tSQ-0j-3aY"/>
                 <outlet property="showBankingBilletButton" destination="2NH-9G-Uxl" id="vZE-Mg-L9H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="labels" destination="liE-Un-DoP" collectionClass="NSMutableArray" id="dbT-iv-kkJ"/>
+                <outletCollection property="labels" destination="dDK-1J-v6Z" collectionClass="NSMutableArray" id="2e6-H9-2jN"/>
+                <outletCollection property="labels" destination="oQA-b7-aMZ" collectionClass="NSMutableArray" id="Oa9-yD-BrY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

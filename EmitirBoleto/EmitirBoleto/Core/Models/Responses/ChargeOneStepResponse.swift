@@ -5,7 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 11/05/21.
 //
 
-struct ChargeOneStepResponseModel: Serializable {
+struct ChargeOneStepResponse: Serializable {
     
     let code: Int
     let data: ResponseData

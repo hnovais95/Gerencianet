@@ -20,6 +20,7 @@
                 <outlet property="discountTypeButton" destination="tys-lh-Ce1" id="0dT-gN-ap9"/>
                 <outlet property="expireAtPickerButton" destination="5Be-px-0nk" id="JIK-Ts-NDI"/>
                 <outlet property="messageTextView" destination="fnL-Hf-XL3" id="kRk-7O-RpP"/>
+                <outlet property="totalLabel" destination="nvB-Ef-hax" id="OYF-6A-oRk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="textFields" destination="S3q-FG-dik" collectionClass="NSMutableArray" id="ajc-7b-tuC"/>
                 <outletCollection property="textFields" destination="Ala-RD-7Oq" collectionClass="NSMutableArray" id="DkE-mw-opl"/>
