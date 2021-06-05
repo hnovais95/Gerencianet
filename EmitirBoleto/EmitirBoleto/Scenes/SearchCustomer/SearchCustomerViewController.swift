@@ -14,7 +14,7 @@ protocol SearchCustomerDelegate: AnyObject {
 
 class SearchCustomerViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -30,7 +30,7 @@ class SearchCustomerViewController: UIViewController {
     }
     
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     weak var delegate: SearchCustomerDelegate?
@@ -39,7 +39,7 @@ class SearchCustomerViewController: UIViewController {
     private var filteredCustomers: [CustomerModel] = []
     
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class SearchCustomerViewController: UIViewController {
 }
 
 
-// MARK: Delegates
+// MARK: - Delegates
 
 extension SearchCustomerViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -71,7 +71,7 @@ extension SearchCustomerViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let customer = filteredCustomers[indexPath.row]
         delegate?.didSelectCustomer(customer)
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
 }
 

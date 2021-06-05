@@ -24,38 +24,36 @@ class BankingBilletViewModel {
     var message: String = ""
     
     var total: String {
-        let sumValue = items?.map({ $0.value }).reduce(0, +) ?? 0
-        print("SumValue: \(sumValue)")
+        let itemsValue = items?.map({ $0.value }).reduce(0, +) ?? 0
         let discount = calculateDiscount()
-        print("Discount: \(discount)")
-        return Helper.getPrice(max(0, (sumValue - discount)))
+        let total = max(0, (itemsValue - discount))
+        return Helper.getPrice(total)
     }
     
     private func calculateDiscount() -> Int {
-        let sumValue = items?.map({ $0.value }).reduce(0, +) ?? 0
-        
         var discount = 0.0
+        let itemsValue = items?.map({ $0.value }).reduce(0, +) ?? 0
+        
         if discountType == "currency" {
             discount += Double(discountValue) ?? 0.0
         } else
         {
-            discount += (Double(discountValue) ?? 0.0) / 100 * Double(sumValue)
+            discount += Double(itemsValue) * (Double(discountValue) ?? 0.0) / 10000.0
         }
         
-        var conditionalDiscount = 0.0
-        if discountType == "currency" {
-            conditionalDiscount += Double(conditionalDiscountValue) ?? 0.0
+        if conditionalDiscountType == "currency" {
+            discount += Double(conditionalDiscountValue) ?? 0.0
         } else
         {
-            conditionalDiscount += (Double(conditionalDiscountValue) ?? 0) / 100 * Double(sumValue)
+            discount += Double(itemsValue) * (Double(conditionalDiscountValue) ?? 0.0) / 10000.0
         }
         
-        return Int((discount + conditionalDiscount).rounded())
+        return Int(discount.rounded())
     }
     
     var isValid: Bool {
-        return //validator.validate(.expireAt, expireAt)
-            /*&&*/ validator.validate(.shippingValue, shippingValue)
+        return validator.validate(.expireAt, expireAt)
+            && validator.validate(.shippingValue, shippingValue)
             && validator.validate(.discountType, discountType)
             && validator.validate(.discountValue, discountValue)
             && validator.validate(.conditionalDiscountType, conditionalDiscountType)

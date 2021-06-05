@@ -7,15 +7,15 @@
 
 struct ErrorResponse: Serializable {
     
-    let code: Int
-    let error: String
-    let errorDescription: ErrorDescription
+    private(set) var code: Int
+    private(set) var error: String
+    private(set) var errorDescription: ErrorDescription
     
     var message: String? {
         guard let property = errorDescription.property.split(separator: #"/"#).first else {
             return nil
         }
-        return "Propriedade \(property) inválida."
+        return "Propriedade \"\(property)\" inválida."
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -27,6 +27,6 @@ struct ErrorResponse: Serializable {
 
 struct ErrorDescription: Serializable {
     
-    let property: String
-    let message: String
+    private(set) var property: String
+    private(set) var message: String
 }

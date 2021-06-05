@@ -106,6 +106,8 @@
 		CAD3AEC2264BF33300DD0DCB /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEC1264BF33300DD0DCB /* Serializable.swift */; };
 		CAD3AECD264BFFDF00DD0DCB /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */; };
 		CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */; };
+		CAD862DF266A6D7A00BF8B9E /* GNSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD862DE266A6D7A00BF8B9E /* GNSpinner.swift */; };
+		CAD862E3266A995300BF8B9E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD862E2266A995300BF8B9E /* UIViewController+Extensions.swift */; };
 		CADE8440265BDBF60020BEC3 /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE843E265BDBF60020BEC3 /* ButtonsTableViewCell.swift */; };
 		CADE8441265BDBF60020BEC3 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADE843F265BDBF60020BEC3 /* ButtonsTableViewCell.xib */; };
 		CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EF264F117700EABEFC /* Gerencianet.swift */; };
@@ -248,6 +250,8 @@
 		CAD3AEC1264BF33300DD0DCB /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		CAD3AECC264BFFDF00DD0DCB /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuridicalPersonModel.swift; sourceTree = "<group>"; };
+		CAD862DE266A6D7A00BF8B9E /* GNSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNSpinner.swift; sourceTree = "<group>"; };
+		CAD862E2266A995300BF8B9E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CADE843E265BDBF60020BEC3 /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		CADE843F265BDBF60020BEC3 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
 		CAF751EF264F117700EABEFC /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
@@ -421,6 +425,7 @@
 				CA04B5E0265E7E0800C759CA /* TextField+Extensions.swift */,
 				CA8A56AC26615EF100E95AB5 /* CaseIterable+Extensions.swift */,
 				CA90CF5926681843008383D2 /* Notification.Name+Extensions.swift */,
+				CAD862E2266A995300BF8B9E /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 			children = (
 				CA8A56A226610DED00E95AB5 /* BindingTextField.swift */,
 				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
+				CAD862DE266A6D7A00BF8B9E /* GNSpinner.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -1184,6 +1190,8 @@
 				CA90CF62266830A0008383D2 /* GerencianetError.swift in Sources */,
 				CA8A56A126604B7700E95AB5 /* SearchCustomerViewModel.swift in Sources */,
 				CA1859C5265D1A91001F821C /* AddItemPopupViewController.swift in Sources */,
+				CAD862E3266A995300BF8B9E /* UIViewController+Extensions.swift in Sources */,
+				CAD862DF266A6D7A00BF8B9E /* GNSpinner.swift in Sources */,
 				CA6DE09D265C078E00FC5D19 /* AddItemsViewController.swift in Sources */,
 				CA8A56B626618D3D00E95AB5 /* SearchItemViewModel.swift in Sources */,
 				CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */,

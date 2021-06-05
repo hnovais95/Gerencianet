@@ -9,7 +9,7 @@ import UIKit
 
 class BankingBilletViewController: UIViewController {
     
-    // MARK: Outlets    
+    // MARK: - Outlets    
     
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
@@ -27,7 +27,7 @@ class BankingBilletViewController: UIViewController {
     @IBOutlet weak var additionalFieldsStackView: UIStackView!
     
     
-    // MARK: Member types
+    // MARK: - Member types
     
     enum FieldType: Int, CaseIterable {
         case expireAt, shippingValue, discountType, discountValue, conditionalDiscountType,
@@ -35,7 +35,7 @@ class BankingBilletViewController: UIViewController {
     }
     
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     private var viewModel = BankingBilletViewModel()
@@ -43,7 +43,7 @@ class BankingBilletViewController: UIViewController {
     private var conditionalDiscountTypePicker = DiscountTypePicker()
     
     
-    // MARK: Public methods
+    // MARK: - Public methods
     
     func setRequiredData(_ customer: CustomerModel, _ items: [ItemModel]) {
         viewModel.customer = customer
@@ -51,7 +51,7 @@ class BankingBilletViewController: UIViewController {
     }
     
         
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +76,7 @@ class BankingBilletViewController: UIViewController {
     }
 
     
-    // MARK: Layout
+    // MARK: - Layout
     
     private func setupLayout() {
         messageTextView.layer.borderWidth = 1.0
@@ -121,7 +121,7 @@ class BankingBilletViewController: UIViewController {
     }
     
     
-    // MARK: Handlers
+    // MARK: - Handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -183,7 +183,7 @@ class BankingBilletViewController: UIViewController {
     private func handleTapChargeButton() {
         if viewModel.isValid {
             let data = viewModel.getChargeData()
-            coordinator?.createCharge(withData: data)
+            coordinator?.createCharge(with: data)
         }
     }
     
@@ -228,7 +228,8 @@ class BankingBilletViewController: UIViewController {
         textFields[FieldType.conditionalDiscountType.rawValue].becomeFirstResponder()
     }
     
-    // MARK: Data binding
+    
+    // MARK: - Data binding
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
@@ -249,7 +250,7 @@ class BankingBilletViewController: UIViewController {
                     }
                 case .discountType:
                     textField.bind { [weak self] in
-                        let value = $0 == "R$" ? "currency" : "percentage"
+                        let value = $0 == "%" ? "percentage": "currency"
                         self?.viewModel.validadeField(field.rawValue, value: value)
                         self?.viewModel.discountType =  value
                         self?.totalLabel.text = self?.viewModel.total
@@ -264,7 +265,7 @@ class BankingBilletViewController: UIViewController {
                     }
                 case .conditionalDiscountType:
                     textField.bind { [weak self] in
-                        let value = $0 == "R$" ? "currency" : "percentage"
+                        let value = $0 == "%" ? "percentage": "currency"
                         self?.viewModel.validadeField(field.rawValue, value: value)
                         self?.viewModel.conditionalDiscountType = value
                         self?.totalLabel.text = self?.viewModel.total
@@ -290,7 +291,7 @@ class BankingBilletViewController: UIViewController {
 }
 
 
-// MARK: Delegates
+// MARK: - Delegates
 
 extension BankingBilletViewController: UITextViewDelegate {
     

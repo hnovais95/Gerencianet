@@ -31,7 +31,7 @@ struct Helper {
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "pt_BR")
-        return formatter.string(from: NSNumber(value: value / 100)) ?? formatter.string(from: 0)!
+        return formatter.string(from: NSNumber(value: Double(value) / 100.0)) ?? formatter.string(from: 0)!
     }
     
     // dd/MM/yyyy -> yyyy-MM-dd

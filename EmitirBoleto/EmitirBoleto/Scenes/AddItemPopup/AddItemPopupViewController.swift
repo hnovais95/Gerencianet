@@ -14,7 +14,7 @@ protocol AddItemDelegate: AnyObject {
 
 class AddItemPopupViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
@@ -28,20 +28,20 @@ class AddItemPopupViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     
     
-    // MARK: Member types
+    // MARK: - Member types
     
     private enum FieldType: Int, CaseIterable {
         case name, value, amount
     }
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     weak var delegate: AddItemDelegate?
     private var viewModel = AddItemPopupViewModel()
     
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class AddItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: Layout
+    // MARK: - Layout
     
     private func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
@@ -65,7 +65,7 @@ class AddItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: Handlers
+    // MARK: - Handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -108,18 +108,18 @@ class AddItemPopupViewController: UIViewController {
     
     @objc
     private func handleTapCancelButton(sender: UIButton) {
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
     
     @objc
     private func handleTapAddItem() {
         let item = viewModel.getItem()
         delegate?.didAddItem(item)
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
     
     
-    // MARK: Data binding
+    // MARK: - Data binding
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {

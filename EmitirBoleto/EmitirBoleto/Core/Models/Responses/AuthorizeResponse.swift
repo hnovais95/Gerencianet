@@ -7,11 +7,11 @@
 
 struct AuthorizeResponse: Serializable {
     
-    let accessToken: String
-    let refreshToken: String
-    let expiresIn: Int
-    let expireAt: String
-    let tokenType: String
+    private(set) var accessToken: String
+    private(set) var refreshToken: String
+    private(set) var expiresIn: Int
+    private(set) var expireAt: String
+    private(set) var tokenType: String
     
     init(_ accessToken: String,
          _ refreshToken: String,

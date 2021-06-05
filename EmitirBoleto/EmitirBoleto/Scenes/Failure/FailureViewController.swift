@@ -9,19 +9,19 @@ import UIKit
 
 class FailureViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
 
     @IBOutlet weak var backButton: BackButton!
     @IBOutlet weak var errorMessageTextView: UITextView!
     
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     var message: String?
     
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +32,17 @@ class FailureViewController: UIViewController {
     }
     
     
-    // MARK: Layout
+    // MARK: - Layout
     
     private func setupLayout() {
         errorMessageTextView.text = message?.uppercased()
     }
     
     
-    // MARK: Handles
+    // MARK: - Handles
     
     @objc
     private func handleTapBackButton(_ sender: UIButton) {
-        coordinator?.back()
-    }
-    
+        coordinator?.backToConfigureBankingBillet()
+    }    
 }

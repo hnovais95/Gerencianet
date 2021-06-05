@@ -14,7 +14,7 @@ protocol EditItemDelegate: AnyObject {
 
 class EditItemPopupViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet var textFields: [BindingTextField]!
     @IBOutlet var validationViews: [UIView]!
@@ -28,29 +28,29 @@ class EditItemPopupViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     
 
-    // MARK: Member types
+    // MARK: - Member types
     
     private enum FieldType: Int, CaseIterable {
         case name, value, amount
     }
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     weak var delegate: EditItemDelegate?
     private var viewModel = EditItemPopupViewModel()
     
     
-    // MARK: Public methods
+    // MARK: - Public methods
     
-    func setItem(_ item: ItemModel) {
+    func prepare(withItem item: ItemModel) {
         viewModel.oldItem = item
         textFields[FieldType.name.rawValue].insertText(item.name)
         textFields[FieldType.value.rawValue].insertText(item.value.description)
         textFields[FieldType.amount.rawValue].replace(withText: item.amount.description)
     }
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class EditItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: Layout
+    // MARK: - Layout
     
     private func setupLayout() {
         popupView.layer.cornerRadius = CGFloat(6)
@@ -74,7 +74,7 @@ class EditItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: Handlers
+    // MARK: - Handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -117,7 +117,7 @@ class EditItemPopupViewController: UIViewController {
     
     @objc
     private func handleTapCancelButton(sender: UIButton) {
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
     
     @objc
@@ -125,11 +125,11 @@ class EditItemPopupViewController: UIViewController {
         guard let oldItem = viewModel.oldItem else { return }
         let newItem = viewModel.getItem()
         delegate?.didEditItem(oldItem, newItem)
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
     
     
-    // MARK: Data binding
+    // MARK: - Data binding
     
     private func bindTextFields() {
         for (index, textField) in textFields.enumerated() {
@@ -162,7 +162,7 @@ class EditItemPopupViewController: UIViewController {
 }
 
 
-// MARK: Delegates
+// MARK: - Delegates
 
 extension EditItemPopupViewController: UITextFieldDelegate {
     

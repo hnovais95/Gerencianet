@@ -5,7 +5,6 @@
 //  Created by Heitor Novais | Gerencianet on 14/05/21.
 //
 
-
 extension Gerencianet {
     
     func authorize(clientId: String,

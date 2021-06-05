@@ -13,7 +13,7 @@ protocol DiscountTypePickerDelegate: AnyObject {
 
 class DiscountTypePicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    private let types = ["R$", "%"]
+    private let types = ["%", "R$"]
     
     weak var delegate: DiscountTypePickerDelegate?
     

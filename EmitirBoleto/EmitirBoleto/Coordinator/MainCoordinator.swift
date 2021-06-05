@@ -5,7 +5,6 @@
 //  Created by Heitor Novais | Gerencianet on 19/05/21.
 //
 
-import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator {
@@ -26,7 +25,7 @@ class MainCoordinator: Coordinator {
         let vc = SearchCustomerViewController()
         vc.delegate = delegate
         vc.coordinator = self
-        navigationController.present(vc, animated: true, completion: nil)
+        navigationController.present(vc, animated: true)
     }
     
     func addItems(to customer: CustomerModel) {
@@ -40,23 +39,22 @@ class MainCoordinator: Coordinator {
         let vc = SearchItemViewController()
         vc.delegate = delegate
         vc.coordinator = self
-        navigationController.present(vc, animated: true, completion: nil)
+        navigationController.present(vc, animated: true)
     }
     
     func addItemPopup(to delegate: AddItemDelegate) {
         let vc = AddItemPopupViewController()
         vc.delegate = delegate
         vc.coordinator = self
-        navigationController.present(vc, animated: true, completion: nil)
+        navigationController.present(vc, animated: true)
     }
     
     func editItemPopup(to delegate: EditItemDelegate, withItem item: ItemModel) {
         let vc = EditItemPopupViewController()
         vc.delegate = delegate
         vc.coordinator = self
-        navigationController.present(vc, animated: true) {
-            vc.setItem(item)
-        }
+        navigationController.present(vc, animated: true)
+        vc.prepare(withItem: item)
     }
     
     func configureBankingBillet(to customer: CustomerModel, with items: [ItemModel]) {
@@ -66,33 +64,35 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func createCharge(withData data: ChargeOneStepModel) {
+    func createCharge(with data: ChargeOneStepModel) {
         let vc = LoadingViewController()
         vc.setRequiredData(data)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showBankingBillet(to customer: String, withResponse response: ChargeOneStepResponse) {
-        let vc = SuccessViewController()
+    func showErrorMessage(with message: String) {
+        let vc = FailureViewController()
+        vc.message = message
         vc.coordinator = self
-        vc.customer = customer
-        vc.response = response
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func showErrorMessage(withMessage message: String) {
-        let vc = FailureViewController()
+    func backToConfigureBankingBillet() {
+        if let vc = navigationController.viewControllers.first(where: { $0 is BankingBilletViewController }) {
+            navigationController.popToViewController(vc, animated: true)
+        }
+    }
+    
+    func showBankingBillet(to customer: String, with response: ChargeOneStepResponse) {
+        let vc = SuccessViewController()
+        vc.customer = customer
+        vc.response = response
         vc.coordinator = self
-        vc.message = message
         navigationController.pushViewController(vc, animated: true)
     }
     
     func back() {
         navigationController.popViewController(animated: true)
-    }
-    
-    func dismiss() {
-        navigationController.dismiss(animated: true, completion: nil)
     }
 }

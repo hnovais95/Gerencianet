@@ -14,7 +14,7 @@ protocol SearchItemDelegate: AnyObject {
 
 class SearchItemViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     
     @IBOutlet weak var tableView: UITableView! {
@@ -30,7 +30,7 @@ class SearchItemViewController: UIViewController {
         }
     }
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     weak var delegate: SearchItemDelegate?
@@ -39,7 +39,7 @@ class SearchItemViewController: UIViewController {
     private var filteredItems: [ItemModel] = []
     
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +69,12 @@ extension SearchItemViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = filteredItems[indexPath.row]
         delegate?.didSelectItem(item)
-        coordinator?.dismiss()
+        dismiss(animated: true)
     }
 }
+
+
+// MARK: - Delegates
 
 extension SearchItemViewController: UISearchBarDelegate {
     

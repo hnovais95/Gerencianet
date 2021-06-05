@@ -14,7 +14,7 @@
                 <outlet property="barcodeTextView" destination="xCA-Rp-eR9" id="zaJ-PY-4fj"/>
                 <outlet property="copyBarcodeButton" destination="kZ1-Wa-ifC" id="xMb-Co-QwK"/>
                 <outlet property="doneButton" destination="zbF-l8-Xj2" id="LGI-gh-56w"/>
-                <outlet property="shareLinkButton" destination="d6g-rV-7Bl" id="tSQ-0j-3aY"/>
+                <outlet property="shareButton" destination="d6g-rV-7Bl" id="tSQ-0j-3aY"/>
                 <outlet property="showBankingBilletButton" destination="2NH-9G-Uxl" id="vZE-Mg-L9H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="labels" destination="liE-Un-DoP" collectionClass="NSMutableArray" id="dbT-iv-kkJ"/>
@@ -208,39 +208,42 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="brO-Mr-m70" userLabel="Actions Stack View">
                             <rect key="frame" x="122" y="392" width="170" height="162"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Wa-ifC">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Wa-ifC">
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="170" id="2Pd-7a-SFF"/>
                                         <constraint firstAttribute="height" constant="50" id="94O-Gn-XcI"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" red="0.1137254902" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="18" maxY="0.0"/>
                                     <state key="normal" title="Copiar código" image="magnet_link_icon">
-                                        <color key="titleColor" red="0.11372549019607843" green="0.70588235294117641" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" red="0.1137254902" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-rV-7Bl">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-rV-7Bl">
                                     <rect key="frame" x="0.0" y="56" width="170" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="OAB-wO-v5f"/>
                                         <constraint firstAttribute="width" constant="170" id="QC2-of-ypS"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" red="0.1137254902" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="18" maxY="0.0"/>
                                     <state key="normal" title="Compartilhar" image="share-icon">
                                         <color key="titleColor" red="0.1137254902" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NH-9G-Uxl">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NH-9G-Uxl">
                                     <rect key="frame" x="0.0" y="112" width="170" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="B29-LA-JZi"/>
                                         <constraint firstAttribute="width" constant="170" id="tUR-HH-m5f"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" red="0.1137254902" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <inset key="titleEdgeInsets" minX="-12.5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="18" maxY="0.0"/>
                                     <state key="normal" title="Ver boleto" image="boleto_icon">

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         scheduleAuthentication = ScheduleAuthentication(paymentGateway: Gerencianet(httpClient: AlamofireClient()))
-        scheduleAuthentication?.execute()
+        //scheduleAuthentication?.execute()
         
         return true
     }

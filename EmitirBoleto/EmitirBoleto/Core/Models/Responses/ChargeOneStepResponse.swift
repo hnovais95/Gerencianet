@@ -7,8 +7,8 @@
 
 struct ChargeOneStepResponse: Serializable {
     
-    let code: Int
-    let data: ResponseData
+    private(set) var code: Int
+    private(set) var data: ResponseData
     
     init(_ code: Int,
          _ barcode: String,
@@ -26,14 +26,14 @@ struct ChargeOneStepResponse: Serializable {
 
 struct ResponseData: Serializable {
     
-    let barcode: String
-    let link: String
-    let pdf: Pdf
-    let expireAt: String
-    let chargeId: Int
-    let status: String
-    let total: Int
-    let payment: String
+    private(set) var barcode: String
+    private(set) var link: String
+    private(set) var pdf: Pdf
+    private(set) var expireAt: String
+    private(set) var chargeId: Int
+    private(set) var status: String
+    private(set) var total: Int
+    private(set) var payment: String
     
     init(_ barcode: String,
          _ link: String,
@@ -67,9 +67,21 @@ struct ResponseData: Serializable {
 
 struct Pdf: Serializable {
     
-    let charge: String
+    private(set) var charge: String
     
     init(_ charge: String) {
         self.charge = charge
+    }
+}
+
+extension ResponseData {
+    
+    var shareableMessage: String {
+        let message = """
+        Olá, segue o boleto no valor de \(Helper.getPrice(total)).
+        
+        Acesse o boleto pelo link: \(link) ou pague usando o código de barras: \(barcode).
+        """
+        return message
     }
 }

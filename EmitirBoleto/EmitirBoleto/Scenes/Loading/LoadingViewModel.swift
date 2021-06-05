@@ -66,7 +66,7 @@ class LoadingViewModel {
             if let gnError = notification.object as? GerencianetError {
                 switch gnError {
                 case .responseBuilding:
-                    failed(Constants.ErrorMessage.responseBuilding)
+                    failed(gnError.description)
                 }
             }
             
@@ -77,20 +77,12 @@ class LoadingViewModel {
     }
     
     func charge() {
-        if let data = data {
-            let charge = ChargeOneStep(paymentGateway: gn)
-            charge.execute(user: UserModel.shared, data: data)
-        } else {
-            failed(Constants.ErrorMessage.default)
-        }
+        let charge = ChargeOneStep(paymentGateway: gn)
+        charge.execute(user: UserModel.shared, data: data!)
     }
     
     func authenticateAndCharge() {
-        if let data = data {
-            let authenticateAndCharge = AuthenticateAndChargeOneStep(paymentGateway: gn)
-            authenticateAndCharge.execute(user: UserModel.shared, data: data)
-        } else {
-            failed(Constants.ErrorMessage.default)
-        }
+        let authenticateAndCharge = AuthenticateAndChargeOneStep(paymentGateway: gn)
+        authenticateAndCharge.execute(user: UserModel.shared, data: data!)
     }
 }

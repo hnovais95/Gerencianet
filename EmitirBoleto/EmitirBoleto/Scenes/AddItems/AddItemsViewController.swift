@@ -9,7 +9,7 @@ import UIKit
 
 class AddItemsViewController: UIViewController {
     
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -25,20 +25,20 @@ class AddItemsViewController: UIViewController {
     @IBOutlet weak var nextButton: NextButton!
     
     
-    // MARK: Member variables
+    // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
     private var viewModel = AddItemsViewModel()
     
     
-    // MARK: Public methods
+    // MARK: - Public methods
     
     func setRequiredData(_ customer: CustomerModel) {
         viewModel.customer = customer
     }
     
     
-    // MARK: Life Cycle
+    // MARK: - Life Cycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class AddItemsViewController: UIViewController {
     }
     
     
-    // MARK: Handlers
+    // MARK: - Handlers
     
     @objc
     private func handleTapBackButton(_ sender: UIButton) {
@@ -83,7 +83,7 @@ class AddItemsViewController: UIViewController {
 }
 
 
-// MARK: Delegates
+// MARK: - Delegates
 
 extension AddItemsViewController: UITableViewDelegate, UITableViewDataSource {
     
