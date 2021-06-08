@@ -30,13 +30,13 @@ class CustomersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupLayout()
+        setup()
     }
     
     
-    // MARK: Layout
+    // MARK: Setups
     
-    private func setupLayout() {
+    private func setup() {
         iconView.layer.borderWidth = 1.0
         iconView.layer.masksToBounds = true
         iconView.layer.cornerRadius = iconView.frame.width / 2
@@ -58,7 +58,15 @@ class CustomersTableViewCell: UITableViewCell {
     
     func prepare(with customer: CustomerModel) {
         nameLabel.text = customer.name
-        identifierLabel.text = customer.isJuridicalPerson ? customer.juridicalPerson?.cnpj : customer.cpf
+        
+        var identifier: String
+        if customer.isJuridicalPerson {
+            identifier = Helper.applyMask(text: customer.juridicalPerson!.cnpj, maskString: Constants.Mask.cnpj)
+        } else {
+            identifier = Helper.applyMask(text: customer.cpf, maskString: Constants.Mask.cpf)
+        }
+        
+        identifierLabel.text = identifier
         iconTitleLabel.text = Helper.getInitialsName(customer.name)
         
         if customer.isJuridicalPerson {

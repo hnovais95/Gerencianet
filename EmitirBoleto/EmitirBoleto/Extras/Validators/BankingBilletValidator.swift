@@ -9,7 +9,7 @@ struct BankingBilletValidator: Validator {
     
     enum BankingBilletValidityType: Int {
         case expireAt, shippingValue, discountType, discountValue, conditionalDiscountType,
-             contitionalDiscountValue, contitionalDiscountDeadline
+             conditionalDiscountValue, conditionalDiscountDeadline, message
     }
     
     func validate(_ rawValue: Int, _ value: String) -> Bool {
@@ -23,10 +23,12 @@ struct BankingBilletValidator: Validator {
             return validadeRegex("^[12][0-9]{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$", value)
         case .discountType, .conditionalDiscountType:
             return (value == "percentage") || (value == "currency")
-        case .shippingValue, .discountValue, .contitionalDiscountValue:
-            return (value == "") || (Int(value) != nil)
-        case .contitionalDiscountDeadline:
+        case .shippingValue, .discountValue, .conditionalDiscountValue:
+            return (value == "") || ((Int(value) != nil) && (Int(value)! > 99))
+        case .conditionalDiscountDeadline:
             return (value == "") || validadeRegex("^[12][0-9]{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$", value)
+        case .message:
+            return validadeRegex("^[^\n]{0,100}(\n[^\n]{0,100}){0,3}$", value)
         }
     }
 }

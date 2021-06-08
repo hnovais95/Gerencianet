@@ -8,6 +8,7 @@ target 'EmitirBoleto' do
   # Pods for EmitirBoleto
   pod 'Alamofire'
   pod 'CPF-CNPJ-Validator'
+  pod 'SwiftMaskText'
 
 
   target 'EmitirBoletoTests' do

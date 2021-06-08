@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankingBilletViewController" customModule="EmitirBoleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BankingBilletViewController" customModule="Boleto" customModuleProvider="target">
             <connections>
                 <outlet property="additionalFieldsStackView" destination="Fxm-ak-Epp" id="P5P-CA-q5c"/>
                 <outlet property="additionalFieldsSwitch" destination="73L-M3-4RW" id="YZY-ve-UX5"/>
@@ -40,21 +40,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOh-9T-kc7" userLabel="Background View">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da8-5V-0xv" userLabel="Top View">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxk-RC-bB3">
-                                    <rect key="frame" x="14" y="9.5" width="25" height="25"/>
+                                    <rect key="frame" x="14" y="9.6666666666666643" width="25" height="25"/>
                                     <state key="normal" image="gn_logo"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMISSÃO DE BOLETO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk8-vG-GsM">
-                                    <rect key="frame" x="124.5" y="10" width="165.5" height="24"/>
+                                    <rect key="frame" x="124.33333333333333" y="10.333333333333334" width="165.33333333333337" height="23.666666666666664"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -73,18 +73,18 @@
                             <rect key="frame" x="8" y="60" width="398" height="7"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40V-i5-lve">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.5" height="7"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="7"/>
                                     <color key="backgroundColor" red="0.35686274509999999" green="0.67450980390000004" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="7" id="DQP-cA-Kdi"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTP-r5-vJ8">
-                                    <rect key="frame" x="135.5" y="0.0" width="127" height="7"/>
+                                    <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="7"/>
                                     <color key="backgroundColor" red="0.35686274509999999" green="0.67450980390000004" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8p-EI-9lv">
-                                    <rect key="frame" x="270.5" y="0.0" width="127.5" height="7"/>
+                                    <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="7"/>
                                     <color key="backgroundColor" red="0.76470588240000004" green="0.64705882349999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                             </subviews>
@@ -111,7 +111,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gxh-oq-fjQ" userLabel="Text Field-Button Stack View">
                                     <rect key="frame" x="0.0" y="0.0" width="378" height="25"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dia/Mês/Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-FG-dik" userLabel="State Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dia/Mês/Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S3q-FG-dik" userLabel="State Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="25"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -143,7 +143,7 @@
                             <rect key="frame" x="18" y="178" width="378" height="47"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exibir campos adicionais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-11-Aft">
-                                    <rect key="frame" x="0.0" y="15.5" width="160" height="16"/>
+                                    <rect key="frame" x="0.0" y="15.666666666666657" width="159.66666666666666" height="15.666666666666664"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -162,44 +162,44 @@
                             </constraints>
                         </view>
                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Fxm-ak-Epp" userLabel="Additional Fields Stack View">
-                            <rect key="frame" x="18" y="233" width="378" height="364"/>
+                            <rect key="frame" x="18" y="233" width="378" height="363"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="pUT-5N-Iph" userLabel="Shipping-Discount Stack View">
-                                    <rect key="frame" x="0.0" y="0.0" width="378" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="378" height="63.666666666666664"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="loi-Vb-hYx" userLabel="Shipping Stack View">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="63.666666666666664"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVV-Xl-ATR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT5-hs-aOY" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="26.5" width="167" height="1"/>
+                                                    <rect key="frame" x="0.0" y="26.333333333333314" width="167" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="PJL-n8-DO0"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ala-RD-7Oq" userLabel="Shipping Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="33.5" width="167" height="17.5"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="R$ 0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ala-RD-7Oq" userLabel="Shipping Text Field" customClass="CurrencyTextField" customModule="Boleto" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="33.333333333333314" width="167" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17.329999999999998" id="YGh-R1-bdc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpl-jM-yqn" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="57" width="167" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="56.666666666666686" width="167" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="lhG-4C-qFY"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1DN-bf-uJ9" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="63" width="167" height="1"/>
+                                                    <rect key="frame" x="0.0" y="62.666666666666686" width="167" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="nNp-TZ-GuC"/>
@@ -209,16 +209,16 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ble-JC-hK9" userLabel="Discount Stack View">
-                                            <rect key="frame" x="185" y="0.0" width="193" height="64"/>
+                                            <rect key="frame" x="185" y="0.0" width="193" height="63.666666666666664"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desconto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IF-Xb-1Dn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="16"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="61.666666666666664" height="15.666666666666666"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HIh-Qb-bTb" userLabel="Unit-Amount View">
-                                                    <rect key="frame" x="0.0" y="22" width="193" height="42"/>
+                                                    <rect key="frame" x="0.0" y="21.666666666666657" width="193" height="42"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="N1v-vo-KNy" userLabel="Type Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="42"/>
@@ -230,9 +230,9 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-yz-IY4" userLabel="Text Field - Button Stack View">
-                                                                    <rect key="frame" x="0.0" y="7" width="40" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="7.0000000000000284" width="40" height="22"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-jt-Mgj" userLabel="Unit Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-jt-Mgj" userLabel="Unit Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="27" height="22"/>
                                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -249,14 +249,14 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bb5-qg-hff" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="35" width="40" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="35.000000000000028" width="40" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="fD7-Bb-rY4"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaH-02-n7r" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="41" width="40" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="41.000000000000028" width="40" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="moJ-01-qCz"/>
@@ -276,21 +276,21 @@
                                                                         <constraint firstAttribute="height" constant="1" id="jim-X3-Ehl"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVZ-kt-rsK" userLabel="Amount Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="7" width="146" height="22"/>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVZ-kt-rsK" userLabel="Amount Text Field" customClass="FractionalNumberTextField" customModule="Boleto" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="7.0000000000000284" width="146" height="22"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                    <textInputTraits key="textInputTraits"/>
+                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szf-eA-JHL" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="35" width="146" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="35.000000000000028" width="146" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="WRx-d4-RFm"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNt-pS-MMD" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="41" width="146" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="41.000000000000028" width="146" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="lmI-28-V74"/>
@@ -313,16 +313,16 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-mx-bbR" userLabel="Conditional Discount Stack View">
-                                    <rect key="frame" x="0.0" y="88" width="254" height="64"/>
+                                    <rect key="frame" x="0.0" y="87.666666666666686" width="253.66666666666666" height="63.666666666666657"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desconto condicional sobre a cobrança" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nl-lK-KLy">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="253.66666666666666" height="15.666666666666666"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="60i-FT-erB" userLabel="Unit-Amount View">
-                                            <rect key="frame" x="0.0" y="22" width="179" height="42"/>
+                                            <rect key="frame" x="0.0" y="21.666666666666629" width="179" height="42"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8OX-NA-RHa" userLabel="Type Stack View">
                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="42"/>
@@ -336,7 +336,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JbT-kk-q3l" userLabel="Text Field - Button Stack View">
                                                             <rect key="frame" x="0.0" y="7" width="40" height="22"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-94-0kY" userLabel="Unit Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="%" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-94-0kY" userLabel="Unit Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="27" height="22"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -380,11 +380,11 @@
                                                                 <constraint firstAttribute="height" constant="1" id="FZn-er-QBB"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="1,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WY0-mt-CCF" userLabel="Amount Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WY0-mt-CCF" userLabel="Amount Text Field" customClass="FractionalNumberTextField" customModule="Boleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="7" width="132" height="22"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVW-Ix-snj" userLabel="White Space View">
                                                             <rect key="frame" x="0.0" y="35" width="132" height="0.0"/>
@@ -412,7 +412,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RrM-Il-BgT" userLabel="Se for pago-Deadline Stack View">
-                                    <rect key="frame" x="0.0" y="176" width="378" height="30"/>
+                                    <rect key="frame" x="0.0" y="175.33333333333331" width="378" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Se for pago até" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbt-ze-7rB">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
@@ -432,7 +432,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-fD-t8L" userLabel="Text Field-Button Stack View">
                                                             <rect key="frame" x="0.0" y="0.0" width="253" height="25"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dia/Mês/Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-Ya-By0" userLabel="State Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dia/Mês/Ano" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-Ya-By0" userLabel="State Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="223" height="25"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -471,13 +471,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bwk-Ic-83k" userLabel="Note View">
-                                    <rect key="frame" x="0.0" y="230" width="378" height="134"/>
+                                    <rect key="frame" x="0.0" y="229.33333333333331" width="378" height="133.66666666666669"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="eAH-VA-phv" userLabel="Title View">
-                                            <rect key="frame" x="0.0" y="0.0" width="378" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="378" height="15.666666666666666"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g9-9b-1mW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="16"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="15.666666666666666"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="u6S-e0-New"/>
                                                     </constraints>
@@ -486,15 +486,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(máximo de 4 linhas de 100 caractéres cada)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Td-DR-TDo">
-                                                    <rect key="frame" x="84" y="0.0" width="294" height="16"/>
+                                                    <rect key="frame" x="84" y="0.0" width="294" height="15.666666666666666"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnL-Hf-XL3">
-                                            <rect key="frame" x="0.0" y="26" width="378" height="108"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnL-Hf-XL3" customClass="BindingTextView" customModule="Boleto" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="25.666666666666686" width="378" height="108"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="108" id="4hV-af-OF6"/>
@@ -510,8 +510,8 @@
                                 <constraint firstItem="Bwk-Ic-83k" firstAttribute="width" secondItem="Fxm-ak-Epp" secondAttribute="width" id="Y7u-9c-e7J"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALOR TOTAL DA COBRANÇA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8x-ft-eSa">
-                            <rect key="frame" x="18" y="707" width="236" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALOR TOTAL DA COBRANÇA:" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l8x-ft-eSa">
+                            <rect key="frame" x="17.999999999999986" y="625" width="235.66666666666663" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="VhF-R1-FY4"/>
                             </constraints>
@@ -519,16 +519,16 @@
                             <color key="textColor" red="0.43137254899999999" green="0.43529411759999997" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 140,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvB-Ef-hax">
-                            <rect key="frame" x="279" y="702.5" width="117" height="29"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 140,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvB-Ef-hax">
+                            <rect key="frame" x="279" y="620.66666666666663" width="117" height="28.666666666666629"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                             <color key="textColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RPe-Li-efT" userLabel="Buttons Stack View">
-                            <rect key="frame" x="16" y="745" width="382" height="44"/>
+                            <rect key="frame" x="16" y="663" width="382" height="44"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-wt-92D" customClass="BackButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTl-wt-92D" customClass="BackButton" customModule="Boleto" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="EKn-FC-84p"/>
@@ -538,7 +538,7 @@
                                         <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQm-wJ-uw6" customClass="NextButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQm-wJ-uw6" customClass="NextButton" customModule="Boleto" customModuleProvider="target">
                                     <rect key="frame" x="199" y="0.0" width="183" height="44"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                     <state key="normal" title="EMITIR BOLETO">
@@ -575,6 +575,7 @@
                         <constraint firstItem="qga-aP-4kO" firstAttribute="top" secondItem="riR-Ic-6i9" secondAttribute="bottom" constant="22" id="grL-Ib-asJ"/>
                         <constraint firstAttribute="trailing" secondItem="Fxm-ak-Epp" secondAttribute="trailing" constant="18" id="nZq-3K-YuP"/>
                         <constraint firstItem="da8-5V-0xv" firstAttribute="top" secondItem="bOh-9T-kc7" secondAttribute="top" id="rcU-3B-Er8"/>
+                        <constraint firstItem="nvB-Ef-hax" firstAttribute="leading" secondItem="l8x-ft-eSa" secondAttribute="trailing" constant="25.333333333333371" id="sd5-am-msM"/>
                         <constraint firstItem="l8x-ft-eSa" firstAttribute="leading" secondItem="bOh-9T-kc7" secondAttribute="leading" constant="18" id="tLI-On-d35"/>
                         <constraint firstAttribute="trailing" secondItem="Lbx-cg-zXP" secondAttribute="trailing" constant="8" id="yLt-j7-jNv"/>
                     </constraints>

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		172CF709C3F8F8AC16E5DA79 /* Pods_EmitirBoletoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */; };
-		5B2C1C019D97527B273D86DE /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B73A124B5E1E9593376F8E /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */; };
-		60D5968BDE40F3F694434C0C /* Pods_EmitirBoleto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427FA4B23DC1784DB73F5703 /* Pods_EmitirBoleto.framework */; };
 		CA0247EC265D776900AE6F61 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0247EA265D776900AE6F61 /* LoadingViewController.swift */; };
 		CA0247ED265D776900AE6F61 /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0247EB265D776900AE6F61 /* LoadingViewController.xib */; };
 		CA0247F9265D7C7D00AE6F61 /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0247F7265D7C7D00AE6F61 /* FailureViewController.swift */; };
@@ -41,6 +38,11 @@
 		CA6DE09E265C078E00FC5D19 /* AddItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE09C265C078E00FC5D19 /* AddItemsViewController.xib */; };
 		CA6DE0A2265C2DB300FC5D19 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6DE0A0265C2DB300FC5D19 /* EmptyTableViewCell.swift */; };
 		CA6DE0A3265C2DB300FC5D19 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6DE0A1265C2DB300FC5D19 /* EmptyTableViewCell.xib */; };
+		CA7D7699266F9C0F005A4697 /* BindingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D7698266F9C0F005A4697 /* BindingTextView.swift */; };
+		CA7D76AB266FF0E0005A4697 /* SwiftMaskField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D76A9266FF0E0005A4697 /* SwiftMaskField.swift */; };
+		CA7D76AC266FF0E0005A4697 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D76AA266FF0E0005A4697 /* StringExtensions.swift */; };
+		CA7D76B2266FF89B005A4697 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D76B0266FF89B005A4697 /* HomeViewController.swift */; };
+		CA7D76B3266FF89B005A4697 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA7D76B1266FF89B005A4697 /* HomeViewController.xib */; };
 		CA87DF452653E02C0074A161 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF442653E02C0074A161 /* Authenticate.swift */; };
 		CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF4826543BEC0074A161 /* CoreDataManager.swift */; };
 		CA87DF9026545BE30074A161 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA87DF8A26545BE30074A161 /* Customer+CoreDataClass.swift */; };
@@ -79,6 +81,10 @@
 		CAA44D8926669359002BA48F /* DiscountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA44D8826669359002BA48F /* DiscountModel.swift */; };
 		CAA44D8B26669371002BA48F /* ConditionalDiscountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA44D8A26669371002BA48F /* ConditionalDiscountModel.swift */; };
 		CAA44D9026669B89002BA48F /* BankingBilletValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA44D8F26669B89002BA48F /* BankingBilletValidator.swift */; };
+		CAB2E153266E453300EC586C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E152266E453300EC586C /* Currency.swift */; };
+		CAB2E156266E458A00EC586C /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E155266E458A00EC586C /* CurrencyTextField.swift */; };
+		CAB2E15A266E681F00EC586C /* DiscountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E159266E681F00EC586C /* DiscountType.swift */; };
+		CAB2E15C266E880500EC586C /* FractionalNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -108,6 +114,7 @@
 		CAD3AEDF264C24F600DD0DCB /* JuridicalPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3AEDE264C24F600DD0DCB /* JuridicalPersonModel.swift */; };
 		CAD862DF266A6D7A00BF8B9E /* GNSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD862DE266A6D7A00BF8B9E /* GNSpinner.swift */; };
 		CAD862E3266A995300BF8B9E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD862E2266A995300BF8B9E /* UIViewController+Extensions.swift */; };
+		CADE77AC5AE79B2E2B4C7D3F /* Pods_EmitirBoletoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF77ADE3EE54EF7A6546F5A /* Pods_EmitirBoletoTests.framework */; };
 		CADE8440265BDBF60020BEC3 /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE843E265BDBF60020BEC3 /* ButtonsTableViewCell.swift */; };
 		CADE8441265BDBF60020BEC3 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADE843F265BDBF60020BEC3 /* ButtonsTableViewCell.xib */; };
 		CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EF264F117700EABEFC /* Gerencianet.swift */; };
@@ -121,6 +128,8 @@
 		CAF75202264F270C00EABEFC /* APIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF75201264F270C00EABEFC /* APIConfigurations.swift */; };
 		CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC899E264AF7CE00D361B0 /* UserModel.swift */; };
 		CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */; };
+		E75A49F9CF15AFFEC6EC54E0 /* Pods_EmitirBoleto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96909849B91820360C4E991D /* Pods_EmitirBoleto.framework */; };
+		F71913AF90CCB8802BE88A0C /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27102FEDA2807B003B73E9FD /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,13 +150,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2061D632FB9809EE514AB1FC /* Pods-EmitirBoletoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoletoTests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoletoTests/Pods-EmitirBoletoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		37853E2FFCD52B2C4533F39B /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		427FA4B23DC1784DB73F5703 /* Pods_EmitirBoleto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		512F2C64F8D67D2114ABD864 /* Pods-EmitirBoletoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoletoTests.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoletoTests/Pods-EmitirBoletoTests.release.xcconfig"; sourceTree = "<group>"; };
-		73B73A124B5E1E9593376F8E /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto_EmitirBoletoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83AD70706259383F52D7FC47 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BFB526D55251AA27FC467449 /* Pods-EmitirBoleto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.release.xcconfig"; sourceTree = "<group>"; };
+		26A8FD7FE3823065878D8053 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		27102FEDA2807B003B73E9FD /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto_EmitirBoletoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF77ADE3EE54EF7A6546F5A /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoletoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5885EBAAC1E6D8DB3BDEF101 /* Pods-EmitirBoleto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.release.xcconfig"; sourceTree = "<group>"; };
+		66BF7C68AD36F141DDE74E75 /* Pods-EmitirBoletoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoletoTests.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoletoTests/Pods-EmitirBoletoTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D84F82D8A55AFD2AF8B8AED /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		96909849B91820360C4E991D /* Pods_EmitirBoleto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoleto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0247EA265D776900AE6F61 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CA0247EB265D776900AE6F61 /* LoadingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		CA0247F7265D7C7D00AE6F61 /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +188,11 @@
 		CA6DE09C265C078E00FC5D19 /* AddItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemsViewController.xib; sourceTree = "<group>"; };
 		CA6DE0A0265C2DB300FC5D19 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		CA6DE0A1265C2DB300FC5D19 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		CA7D7698266F9C0F005A4697 /* BindingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextView.swift; sourceTree = "<group>"; };
+		CA7D76A9266FF0E0005A4697 /* SwiftMaskField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftMaskField.swift; sourceTree = "<group>"; };
+		CA7D76AA266FF0E0005A4697 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		CA7D76B0266FF89B005A4697 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA7D76B1266FF89B005A4697 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CA87DF442653E02C0074A161 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		CA87DF4826543BEC0074A161 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CA87DF8A26545BE30074A161 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -216,11 +230,15 @@
 		CAA44D8826669359002BA48F /* DiscountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountModel.swift; sourceTree = "<group>"; };
 		CAA44D8A26669371002BA48F /* ConditionalDiscountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalDiscountModel.swift; sourceTree = "<group>"; };
 		CAA44D8F26669B89002BA48F /* BankingBilletValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletValidator.swift; sourceTree = "<group>"; };
+		CAB2E152266E453300EC586C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		CAB2E155266E458A00EC586C /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		CAB2E159266E681F00EC586C /* DiscountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountType.swift; sourceTree = "<group>"; };
+		CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionalNumberTextField.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
 		CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitirBoleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABCA8C7264AB04D007AE005 /* Boleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABCA8D4264AB04D007AE005 /* EmitirBoleto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmitirBoleto.xcdatamodel; sourceTree = "<group>"; };
 		CABCA8D6264AB04E007AE005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,8 +283,8 @@
 		CAF75201264F270C00EABEFC /* APIConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurations.swift; sourceTree = "<group>"; };
 		CAFC899E264AF7CE00D361B0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CAFC89A3264B077900D361B0 /* ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStep.swift; sourceTree = "<group>"; };
-		F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmitirBoletoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F98C064082B60A0DD6208CF5 /* Pods-EmitirBoleto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.debug.xcconfig"; sourceTree = "<group>"; };
+		DB2DCF044AF99005CAEE57E9 /* Pods-EmitirBoleto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoleto.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto.debug.xcconfig"; sourceTree = "<group>"; };
+		F8930422CC5A2391AEDF3AC0 /* Pods-EmitirBoletoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmitirBoletoTests.debug.xcconfig"; path = "Target Support Files/Pods-EmitirBoletoTests/Pods-EmitirBoletoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +292,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D5968BDE40F3F694434C0C /* Pods_EmitirBoleto.framework in Frameworks */,
+				E75A49F9CF15AFFEC6EC54E0 /* Pods_EmitirBoleto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172CF709C3F8F8AC16E5DA79 /* Pods_EmitirBoletoTests.framework in Frameworks */,
+				CADE77AC5AE79B2E2B4C7D3F /* Pods_EmitirBoletoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2C1C019D97527B273D86DE /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */,
+				F71913AF90CCB8802BE88A0C /* Pods_EmitirBoleto_EmitirBoletoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,22 +318,22 @@
 		623B25C55304E82FB7237279 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F98C064082B60A0DD6208CF5 /* Pods-EmitirBoleto.debug.xcconfig */,
-				BFB526D55251AA27FC467449 /* Pods-EmitirBoleto.release.xcconfig */,
-				83AD70706259383F52D7FC47 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */,
-				37853E2FFCD52B2C4533F39B /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */,
-				2061D632FB9809EE514AB1FC /* Pods-EmitirBoletoTests.debug.xcconfig */,
-				512F2C64F8D67D2114ABD864 /* Pods-EmitirBoletoTests.release.xcconfig */,
+				DB2DCF044AF99005CAEE57E9 /* Pods-EmitirBoleto.debug.xcconfig */,
+				5885EBAAC1E6D8DB3BDEF101 /* Pods-EmitirBoleto.release.xcconfig */,
+				26A8FD7FE3823065878D8053 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */,
+				6D84F82D8A55AFD2AF8B8AED /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */,
+				F8930422CC5A2391AEDF3AC0 /* Pods-EmitirBoletoTests.debug.xcconfig */,
+				66BF7C68AD36F141DDE74E75 /* Pods-EmitirBoletoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		8618A834A243BEC714F28D98 /* Frameworks */ = {
+		B40A086BAAAD37BFA1001DA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				427FA4B23DC1784DB73F5703 /* Pods_EmitirBoleto.framework */,
-				73B73A124B5E1E9593376F8E /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */,
-				F77A04EAF7AE2FAEFC399FD9 /* Pods_EmitirBoletoTests.framework */,
+				96909849B91820360C4E991D /* Pods_EmitirBoleto.framework */,
+				27102FEDA2807B003B73E9FD /* Pods_EmitirBoleto_EmitirBoletoUITests.framework */,
+				4DF77ADE3EE54EF7A6546F5A /* Pods_EmitirBoletoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -451,6 +469,32 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CA7D7697266F99BA005A4697 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2E159266E681F00EC586C /* DiscountType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		CA7D76A8266FBB92005A4697 /* SwiftMaskField */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D76AA266FF0E0005A4697 /* StringExtensions.swift */,
+				CA7D76A9266FF0E0005A4697 /* SwiftMaskField.swift */,
+			);
+			path = SwiftMaskField;
+			sourceTree = "<group>";
+		};
+		CA7D76AD266FF87A005A4697 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CA7D76B0266FF89B005A4697 /* HomeViewController.swift */,
+				CA7D76B1266FF89B005A4697 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		CA87DF4626543A9C0074A161 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,14 +585,18 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
-		CA8A56C02661B65E00E95AB5 /* UIComponents */ = {
+		CA8A56C02661B65E00E95AB5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CA7D76A8266FBB92005A4697 /* SwiftMaskField */,
+				CAB2E154266E456200EC586C /* CurrencyTextField */,
+				CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */,
 				CA8A56A226610DED00E95AB5 /* BindingTextField.swift */,
+				CA7D7698266F9C0F005A4697 /* BindingTextView.swift */,
 				CA8A56AA2661377C00E95AB5 /* CustomButtons.swift */,
 				CAD862DE266A6D7A00BF8B9E /* GNSpinner.swift */,
 			);
-			path = UIComponents;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		CA90CF522667A71C008383D2 /* Components */ = {
@@ -594,6 +642,15 @@
 			path = Shipping;
 			sourceTree = "<group>";
 		};
+		CAB2E154266E456200EC586C /* CurrencyTextField */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2E152266E453300EC586C /* Currency.swift */,
+				CAB2E155266E458A00EC586C /* CurrencyTextField.swift */,
+			);
+			path = CurrencyTextField;
+			sourceTree = "<group>";
+		};
 		CABB5FC32655647A0079FFDF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,14 +679,14 @@
 				CABCA8EE264AB04F007AE005 /* EmitirBoletoUITests */,
 				CABCA8C8264AB04D007AE005 /* Products */,
 				623B25C55304E82FB7237279 /* Pods */,
-				8618A834A243BEC714F28D98 /* Frameworks */,
+				B40A086BAAAD37BFA1001DA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		CABCA8C8264AB04D007AE005 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */,
+				CABCA8C7264AB04D007AE005 /* Boleto.app */,
 				CABCA8E0264AB04F007AE005 /* EmitirBoletoTests.xctest */,
 				CABCA8EB264AB04F007AE005 /* EmitirBoletoUITests.xctest */,
 			);
@@ -676,6 +733,7 @@
 		CABCA8FF264AB080007AE005 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CA7D76AD266FF87A005A4697 /* Home */,
 				CABB5FC6265566640079FFDF /* InsertCustomer */,
 				CAC0F12E2656EA9B00D98492 /* SearchCustomer */,
 				CA29B52626585C2A004BCBFD /* AddItems */,
@@ -802,11 +860,12 @@
 		CAD3AEC7264BF93000DD0DCB /* Extras */ = {
 			isa = PBXGroup;
 			children = (
-				CA29B5232658583C004BCBFD /* Helper.swift */,
 				CA25553D2652F7A100F75E20 /* Constants.swift */,
+				CA29B5232658583C004BCBFD /* Helper.swift */,
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
-				CA8A56C02661B65E00E95AB5 /* UIComponents */,
+				CA7D7697266F99BA005A4697 /* Enums */,
+				CA8A56C02661B65E00E95AB5 /* UI */,
 				CA8A56B92661B1AB00E95AB5 /* Validators */,
 			);
 			path = Extras;
@@ -860,28 +919,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CABCA8F4264AB04F007AE005 /* Build configuration list for PBXNativeTarget "EmitirBoleto" */;
 			buildPhases = (
-				48DA9FFFBCD318703C3517DD /* [CP] Check Pods Manifest.lock */,
+				D06191B1435497634612B7E6 /* [CP] Check Pods Manifest.lock */,
 				CABCA8C3264AB04D007AE005 /* Sources */,
 				CABCA8C4264AB04D007AE005 /* Frameworks */,
 				CABCA8C5264AB04D007AE005 /* Resources */,
-				06FCA638BA5D870D6A24079F /* [CP] Embed Pods Frameworks */,
+				555C000152129EF5AE9BC5E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = EmitirBoleto;
-			packageProductDependencies = (
-			);
 			productName = EmitirBoleto;
-			productReference = CABCA8C7264AB04D007AE005 /* EmitirBoleto.app */;
+			productReference = CABCA8C7264AB04D007AE005 /* Boleto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CABCA8DF264AB04F007AE005 /* EmitirBoletoTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CABCA8F7264AB04F007AE005 /* Build configuration list for PBXNativeTarget "EmitirBoletoTests" */;
 			buildPhases = (
-				51720CEC3D0B4F4B5CFBCC12 /* [CP] Check Pods Manifest.lock */,
+				7169F45F643A629F14DEE332 /* [CP] Check Pods Manifest.lock */,
 				CABCA8DC264AB04F007AE005 /* Sources */,
 				CABCA8DD264AB04F007AE005 /* Frameworks */,
 				CABCA8DE264AB04F007AE005 /* Resources */,
@@ -900,11 +957,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CABCA8FA264AB04F007AE005 /* Build configuration list for PBXNativeTarget "EmitirBoletoUITests" */;
 			buildPhases = (
-				F5A5781008975C84D413AF7C /* [CP] Check Pods Manifest.lock */,
+				5E555E295A81A344C98FBB05 /* [CP] Check Pods Manifest.lock */,
 				CABCA8E7264AB04F007AE005 /* Sources */,
 				CABCA8E8264AB04F007AE005 /* Frameworks */,
 				CABCA8E9264AB04F007AE005 /* Resources */,
-				9BD591F216B6CD359ACF0825 /* [CP] Embed Pods Frameworks */,
+				0B5858FC542176A4CF2F592C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -947,8 +1004,6 @@
 				Base,
 			);
 			mainGroup = CABCA8BE264AB04D007AE005;
-			packageReferences = (
-			);
 			productRefGroup = CABCA8C8264AB04D007AE005 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -977,6 +1032,7 @@
 				CA0247ED265D776900AE6F61 /* LoadingViewController.xib in Resources */,
 				CA6DE09A265BE21600FC5D19 /* ItemDetailsTableViewCell.xib in Resources */,
 				CA1859C6265D1A91001F821C /* AddItemPopupViewController.xib in Resources */,
+				CA7D76B3266FF89B005A4697 /* HomeViewController.xib in Resources */,
 				CA6DE0A3265C2DB300FC5D19 /* EmptyTableViewCell.xib in Resources */,
 				CA6DE09E265C078E00FC5D19 /* AddItemsViewController.xib in Resources */,
 				CAA44D8326665A5F002BA48F /* BankingBilletViewController.xib in Resources */,
@@ -1003,7 +1059,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06FCA638BA5D870D6A24079F /* [CP] Embed Pods Frameworks */ = {
+		0B5858FC542176A4CF2F592C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		555C000152129EF5AE9BC5E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1020,7 +1093,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto/Pods-EmitirBoleto-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		48DA9FFFBCD318703C3517DD /* [CP] Check Pods Manifest.lock */ = {
+		5E555E295A81A344C98FBB05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1035,14 +1108,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EmitirBoleto-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EmitirBoleto-EmitirBoletoUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51720CEC3D0B4F4B5CFBCC12 /* [CP] Check Pods Manifest.lock */ = {
+		7169F45F643A629F14DEE332 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1064,24 +1137,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD591F216B6CD359ACF0825 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmitirBoleto-EmitirBoletoUITests/Pods-EmitirBoleto-EmitirBoletoUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5A5781008975C84D413AF7C /* [CP] Check Pods Manifest.lock */ = {
+		D06191B1435497634612B7E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1096,7 +1152,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EmitirBoleto-EmitirBoletoUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EmitirBoleto-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1137,6 +1193,7 @@
 				CAFC89A4264B077900D361B0 /* ChargeOneStep.swift in Sources */,
 				CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */,
 				CA90CF5F26682F19008383D2 /* NetworkError.swift in Sources */,
+				CAB2E156266E458A00EC586C /* CurrencyTextField.swift in Sources */,
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
@@ -1161,6 +1218,7 @@
 				CAA44D8B26669371002BA48F /* ConditionalDiscountModel.swift in Sources */,
 				CA25553C2652F3A000F75E20 /* RepeatingTimer.swift in Sources */,
 				CA87DF9026545BE30074A161 /* Customer+CoreDataClass.swift in Sources */,
+				CAB2E15A266E681F00EC586C /* DiscountType.swift in Sources */,
 				CAFC899F264AF7CE00D361B0 /* UserModel.swift in Sources */,
 				CABCA8CB264AB04D007AE005 /* AppDelegate.swift in Sources */,
 				CA25553E2652F7A100F75E20 /* Constants.swift in Sources */,
@@ -1170,6 +1228,7 @@
 				CAF751F6264F11A700EABEFC /* BodyFactory.swift in Sources */,
 				CA6DE0A2265C2DB300FC5D19 /* EmptyTableViewCell.swift in Sources */,
 				CA29B513265815F9004BCBFD /* CustomersTableViewCell.swift in Sources */,
+				CAB2E153266E453300EC586C /* Currency.swift in Sources */,
 				CA87DF9126545BE30074A161 /* Customer+CoreDataProperties.swift in Sources */,
 				CABCA920264AC67F007AE005 /* ShippingModel.swift in Sources */,
 				CAC0F1312656EAB700D98492 /* SearchCustomerViewController.swift in Sources */,
@@ -1177,10 +1236,13 @@
 				CA29B5242658583C004BCBFD /* Helper.swift in Sources */,
 				CAF75200264F233700EABEFC /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA6DE099265BE21600FC5D19 /* ItemDetailsTableViewCell.swift in Sources */,
+				CA7D76AC266FF0E0005A4697 /* StringExtensions.swift in Sources */,
 				CA8F36822665609100473673 /* EditItemPopupViewModel.swift in Sources */,
 				CA87DF9F265480E70074A161 /* Item+CoreDataProperties.swift in Sources */,
 				CA2555452653300B00F75E20 /* ScheduleAuthentication.swift in Sources */,
+				CAB2E15C266E880500EC586C /* FractionalNumberTextField.swift in Sources */,
 				CA87DF9E265480E70074A161 /* Item+CoreDataClass.swift in Sources */,
+				CA7D7699266F9C0F005A4697 /* BindingTextView.swift in Sources */,
 				CA8A56B12661749500E95AB5 /* AddItemViewModel.swift in Sources */,
 				CAA44D8226665A5F002BA48F /* BankingBilletViewController.swift in Sources */,
 				CABCA918264AC2E3007AE005 /* CustomerModel.swift in Sources */,
@@ -1192,12 +1254,14 @@
 				CA1859C5265D1A91001F821C /* AddItemPopupViewController.swift in Sources */,
 				CAD862E3266A995300BF8B9E /* UIViewController+Extensions.swift in Sources */,
 				CAD862DF266A6D7A00BF8B9E /* GNSpinner.swift in Sources */,
+				CA7D76AB266FF0E0005A4697 /* SwiftMaskField.swift in Sources */,
 				CA6DE09D265C078E00FC5D19 /* AddItemsViewController.swift in Sources */,
 				CA8A56B626618D3D00E95AB5 /* SearchItemViewModel.swift in Sources */,
 				CABB5FCC265566FD0079FFDF /* MainCoordinator.swift in Sources */,
 				CAC0F12B2656951B00D98492 /* UIImage+Extensions.swift in Sources */,
 				CA0247F9265D7C7D00AE6F61 /* FailureViewController.swift in Sources */,
 				CA0247FD265D824400AE6F61 /* SuccessViewController.swift in Sources */,
+				CA7D76B2266FF89B005A4697 /* HomeViewController.swift in Sources */,
 				CA255543265327FB00F75E20 /* AuthenticateAndChargeOneStep.swift in Sources */,
 				CA8F367826651E6100473673 /* CustomerValidator.swift in Sources */,
 				CA8F367B2665246600473673 /* Validator.swift in Sources */,
@@ -1365,7 +1429,7 @@
 		};
 		CABCA8F5264AB04F007AE005 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F98C064082B60A0DD6208CF5 /* Pods-EmitirBoleto.debug.xcconfig */;
+			baseConfigurationReference = DB2DCF044AF99005CAEE57E9 /* Pods-EmitirBoleto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1378,7 +1442,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.EmitirBoleto";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Boleto;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1386,7 +1450,7 @@
 		};
 		CABCA8F6264AB04F007AE005 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFB526D55251AA27FC467449 /* Pods-EmitirBoleto.release.xcconfig */;
+			baseConfigurationReference = 5885EBAAC1E6D8DB3BDEF101 /* Pods-EmitirBoleto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1399,7 +1463,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.EmitirBoleto";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Boleto;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1407,7 +1471,7 @@
 		};
 		CABCA8F8264AB04F007AE005 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2061D632FB9809EE514AB1FC /* Pods-EmitirBoletoTests.debug.xcconfig */;
+			baseConfigurationReference = F8930422CC5A2391AEDF3AC0 /* Pods-EmitirBoletoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1430,7 +1494,7 @@
 		};
 		CABCA8F9264AB04F007AE005 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 512F2C64F8D67D2114ABD864 /* Pods-EmitirBoletoTests.release.xcconfig */;
+			baseConfigurationReference = 66BF7C68AD36F141DDE74E75 /* Pods-EmitirBoletoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1453,7 +1517,7 @@
 		};
 		CABCA8FB264AB04F007AE005 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83AD70706259383F52D7FC47 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */;
+			baseConfigurationReference = 26A8FD7FE3823065878D8053 /* Pods-EmitirBoleto-EmitirBoletoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1474,7 +1538,7 @@
 		};
 		CABCA8FC264AB04F007AE005 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37853E2FFCD52B2C4533F39B /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */;
+			baseConfigurationReference = 6D84F82D8A55AFD2AF8B8AED /* Pods-EmitirBoleto-EmitirBoletoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

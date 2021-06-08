@@ -40,4 +40,15 @@ struct Constants {
         static let noConnectivity = "Falha de conexão. Verifique a conexão com a internet."
         static let responseBuilding = "Falha ao apresentar informações do boleto. Verifique o histório de emissões."
     }
+    
+    struct LocaleIdentifier {
+        static let ptBR = "pt_BR"
+    }
+    
+    struct Mask {
+        static let cpf = "NNN.NNN.NNN-NN"
+        static let cnpj = "NN.NNN.NNN/NNNN-NN"
+        static let phoneNumber = "(NN) N NNNN-NNNN"
+        static let zipCode = "NNNNN-NNN"
+    }
 }

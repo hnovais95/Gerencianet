@@ -16,9 +16,15 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        let vc = HomeViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func insertCustomer() {
         let vc = InsertCustomerViewController()
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.pushViewController(vc, animated: true)
     }
     
     func searchCustomer(to delegate: SearchCustomerDelegate) {
@@ -46,6 +52,8 @@ class MainCoordinator: Coordinator {
         let vc = AddItemPopupViewController()
         vc.delegate = delegate
         vc.coordinator = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .coverVertical
         navigationController.present(vc, animated: true)
     }
     
@@ -53,6 +61,8 @@ class MainCoordinator: Coordinator {
         let vc = EditItemPopupViewController()
         vc.delegate = delegate
         vc.coordinator = self
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .coverVertical
         navigationController.present(vc, animated: true)
         vc.prepare(withItem: item)
     }

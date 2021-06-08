@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="EmitirBoleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="Boleto" customModuleProvider="target">
             <connections>
                 <outlet property="addressStackView" destination="Au0-JG-xGm" id="I50-Ew-Xsx"/>
                 <outlet property="addressSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
@@ -21,19 +21,6 @@
                 <outlet property="segmentedControl" destination="5WP-TC-IBo" id="zPM-Kb-z7x"/>
                 <outlet property="statePickerButton" destination="Fdr-yV-O6K" id="Igv-9k-g3K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="textFields" destination="c07-8A-eJz" collectionClass="NSMutableArray" id="e1O-3R-xft"/>
-                <outletCollection property="textFields" destination="azG-JF-mgD" collectionClass="NSMutableArray" id="BDT-Dq-MhD"/>
-                <outletCollection property="textFields" destination="Ad0-Nu-kaX" collectionClass="NSMutableArray" id="HeV-7n-ofh"/>
-                <outletCollection property="textFields" destination="34S-Xn-k7U" collectionClass="NSMutableArray" id="Kwq-jt-AeC"/>
-                <outletCollection property="textFields" destination="X2q-mc-Y8M" collectionClass="NSMutableArray" id="Wf1-P7-GPb"/>
-                <outletCollection property="textFields" destination="vXU-dC-Cqo" collectionClass="NSMutableArray" id="mcJ-zl-PuZ"/>
-                <outletCollection property="textFields" destination="0FN-bO-0Dt" collectionClass="NSMutableArray" id="uZd-b0-f3K"/>
-                <outletCollection property="textFields" destination="Oh2-XB-JiM" collectionClass="NSMutableArray" id="GUc-rX-F2A"/>
-                <outletCollection property="textFields" destination="5ti-Gp-VAA" collectionClass="NSMutableArray" id="N4N-wH-71j"/>
-                <outletCollection property="textFields" destination="4Ie-qM-Fox" collectionClass="NSMutableArray" id="aCr-qV-g1n"/>
-                <outletCollection property="textFields" destination="k73-lw-55b" collectionClass="NSMutableArray" id="IOK-Ch-sdg"/>
-                <outletCollection property="textFields" destination="IKl-xx-EUe" collectionClass="NSMutableArray" id="Fr4-yv-8gj"/>
-                <outletCollection property="textFields" destination="Pg4-nP-aiN" collectionClass="NSMutableArray" id="qyJ-gr-rOm"/>
                 <outletCollection property="validationViews" destination="2gH-Ju-2wx" collectionClass="NSMutableArray" id="scx-AV-gZk"/>
                 <outletCollection property="validationViews" destination="lGX-So-crK" collectionClass="NSMutableArray" id="yNJ-g7-zBB"/>
                 <outletCollection property="validationViews" destination="Xbs-mn-8sK" collectionClass="NSMutableArray" id="DZN-In-Su8"/>
@@ -60,6 +47,19 @@
                 <outletCollection property="validationViews" destination="Z3I-fc-za2" collectionClass="NSMutableArray" id="58f-AE-ghX"/>
                 <outletCollection property="validationViews" destination="suj-Ib-C0i" collectionClass="NSMutableArray" id="Y0V-CS-qyb"/>
                 <outletCollection property="validationViews" destination="Leh-bW-BBq" collectionClass="NSMutableArray" id="dIx-0a-4Ze"/>
+                <outletCollection property="textFields" destination="c07-8A-eJz" collectionClass="NSMutableArray" id="TGk-AO-JpG"/>
+                <outletCollection property="textFields" destination="azG-JF-mgD" collectionClass="NSMutableArray" id="266-mV-jbG"/>
+                <outletCollection property="textFields" destination="Ad0-Nu-kaX" collectionClass="NSMutableArray" id="2av-Cl-MbF"/>
+                <outletCollection property="textFields" destination="34S-Xn-k7U" collectionClass="NSMutableArray" id="cja-hm-GUK"/>
+                <outletCollection property="textFields" destination="X2q-mc-Y8M" collectionClass="NSMutableArray" id="KDY-Qq-5iL"/>
+                <outletCollection property="textFields" destination="vXU-dC-Cqo" collectionClass="NSMutableArray" id="Pql-Fb-Ggb"/>
+                <outletCollection property="textFields" destination="0FN-bO-0Dt" collectionClass="NSMutableArray" id="Wb8-ut-LHM"/>
+                <outletCollection property="textFields" destination="Oh2-XB-JiM" collectionClass="NSMutableArray" id="G1s-RB-0vU"/>
+                <outletCollection property="textFields" destination="5ti-Gp-VAA" collectionClass="NSMutableArray" id="Vcd-CA-nn1"/>
+                <outletCollection property="textFields" destination="4Ie-qM-Fox" collectionClass="NSMutableArray" id="w96-4n-tJJ"/>
+                <outletCollection property="textFields" destination="k73-lw-55b" collectionClass="NSMutableArray" id="LGT-oz-nGH"/>
+                <outletCollection property="textFields" destination="IKl-xx-EUe" collectionClass="NSMutableArray" id="dwP-ik-Pdx"/>
+                <outletCollection property="textFields" destination="Pg4-nP-aiN" collectionClass="NSMutableArray" id="5aV-MH-d9E"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -174,7 +174,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="blY-JE-wcK">
                                                     <rect key="frame" x="0.0" y="28.666666666666657" width="384.66666666666669" height="18"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="360.66666666666669" height="18"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -227,11 +227,14 @@
                                                         <constraint firstAttribute="height" constant="1" id="dvZ-Zq-MYq"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 000.000.000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azG-JF-mgD" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 000.000.000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azG-JF-mgD" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNN.NNN.NNN-NN"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-bY-zYM" userLabel="White Space View">
                                                     <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -273,7 +276,7 @@
                                                                 <constraint firstAttribute="height" constant="1" id="Ck7-Pq-gMu"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Gerencianet" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-Nu-kaX" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Gerencianet" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-Nu-kaX" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -316,11 +319,14 @@
                                                                 <constraint firstAttribute="height" constant="1" id="JLo-Mi-Q01"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00.000.000/0000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-Xn-k7U" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00.000.000/0000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-Xn-k7U" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NN.NNN.NNN/NNNN-NN"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvf-Tc-3kV" userLabel="White Space View">
                                                             <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -361,11 +367,14 @@
                                                         <constraint firstAttribute="height" constant="1" id="B5r-UT-mJU"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: (00) 9 0000-0000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-mc-Y8M" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: (00) 9 0000-0000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-mc-Y8M" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="(NN) N NNNN-NNNN"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-Gg-cqg" userLabel="White Space View">
                                                     <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
@@ -404,7 +413,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="aDc-Zj-1vG"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: email@dominio.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-dC-Cqo" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: email@dominio.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-dC-Cqo" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -491,7 +500,7 @@ para o cliente.</string>
                                                                 <constraint firstAttribute="height" constant="1" id="oNi-Ac-00g"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-bO-0Dt" userLabel="Address Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-bO-0Dt" userLabel="Address Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -537,7 +546,7 @@ para o cliente.</string>
                                                                         <constraint firstAttribute="height" constant="1" id="COS-m3-ygF"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-XB-JiM" userLabel="Number Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-XB-JiM" userLabel="Number Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -580,7 +589,7 @@ para o cliente.</string>
                                                                         <constraint firstAttribute="height" constant="1" id="IZa-jt-O18"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-Gp-VAA" userLabel="Complement Style Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-Gp-VAA" userLabel="Complement Style Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28.666666666666629" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -631,7 +640,7 @@ para o cliente.</string>
                                                                         <constraint firstAttribute="height" constant="1" id="TPX-YM-zRI"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-qM-Fox" userLabel="Neighborhood Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-qM-Fox" userLabel="Neighborhood Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -674,11 +683,14 @@ para o cliente.</string>
                                                                         <constraint firstAttribute="height" constant="1" id="awT-oe-UNq"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00000-000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k73-lw-55b" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00000-000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k73-lw-55b" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="17.333333333333329"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNNNN-NNN"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-BW-IpR" userLabel="White Space View">
                                                                     <rect key="frame" x="0.0" y="52.000000000000114" width="262.66666666666669" height="0.0"/>
@@ -728,7 +740,7 @@ para o cliente.</string>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Vt-Os-nPZ" userLabel="Text Field-Button Stack View">
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="22"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                        <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="22"/>
                                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -780,7 +792,7 @@ para o cliente.</string>
                                                                         <constraint firstAttribute="height" constant="1" id="936-OP-SPH"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Ouro Preto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-nP-aiN" userLabel="City Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                                <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Ouro Preto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-nP-aiN" userLabel="City Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="22"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -829,7 +841,7 @@ para o cliente.</string>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eDj-9Y-Ygz" userLabel="Buttons Stack View">
                             <rect key="frame" x="16" y="663" width="382" height="44"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-SX-kCt" customClass="BackButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-SX-kCt" customClass="BackButton" customModule="Boleto" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="182" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="nfv-yu-3XS" userLabel="height = 44"/>
@@ -839,7 +851,7 @@ para o cliente.</string>
                                         <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo" customClass="NextButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo" customClass="NextButton" customModule="Boleto" customModuleProvider="target">
                                     <rect key="frame" x="200" y="0.0" width="182" height="44"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                     <state key="normal" title="AVANÇAR">

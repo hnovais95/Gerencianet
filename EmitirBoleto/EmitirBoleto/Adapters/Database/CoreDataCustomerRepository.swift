@@ -49,7 +49,7 @@ class CoreDataCustomerRepository: CustomerRepository {
         customer.email = data.email
         
         var juridicalPerson: JuridicalPerson?
-        if data.juridicalPerson != nil {
+        if let _ = data.juridicalPerson {
             
             if fetchResult == nil {
                 juridicalPerson = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.juridicalPerson, into: context) as? JuridicalPerson
@@ -61,7 +61,7 @@ class CoreDataCustomerRepository: CustomerRepository {
         }
         
         var address: Address?
-        if data.address != nil {
+        if let _ =  data.address {
             
             if fetchResult == nil {
                 address = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.address, into: context) as? Address

@@ -22,9 +22,9 @@ struct ItemValidator: Validator {
             return validadeLength(1...255, value)
                 && validadeRegex("^[^<>]+$", value)
         case .value:
-            return Int(value) != nil
+            return (Int(value) != nil) && (Int(value)! > 0)
         case .amount:
-            return Int(value) != nil
+            return (Int(value) != nil) && (Int(value)! > 0)
         }
     }
 }

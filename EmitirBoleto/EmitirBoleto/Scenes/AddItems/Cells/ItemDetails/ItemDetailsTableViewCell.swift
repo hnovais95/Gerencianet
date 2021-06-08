@@ -42,14 +42,14 @@ class ItemDetailsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupLayout()
+        setup()
         setupLongPressGesture()
     }
     
     
-    // MARK: Layout
+    // MARK: Setups
     
-    func setupLayout() {
+    func setup() {
         view.layer.borderWidth = 1.0
         view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
     }

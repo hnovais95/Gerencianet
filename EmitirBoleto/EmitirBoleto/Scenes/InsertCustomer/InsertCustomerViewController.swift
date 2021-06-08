@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftMaskText
 
 class InsertCustomerViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class InsertCustomerViewController: UIViewController {
     
     private enum FieldType: Int, CaseIterable {
         case name, cpf, corporateName, cnpj, phoneNumber, email,
-             street, number, complement, neighborhood, zipcode, state, city
+             street, number, complement, neighborhood, zipCode, state, city
     }
     
     
@@ -56,20 +57,27 @@ class InsertCustomerViewController: UIViewController {
         
         statePicker.delegate = self
         
-        setupLayout()
+        setup()
         bindTextFields()
         observeEvents()
     }
     
     
-    // MARK: - Layout
+    // MARK: - Setups
     
-    private func setupLayout() {
-        setupLayoutSegmentedControl()
-        setupComponents()
+    private func setup() {
+        setupSegmentedControl()
+        
+        juridicalPersonStackView.isHidden = true
+        addressStackView.isHidden = true        
+        
+        addressSwitch.isOn = false
+        
+        textFields[FieldType.state.rawValue].tintColor = .clear
+        textFields[FieldType.state.rawValue].inputView = createStatePickerView()
     }
     
-    private func setupLayoutSegmentedControl() {
+    private func setupSegmentedControl() {
         segmentedControl.layer.borderWidth = 1.0
         segmentedControl.layer.borderColor = Constants.Color.azulEscuro.cgColor
         segmentedControl.layer.masksToBounds = true
@@ -77,18 +85,7 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azulEscuro), for: .selected, barMetrics: .default)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
-    }
-    
-    private func setupComponents() {
-        juridicalPersonStackView.isHidden = true
-        
-        addressStackView.isHidden = true
-        addressSwitch.setOn(false, animated: false)
-        
         segmentedControl.selectedSegmentIndex = 0
-        
-        textFields[FieldType.state.rawValue].tintColor = .clear
-        textFields[FieldType.state.rawValue].inputView = createStatePickerView()
     }
     
     private func createStatePickerView() -> UIPickerView {
@@ -183,6 +180,7 @@ class InsertCustomerViewController: UIViewController {
         scrollView.scrollIndicatorInsets = contentInset
     }
     
+    
     // MARK: - Data binding
     
     private func bindTextFields() {
@@ -219,6 +217,7 @@ class InsertCustomerViewController: UIViewController {
                         self?.viewModel.phoneNumber = $0
                         self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
+                    break
                 case .email:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
@@ -249,7 +248,7 @@ class InsertCustomerViewController: UIViewController {
                         self?.viewModel.neighborhood = $0
                         self?.nextButton.setEnable(self?.viewModel.isValid ?? false)
                     }
-                case .zipcode:
+                case .zipCode:
                     textField.bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.zipcode = $0
@@ -282,8 +281,8 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
     
     func didSelectCustomer(_ customer: CustomerModel) {
         textFields[FieldType.name.rawValue].replace(withText: customer.name)
-        textFields[FieldType.cpf.rawValue].replace(withText: customer.cpf)
-        textFields[FieldType.phoneNumber.rawValue].replace(withText: customer.phoneNumber)
+        textFields[FieldType.cpf.rawValue].replace(withText: Helper.applyMask(text: customer.cpf, maskString: Constants.Mask.cpf))
+        textFields[FieldType.phoneNumber.rawValue].replace(withText: Helper.applyMask(text: customer.phoneNumber, maskString: Constants.Mask.phoneNumber))
         textFields[FieldType.email.rawValue].replace(withText: customer.email ?? "")
         
         if let juridicalPerson = customer.juridicalPerson {
@@ -291,7 +290,7 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
             handleSegmentedControlChange(segmentedControl)
             
             textFields[FieldType.corporateName.rawValue].replace(withText: juridicalPerson.corporateName)
-            textFields[FieldType.cnpj.rawValue].replace(withText: juridicalPerson.cnpj)
+            textFields[FieldType.cnpj.rawValue].replace(withText: Helper.applyMask(text: juridicalPerson.cnpj, maskString: Constants.Mask.cnpj))
         } else {
             segmentedControl.selectedSegmentIndex = 0
             handleSegmentedControlChange(segmentedControl)
@@ -308,7 +307,7 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
             textFields[FieldType.number.rawValue].replace(withText: address.number.description)
             textFields[FieldType.complement.rawValue].replace(withText: address.complement ?? "")
             textFields[FieldType.neighborhood.rawValue].replace(withText: address.neighborhood)
-            textFields[FieldType.zipcode.rawValue].replace(withText: address.zipCode)
+            textFields[FieldType.zipCode.rawValue].replace(withText: Helper.applyMask(text: address.zipCode, maskString: Constants.Mask.zipCode))
             textFields[FieldType.state.rawValue].replace(withText: address.state)
             textFields[FieldType.city.rawValue].replace(withText: address.city)
         } else {
@@ -319,7 +318,7 @@ extension InsertCustomerViewController: SearchCustomerDelegate {
             textFields[FieldType.number.rawValue].replace(withText: "")
             textFields[FieldType.complement.rawValue].replace(withText: "")
             textFields[FieldType.neighborhood.rawValue].replace(withText: "")
-            textFields[FieldType.zipcode.rawValue].replace(withText: "")
+            textFields[FieldType.zipCode.rawValue].replace(withText: "")
             textFields[FieldType.state.rawValue].replace(withText: "")
             textFields[FieldType.city.rawValue].replace(withText: "")
         }
@@ -355,5 +354,15 @@ extension InsertCustomerViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        if textField == textFields[FieldType.cpf.rawValue] { return updatedText.count <= 14 }
+        if textField == textFields[FieldType.cnpj.rawValue] { return updatedText.count <= 18 }
+        else { return true }
     }
 }

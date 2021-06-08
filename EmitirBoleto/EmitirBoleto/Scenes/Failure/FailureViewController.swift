@@ -28,13 +28,13 @@ class FailureViewController: UIViewController {
         
         self.backButton.addTarget(self, action: #selector(self.handleTapBackButton(_:)), for: .touchUpInside)
         
-        setupLayout()
+        setup()
     }
     
     
-    // MARK: - Layout
+    // MARK: - Setups
     
-    private func setupLayout() {
+    private func setup() {
         errorMessageTextView.text = message?.uppercased()
     }
     

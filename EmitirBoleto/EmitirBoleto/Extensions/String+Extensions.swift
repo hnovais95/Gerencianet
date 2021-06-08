@@ -19,3 +19,15 @@ extension String {
         return Data(self.utf8).base64EncodedString()
     }
 }
+
+extension String {
+    func isLastCharANumber() -> Bool {
+        let lastChar = self.last!
+        
+        if lastChar.isNumber {
+            return true
+        } else {
+            return false
+        }
+    }
+}

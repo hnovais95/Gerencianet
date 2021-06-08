@@ -121,7 +121,7 @@
                                                                 <constraint firstAttribute="height" constant="1" id="EoE-6x-s5C"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 12,30" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNl-gO-yhG" userLabel="Value Text Field" customClass="BindingTextField" customModule="EmitirBoleto" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R$ 12,30" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNl-gO-yhG" userLabel="Value Text Field" customClass="CurrencyTextField" customModule="EmitirBoleto" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28.666666666666657" width="175.66666666666666" height="13"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                             <constraints>

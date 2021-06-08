@@ -17,7 +17,7 @@ class EntityMapper {
                 let data = data as! Customer
                 
                 var address: AddressModel?
-                if data.address != nil {
+                if let _ = data.address {
                     address = AddressModel(data.address!.street!,
                                            Int(data.address!.number),
                                            data.address!.neighborhood!,
@@ -28,7 +28,7 @@ class EntityMapper {
                 }
                 
                 var juridicalPerson: JuridicalPersonModel?
-                if data.juridicalPerson != nil {
+                if let _ = data.juridicalPerson{
                     juridicalPerson = JuridicalPersonModel(data.juridicalPerson!.corporateName!,
                                                            data.juridicalPerson!.cnpj!)
                 }

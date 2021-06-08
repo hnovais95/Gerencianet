@@ -18,6 +18,7 @@ class SuccessViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var showBankingBilletButton: UIButton!
     @IBOutlet weak var doneButton: NextButton!
+    
     var closePdfButton: UIButton?
     
     
@@ -50,7 +51,7 @@ class SuccessViewController: UIViewController {
     }
     
     
-    // MARK: - Layout
+    // MARK: - Setups
     
     private func setupButtons() {
         copyBarcodeButton.layer.borderWidth = 1.0

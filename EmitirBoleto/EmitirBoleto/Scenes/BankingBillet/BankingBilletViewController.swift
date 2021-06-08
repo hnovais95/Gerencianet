@@ -11,9 +11,9 @@ class BankingBilletViewController: UIViewController {
     
     // MARK: - Outlets    
     
-    @IBOutlet var textFields: [BindingTextField]!
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet var validationViews: [UIView]!
-    @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var messageTextView: BindingTextView!
     @IBOutlet weak var totalLabel: UILabel!
     
     @IBOutlet weak var additionalFieldsSwitch: UISwitch!
@@ -31,7 +31,7 @@ class BankingBilletViewController: UIViewController {
     
     enum FieldType: Int, CaseIterable {
         case expireAt, shippingValue, discountType, discountValue, conditionalDiscountType,
-             contitionalDiscountValue, contitionalDiscountDeadline
+             conditionalDiscountValue, contitionalDiscountDeadline, message
     }
     
     
@@ -70,36 +70,45 @@ class BankingBilletViewController: UIViewController {
         conditionalDiscountTypePicker.delegate = self
         messageTextView.delegate = self
         
-        setupLayout()
+        setup()
         bindTextFields()
         observeEvents()
     }
 
     
-    // MARK: - Layout
+    // MARK: - Setups
     
-    private func setupLayout() {
+    private func setup() {
         messageTextView.layer.borderWidth = 1.0
         messageTextView.layer.borderColor = Constants.Color.cinzaClaro.cgColor
         
-        setupComponents()
-    }
-
-    private func setupComponents() {
-        // Initial states
-        additionalFieldsSwitch.setOn(false, animated: false)
+        additionalFieldsSwitch.isOn = false
         additionalFieldsStackView.isHidden = true
+        
+        messageTextView.textContainer.maximumNumberOfLines = 4
+        messageTextView.textContainer.lineBreakMode = .byTruncatingTail
+        
+        setupPickerTextFields()
+        
+        totalLabel.text = viewModel.total
+    }
+    
+    private func setupPickerTextFields() {
         textFields[FieldType.discountType.rawValue].tintColor = .clear
         textFields[FieldType.conditionalDiscountType.rawValue].tintColor = .clear
         textFields[FieldType.expireAt.rawValue].tintColor = .clear
         textFields[FieldType.contitionalDiscountDeadline.rawValue].tintColor = .clear
-        totalLabel.text = viewModel.total
         
         // Setup pickers
         textFields[FieldType.discountType.rawValue].inputView = createDiscountTypePicker(with: discountTypePicker)
         textFields[FieldType.conditionalDiscountType.rawValue].inputView = createDiscountTypePicker(with: conditionalDiscountTypePicker)
         textFields[FieldType.expireAt.rawValue].inputView = createDatePicker(action: #selector(handleExpireAtDatePickerChange(_:)))
         textFields[FieldType.contitionalDiscountDeadline.rawValue].inputView = createDatePicker(action: #selector(handleDeadlineDatePickerChange(_:)))
+        setupCurrencyTextField()
+    }
+    
+    private func setupCurrencyTextField() {
+        (textFields[FieldType.shippingValue.rawValue] as! CurrencyTextField).currency = Currency(locale: Constants.LocaleIdentifier.ptBR, amount: 0.0)
     }
     
     private func createDatePicker(action: Selector) -> UIDatePicker {
@@ -129,43 +138,51 @@ class BankingBilletViewController: UIViewController {
 
     private func observeEvents() {
         viewModel.validatedField = { [unowned self] result, rawValue in
-            guard let field = FieldType(rawValue: rawValue) else { return }
+            guard let field = FieldType(rawValue: rawValue), field != .message else { return }
             guard let value = textFields[field.rawValue].text else { return }
             
             let validationLine = validationViews[field.rawValue]
-               
-            if value.isEmpty {
+            
+            if ((field == .discountType) || (field == .conditionalDiscountType)) { return }
+            
+            let priceZero = Helper.getPrice(0)
+            let zero = "0,00"
+            
+            if (value.isEmpty || value == priceZero || value == zero) {
                 validationLine.backgroundColor = Constants.Color.cinzaClaro
-                
-                if field == .discountValue {
-                    validationViews[FieldType.discountType.rawValue].backgroundColor = Constants.Color.cinzaClaro
-                }
-                
-                if field == .contitionalDiscountValue {
-                    validationViews[FieldType.conditionalDiscountType.rawValue].backgroundColor = Constants.Color.cinzaClaro
-                }
             }
             else if result == true {
                 validationLine.backgroundColor = Constants.Color.verde
-                
-                if field == .discountValue {
-                    validationViews[FieldType.discountType.rawValue].backgroundColor = Constants.Color.verde
-                }
-                
-                if field == .contitionalDiscountValue {
-                    validationViews[FieldType.conditionalDiscountType.rawValue].backgroundColor = Constants.Color.verde
-                }
             } else {
                 validationLine.backgroundColor = Constants.Color.vermelhoEscuro
-                
-                if field == .discountValue {
-                    validationViews[FieldType.discountType.rawValue].backgroundColor = Constants.Color.vermelhoEscuro
-                }
-                
-                if field == .contitionalDiscountValue {
-                    validationViews[FieldType.conditionalDiscountType.rawValue].backgroundColor = Constants.Color.vermelhoEscuro
-                }
             }
+        }        
+        
+        (textFields[FieldType.shippingValue.rawValue] as! CurrencyTextField).passTextFieldText = { [weak self] cleanedText, _ in
+            let zero = "00"
+            let value = cleanedText != zero ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.shippingValue.rawValue, value: value)
+            self?.viewModel.shippingValue = value
+            self?.totalLabel.text = self?.viewModel.total
+            self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
+        }
+        
+        (textFields[FieldType.discountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, _ in
+            let zero = "00"
+            let value = cleanedText != zero ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.discountValue.rawValue, value: value)
+            self?.viewModel.discountValue = value
+            self?.totalLabel.text = self?.viewModel.total
+            self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
+        }
+        
+        (textFields[FieldType.conditionalDiscountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, _ in
+            let zero = "00"
+            let value = cleanedText != zero ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.conditionalDiscountValue.rawValue, value: value)
+            self?.viewModel.conditionalDiscountValue = value
+            self?.totalLabel.text = self?.viewModel.total
+            self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
     }
     
@@ -236,56 +253,43 @@ class BankingBilletViewController: UIViewController {
             if let field = FieldType(rawValue: index) {
                 switch field {
                 case .expireAt:
-                    textField.bind { [weak self] in
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: Helper.convertDateToReverseFormat($0) ?? $0)
                         self?.viewModel.expireAt = Helper.convertDateToReverseFormat($0) ?? $0
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
-                case .shippingValue:
-                    textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: $0)
-                        self?.viewModel.shippingValue = $0
-                        self?.totalLabel.text = self?.viewModel.total
-                        self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
-                    }
                 case .discountType:
-                    textField.bind { [weak self] in
-                        let value = $0 == "%" ? "percentage": "currency"
-                        self?.viewModel.validadeField(field.rawValue, value: value)
-                        self?.viewModel.discountType =  value
-                        self?.totalLabel.text = self?.viewModel.total
-                        self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
-                    }
-                case .discountValue:
-                    textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: $0)
-                        self?.viewModel.discountValue = $0
+                    (textField as! BindingTextField).bind { [weak self] in
+                        self?.viewModel.validadeField(field.rawValue, value: $0.description)
+                        self?.viewModel.discountType = DiscountType(rawValue: $0)!
                         self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .conditionalDiscountType:
-                    textField.bind { [weak self] in
-                        let value = $0 == "%" ? "percentage": "currency"
-                        self?.viewModel.validadeField(field.rawValue, value: value)
-                        self?.viewModel.conditionalDiscountType = value
-                        self?.totalLabel.text = self?.viewModel.total
-                        self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
-                    }
-                case .contitionalDiscountValue:
-                    textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: $0)
-                        self?.viewModel.conditionalDiscountValue = $0
+                    (textField as! BindingTextField).bind { [weak self] in
+                        self?.viewModel.validadeField(field.rawValue, value: $0.description)
+                        self?.viewModel.conditionalDiscountType = DiscountType(rawValue: $0)!
                         self?.totalLabel.text = self?.viewModel.total
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
                 case .contitionalDiscountDeadline:
-                    textField.bind { [weak self] in
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: Helper.convertDateToReverseFormat($0) ?? $0)
                         self?.viewModel.conditionalDiscountDeadline = Helper.convertDateToReverseFormat($0) ?? $0
                         self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
                     }
+                default:
+                    break
                 }
+                
+                textField.delegate = self
             }
+        }
+        
+        messageTextView.bind { [weak self] in
+            self?.viewModel.validadeField(FieldType.message.rawValue, value: $0)
+            self?.viewModel.message = $0
+            self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
     }
 }
@@ -302,15 +306,23 @@ extension BankingBilletViewController: UITextViewDelegate {
 
 extension BankingBilletViewController: DiscountTypePickerDelegate {
     
-    func didSelectType(type: String) {
+    func didSelectType(type: DiscountType) {
         guard let textField = textFields.first(where: { $0.isFirstResponder }) else {
             return
         }
         
         if (textField == textFields[FieldType.discountType.rawValue])
         || (textField == textFields[FieldType.conditionalDiscountType.rawValue]) {
-            textField.replace(withText: type)
+            textField.replace(withText: type.rawValue)
             textField.resignFirstResponder()
         }
+    }
+}
+
+extension BankingBilletViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -16,7 +16,7 @@ class AddItemPopupViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet var textFields: [BindingTextField]!
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet var errorMessageLabels: [UILabel]!
 
@@ -51,17 +51,23 @@ class AddItemPopupViewController: UIViewController {
         self.cancelButton.addTarget(self, action: #selector(self.handleTapCancelButton(sender:)), for: .touchUpInside)
         self.addButton.addTarget(self, action: #selector(self.handleTapAddItem), for: .touchUpInside)
         
-        setupLayout()
+        setup()
         bindTextFields()
         observeEvents()
     }
     
     
-    // MARK: - Layout
+    // MARK: - Setups
     
-    private func setupLayout() {
+    private func setup() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
+        
+        setupCurrencyTextField()
+    }
+    
+    private func setupCurrencyTextField() {
+        (textFields[FieldType.value.rawValue] as! CurrencyTextField).currency = Currency(locale: Constants.LocaleIdentifier.ptBR, amount: 0.0)
     }
     
     
@@ -91,6 +97,12 @@ class AddItemPopupViewController: UIViewController {
                 validationLine?.backgroundColor = Constants.Color.vermelhoEscuro
                 errorMessage?.alpha = 1
             }
+        }
+        
+        (textFields[FieldType.value.rawValue] as! CurrencyTextField).passTextFieldText = { [weak self] cleanedText, _ in
+            self?.viewModel.validadeField(FieldType.value.rawValue, value: cleanedText)
+            self?.viewModel.value = cleanedText
+            self?.addButton.setEnable(self?.viewModel.isValid ?? false)
         }
     }
     
@@ -122,28 +134,25 @@ class AddItemPopupViewController: UIViewController {
     // MARK: - Data binding
     
     private func bindTextFields() {
+        
         for (index, textField) in textFields.enumerated() {
             if let field = FieldType(rawValue: index) {
                 switch field {
                 case .name:
-                    textField.bind { [weak self] in
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.name = $0
                         self?.addButton.setEnable(self?.viewModel.isValid ?? false)
                     }
-                case .value:
-                    textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: $0)
-                        self?.viewModel.value = $0
-                        self?.addButton.setEnable(self?.viewModel.isValid ?? false)
-                    }
-                case .amount:
-                    textField.bind { [weak self] in
+                case.amount:
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.amount = $0
                         self?.addButton.setEnable(self?.viewModel.isValid ?? false)
                     }
-                }                
+                default:
+                    break
+                }
                 
                 textField.delegate = self
             }

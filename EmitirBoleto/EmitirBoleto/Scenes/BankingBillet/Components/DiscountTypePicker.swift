@@ -8,12 +8,12 @@
 import UIKit
 
 protocol DiscountTypePickerDelegate: AnyObject {
-    func didSelectType(type: String)
+    func didSelectType(type: DiscountType)
 }
 
 class DiscountTypePicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    private let types = ["%", "R$"]
+    private let types: [DiscountType] = [.percentage, .currency]
     
     weak var delegate: DiscountTypePickerDelegate?
     
@@ -26,7 +26,7 @@ class DiscountTypePicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return types[row]
+        return types[row].rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

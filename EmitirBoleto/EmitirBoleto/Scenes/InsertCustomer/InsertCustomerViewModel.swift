@@ -54,12 +54,13 @@ class InsertCustomerViewModel {
         var isValidJuridicalPerson: Bool {
             if isJuridicalPerson {
                 return validator.validate(.corporateName, corporateName)
+                    && validator.validate(.cnpj, cnpj)
             } else {
                 return true
             }
         }
         
-        var isValidJuridicalAddress: Bool {
+        var isValidAddress: Bool {
             if includeAddress {
                 return validator.validate(.street, street)
                     && validator.validate(.number, number)
@@ -78,6 +79,6 @@ class InsertCustomerViewModel {
             && validator.validate(.phoneNumber, phoneNumber)
             && validator.validate(.email, email)
             && isValidJuridicalPerson
-            && isValidJuridicalAddress
+            && isValidAddress
     }
 }

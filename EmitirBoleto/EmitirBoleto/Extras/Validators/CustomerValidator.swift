@@ -34,8 +34,8 @@ struct CustomerValidator: Validator {
             return validadeLength(11...11, value)
                 && validadeRegex("^[1-9]{2}9?[0-9]{8}$", value)
         case .email:
-            return validadeLength(1...320, value)
-                && validadeRegex("^[A-Za-z0-9_\\-]+(?:[.][A-Za-z0-9_\\-]+)*@[A-Za-z0-9_]+(?:[-.][A-Za-z0-9_]+)*\\.[A-Za-z0-9_]+$", value)
+            return (value == "") || (validadeLength(1...320, value)
+                && validadeRegex("^[A-Za-z0-9_\\-]+(?:[.][A-Za-z0-9_\\-]+)*@[A-Za-z0-9_]+(?:[-.][A-Za-z0-9_]+)*\\.[A-Za-z0-9_]+$", value))
         case .street:
             return validadeLength(0...200, value)
         case .number:

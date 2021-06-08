@@ -16,7 +16,7 @@ class EditItemPopupViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet var textFields: [BindingTextField]!
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet var validationViews: [UIView]!
     @IBOutlet var errorMessageLabels: [UILabel]!
  
@@ -60,17 +60,19 @@ class EditItemPopupViewController: UIViewController {
         self.cancelButton.addTarget(self, action: #selector(self.handleTapCancelButton(sender:)), for: .touchUpInside)
         self.editButton.addTarget(self, action: #selector(self.handleTapEditItem), for: .touchUpInside)
         
-        setupLayout()
+        setup()
         bindTextFields()
         observeEvents()
     }
     
     
-    // MARK: - Layout
+    // MARK: - Setups
     
-    private func setupLayout() {
+    private func setup() {
         popupView.layer.cornerRadius = CGFloat(6)
         popupView.layer.masksToBounds = true
+        
+        (textFields[FieldType.value.rawValue] as! CurrencyTextField).currency = Currency(locale: Constants.LocaleIdentifier.ptBR, amount: 0.0)
     }
     
     
@@ -100,6 +102,12 @@ class EditItemPopupViewController: UIViewController {
                 validationLine?.backgroundColor = Constants.Color.vermelhoEscuro
                 errorMessage?.alpha = 1
             }
+        }
+        
+        (textFields[FieldType.value.rawValue] as! CurrencyTextField).passTextFieldText = { [weak self] cleanedText, _ in
+            self?.viewModel.validadeField(FieldType.value.rawValue, value: cleanedText)
+            self?.viewModel.value = cleanedText
+            self?.editButton.setEnable(self?.viewModel.isValid ?? false)
         }
     }
     
@@ -136,23 +144,19 @@ class EditItemPopupViewController: UIViewController {
             if let field = FieldType(rawValue: index) {
                 switch field {
                 case .name:
-                    textField.bind { [weak self] in
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.name = $0
                         self?.editButton.setEnable(self?.viewModel.isValid ?? false)
                     }
-                case .value:
-                    textField.bind { [weak self] in
-                        self?.viewModel.validadeField(field.rawValue, value: $0)
-                        self?.viewModel.value = $0
-                        self?.editButton.setEnable(self?.viewModel.isValid ?? false)
-                    }
                 case .amount:
-                    textField.bind { [weak self] in
+                    (textField as! BindingTextField).bind { [weak self] in
                         self?.viewModel.validadeField(field.rawValue, value: $0)
                         self?.viewModel.amount = $0
                         self?.editButton.setEnable(self?.viewModel.isValid ?? false)
                     }
+                default:
+                    break
                 }
                 
                 textField.delegate = self

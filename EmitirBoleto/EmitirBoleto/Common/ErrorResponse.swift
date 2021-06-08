@@ -5,6 +5,7 @@
 //  Created by Heitor Novais | Gerencianet on 02/06/21.
 //
 
+
 struct ErrorResponse: Serializable {
     
     private(set) var code: Int
