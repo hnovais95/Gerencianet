@@ -25,6 +25,8 @@ class BankingBilletViewController: UIViewController {
     @IBOutlet weak var conditionalDiscountTypeButton: UIButton!
     
     @IBOutlet weak var additionalFieldsStackView: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var messageStackView: UIStackView!
     
     
     // MARK: - Member types
@@ -69,6 +71,7 @@ class BankingBilletViewController: UIViewController {
         discountTypePicker.delegate = self
         conditionalDiscountTypePicker.delegate = self
         messageTextView.delegate = self
+        scrollView.delegate = self
         
         setup()
         bindTextFields()
@@ -186,6 +189,10 @@ class BankingBilletViewController: UIViewController {
             self?.totalLabel.text = self?.viewModel.total
             self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector (keyboardWillBeShown(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: #selector (keyboardWillBeHidden(_ :)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc
@@ -245,6 +252,27 @@ class BankingBilletViewController: UIViewController {
     @objc
     private func handleTapConditionalDiscountTypePickerButton() {
         textFields[FieldType.conditionalDiscountType.rawValue].becomeFirstResponder()
+    }
+    
+    @objc
+    private func keyboardWillBeShown(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
+        
+        let viewFocused: UIView
+        viewFocused = textFields.filter({ $0.isFocused }).first ?? messageStackView
+        
+        scrollView.scrollRectToVisible(viewFocused.frame, animated: true)
+    }
+    
+    @objc
+    private func keyboardWillBeHidden(_ notification: Notification) {
+        let contentInset = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+        scrollView.scrollIndicatorInsets = contentInset
     }
     
     
@@ -326,5 +354,12 @@ extension BankingBilletViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension BankingBilletViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0
     }
 }
