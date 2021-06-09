@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchItemViewController" customModule="EmitirBoleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchItemViewController" customModule="Gerencianet" customModuleProvider="target">
             <connections>
                 <outlet property="searchBar" destination="hlA-lH-rZr" id="0aI-KF-5Rp"/>
                 <outlet property="tableView" destination="xIF-5p-f9T" id="5iA-30-M8e"/>

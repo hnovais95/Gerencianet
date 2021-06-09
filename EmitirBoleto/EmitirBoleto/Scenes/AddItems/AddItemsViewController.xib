@@ -8,8 +8,13 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyriadPro-Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddItemsViewController" customModule="EmitirBoleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddItemsViewController" customModule="Gerencianet" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="cV5-WQ-Eyw" id="era-0X-OB0"/>
                 <outlet property="nextButton" destination="PYW-fj-eb3" id="vYX-fu-kUy"/>
@@ -76,11 +81,11 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você deseja cobrar?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz1-3T-Wem">
-                            <rect key="frame" x="15.999999999999986" y="97" width="247.66666666666663" height="20"/>
+                            <rect key="frame" x="16" y="97" width="231" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="cWJ-o6-Wd0"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                             <color key="textColor" red="0.43137254899999999" green="0.43529411759999997" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -90,7 +95,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uBd-6Q-cyV" userLabel="Buttons Stack View">
                             <rect key="frame" x="16" y="663" width="382" height="44"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-WQ-Eyw" customClass="BackButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-WQ-Eyw" customClass="BackButton" customModule="Gerencianet" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="K0U-gj-Iuu"/>
@@ -100,7 +105,7 @@
                                         <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYW-fj-eb3" customClass="NextButton" customModule="EmitirBoleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYW-fj-eb3" customClass="NextButton" customModule="Gerencianet" customModuleProvider="target">
                                     <rect key="frame" x="199" y="0.0" width="183" height="44"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                     <state key="normal" title="AVANÇAR">

@@ -10,6 +10,8 @@ import Foundation
 class LoadingViewModel {
     
     private let notificationCenter = NotificationCenter.default
+    private let customerRepository = CoreDataCustomerRepository()
+    private let itemRepository = CoreDataItemRepository()
     
     private let gn: PaymentGateway
     var data: ChargeOneStepModel?
@@ -33,6 +35,14 @@ class LoadingViewModel {
             failed(Constants.ErrorMessage.responseBuilding)
             return
         }
+        
+        DispatchQueue.global(qos: .background).async { [self] in
+            customerRepository.save(data!.bankingBillet.customer)
+            for item in data!.items! {
+                itemRepository.save(item)
+            }
+        }
+        
         succeed(response)
     }
     

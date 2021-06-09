@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Boleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Gerencianet" customModuleProvider="target">
             <connections>
                 <outlet property="button" destination="708-Cm-5ge" id="0OI-7R-YqR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,8 +23,8 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-fX-GWT">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="708-Cm-5ge">
-                    <rect key="frame" x="36" y="682" width="342" height="60"/>
+                <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="708-Cm-5ge">
+                    <rect key="frame" x="36" y="662" width="342" height="60"/>
                     <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="ZuQ-Fz-VDb"/>
@@ -40,7 +40,7 @@
             <constraints>
                 <constraint firstItem="r0C-fX-GWT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2gh-8F-von"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="708-Cm-5ge" secondAttribute="trailing" constant="36" id="9s7-My-aHV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="708-Cm-5ge" secondAttribute="bottom" constant="120" id="IdZ-tJ-Q4U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="708-Cm-5ge" secondAttribute="bottom" constant="140" id="IdZ-tJ-Q4U"/>
                 <constraint firstItem="r0C-fX-GWT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JNA-IH-yI7"/>
                 <constraint firstItem="r0C-fX-GWT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VGp-RF-Hb2"/>
                 <constraint firstAttribute="bottom" secondItem="r0C-fX-GWT" secondAttribute="bottom" id="l0c-4d-iVd"/>

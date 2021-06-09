@@ -8,8 +8,13 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyriadPro-Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FailureViewController" customModule="EmitirBoleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FailureViewController" customModule="Gerencianet" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="jjj-Vq-dmC" id="ECc-kU-kTW"/>
                 <outlet property="errorMessageTextView" destination="PLe-GG-y9t" id="Fl5-6Z-g9e"/>
@@ -75,11 +80,11 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falha na emissão da cobrança." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-Bu-uT9">
-                            <rect key="frame" x="63.666666666666657" y="97" width="287" height="20"/>
+                            <rect key="frame" x="72.666666666666657" y="97" width="268.66666666666674" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="8Db-bc-oLD"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                             <color key="textColor" red="0.72156862745098038" green="0.023529411764705882" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -112,7 +117,7 @@
                                 <constraint firstItem="PLe-GG-y9t" firstAttribute="centerX" secondItem="vOt-Dt-e3w" secondAttribute="centerX" id="VLD-zT-TBM"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjj-Vq-dmC" customClass="BackButton" customModule="EmitirBoleto" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjj-Vq-dmC" customClass="BackButton" customModule="Gerencianet" customModuleProvider="target">
                             <rect key="frame" x="16" y="663" width="183" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="183" id="6fa-jk-ca1"/>

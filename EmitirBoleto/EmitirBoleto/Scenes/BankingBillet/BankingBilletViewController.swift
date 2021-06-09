@@ -111,6 +111,11 @@ class BankingBilletViewController: UIViewController {
         (textFields[FieldType.shippingValue.rawValue] as! CurrencyTextField).currency = Currency(locale: Constants.LocaleIdentifier.ptBR, amount: 0.0)
     }
     
+    private func setupFractionalNumberTextFields() {
+        (textFields[FieldType.discountValue.rawValue] as! FractionalNumberTextField).regionCode = Constants.LocaleIdentifier.ptBR
+        (textFields[FieldType.conditionalDiscountValue.rawValue] as! FractionalNumberTextField).regionCode = Constants.LocaleIdentifier.ptBR
+    }
+    
     private func createDatePicker(action: Selector) -> UIDatePicker {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -158,29 +163,26 @@ class BankingBilletViewController: UIViewController {
             }
         }        
         
-        (textFields[FieldType.shippingValue.rawValue] as! CurrencyTextField).passTextFieldText = { [weak self] cleanedText, _ in
-            let zero = "00"
-            let value = cleanedText != zero ? cleanedText : ""
-            self?.viewModel.validadeField(FieldType.shippingValue.rawValue, value: value)
-            self?.viewModel.shippingValue = value
+        (textFields[FieldType.shippingValue.rawValue] as! CurrencyTextField).passTextFieldText = { [weak self] cleanedText, value in
+            let shippingValue = value != 0 ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.shippingValue.rawValue, value: shippingValue)
+            self?.viewModel.shippingValue = shippingValue
             self?.totalLabel.text = self?.viewModel.total
             self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
         
-        (textFields[FieldType.discountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, _ in
-            let zero = "00"
-            let value = cleanedText != zero ? cleanedText : ""
-            self?.viewModel.validadeField(FieldType.discountValue.rawValue, value: value)
-            self?.viewModel.discountValue = value
+        (textFields[FieldType.discountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, value in
+            let discountValue = value != 0 ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.discountValue.rawValue, value: discountValue)
+            self?.viewModel.discountValue = discountValue
             self?.totalLabel.text = self?.viewModel.total
             self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
         
-        (textFields[FieldType.conditionalDiscountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, _ in
-            let zero = "00"
-            let value = cleanedText != zero ? cleanedText : ""
-            self?.viewModel.validadeField(FieldType.conditionalDiscountValue.rawValue, value: value)
-            self?.viewModel.conditionalDiscountValue = value
+        (textFields[FieldType.conditionalDiscountValue.rawValue] as! FractionalNumberTextField).passTextFieldText = { [weak self] cleanedText, value in
+            let conditionalDiscountValue = value != 0 ? cleanedText : ""
+            self?.viewModel.validadeField(FieldType.conditionalDiscountValue.rawValue, value: conditionalDiscountValue)
+            self?.viewModel.conditionalDiscountValue = conditionalDiscountValue
             self?.totalLabel.text = self?.viewModel.total
             self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }

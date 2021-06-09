@@ -43,7 +43,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key></key>
-	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MyriadPro-Bold.ttf</string>
+		<string>MyriadPro-Regular.ttf</string>
+		<string>MyriadPro-It.otf</string>
+		<string>SFProText-Regular.otf</string>
+	</array>
 </dict>
 </plist>

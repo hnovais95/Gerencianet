@@ -117,6 +117,10 @@
 		CADE77AC5AE79B2E2B4C7D3F /* Pods_EmitirBoletoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF77ADE3EE54EF7A6546F5A /* Pods_EmitirBoletoTests.framework */; };
 		CADE8440265BDBF60020BEC3 /* ButtonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE843E265BDBF60020BEC3 /* ButtonsTableViewCell.swift */; };
 		CADE8441265BDBF60020BEC3 /* ButtonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADE843F265BDBF60020BEC3 /* ButtonsTableViewCell.xib */; };
+		CAEE96442670F1DE00665B9D /* MyriadPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEE96422670F1DE00665B9D /* MyriadPro-Bold.ttf */; };
+		CAEE96452670F1DE00665B9D /* MyriadPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAEE96432670F1DE00665B9D /* MyriadPro-Regular.ttf */; };
+		CAEE96472670F2AE00665B9D /* SFProText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAEE96462670F2AE00665B9D /* SFProText-Regular.otf */; };
+		CAEE96552670FE5900665B9D /* MyriadPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAEE96542670FE5900665B9D /* MyriadPro-It.otf */; };
 		CAF751F0264F117700EABEFC /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751EF264F117700EABEFC /* Gerencianet.swift */; };
 		CAF751F2264F118E00EABEFC /* GerencianetEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */; };
 		CAF751F4264F119A00EABEFC /* HeadersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF751F3264F119A00EABEFC /* HeadersFactory.swift */; };
@@ -238,7 +242,7 @@
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
 		CABB5FCB265566FD0079FFDF /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		CABCA8C7264AB04D007AE005 /* Boleto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boleto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABCA8C7264AB04D007AE005 /* Gerencianet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gerencianet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABCA8CA264AB04D007AE005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABCA8D4264AB04D007AE005 /* EmitirBoleto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmitirBoleto.xcdatamodel; sourceTree = "<group>"; };
 		CABCA8D6264AB04E007AE005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,6 +276,10 @@
 		CAD862E2266A995300BF8B9E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CADE843E265BDBF60020BEC3 /* ButtonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTableViewCell.swift; sourceTree = "<group>"; };
 		CADE843F265BDBF60020BEC3 /* ButtonsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsTableViewCell.xib; sourceTree = "<group>"; };
+		CAEE96422670F1DE00665B9D /* MyriadPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Bold.ttf"; sourceTree = "<group>"; };
+		CAEE96432670F1DE00665B9D /* MyriadPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.ttf"; sourceTree = "<group>"; };
+		CAEE96462670F2AE00665B9D /* SFProText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.otf"; sourceTree = "<group>"; };
+		CAEE96542670FE5900665B9D /* MyriadPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-It.otf"; sourceTree = "<group>"; };
 		CAF751EF264F117700EABEFC /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
 		CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerencianetEndpoints.swift; sourceTree = "<group>"; };
 		CAF751F3264F119A00EABEFC /* HeadersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadersFactory.swift; sourceTree = "<group>"; };
@@ -588,6 +596,7 @@
 		CA8A56C02661B65E00E95AB5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CAEE96312670EE1600665B9D /* Fonts */,
 				CA7D76A8266FBB92005A4697 /* SwiftMaskField */,
 				CAB2E154266E456200EC586C /* CurrencyTextField */,
 				CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */,
@@ -686,7 +695,7 @@
 		CABCA8C8264AB04D007AE005 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CABCA8C7264AB04D007AE005 /* Boleto.app */,
+				CABCA8C7264AB04D007AE005 /* Gerencianet.app */,
 				CABCA8E0264AB04F007AE005 /* EmitirBoletoTests.xctest */,
 				CABCA8EB264AB04F007AE005 /* EmitirBoletoUITests.xctest */,
 			);
@@ -755,6 +764,7 @@
 				CABCA904264AB0A3007AE005 /* Repositories */,
 				CABCA902264AB094007AE005 /* Models */,
 				CABCA903264AB09A007AE005 /* UseCases */,
+				CA8A56B92661B1AB00E95AB5 /* Validators */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -866,9 +876,19 @@
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
 				CA7D7697266F99BA005A4697 /* Enums */,
 				CA8A56C02661B65E00E95AB5 /* UI */,
-				CA8A56B92661B1AB00E95AB5 /* Validators */,
 			);
 			path = Extras;
+			sourceTree = "<group>";
+		};
+		CAEE96312670EE1600665B9D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CAEE96422670F1DE00665B9D /* MyriadPro-Bold.ttf */,
+				CAEE96432670F1DE00665B9D /* MyriadPro-Regular.ttf */,
+				CAEE96542670FE5900665B9D /* MyriadPro-It.otf */,
+				CAEE96462670F2AE00665B9D /* SFProText-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		CAF751EE264F116400EABEFC /* Gerencianet */ = {
@@ -931,7 +951,7 @@
 			);
 			name = EmitirBoleto;
 			productName = EmitirBoleto;
-			productReference = CABCA8C7264AB04D007AE005 /* Boleto.app */;
+			productReference = CABCA8C7264AB04D007AE005 /* Gerencianet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CABCA8DF264AB04F007AE005 /* EmitirBoletoTests */ = {
@@ -1023,6 +1043,8 @@
 				CA29B51E26585190004BCBFD /* ItemTableViewCell.xib in Resources */,
 				CADE8441265BDBF60020BEC3 /* ButtonsTableViewCell.xib in Resources */,
 				CAC0F1322656EAB700D98492 /* SearchCustomerViewController.xib in Resources */,
+				CAEE96452670F1DE00665B9D /* MyriadPro-Regular.ttf in Resources */,
+				CAEE96442670F1DE00665B9D /* MyriadPro-Bold.ttf in Resources */,
 				CA29B52226585477004BCBFD /* SearchItemViewController.xib in Resources */,
 				CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */,
 				CA87DFA326549CFF0074A161 /* EmitirBoleto.xcdatamodeld in Resources */,
@@ -1036,6 +1058,8 @@
 				CA6DE0A3265C2DB300FC5D19 /* EmptyTableViewCell.xib in Resources */,
 				CA6DE09E265C078E00FC5D19 /* AddItemsViewController.xib in Resources */,
 				CAA44D8326665A5F002BA48F /* BankingBilletViewController.xib in Resources */,
+				CAEE96472670F2AE00665B9D /* SFProText-Regular.otf in Resources */,
+				CAEE96552670FE5900665B9D /* MyriadPro-It.otf in Resources */,
 				CA29B514265815F9004BCBFD /* CustomersTableViewCell.xib in Resources */,
 				CABCA8D7264AB04E007AE005 /* Assets.xcassets in Resources */,
 				CA1859C2265D1804001F821C /* EditItemPopupViewController.xib in Resources */,
@@ -1442,7 +1466,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.EmitirBoleto";
-				PRODUCT_NAME = Boleto;
+				PRODUCT_NAME = Gerencianet;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1463,7 +1487,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.EmitirBoleto";
-				PRODUCT_NAME = Boleto;
+				PRODUCT_NAME = Gerencianet;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

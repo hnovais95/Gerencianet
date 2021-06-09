@@ -8,8 +8,19 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyriadPro-Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
+        <array key="MyriadPro-It.otf">
+            <string>MyriadPro-It</string>
+        </array>
+        <array key="MyriadPro-Regular.ttf">
+            <string>MyriadPro-Regular</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="Boleto" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertCustomerViewController" customModule="Gerencianet" customModuleProvider="target">
             <connections>
                 <outlet property="addressStackView" destination="Au0-JG-xGm" id="I50-Ew-Xsx"/>
                 <outlet property="addressSwitch" destination="kgm-Ba-HEa" id="FSg-xe-Ee2"/>
@@ -124,11 +135,11 @@
                             <rect key="frame" x="16" y="97" width="382" height="56"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para quem?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScJ-K6-DDd">
-                                    <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="chf-bX-FAJ"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                     <color key="textColor" red="0.43137254901960786" green="0.43529411764705883" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -154,30 +165,30 @@
                             <rect key="frame" x="0.0" y="175" width="414" height="460"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BxS-6G-jtd" userLabel="Input Fields Stack View">
-                                    <rect key="frame" x="18" y="0.0" width="384.66666666666669" height="987"/>
+                                    <rect key="frame" x="18" y="0.0" width="384.66666666666669" height="910.33333333333337"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FIO-0P-JaC" userLabel="Name Stack View">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="75"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4t-H1-vPz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNl-St-xkQ" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="21.666666666666657" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="2HJ-1L-Vxs"/>
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="blY-JE-wcK">
-                                                    <rect key="frame" x="0.0" y="28.666666666666657" width="384.66666666666669" height="18"/>
+                                                    <rect key="frame" x="0.0" y="26" width="384.66666666666669" height="18"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
+                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c07-8A-eJz" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="360.66666666666669" height="18"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xX-DS-ImK">
@@ -191,160 +202,160 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKf-xg-acW" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="52.666666666666657" width="384.66666666666669" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="50" width="384.66666666666669" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="Gqc-7p-YEV"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-Ju-2wx" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="58.666666666666657" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="56" width="384.66666666666669" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="dmS-jr-gRB"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3p-i3-t2R">
-                                                    <rect key="frame" x="0.0" y="65.666666666666657" width="384.66666666666669" height="14.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="63" width="384.66666666666669" height="12"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uFf-xM-qQD" userLabel="CPF Stack View">
-                                            <rect key="frame" x="0.0" y="91" width="384.66666666666669" height="79.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="86" width="384.66666666666669" height="71.666666666666686"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-Nx-MtK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6b-8v-oVe" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="21.666666666666686" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="dvZ-Zq-MYq"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 000.000.000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azG-JF-mgD" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
+                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 000.000.000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azG-JF-mgD" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNN.NNN.NNN-NN"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-bY-zYM" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666686" width="384.66666666666669" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="OMp-MX-hU8"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-So-crK" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="52.666666666666686" width="384.66666666666669" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="bih-eV-TFM"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAe-OR-73k">
-                                                    <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="59.666666666666686" width="384.66666666666669" height="12"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="qQl-pb-qRG" userLabel="Juridical Person Stack View">
-                                            <rect key="frame" x="0.0" y="181.33333333333331" width="384.66666666666669" height="169.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="168.66666666666669" width="384.66666666666669" height="154.33333333333331"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LoA-l8-GvS" userLabel="Corporate Name Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="79.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="71.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Razão Social" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnv-bY-BCA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sn-nH-arT" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="21.666666666666686" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="Ck7-Pq-gMu"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Gerencianet" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-Nu-kaX" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28.666666666666686" width="384.66666666666669" height="17.333333333333329"/>
+                                                        <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Gerencianet" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ad0-Nu-kaX" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdK-Kh-dH7" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="46.666666666666629" width="384.66666666666669" height="0.0"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" id="Kdd-IY-ngW"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbs-mn-8sK" userLabel="Validation View">
-                                                            <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="52.666666666666629" width="384.66666666666669" height="1"/>
                                                             <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="4rq-fv-LBD"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-6o-8Ih">
-                                                            <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="59.666666666666629" width="384.66666666666669" height="12"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                             <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4GE-Zg-071" userLabel="CNPJ Name Stack View">
-                                                    <rect key="frame" x="0.0" y="90.333333333333371" width="384.66666666666669" height="79.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="82.666666666666629" width="384.66666666666669" height="71.666666666666686"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNPJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtP-hg-kGC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cz-eT-OPe" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="JLo-Mi-Q01"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00.000.000/0000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-Xn-k7U" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
+                                                        <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00.000.000/0000-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34S-Xn-k7U" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NN.NNN.NNN/NNNN-NN"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvf-Tc-3kV" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="46.666666666666686" width="384.66666666666669" height="0.0"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" id="pxn-T5-OPo"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Deu-u0-qUk" userLabel="Validation View">
-                                                            <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="52.666666666666686" width="384.66666666666669" height="1"/>
                                                             <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="QOA-CX-2O5"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH1-Mb-FAF">
-                                                            <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="59.666666666666686" width="384.66666666666669" height="12"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                             <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -353,112 +364,112 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-gv-IyR" userLabel="Phone Number Stack View">
-                                            <rect key="frame" x="0.0" y="362" width="384.66666666666669" height="79.333333333333314"/>
+                                            <rect key="frame" x="0.0" y="334" width="384.66666666666669" height="71.666666666666686"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42d-Gd-IdT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY4-gi-w82" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="B5r-UT-mJU"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: (00) 9 0000-0000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-mc-Y8M" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
+                                                <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: (00) 9 0000-0000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-mc-Y8M" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="(NN) N NNNN-NNNN"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-Gg-cqg" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666629" width="384.66666666666669" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="xt3-4a-PxS"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbZ-FN-nYO" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="52.666666666666629" width="384.66666666666669" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="gGj-YL-FNs"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiD-FT-mez">
-                                                    <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="0.0" y="59.666666666666629" width="384.66666666666669" height="12"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="16q-3Y-VhZ" userLabel="Email Stack View">
-                                            <rect key="frame" x="0.0" y="452.33333333333337" width="384.66666666666669" height="88.666666666666629"/>
+                                            <rect key="frame" x="0.0" y="416.66666666666663" width="384.66666666666669" height="75.666666666666686"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDZ-fT-Q7u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofE-js-0Qf" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="aDc-Zj-1vG"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: email@dominio.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-dC-Cqo" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
+                                                <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: email@dominio.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-dC-Cqo" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgV-eU-i8x" userLabel="White Space View">
-                                                    <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="46.666666666666742" width="384.66666666666669" height="0.0"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="sYN-l8-hZL"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bs-8j-tf5" userLabel="Validation View">
-                                                    <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                    <rect key="frame" x="0.0" y="52.666666666666742" width="384.66666666666669" height="1"/>
                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="d9v-N7-v1a"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-Xp-b1P">
-                                                    <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="23.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="59.666666666666742" width="384.66666666666669" height="16"/>
                                                     <string key="text">Ao preencher o e-mail, o boleto será encaminhado automaticamente
 para o cliente.</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-It" family="Myriad Pro" pointSize="8"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-lG-il6" userLabel="White Space View">
-                                            <rect key="frame" x="0.0" y="552" width="384.66666666666669" height="8"/>
+                                            <rect key="frame" x="0.0" y="503.33333333333337" width="384.66666666666669" height="8"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="CNw-dr-oqc"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMd-6p-saZ" userLabel="Show Additional Fields View">
-                                            <rect key="frame" x="0.0" y="571" width="384.66666666666669" height="31"/>
+                                            <rect key="frame" x="0.0" y="522.33333333333337" width="384.66666666666669" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exibir campos adicionais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZA-d1-jw4">
-                                                    <rect key="frame" x="0.0" y="9" width="159.66666666666666" height="13"/>
+                                                    <rect key="frame" x="0.0" y="9" width="142.66666666666666" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="13" id="DDB-aX-vSL"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -476,142 +487,142 @@ para o cliente.</string>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-tU-IsQ" userLabel="White Space View">
-                                            <rect key="frame" x="0.0" y="613" width="384.66666666666669" height="8"/>
+                                            <rect key="frame" x="0.0" y="564.33333333333337" width="384.66666666666669" height="8"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="ktY-0o-T0t"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Au0-JG-xGm" userLabel="Additional Fields View">
-                                            <rect key="frame" x="0.0" y="632" width="384.66666666666669" height="355"/>
+                                            <rect key="frame" x="0.0" y="583.33333333333337" width="384.66666666666669" height="327"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Z0g-RG-SBw" userLabel="Address Stack View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="79.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="71.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço (Logradiura/Rua/Avenida)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH3-2J-bSN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="15.666666666666666"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384.66666666666669" height="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-Ab-O1Z" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="21.666666666666629" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="19" width="384.66666666666669" height="1"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="oNi-Ac-00g"/>
                                                             </constraints>
                                                         </view>
-                                                        <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-bO-0Dt" userLabel="Address Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28.666666666666629" width="384.66666666666669" height="17.333333333333329"/>
+                                                        <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-bO-0Dt" userLabel="Address Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="26.000000000000004" width="384.66666666666669" height="14.666666666666668"/>
                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj4-KT-c6T" userLabel="White Space View">
-                                                            <rect key="frame" x="0.0" y="52" width="384.66666666666669" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="46.666666666666629" width="384.66666666666669" height="0.0"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" id="aAp-G3-8yt"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="843-JV-FHS" userLabel="Validation View">
-                                                            <rect key="frame" x="0.0" y="58" width="384.66666666666669" height="1"/>
+                                                            <rect key="frame" x="0.0" y="52.666666666666629" width="384.66666666666669" height="1"/>
                                                             <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="LkY-QR-ECD"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-S3-NfQ">
-                                                            <rect key="frame" x="0.0" y="65" width="384.66666666666669" height="14.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="59.666666666666629" width="384.66666666666669" height="12"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                             <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="5O5-Gm-vwY" userLabel="Number-Complement Stack View">
-                                                    <rect key="frame" x="0.0" y="90.333333333333371" width="384.66666666666669" height="79.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="82.666666666666629" width="384.66666666666669" height="71.666666666666686"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yQ8-6q-WKn" userLabel="Number Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="79.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="71.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-vK-YQF">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-yF-7xb" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="19" width="108" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="COS-m3-ygF"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-XB-JiM" userLabel="Number Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="108" height="17.333333333333329"/>
+                                                                <textField opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oh2-XB-JiM" userLabel="Number Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="108" height="14.666666666666668"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3B-Wr-Usz" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52" width="108" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="46.666666666666629" width="108" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="RLF-Jr-wKI"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txu-Te-pfa" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="52.666666666666629" width="108" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="fcL-YY-DJw"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-M8-l9c">
-                                                                    <rect key="frame" x="0.0" y="65" width="108" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="59.666666666666629" width="108" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Mvx-va-2Ab" userLabel="Complement Stack View">
-                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="79.333333333333329"/>
+                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="71.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complemento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svL-cE-LZw">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-n4-lZG" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666629" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="19" width="262.66666666666669" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="IZa-jt-O18"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-Gp-VAA" userLabel="Complement Style Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666629" width="262.66666666666669" height="17.333333333333329"/>
+                                                                <textField opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-Gp-VAA" userLabel="Complement Style Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="262.66666666666669" height="14.666666666666668"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMT-Ma-6Kc" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52" width="262.66666666666669" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="46.666666666666629" width="262.66666666666669" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="5EU-0c-OOf"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-Iu-Doz" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="52.666666666666629" width="262.66666666666669" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="VDl-OR-SQI"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tL-dz-6Sv">
-                                                                    <rect key="frame" x="0.0" y="65" width="262.66666666666669" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="59.666666666666629" width="262.66666666666669" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -623,92 +634,92 @@ para o cliente.</string>
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="b2C-U7-7yN" userLabel="Neighborhood-Zipcode Stack View">
-                                                    <rect key="frame" x="0.0" y="180.66666666666663" width="384.66666666666669" height="79.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="165.33333333333326" width="384.66666666666669" height="71.666666666666686"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="BxF-OG-QTO" userLabel="Neiborhood Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="79.333333333333329"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="71.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bairro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-fQ-IBm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZN-jR-82C" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="19" width="108" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="TPX-YM-zRI"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-qM-Fox" userLabel="Neighborhood Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="17.333333333333329"/>
+                                                                <textField opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ie-qM-Fox" userLabel="Neighborhood Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="108" height="14.666666666666668"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yi-Ky-8np" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52.000000000000114" width="108" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="46.666666666666742" width="108" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="NXC-vL-RxT"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mzq-4e-Cws" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58.000000000000114" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="52.666666666666742" width="108" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="HeC-kG-KU8"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-Vv-qGl">
-                                                                    <rect key="frame" x="0.0" y="65.000000000000114" width="108" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="59.666666666666742" width="108" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="peF-Ea-djj" userLabel="Zipcode Stack View">
-                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="79.333333333333329"/>
+                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="71.666666666666671"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KA7-9G-77U">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuD-wA-3Wc" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="19" width="262.66666666666669" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="awT-oe-UNq"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00000-000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k73-lw-55b" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="17.333333333333329"/>
+                                                                <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: 00000-000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k73-lw-55b" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="26.000000000000004" width="262.66666666666669" height="14.666666666666668"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNNNN-NNN"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-BW-IpR" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="52.000000000000114" width="262.66666666666669" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="46.666666666666742" width="262.66666666666669" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="Iga-GP-HlW"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3I-fc-za2" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="58.000000000000114" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="52.666666666666742" width="262.66666666666669" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="M8m-hn-GBF"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDs-Q9-4ZV">
-                                                                    <rect key="frame" x="0.0" y="65.000000000000114" width="262.66666666666669" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="59.666666666666742" width="262.66666666666669" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -720,30 +731,30 @@ para o cliente.</string>
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-ce-L86" userLabel="State-City Stack View">
-                                                    <rect key="frame" x="0.0" y="271" width="384.66666666666669" height="84"/>
+                                                    <rect key="frame" x="0.0" y="248" width="384.66666666666669" height="79"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="96q-1U-un7" userLabel="State Stack View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="84"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="79"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I1-aD-FIx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-Mk-5Qt" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="18.999999999999886" width="108" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="4m7-B3-loJ"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Vt-Os-nPZ" userLabel="Text Field-Button Stack View">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="108" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="25.999999999999886" width="108" height="22"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
+                                                                        <textField opaque="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKl-xx-EUe" userLabel="State Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="95" height="22"/>
                                                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                             <textInputTraits key="textInputTraits"/>
                                                                         </textField>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdr-yV-O6K" userLabel="Push Down Button">
@@ -756,65 +767,65 @@ para o cliente.</string>
                                                                     </constraints>
                                                                 </stackView>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuP-Mq-UoS" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="56.666666666666742" width="108" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="53.999999999999886" width="108" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="vUS-dS-EyU"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suj-Ib-C0i" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="62.666666666666742" width="108" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="59.999999999999886" width="108" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="0a3-qP-RsT"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-wP-sbF">
-                                                                    <rect key="frame" x="0.0" y="69.666666666666742" width="108" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="66.999999999999886" width="108" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="KAG-3s-nNH" userLabel="City Stack View">
-                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="84"/>
+                                                            <rect key="frame" x="122" y="0.0" width="262.66666666666669" height="79"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-wd-zGK">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="15.666666666666666"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="262.66666666666669" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="13"/>
                                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPQ-Oa-ZOM" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="21.666666666666742" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="18.999999999999886" width="262.66666666666669" height="1"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="936-OP-SPH"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Ouro Preto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-nP-aiN" userLabel="City Text Field" customClass="BindingTextField" customModule="Boleto" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="28.666666666666742" width="262.66666666666669" height="22"/>
+                                                                <textField opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Ouro Preto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-nP-aiN" userLabel="City Text Field" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="25.999999999999886" width="262.66666666666669" height="22"/>
                                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="13"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                                                                 </textField>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eD6-Vj-m4i" userLabel="White Space View">
-                                                                    <rect key="frame" x="0.0" y="56.666666666666742" width="262.66666666666669" height="0.0"/>
+                                                                    <rect key="frame" x="0.0" y="53.999999999999886" width="262.66666666666669" height="0.0"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" id="MjX-ns-64W"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-bW-BBq" userLabel="Validation View">
-                                                                    <rect key="frame" x="0.0" y="62.666666666666742" width="262.66666666666669" height="1"/>
+                                                                    <rect key="frame" x="0.0" y="59.999999999999886" width="262.66666666666669" height="1"/>
                                                                     <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="7LA-1h-c1t"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formato inválido." textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-O8-4QL">
-                                                                    <rect key="frame" x="0.0" y="69.666666666666742" width="262.66666666666669" height="14.333333333333329"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <rect key="frame" x="0.0" y="66.999999999999886" width="262.66666666666669" height="12"/>
+                                                                    <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="12"/>
                                                                     <color key="textColor" red="0.74901960779999999" green="0.32156862749999998" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -841,7 +852,7 @@ para o cliente.</string>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="eDj-9Y-Ygz" userLabel="Buttons Stack View">
                             <rect key="frame" x="16" y="663" width="382" height="44"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-SX-kCt" customClass="BackButton" customModule="Boleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vO-SX-kCt" customClass="BackButton" customModule="Gerencianet" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="182" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="nfv-yu-3XS" userLabel="height = 44"/>
@@ -851,7 +862,7 @@ para o cliente.</string>
                                         <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo" customClass="NextButton" customModule="Boleto" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLo-hR-pVo" customClass="NextButton" customModule="Gerencianet" customModuleProvider="target">
                                     <rect key="frame" x="200" y="0.0" width="182" height="44"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                     <state key="normal" title="AVANÇAR">

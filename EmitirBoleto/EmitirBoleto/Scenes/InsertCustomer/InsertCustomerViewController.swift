@@ -51,6 +51,7 @@ class InsertCustomerViewController: UIViewController {
         
         self.segmentedControl.addTarget(self, action: #selector(handleSegmentedControlChange(_:)), for: .valueChanged)
         self.addressSwitch.addTarget(self, action: #selector(handleSwitchChange(_:)), for: .valueChanged)
+        self.backButton.addTarget(self, action: #selector(handleBackStep), for: .touchUpInside)
         self.nextButton.addTarget(self, action: #selector(handleNextStep), for: .touchUpInside)
         self.searchCustomerButton.addTarget(self, action: #selector(handleTapSearchCustomerButton), for: .touchUpInside)
         self.statePickerButton.addTarget(self, action: #selector(handleTapStatePickerButton), for: .touchUpInside)
@@ -75,6 +76,12 @@ class InsertCustomerViewController: UIViewController {
         
         textFields[FieldType.state.rawValue].tintColor = .clear
         textFields[FieldType.state.rawValue].inputView = createStatePickerView()
+        
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family \(family) Font names: \(names)")
+        }
     }
     
     private func setupSegmentedControl() {
@@ -85,6 +92,7 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azulEscuro), for: .selected, barMetrics: .default)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.font: UIFont(name: "SFProText-Regular", size: 13)!], for: .normal)
         segmentedControl.selectedSegmentIndex = 0
     }
     
@@ -140,6 +148,11 @@ class InsertCustomerViewController: UIViewController {
         addressStackView.isHidden = !sender.isOn
         viewModel.includeAddress = sender.isOn
         self.nextButton.setEnable(viewModel.isValid)
+    }
+    
+    @objc
+    private func handleBackStep() {
+        coordinator?.back()
     }
     
     @objc

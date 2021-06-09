@@ -24,9 +24,10 @@ class BankingBilletViewModel {
     var message: String = ""
     
     var total: String {
-        let itemsValue = items?.map({ $0.value }).reduce(0, +) ?? 0
+        let sumItems = items?.map({ $0.value * $0.amount }).reduce(0, +) ?? 0
+        let shipping = Int(shippingValue) ?? 0
         let discount = calculateDiscount()
-        let total = max(0, (itemsValue - discount))
+        let total = max(0, (sumItems + shipping - discount))
         return Helper.getPrice(total)
     }
     
@@ -40,8 +41,6 @@ class BankingBilletViewModel {
             }
         }
         
-        print("discount \(isDiscountValid)")
-        
         var isConditionalDiscountValid: Bool {
             if let _ = Int(conditionalDiscountValue) {
                 if !conditionalDiscountDeadline.isEmpty {
@@ -54,8 +53,6 @@ class BankingBilletViewModel {
             }
             return false
         }
-        
-        print("conditional \(isConditionalDiscountValid)")
         
         return validator.validate(.expireAt, expireAt)
             && validator.validate(.shippingValue, shippingValue)
@@ -73,21 +70,21 @@ class BankingBilletViewModel {
     }
     
     private func calculateDiscount() -> Int {
+        let sumItems = items?.map({ $0.value * $0.amount }).reduce(0, +) ?? 0
         var discount = 0.0
-        let itemsValue = items?.map({ $0.value }).reduce(0, +) ?? 0
         
         if discountType == .currency {
             discount += Double(discountValue) ?? 0.0
         } else
         {
-            discount += Double(itemsValue) * (Double(discountValue) ?? 0.0) / 10000.0
+            discount += Double(sumItems) * (Double(discountValue) ?? 0.0) / 10000.0
         }
         
-        if conditionalDiscountType == .percentage {
+        if conditionalDiscountType == .currency {
             discount += Double(conditionalDiscountValue) ?? 0.0
         } else
         {
-            discount += Double(itemsValue) * (Double(conditionalDiscountValue) ?? 0.0) / 10000.0
+            discount += Double(sumItems) * (Double(conditionalDiscountValue) ?? 0.0) / 10000.0
         }
         
         return Int(discount.rounded())
