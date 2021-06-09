@@ -9,8 +9,7 @@ import CoreData
 
 class CoreDataItemRepository: ItemRepository {
     
-    func getAll() -> [ItemModel] {
-        
+    func getAll() -> [ItemModel] {        
         var models = [ItemModel]()
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Item>(entityName: Constants.EntityName.item)
@@ -33,7 +32,6 @@ class CoreDataItemRepository: ItemRepository {
     }
     
     func save(_ data: ItemModel) {
-        
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
         let fetchResult = fetch(byName: data.name, andValue: Int32(data.value))
@@ -59,11 +57,10 @@ class CoreDataItemRepository: ItemRepository {
     }
     
     private func fetch(byName name: String, andValue value: Int32) -> Item? {
-        
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Item>(entityName: Constants.EntityName.item)
-        fetchRequest.predicate = NSPredicate(format: "name == %@ AND value == %i", name)
+        fetchRequest.predicate = NSPredicate(format: "name == %@ AND value == %i", name, value)
         fetchRequest.fetchLimit = 1
         
         do {

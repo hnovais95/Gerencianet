@@ -8,10 +8,10 @@
 import Foundation
 import Alamofire
 
-class AlamofireClient: HTTPAlamofireClient {
+class AlamofireClient: HTTPClient {
     
     func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
-              completion: @escaping (Result<Data?, APIError>) -> Void) {
+              completion: @escaping (Result<Data?, NetworkError>) -> Void) {
         
         AF.request(url,
                    method: method,
@@ -20,28 +20,28 @@ class AlamofireClient: HTTPAlamofireClient {
                    headers: headers).responseData { responseData in
             
             guard let statusCode = responseData.response?.statusCode else {
-                return completion(.failure(.noConnectivity))
+                return completion(.failure(NetworkError(.noConnectivity)))
             }
                     
             switch responseData.result {
             case .failure:
-                completion(.failure(.noConnectivity))
+                completion(.failure(NetworkError(.noConnectivity)))
             case .success(let data):
                 switch statusCode {
                 case 204:
-                    completion(.success(nil))
+                    completion(.success(data))
                 case 200...299:
                     completion(.success(data))
                 case 401:
-                    completion(.failure(.unauthorized))
+                    completion(.failure(NetworkError(.unauthorized, data)))
                 case 403:
-                    completion(.failure(.forbidden))
+                    completion(.failure(NetworkError(.forbidden, data)))
                 case 400...499:
-                    completion(.failure(.badRequest))
+                    completion(.failure(NetworkError(.badRequest, data)))
                 case 500...599:
-                    completion(.failure(.serverError))
+                    completion(.failure(NetworkError(.serverError, data)))
                 default:
-                    completion(.failure(.noConnectivity))
+                    completion(.failure(NetworkError(.unauthorized, data)))
                 }
             }
         }

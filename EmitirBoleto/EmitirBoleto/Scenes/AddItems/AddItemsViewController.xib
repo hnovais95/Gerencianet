@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyriadPro-Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddItemsViewController" customModule="Gerencianet" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="cV5-WQ-Eyw" id="era-0X-OB0"/>
+                <outlet property="nextButton" destination="PYW-fj-eb3" id="vYX-fu-kUy"/>
+                <outlet property="tableView" destination="u1V-1a-9TQ" id="13T-3t-2wN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtO-Uq-YaT" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="go2-yQ-vpN" userLabel="Top View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFV-SZ-Z1f">
+                                    <rect key="frame" x="14" y="9.6666666666666643" width="25" height="25"/>
+                                    <state key="normal" image="gn_logo"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMISSÃO DE BOLETO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvJ-Ot-CYh">
+                                    <rect key="frame" x="124.33333333333333" y="10.333333333333334" width="165.33333333333337" height="23.666666666666664"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="pFV-SZ-Z1f" firstAttribute="centerY" secondItem="go2-yQ-vpN" secondAttribute="centerY" id="ORd-Js-qc1"/>
+                                <constraint firstItem="pFV-SZ-Z1f" firstAttribute="leading" secondItem="go2-yQ-vpN" secondAttribute="leading" constant="14" id="Yzz-wD-aNB"/>
+                                <constraint firstAttribute="height" constant="44" id="bkj-Ul-Gbu"/>
+                                <constraint firstItem="fvJ-Ot-CYh" firstAttribute="centerY" secondItem="go2-yQ-vpN" secondAttribute="centerY" id="tif-NY-Jbc"/>
+                                <constraint firstItem="fvJ-Ot-CYh" firstAttribute="centerX" secondItem="go2-yQ-vpN" secondAttribute="centerX" id="vwq-XO-iIs"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XkT-2O-u6d" userLabel="Progress Stack View">
+                            <rect key="frame" x="8" y="60" width="398" height="7"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-7Q-FeY">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="7"/>
+                                    <color key="backgroundColor" red="0.35686274509999999" green="0.67450980390000004" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="7" id="HoC-Tq-Oz0"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdO-f5-L0L">
+                                    <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="7"/>
+                                    <color key="backgroundColor" red="0.76470588240000004" green="0.64705882349999999" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyL-1A-oE0">
+                                    <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="7"/>
+                                    <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TdO-f5-L0L" firstAttribute="width" secondItem="PLf-7Q-FeY" secondAttribute="width" id="4MW-iI-eWz"/>
+                                <constraint firstItem="TdO-f5-L0L" firstAttribute="height" secondItem="PLf-7Q-FeY" secondAttribute="height" id="Gve-7h-yvb"/>
+                                <constraint firstItem="QyL-1A-oE0" firstAttribute="width" secondItem="PLf-7Q-FeY" secondAttribute="width" id="S6H-pV-8Vu"/>
+                                <constraint firstItem="QyL-1A-oE0" firstAttribute="height" secondItem="PLf-7Q-FeY" secondAttribute="height" id="Yfj-V5-dbg"/>
+                                <constraint firstItem="TdO-f5-L0L" firstAttribute="centerX" secondItem="XkT-2O-u6d" secondAttribute="centerX" id="hDA-Rp-1zg"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você deseja cobrar?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz1-3T-Wem">
+                            <rect key="frame" x="16" y="97" width="231" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="cWJ-o6-Wd0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
+                            <color key="textColor" red="0.43137254899999999" green="0.43529411759999997" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1V-1a-9TQ">
+                            <rect key="frame" x="0.0" y="127" width="414" height="520"/>
+                        </tableView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uBd-6Q-cyV" userLabel="Buttons Stack View">
+                            <rect key="frame" x="16" y="663" width="382" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-WQ-Eyw" customClass="BackButton" customModule="Gerencianet" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="K0U-gj-Iuu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                    <state key="normal" title="VOLTAR">
+                                        <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYW-fj-eb3" customClass="NextButton" customModule="Gerencianet" customModuleProvider="target">
+                                    <rect key="frame" x="199" y="0.0" width="183" height="44"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                                    <state key="normal" title="AVANÇAR">
+                                        <color key="titleColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="go2-yQ-vpN" firstAttribute="leading" secondItem="JtO-Uq-YaT" secondAttribute="leading" id="0mi-S5-AKa"/>
+                        <constraint firstItem="Dz1-3T-Wem" firstAttribute="top" secondItem="XkT-2O-u6d" secondAttribute="bottom" constant="30" id="7Yx-Lk-fOk"/>
+                        <constraint firstItem="uBd-6Q-cyV" firstAttribute="top" secondItem="u1V-1a-9TQ" secondAttribute="bottom" constant="16" id="7xp-hN-C6a"/>
+                        <constraint firstAttribute="trailing" secondItem="uBd-6Q-cyV" secondAttribute="trailing" priority="750" constant="16" id="Dqf-bR-qol"/>
+                        <constraint firstAttribute="bottom" secondItem="uBd-6Q-cyV" secondAttribute="bottom" constant="29" id="Hw5-fU-zjn"/>
+                        <constraint firstAttribute="trailing" secondItem="XkT-2O-u6d" secondAttribute="trailing" constant="8" id="NAp-oU-egH"/>
+                        <constraint firstItem="go2-yQ-vpN" firstAttribute="top" secondItem="JtO-Uq-YaT" secondAttribute="top" id="XXf-FH-H4N"/>
+                        <constraint firstItem="u1V-1a-9TQ" firstAttribute="top" secondItem="Dz1-3T-Wem" secondAttribute="bottom" constant="10" id="aQ7-53-s8P"/>
+                        <constraint firstItem="u1V-1a-9TQ" firstAttribute="leading" secondItem="JtO-Uq-YaT" secondAttribute="leading" id="d4c-Qj-EVo"/>
+                        <constraint firstAttribute="trailing" secondItem="u1V-1a-9TQ" secondAttribute="trailing" id="mVP-za-eLN"/>
+                        <constraint firstItem="XkT-2O-u6d" firstAttribute="leading" secondItem="JtO-Uq-YaT" secondAttribute="leading" constant="8" id="mZv-cW-y15"/>
+                        <constraint firstItem="Dz1-3T-Wem" firstAttribute="leading" secondItem="JtO-Uq-YaT" secondAttribute="leading" constant="16" id="p4d-Ho-ttx"/>
+                        <constraint firstAttribute="trailing" secondItem="go2-yQ-vpN" secondAttribute="trailing" id="wyS-av-me8"/>
+                        <constraint firstItem="uBd-6Q-cyV" firstAttribute="leading" secondItem="JtO-Uq-YaT" secondAttribute="leading" constant="16" id="yDS-HP-uQC"/>
+                        <constraint firstItem="XkT-2O-u6d" firstAttribute="top" secondItem="go2-yQ-vpN" secondAttribute="bottom" constant="16" id="zuz-JE-VTq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="JtO-Uq-YaT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JIc-Nh-rA9"/>
+                <constraint firstItem="JtO-Uq-YaT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WFB-TT-ldr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JtO-Uq-YaT" secondAttribute="bottom" id="hqe-r1-19l"/>
+                <constraint firstItem="JtO-Uq-YaT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jLl-oU-8Kh"/>
+            </constraints>
+            <point key="canvasLocation" x="-43" y="61"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gn_logo" width="25" height="25"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

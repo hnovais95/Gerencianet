@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MyriadPro-Bold.ttf">
+            <string>MyriadPro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FailureViewController" customModule="Gerencianet" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="jjj-Vq-dmC" id="ECc-kU-kTW"/>
+                <outlet property="errorMessageTextView" destination="PLe-GG-y9t" id="Fl5-6Z-g9e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVB-YA-orR" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2O-fH-O8j" userLabel="Top View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyJ-2S-v9Q">
+                                    <rect key="frame" x="14" y="9.6666666666666643" width="25" height="25"/>
+                                    <state key="normal" image="gn_logo"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMISSÃO DE BOLETO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-Tq-tik">
+                                    <rect key="frame" x="124.33333333333333" y="10.333333333333334" width="165.33333333333337" height="23.666666666666664"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="200-vT-hPu"/>
+                                <constraint firstItem="0AO-Tq-tik" firstAttribute="centerX" secondItem="a2O-fH-O8j" secondAttribute="centerX" id="2ym-WM-kqI"/>
+                                <constraint firstItem="wyJ-2S-v9Q" firstAttribute="leading" secondItem="a2O-fH-O8j" secondAttribute="leading" constant="14" id="OxX-eg-9QD"/>
+                                <constraint firstItem="wyJ-2S-v9Q" firstAttribute="centerY" secondItem="a2O-fH-O8j" secondAttribute="centerY" id="PST-cP-u0Y"/>
+                                <constraint firstItem="0AO-Tq-tik" firstAttribute="centerY" secondItem="a2O-fH-O8j" secondAttribute="centerY" id="k0g-BJ-TEt"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VkL-Cb-UYJ" userLabel="Progress Stack View">
+                            <rect key="frame" x="8" y="60" width="398" height="7"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7h-zl-RHD">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="7"/>
+                                    <color key="backgroundColor" red="0.72156862749999995" green="0.023529411760000001" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="7" id="hem-AN-1Hx"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTH-8b-mEE">
+                                    <rect key="frame" x="135.33333333333334" y="0.0" width="127.33333333333334" height="7"/>
+                                    <color key="backgroundColor" red="0.72156862749999995" green="0.023529411760000001" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCo-nz-1k0">
+                                    <rect key="frame" x="270.66666666666669" y="0.0" width="127.33333333333331" height="7"/>
+                                    <color key="backgroundColor" red="0.72156862749999995" green="0.023529411760000001" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="xCo-nz-1k0" firstAttribute="width" secondItem="a7h-zl-RHD" secondAttribute="width" id="IKE-dX-IpD"/>
+                                <constraint firstItem="LTH-8b-mEE" firstAttribute="centerX" secondItem="VkL-Cb-UYJ" secondAttribute="centerX" id="V2A-uB-FF1"/>
+                                <constraint firstItem="LTH-8b-mEE" firstAttribute="height" secondItem="a7h-zl-RHD" secondAttribute="height" id="iSg-1j-jN4"/>
+                                <constraint firstItem="xCo-nz-1k0" firstAttribute="height" secondItem="a7h-zl-RHD" secondAttribute="height" id="pKc-mS-toa"/>
+                                <constraint firstItem="LTH-8b-mEE" firstAttribute="width" secondItem="a7h-zl-RHD" secondAttribute="width" id="wgs-K0-2ux"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falha na emissão da cobrança." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti2-Bu-uT9">
+                            <rect key="frame" x="72.666666666666657" y="97" width="268.66666666666674" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="8Db-bc-oLD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
+                            <color key="textColor" red="0.72156862745098038" green="0.023529411764705882" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Dt-e3w" userLabel="Message View">
+                            <rect key="frame" x="16" y="133" width="382" height="94"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLe-GG-y9t" userLabel="Message Text View">
+                                    <rect key="frame" x="51" y="24" width="280" height="46"/>
+                                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="Obi-Kl-Iw2"/>
+                                        <constraint firstAttribute="width" constant="280" id="dRx-Oj-b5t"/>
+                                    </constraints>
+                                    <attributedString key="attributedText">
+                                        <fragment content="FALHA INESPERADA! POR FAVOR, TENTE NOVAMENTE.">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor"/>
+                                                <font key="NSFont" size="16" name="MyriadPro-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="94" id="3As-nn-HJ8"/>
+                                <constraint firstItem="PLe-GG-y9t" firstAttribute="centerY" secondItem="vOt-Dt-e3w" secondAttribute="centerY" id="Qa9-kq-QuZ"/>
+                                <constraint firstItem="PLe-GG-y9t" firstAttribute="centerX" secondItem="vOt-Dt-e3w" secondAttribute="centerX" id="VLD-zT-TBM"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjj-Vq-dmC" customClass="BackButton" customModule="Gerencianet" customModuleProvider="target">
+                            <rect key="frame" x="16" y="663" width="183" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="183" id="6fa-jk-ca1"/>
+                                <constraint firstAttribute="height" constant="44" id="ll7-zm-Ewc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
+                            <state key="normal" title="VOLTAR">
+                                <color key="titleColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Ti2-Bu-uT9" firstAttribute="centerX" secondItem="DVB-YA-orR" secondAttribute="centerX" id="3jG-Gp-KYu"/>
+                        <constraint firstItem="vOt-Dt-e3w" firstAttribute="top" secondItem="Ti2-Bu-uT9" secondAttribute="bottom" constant="16" id="7jA-CR-8ra"/>
+                        <constraint firstItem="VkL-Cb-UYJ" firstAttribute="leading" secondItem="DVB-YA-orR" secondAttribute="leading" constant="8" id="Hpn-TN-43B"/>
+                        <constraint firstItem="vOt-Dt-e3w" firstAttribute="leading" secondItem="DVB-YA-orR" secondAttribute="leading" constant="16" id="LbD-X8-wrh"/>
+                        <constraint firstAttribute="trailing" secondItem="vOt-Dt-e3w" secondAttribute="trailing" constant="16" id="N2e-uU-X4k"/>
+                        <constraint firstAttribute="bottom" secondItem="jjj-Vq-dmC" secondAttribute="bottom" constant="29" id="Nyz-8v-lnq"/>
+                        <constraint firstItem="jjj-Vq-dmC" firstAttribute="leading" secondItem="DVB-YA-orR" secondAttribute="leading" constant="16" id="PD1-Ta-AWW"/>
+                        <constraint firstItem="a2O-fH-O8j" firstAttribute="top" secondItem="DVB-YA-orR" secondAttribute="top" id="TKH-36-D6w"/>
+                        <constraint firstAttribute="trailing" secondItem="VkL-Cb-UYJ" secondAttribute="trailing" constant="8" id="Woo-dD-xjZ"/>
+                        <constraint firstItem="Ti2-Bu-uT9" firstAttribute="top" secondItem="VkL-Cb-UYJ" secondAttribute="bottom" constant="30" id="hIo-8X-DxY"/>
+                        <constraint firstItem="a2O-fH-O8j" firstAttribute="leading" secondItem="DVB-YA-orR" secondAttribute="leading" id="lvM-Vy-dZ6"/>
+                        <constraint firstAttribute="trailing" secondItem="a2O-fH-O8j" secondAttribute="trailing" id="t0e-nd-32z"/>
+                        <constraint firstItem="VkL-Cb-UYJ" firstAttribute="top" secondItem="a2O-fH-O8j" secondAttribute="bottom" constant="16" id="wIe-Wo-kRT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.43529411759999997" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="DVB-YA-orR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AI4-f4-Xr6"/>
+                <constraint firstItem="DVB-YA-orR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="D3W-gn-XJ0"/>
+                <constraint firstItem="DVB-YA-orR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="XrB-bt-JxG"/>
+                <constraint firstItem="DVB-YA-orR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="oCm-4B-0ex"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="105.97826086956522"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gn_logo" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

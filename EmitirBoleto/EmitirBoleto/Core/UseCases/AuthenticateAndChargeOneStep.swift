@@ -9,34 +9,30 @@ import Foundation
 
 class AuthenticateAndChargeOneStep {
     
+    private let notificationCenter = NotificationCenter.default
+    private let authenticateGroup = DispatchGroup()
     private let paymentGateway: PaymentGateway
 
     init(paymentGateway: PaymentGateway) {
         self.paymentGateway = paymentGateway
+        self.notificationCenter.addObserver(self, selector: #selector(handleAuthentication(_:)), name: .authenticateSucess, object: nil)
+        self.notificationCenter.addObserver(self, selector: #selector(handleAuthentication(_:)), name: .authenticateFailure, object: nil)
     }
     
-    func execute(user: UserModel,
-                 data: ChargeOneStepModel,
-                 completion: @escaping (Result<ChargeOneStepResponseModel, APIError>) -> Void) {        
+    func execute(user: UserModel, data: ChargeOneStepModel) {
         let authenticate = Authenticate(paymentGateway: paymentGateway)
-        let authenticateGroup = DispatchGroup()
         authenticateGroup.enter()
-        authenticate.execute(user: UserModel.shared) { _ in
-            authenticateGroup.leave()
-        }
+        authenticate.execute(user: UserModel.shared)
         
         authenticateGroup.notify(queue: DispatchQueue.main) {
             let chargeOneStep = ChargeOneStep(paymentGateway: self.paymentGateway)
-            chargeOneStep.execute(user: UserModel.shared, data: data, completion: { result in
-                switch result {
-                case .success(let response):
-                    completion(.success(response))
-                case .failure(let error):                    
-                    print("Erro ao autenticar e reprocessar emissão de boleto: \(error.localizedDescription).")
-                    completion(.failure(error))
-                }
-            })
+            chargeOneStep.execute(user: UserModel.shared, data: data)
         }
+    }
+    
+    @objc
+    private func handleAuthentication(_ notification: Notification) {
+        authenticateGroup.leave()
     }
 }
 

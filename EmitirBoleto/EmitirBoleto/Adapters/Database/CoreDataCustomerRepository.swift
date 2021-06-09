@@ -10,7 +10,6 @@ import CoreData
 class CoreDataCustomerRepository: CustomerRepository {
     
     func getAll() -> [CustomerModel] {
-        
         var models = [CustomerModel]()
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Customer>(entityName: Constants.EntityName.customer)
@@ -32,8 +31,7 @@ class CoreDataCustomerRepository: CustomerRepository {
         return models
     }
     
-    func save(_ data: CustomerModel) {
-        
+    func save(_ data: CustomerModel) {        
         let context = CoreDataManager.shared.persistentContainer.viewContext
         
         let fetchResult = fetch(byCpf: data.cpf)
@@ -47,12 +45,11 @@ class CoreDataCustomerRepository: CustomerRepository {
         
         customer.name = data.name
         customer.cpf = data.cpf
-        customer.birth = data.birth
         customer.phoneNumber = data.phoneNumber
         customer.email = data.email
         
         var juridicalPerson: JuridicalPerson?
-        if data.juridicalPerson != nil {
+        if let _ = data.juridicalPerson {
             
             if fetchResult == nil {
                 juridicalPerson = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.juridicalPerson, into: context) as? JuridicalPerson
@@ -64,7 +61,7 @@ class CoreDataCustomerRepository: CustomerRepository {
         }
         
         var address: Address?
-        if data.address != nil {
+        if let _ =  data.address {
             
             if fetchResult == nil {
                 address = NSEntityDescription.insertNewObject(forEntityName: Constants.EntityName.address, into: context) as? Address

@@ -7,9 +7,9 @@
 
 final class Gerencianet: PaymentGateway {
     
-    private(set) var httpClient: HTTPAlamofireClient
+    private(set) var httpClient: HTTPClient
     
-    init(httpClient: HTTPAlamofireClient) {
+    init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
 }

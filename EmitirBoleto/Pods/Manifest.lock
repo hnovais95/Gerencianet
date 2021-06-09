@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.3)
-  - Resolver (1.4.1)
+  - CPF-CNPJ-Validator (1.0.2)
+  - SwiftMaskText (2.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
-  - Resolver
+  - Alamofire
+  - CPF-CNPJ-Validator
+  - SwiftMaskText
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Resolver
+    - CPF-CNPJ-Validator
+    - SwiftMaskText
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  Resolver: c293d0177cbc69fcb700cfd49922ae2122c1829c
+  CPF-CNPJ-Validator: 0b08069595da2c4b20e964b743bfc0a7334d5347
+  SwiftMaskText: ac36bc4a634c8286095e1c96de5254cf09632a58
 
-PODFILE CHECKSUM: 860aa5644010a9e8d20bb26bb68264677b4c67d4
+PODFILE CHECKSUM: 2ce0f80b38a75a046ba0bef3840a079b8c8744c2
 
 COCOAPODS: 1.10.1
