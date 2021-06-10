@@ -233,16 +233,18 @@ class BankingBilletViewController: UIViewController {
     
     @objc
     private func keyboardWillBeShown(_ notification: Notification) {
-        let userInfo = notification.userInfo
-        let keyboardScreenEndFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0.0)
-        scrollView.contentInset = contentInset
-        scrollView.scrollIndicatorInsets = contentInset
-        
-        let viewFocused: UIView
-        viewFocused = textFields.filter({ $0.isFocused }).first ?? messageStackView
-        scrollView.scrollRectToVisible(viewFocused.frame, animated: true)
+        if !additionalFieldsStackView.isHidden {
+            let userInfo = notification.userInfo
+            let keyboardScreenEndFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+            let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+            let messageTextViewFrame = messageTextView.convert(messageTextView.frame, to: self.view)
+            let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: max(0, keyboardViewEndFrame.height - messageTextViewFrame.height), right: 0.0)
+            scrollView.contentInset = contentInset
+            scrollView.scrollIndicatorInsets = contentInset
+            
+            let viewFocused: UIView = textFields.filter({ $0.isFirstResponder }).first ?? messageStackView
+            scrollView.scrollRectToVisible(viewFocused.frame, animated: true)
+        }
     }
     
     @objc

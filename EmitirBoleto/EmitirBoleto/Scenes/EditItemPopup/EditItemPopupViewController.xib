@@ -81,7 +81,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="2l5-wZ-T1L"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Heitor Novais" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUX-9e-8jJ" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex.: Camisa Polo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUX-9e-8jJ" customClass="BindingTextField" customModule="Gerencianet" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="26" width="344" height="13"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                                     <constraints>
