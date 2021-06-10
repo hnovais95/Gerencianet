@@ -9,10 +9,14 @@ import Foundation
 
 class BankingBilletViewModel {
     
+    // MARK: - Model
+    
+    var customer: CustomerModel? // holding
+    var items: [ItemModel]? // holding
     private var validator = BankingBilletValidator()
     
-    var customer: CustomerModel?
-    var items: [ItemModel]?
+    
+    // MARK: - Binding variables
     
     var expireAt: String = ""
     var shippingValue: String = ""
@@ -21,7 +25,7 @@ class BankingBilletViewModel {
     var conditionalDiscountType: DiscountType = DiscountType.percentage
     var conditionalDiscountValue: String = ""
     var conditionalDiscountDeadline: String = ""
-    var message: String = ""
+    var message: String = ""    
     
     var total: String {
         let sumItems = items?.map({ $0.value * $0.amount }).reduce(0, +) ?? 0
@@ -62,12 +66,13 @@ class BankingBilletViewModel {
             && validator.validate(.message, message)
     }
     
+    
+    // MARK: - Events
+    
     var validatedField: (Bool, Int) -> () = { _,_  in }
     
-    func validadeField(_ rawValue: Int, value: String) {
-        let isValid = validator.validate(rawValue, value)
-        validatedField(isValid, rawValue)
-    }
+    
+    // MARK: - Methods
     
     private func calculateDiscount() -> Int {
         let sumItems = items?.map({ $0.value * $0.amount }).reduce(0, +) ?? 0
@@ -114,6 +119,11 @@ class BankingBilletViewModel {
         } else {
             return nil
         }
+    }
+    
+    func validadeField(_ rawValue: Int, value: String) {
+        let isValid = validator.validate(rawValue, value)
+        validatedField(isValid, rawValue)
     }
     
     func getChargeData() -> ChargeOneStepModel {

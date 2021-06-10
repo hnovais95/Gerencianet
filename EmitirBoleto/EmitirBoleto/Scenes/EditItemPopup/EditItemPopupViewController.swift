@@ -35,6 +35,7 @@ class EditItemPopupViewController: UIViewController {
         case name, value, amount
     }
     
+    
     // MARK: - Member variables
     
     weak var coordinator: MainCoordinator?
@@ -62,8 +63,6 @@ class EditItemPopupViewController: UIViewController {
         self.cancelButton.addTarget(self, action: #selector(self.handleTapCancelButton(sender:)), for: .touchUpInside)
         self.editButton.addTarget(self, action: #selector(self.handleTapEditItem), for: .touchUpInside)
         
-        self.originalConstantBottonConstraint = self.bottonConstraint.constant
-        
         setup()
         bindTextFields()
         observeEvents()
@@ -73,11 +72,10 @@ class EditItemPopupViewController: UIViewController {
     // MARK: - Setups
     
     private func setup() {
-        popupView.layer.cornerRadius = CGFloat(6)
-        popupView.layer.masksToBounds = true
-        
         setupCurrencyTextField()
         setupBottonContraint()
+        popupView.layer.cornerRadius = CGFloat(6)
+        popupView.layer.masksToBounds = true
     }
     
     private func setupCurrencyTextField() {
@@ -90,7 +88,7 @@ class EditItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

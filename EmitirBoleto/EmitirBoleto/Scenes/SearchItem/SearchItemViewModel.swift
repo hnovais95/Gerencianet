@@ -8,7 +8,12 @@
 
 class SearchItemViewModel {
     
+    // MARK: - Model
+    
     let itemRepository = CoreDataItemRepository()
+    
+    
+    // MARK: - Methods
     
     func getAllItems() -> [ItemModel] {
         return itemRepository.getAll()

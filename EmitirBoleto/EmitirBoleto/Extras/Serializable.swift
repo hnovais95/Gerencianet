@@ -7,9 +7,9 @@
 
 import Foundation
 
-public protocol Serializable: Codable, Equatable {}
+protocol Serializable: Codable, Equatable {}
 
-public extension Serializable {
+extension Serializable {
     
     func toData() -> Data?  {
         return try? JSONEncoder().encode(self)

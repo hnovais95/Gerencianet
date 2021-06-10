@@ -7,12 +7,20 @@
 
 class AddItemsViewModel {
     
-    var customer: CustomerModel?
+    // MARK: - Model
+    
+    var customer: CustomerModel? // holding
     private(set) var items: [ItemModel] = []
+    
+    
+    // MARK: - Binding variables
     
     var isValid: Bool {
         return items.count > 0
     }
+    
+    
+    // MARK: - Methods
     
     func addItem(_ item: ItemModel) {
         if let index = items.firstIndex(of: item) {

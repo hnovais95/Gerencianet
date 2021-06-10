@@ -69,14 +69,10 @@ class InsertCustomerViewController: UIViewController {
     
     private func setup() {
         setupSegmentedControl()
-        
+        setupStatePickerTextField()
         juridicalPersonStackView.isHidden = true
-        addressStackView.isHidden = true        
-        
+        addressStackView.isHidden = true
         addressSwitch.isOn = false
-        
-        textFields[FieldType.state.rawValue].tintColor = .clear
-        textFields[FieldType.state.rawValue].inputView = createStatePickerView()
     }
     
     private func setupSegmentedControl() {
@@ -91,15 +87,13 @@ class InsertCustomerViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0
     }
     
-    private func createStatePickerView() -> UIPickerView {
-        let pickerView = UIPickerView()
-        pickerView.delegate = statePicker
-        pickerView.dataSource = statePicker
-        return pickerView
+    private func setupStatePickerTextField() {
+        textFields[FieldType.state.rawValue].tintColor = .clear
+        textFields[FieldType.state.rawValue].inputView = createStatePickerView()
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -280,6 +274,16 @@ class InsertCustomerViewController: UIViewController {
                 textField.delegate = self
             }
         }
+    }
+    
+    
+    // MARK: - Methods
+    
+    private func createStatePickerView() -> UIPickerView {
+        let pickerView = UIPickerView()
+        pickerView.delegate = statePicker
+        pickerView.dataSource = statePicker
+        return pickerView
     }
 }
 

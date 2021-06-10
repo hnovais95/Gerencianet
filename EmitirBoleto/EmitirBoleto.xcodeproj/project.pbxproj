@@ -479,14 +479,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		CA7D7697266F99BA005A4697 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				CAB2E159266E681F00EC586C /* DiscountType.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
 		CA7D76A8266FBB92005A4697 /* SwiftMaskField */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +607,7 @@
 		CA90CF522667A71C008383D2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CAB2E159266E681F00EC586C /* DiscountType.swift */,
 				CA90CF532667A73C008383D2 /* DiscountTypePicker.swift */,
 			);
 			path = Components;
@@ -895,7 +888,6 @@
 				CA29B5232658583C004BCBFD /* Helper.swift */,
 				CAD3AEC1264BF33300DD0DCB /* Serializable.swift */,
 				CA25553B2652F3A000F75E20 /* RepeatingTimer.swift */,
-				CA7D7697266F99BA005A4697 /* Enums */,
 				CA8A56C02661B65E00E95AB5 /* UI */,
 			);
 			path = Extras;

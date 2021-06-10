@@ -7,7 +7,12 @@
 
 class SearchCustomerViewModel {
     
+    // MARK: - Model
+    
     let customerRepository = CoreDataCustomerRepository()
+    
+    
+    // MARK: - Methods
     
     func getAllCustomers() -> [CustomerModel] {
         return customerRepository.getAll()

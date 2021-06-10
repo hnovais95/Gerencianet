@@ -91,7 +91,7 @@ class SuccessViewController: UIViewController {
     }
     
     
-    // MARK: - Handles
+    // MARK: - Event handlers
     
     @objc
     private func handleTapCopyBarcodeButton(_ sender: UIButton) {

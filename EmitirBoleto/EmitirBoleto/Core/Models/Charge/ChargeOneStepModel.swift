@@ -6,10 +6,10 @@
 //
 
 struct ChargeOneStepModel: Serializable {
-    
-    private(set) var shippings: [ShippingModel]?
-    private(set) var items: [ItemModel]
+        
     private(set) var bankingBillet: BankingBilletModel
+    private(set) var items: [ItemModel]
+    private(set) var shippings: [ShippingModel]?
     
     init(bankingBillet: BankingBilletModel, items: [ItemModel], shippings: [ShippingModel]? = nil) {
         self.bankingBillet = bankingBillet

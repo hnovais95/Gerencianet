@@ -82,21 +82,18 @@ class BankingBilletViewController: UIViewController {
     // MARK: - Setups
     
     private func setup() {
+        setupPickerTextFields()
         messageTextView.layer.borderWidth = 1.0
         messageTextView.layer.borderColor = Constants.Color.gnLightGray.cgColor
-        
         additionalFieldsSwitch.isOn = false
         additionalFieldsStackView.isHidden = true
-        
         messageTextView.textContainer.maximumNumberOfLines = 4
         messageTextView.textContainer.lineBreakMode = .byTruncatingTail
-        
-        setupPickerTextFields()
-        
         totalLabel.text = viewModel.total
     }
     
     private func setupPickerTextFields() {
+        // Hide cursors
         textFields[FieldType.discountType.rawValue].tintColor = .clear
         textFields[FieldType.conditionalDiscountType.rawValue].tintColor = .clear
         textFields[FieldType.expireAt.rawValue].tintColor = .clear
@@ -119,26 +116,8 @@ class BankingBilletViewController: UIViewController {
         (textFields[FieldType.conditionalDiscountValue.rawValue] as! FractionalNumberTextField).setRegionCode(Constants.LocaleIdentifier.ptBR)
     }
     
-    private func createDatePicker(action: Selector) -> UIDatePicker {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.minimumDate = Date()
-        datePicker.addTarget(self, action: action, for: .valueChanged)
-        datePicker.frame.size = CGSize(width: 0, height: 150)
-        datePicker.backgroundColor = Constants.Color.gnOrange
-        datePicker.tintColor = .white
-        return datePicker
-    }
     
-    private func createDiscountTypePicker(with picker: DiscountTypePicker) -> UIPickerView {
-        let pickerView = UIPickerView()
-        pickerView.delegate = picker
-        pickerView.dataSource = picker
-        return pickerView
-    }
-    
-    
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -319,6 +298,32 @@ class BankingBilletViewController: UIViewController {
             self?.viewModel.message = $0
             self?.chargeButton.setEnable(self?.viewModel.isValid ?? false)
         }
+    }
+    
+    
+    // MARK: - Methods
+    
+    private func createDatePicker(action: Selector) -> UIDatePicker {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
+        datePicker.addTarget(self, action: action, for: .valueChanged)
+        datePicker.frame.size = CGSize(width: 0, height: 150)
+        datePicker.backgroundColor = Constants.Color.gnOrange
+        datePicker.tintColor = .white
+        
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        return datePicker
+    }
+    
+    private func createDiscountTypePicker(with picker: DiscountTypePicker) -> UIPickerView {
+        let pickerView = UIPickerView()
+        pickerView.delegate = picker
+        pickerView.dataSource = picker
+        return pickerView
     }
 }
 

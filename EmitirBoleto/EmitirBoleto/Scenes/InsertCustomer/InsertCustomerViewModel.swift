@@ -9,7 +9,12 @@ import Foundation
 
 class InsertCustomerViewModel {
     
+    // MARK: - Model
+    
     let validator = CustomerValidator()
+    
+    
+    // MARK: - Binding variables
     
     var name: String = ""
     var cpf: String = ""
@@ -26,29 +31,6 @@ class InsertCustomerViewModel {
     var city: String = ""
     var isJuridicalPerson: Bool = false
     var includeAddress: Bool = false
-    
-    var validatedField: (Bool, Int) -> () = { _,_  in }
-    
-    func validadeField(_ rawValue: Int, value: String) {
-        let isValid = validator.validate(rawValue, value)
-        validatedField(isValid, rawValue)
-    }
-    
-    func getCustomer() -> CustomerModel {
-        var juridicalPerson: JuridicalPersonModel?
-        if isJuridicalPerson {
-            juridicalPerson = JuridicalPersonModel(corporateName, cnpj)
-        }
-        
-        var address: AddressModel?
-        if includeAddress {
-            let complement: String? = !self.complement.isEmpty ? self.complement : nil // complement is optional
-            address = AddressModel(street, Int(number)!, neighborhood, zipcode, city, complement, state)
-        }
-        
-        let email: String? = !self.email.isEmpty ? self.email : nil // email is optional
-        return CustomerModel(name, cpf, phoneNumber, email, address, juridicalPerson)
-    }
     
     var isValid: Bool {
         var isValidJuridicalPerson: Bool {
@@ -81,4 +63,35 @@ class InsertCustomerViewModel {
             && isValidJuridicalPerson
             && isValidAddress
     }
+    
+    
+    // MARK: - Events
+    
+    var validatedField: (Bool, Int) -> () = { _,_  in }
+    
+    
+    // MARK: - Methods
+    
+    func validadeField(_ rawValue: Int, value: String) {
+        let isValid = validator.validate(rawValue, value)
+        validatedField(isValid, rawValue)
+    }
+    
+    func getCustomer() -> CustomerModel {
+        var juridicalPerson: JuridicalPersonModel?
+        if isJuridicalPerson {
+            juridicalPerson = JuridicalPersonModel(corporateName, cnpj)
+        }
+        
+        var address: AddressModel?
+        if includeAddress {
+            let complement: String? = !self.complement.isEmpty ? self.complement : nil // complement is optional
+            address = AddressModel(street, Int(number)!, neighborhood, zipcode, city, complement, state)
+        }
+        
+        let email: String? = !self.email.isEmpty ? self.email : nil // email is optional
+        return CustomerModel(name, cpf, phoneNumber, email, address, juridicalPerson)
+    }
+    
+    
 }

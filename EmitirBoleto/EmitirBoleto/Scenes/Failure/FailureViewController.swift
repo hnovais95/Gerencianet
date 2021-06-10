@@ -39,7 +39,7 @@ class FailureViewController: UIViewController {
     }
     
     
-    // MARK: - Handles
+    // MARK: - Event handlers
     
     @objc
     private func handleTapBackButton(_ sender: UIButton) {

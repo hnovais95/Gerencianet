@@ -9,7 +9,12 @@ import Foundation
 
 class AddItemPopupViewModel {
     
+    // MARK: - Model
+    
     let validator = ItemValidator()
+    
+
+    // MARK: - Binding variables
     
     var name: String = ""
     var value: String = ""
@@ -21,7 +26,13 @@ class AddItemPopupViewModel {
             && validator.validate(.amount, amount)
     }
     
+    
+    // MARK: - Events
+    
     var validatedField: (Bool, Int) -> () = { _,_  in }
+    
+    
+    // MARK: - Methods
     
     func validadeField(_ rawValue: Int, value: String) {
         let isValid = validator.validate(rawValue, value)

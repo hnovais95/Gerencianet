@@ -24,6 +24,15 @@ struct ChargeOneStepResponse: Serializable {
     }
 }
 
+struct Pdf: Serializable {
+    
+    private(set) var charge: String
+    
+    init(_ charge: String) {
+        self.charge = charge
+    }
+}
+
 struct ResponseData: Serializable {
     
     private(set) var barcode: String
@@ -62,15 +71,6 @@ struct ResponseData: Serializable {
         case status
         case total
         case payment
-    }
-}
-
-struct Pdf: Serializable {
-    
-    private(set) var charge: String
-    
-    init(_ charge: String) {
-        self.charge = charge
     }
 }
 

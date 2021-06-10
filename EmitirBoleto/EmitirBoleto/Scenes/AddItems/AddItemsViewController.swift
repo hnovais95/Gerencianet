@@ -48,7 +48,7 @@ class AddItemsViewController: UIViewController {
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     @objc
     private func handleTapBackButton(_ sender: UIButton) {
@@ -62,6 +62,9 @@ class AddItemsViewController: UIViewController {
             coordinator?.configureBankingBillet(to: customer, with: viewModel.items)
         }
     }
+    
+    
+    // MARK: - Methods
     
     private func addItem(_ item: ItemModel) {
         viewModel.addItem(item)

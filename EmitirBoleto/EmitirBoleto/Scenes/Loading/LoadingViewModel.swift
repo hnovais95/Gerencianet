@@ -9,14 +9,24 @@ import Foundation
 
 class LoadingViewModel {
     
+    
+    // MARK: - Model
+    
+    private var validator = BankingBilletValidator()
     private let notificationCenter = NotificationCenter.default
     private let customerRepository = CoreDataCustomerRepository()
     private let itemRepository = CoreDataItemRepository()
-    
     private let gn: PaymentGateway
     var data: ChargeOneStepModel?
+    
+    
+    // MARK: - Events
+    
     var succeed: (ChargeOneStepResponse) -> () = { _ in }
     var failed: (String) -> () = { _ in }
+    
+    
+    // MARK: - Initializer / Deinitializer
     
     init() {
         self.gn = Gerencianet(httpClient: AlamofireClient())
@@ -28,6 +38,9 @@ class LoadingViewModel {
         self.notificationCenter.removeObserver(self, name: .chargeSuccess , object: nil)
         self.notificationCenter.removeObserver(self, name: .chargeFailure , object: nil)
     }
+    
+    
+    // MARK: - Event handlers
     
     @objc
     func chargeSuccess(_ notification: Notification) {
@@ -85,6 +98,10 @@ class LoadingViewModel {
             failed(Constants.ErrorMessage.default)
         }
     }
+    
+    
+    // MARK: - Methods
+    
     
     func charge() {
         let charge = ChargeOneStep(paymentGateway: gn)

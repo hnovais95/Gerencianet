@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     @objc
     private func handleTapButton(_ sender: UIButton) {

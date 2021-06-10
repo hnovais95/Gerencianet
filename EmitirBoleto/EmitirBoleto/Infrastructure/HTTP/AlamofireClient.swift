@@ -11,7 +11,7 @@ import Alamofire
 class AlamofireClient: HTTPClient {
     
     func request(to url: URL, method: String, with body: [String: Any], headers: [[String: String]],
-              completion: @escaping (Result<Data?, NetworkError>) -> Void) {
+              completion: @escaping (Result<Data?, Error>) -> Void) {
         
         guard let method = AlamofireObjectMapper.map(from: method, to: HTTPMethod.self),
               let headers = AlamofireObjectMapper.map(from: headers, to: HTTPHeaders.self) else {

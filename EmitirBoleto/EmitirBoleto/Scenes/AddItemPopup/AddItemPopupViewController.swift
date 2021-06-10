@@ -28,6 +28,7 @@ class AddItemPopupViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     
+    
     // MARK: - Member types
     
     private enum FieldType: Int, CaseIterable {
@@ -61,11 +62,10 @@ class AddItemPopupViewController: UIViewController {
     // MARK: - Setups
     
     private func setup() {
-        popupView.layer.cornerRadius = CGFloat(6)
-        popupView.layer.masksToBounds = true
-        
         setupCurrencyTextField()
         setupBottonContraint()
+        popupView.layer.cornerRadius = CGFloat(6)
+        popupView.layer.masksToBounds = true
     }
     
     private func setupCurrencyTextField() {
@@ -78,7 +78,7 @@ class AddItemPopupViewController: UIViewController {
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -188,6 +188,9 @@ class AddItemPopupViewController: UIViewController {
         }
     }
 }
+
+
+// MARK: - Delegates
 
 extension AddItemPopupViewController: UITextFieldDelegate {
     

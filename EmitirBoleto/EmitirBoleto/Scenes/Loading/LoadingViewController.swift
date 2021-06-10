@@ -39,7 +39,7 @@ class LoadingViewController: UIViewController {
     }
     
     
-    // MARK: - Handlers
+    // MARK: - Event handlers
     
     private func observeEvents() {
         viewModel.succeed = { [unowned self] response in
@@ -68,7 +68,8 @@ class LoadingViewController: UIViewController {
         timer = nil
     }
     
-    @objc private func animateView() {
+    @objc
+    private func animateView() {
         UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveLinear, animations: {
             self.spinnerImageView.transform = self.spinnerImageView.transform.rotated(by: CGFloat(Double.pi))
         }, completion: { (finished) in
