@@ -10,8 +10,14 @@ import Alamofire
 
 class AlamofireClient: HTTPClient {
     
-    func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
+    func request(to url: URL, method: String, with body: [String: Any], headers: [[String: String]],
               completion: @escaping (Result<Data?, NetworkError>) -> Void) {
+        
+        guard let method = AlamofireObjectMapper.map(from: method, to: HTTPMethod.self),
+              let headers = AlamofireObjectMapper.map(from: headers, to: HTTPHeaders.self) else {
+            completion(.failure(NetworkError(.badRequest)))
+            return
+        }
         
         AF.request(url,
                    method: method,
@@ -41,7 +47,7 @@ class AlamofireClient: HTTPClient {
                 case 500...599:
                     completion(.failure(NetworkError(.serverError, data)))
                 default:
-                    completion(.failure(NetworkError(.unauthorized, data)))
+                    completion(.failure(NetworkError(.noConnectivity, data)))
                 }
             }
         }

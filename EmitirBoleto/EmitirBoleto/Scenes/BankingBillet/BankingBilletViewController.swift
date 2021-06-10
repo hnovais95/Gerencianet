@@ -83,7 +83,7 @@ class BankingBilletViewController: UIViewController {
     
     private func setup() {
         messageTextView.layer.borderWidth = 1.0
-        messageTextView.layer.borderColor = Constants.Color.cinzaClaro.cgColor
+        messageTextView.layer.borderColor = Constants.Color.gnLightGray.cgColor
         
         additionalFieldsSwitch.isOn = false
         additionalFieldsStackView.isHidden = true
@@ -125,7 +125,7 @@ class BankingBilletViewController: UIViewController {
         datePicker.minimumDate = Date()
         datePicker.addTarget(self, action: action, for: .valueChanged)
         datePicker.frame.size = CGSize(width: 0, height: 150)
-        datePicker.backgroundColor = Constants.Color.laranja
+        datePicker.backgroundColor = Constants.Color.gnOrange
         datePicker.tintColor = .white
         return datePicker
     }
@@ -149,20 +149,18 @@ class BankingBilletViewController: UIViewController {
             guard let field = FieldType(rawValue: rawValue), field != .message else { return }
             guard let value = textFields[field.rawValue].text else { return }
             
-            let validationLine = validationViews[field.rawValue]
-            
-            if ((field == .discountType) || (field == .conditionalDiscountType)) { return }
+            let validationLine = (field != .discountType) && (field != .conditionalDiscountType) ? validationViews[field.rawValue] : nil
             
             let priceZero = Helper.getPrice(0)
             let zero = "0,00"
             
             if (value.isEmpty || value == priceZero || value == zero) {
-                validationLine.backgroundColor = Constants.Color.cinzaClaro
+                validationLine?.backgroundColor = Constants.Color.gnLightGray
             }
             else if result == true {
-                validationLine.backgroundColor = Constants.Color.verde
+                validationLine?.backgroundColor = Constants.Color.gnGreen
             } else {
-                validationLine.backgroundColor = Constants.Color.vermelhoEscuro
+                validationLine?.backgroundColor = Constants.Color.gnDarkRed
             }
         }        
         
@@ -257,14 +255,14 @@ class BankingBilletViewController: UIViewController {
     @objc
     private func keyboardWillBeShown(_ notification: Notification) {
         let userInfo = notification.userInfo
-        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+        let keyboardScreenEndFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0.0)
         scrollView.contentInset = contentInset
         scrollView.scrollIndicatorInsets = contentInset
         
         let viewFocused: UIView
         viewFocused = textFields.filter({ $0.isFocused }).first ?? messageStackView
-        
         scrollView.scrollRectToVisible(viewFocused.frame, animated: true)
     }
     

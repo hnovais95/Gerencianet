@@ -38,7 +38,7 @@ class LoadingViewModel {
         
         DispatchQueue.global(qos: .background).async { [self] in
             customerRepository.save(data!.bankingBillet.customer)
-            for item in data!.items! {
+            for item in data!.items {
                 itemRepository.save(item)
             }
         }

@@ -5,9 +5,9 @@
 //  Created by Heitor Novais | Gerencianet on 14/05/21.
 //
 
-import Alamofire
+import Foundation
 
 protocol HTTPClient {
-    func request(to url: URL, method: HTTPMethod, with body: [String: Any], headers: HTTPHeaders,
+    func request(to url: URL, method: String, with body: [String: Any], headers: [[String: String]],
               completion: @escaping (Result<Data?, NetworkError>) -> Void)
 }

@@ -99,7 +99,6 @@ class MainCoordinator: Coordinator {
         vc.customer = customer
         vc.response = response
         vc.coordinator = self
-        print("showBankingBillet")
         navigationController.pushViewController(vc, animated: true)
     }
     

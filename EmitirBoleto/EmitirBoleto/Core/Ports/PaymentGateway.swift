@@ -6,6 +6,7 @@
 //
 
 protocol PaymentGateway {
+    
     func authorize(clientId: String,
                    clientSecret: String,
                    completion: @escaping (Result<AuthorizeResponse, Error>) -> Void)

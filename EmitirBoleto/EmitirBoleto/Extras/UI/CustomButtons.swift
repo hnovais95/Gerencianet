@@ -15,19 +15,19 @@ class NextButton: UIButton {
         isEnabled = false
         setTitleColor(UIColor.white, for: .normal)
         layer.borderWidth = 1.0
-        layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-        backgroundColor = Constants.Color.cinzaClaro
+        layer.borderColor = Constants.Color.gnDarkGray.cgColor
+        backgroundColor = Constants.Color.gnLightGray
     }
     
     func setEnable(_ on: Bool) {
         isEnabled = on
         
         if isEnabled {
-            layer.borderColor = Constants.Color.laranja.cgColor
-            backgroundColor = Constants.Color.laranja
+            layer.borderColor = Constants.Color.gnOrange.cgColor
+            backgroundColor = Constants.Color.gnOrange
         } else {
-            layer.borderColor = Constants.Color.cinzaEscuro.cgColor
-            backgroundColor = Constants.Color.cinzaClaro
+            layer.borderColor = Constants.Color.gnDarkGray.cgColor
+            backgroundColor = Constants.Color.gnLightGray
         }
     }
 }
@@ -37,9 +37,9 @@ class BackButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setTitleColor(Constants.Color.laranja, for: .normal)
+        setTitleColor(Constants.Color.gnOrange, for: .normal)
         layer.borderWidth = 1.0
-        layer.borderColor = Constants.Color.laranja.cgColor
+        layer.borderColor = Constants.Color.gnOrange.cgColor
         backgroundColor = UIColor.white
     }
 }

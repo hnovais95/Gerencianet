@@ -24,15 +24,15 @@ struct Constants {
     }
     
     struct Color {
-        static let laranja = UIColor.init(rgb: 0xF36F36)
-        static let azulClaro = UIColor.init(rgb: 0x6BC7D1)
-        static let azulEscuro = UIColor.init(rgb: 0x00B4C5)
-        static let cinzaClaro = UIColor.init(rgb: 0xB8B8B8)
-        static let cinzaEscuro = UIColor.init(rgb: 0x707070)
-        static let bege = UIColor.init(rgb: 0xC3A523)
-        static let verde = UIColor.init(rgb: 0x5BAC65)
-        static let vermelhoClaro = UIColor.init(rgb: 0xB80610)
-        static let vermelhoEscuro = UIColor.init(rgb: 0xBF5259)
+        static let gnOrange = UIColor.init(rgb: 0xF36F36)
+        static let gnLightBlue = UIColor.init(rgb: 0x6BC7D1)
+        static let gnDarkBlue = UIColor.init(rgb: 0x00B4C5)
+        static let gnLightGray = UIColor.init(rgb: 0xB8B8B8)
+        static let gnDarkGray = UIColor.init(rgb: 0x707070)
+        static let gnBeige = UIColor.init(rgb: 0xC3A523)
+        static let gnGreen = UIColor.init(rgb: 0x5BAC65)
+        static let gnLightRed = UIColor.init(rgb: 0xB80610)
+        static let gnDarkRed = UIColor.init(rgb: 0xBF5259)
     }
     
     struct ErrorMessage {

@@ -8,8 +8,9 @@
 import Alamofire
 
 protocol APIConfigurations {
-    var method: HTTPMethod { get }
+    
+    var method: String { get }
     var url: URL { get }
-    var headers: HTTPHeaders { get }
+    var headers: [[String: String]] { get }
     var body: [String: Any] { get }
 }

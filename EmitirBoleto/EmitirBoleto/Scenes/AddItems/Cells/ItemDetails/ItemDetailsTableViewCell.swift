@@ -51,7 +51,7 @@ class ItemDetailsTableViewCell: UITableViewCell {
     
     func setup() {
         view.layer.borderWidth = 1.0
-        view.layer.borderColor = Constants.Color.cinzaClaro.cgColor
+        view.layer.borderColor = Constants.Color.gnLightGray.cgColor
     }
     
     func setupLongPressGesture() {

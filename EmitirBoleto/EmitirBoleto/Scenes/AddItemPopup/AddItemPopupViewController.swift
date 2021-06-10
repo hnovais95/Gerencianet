@@ -94,14 +94,14 @@ class AddItemPopupViewController: UIViewController {
             let errorMessage = field != .amount ? errorMessageLabels[field.rawValue] : nil
                
             if value.isEmpty {
-                validationLine?.backgroundColor = Constants.Color.cinzaClaro
+                validationLine?.backgroundColor = Constants.Color.gnLightGray
                 errorMessage?.alpha = 0
             }
             else if result == true {
-                validationLine?.backgroundColor = Constants.Color.verde
+                validationLine?.backgroundColor = Constants.Color.gnGreen
                 errorMessage?.alpha = 0
             } else {
-                validationLine?.backgroundColor = Constants.Color.vermelhoEscuro
+                validationLine?.backgroundColor = Constants.Color.gnDarkRed
                 errorMessage?.alpha = 1
             }
         }

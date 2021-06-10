@@ -13,10 +13,10 @@ enum GerencianetEndpoint: APIConfigurations {
     case authorize(clientId: String, clientSecret: String)
     case chargeOneStep(token: String, chargeData: ChargeOneStepModel)
     
-    var method: HTTPMethod {
+    var method: String {
         switch self {
         case .authorize, .chargeOneStep:
-            return .post
+            return "POST"
         }
     }
     
@@ -29,7 +29,7 @@ enum GerencianetEndpoint: APIConfigurations {
         }
     }
     
-    var headers: HTTPHeaders {
+    var headers: [[String: String]] {
         switch self {
         case .authorize(let clientId, let clientSecret):
             return HeadersFactory.makeAuthorizeHeaders(clientId: clientId, clientSecret: clientSecret)

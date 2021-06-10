@@ -48,8 +48,6 @@ class SuccessViewController: UIViewController {
 
         setupButtons()
         prepare()
-        
-        print("viewDidLoad SucessViewController")
     }
     
     
@@ -57,13 +55,13 @@ class SuccessViewController: UIViewController {
     
     private func setupButtons() {
         copyBarcodeButton.layer.borderWidth = 1.0
-        copyBarcodeButton.layer.borderColor = Constants.Color.azulEscuro.cgColor
+        copyBarcodeButton.layer.borderColor = Constants.Color.gnDarkBlue.cgColor
         
         shareButton.layer.borderWidth = 1.0
-        shareButton.layer.borderColor = Constants.Color.azulEscuro.cgColor
+        shareButton.layer.borderColor = Constants.Color.gnDarkBlue.cgColor
         
         showBankingBilletButton.layer.borderWidth = 1.0
-        showBankingBilletButton.layer.borderColor = Constants.Color.azulEscuro.cgColor
+        showBankingBilletButton.layer.borderColor = Constants.Color.gnDarkBlue.cgColor
         
         doneButton.setEnable(true)
     }

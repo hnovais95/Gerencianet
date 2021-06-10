@@ -85,6 +85,7 @@
 		CAB2E156266E458A00EC586C /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E155266E458A00EC586C /* CurrencyTextField.swift */; };
 		CAB2E15A266E681F00EC586C /* DiscountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E159266E681F00EC586C /* DiscountType.swift */; };
 		CAB2E15C266E880500EC586C /* FractionalNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */; };
+		CAB43E72267238EF00743E48 /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB43E71267238EF00743E48 /* AlamofireObjectMapper.swift */; };
 		CABB5FC5265564FD0079FFDF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC4265564FD0079FFDF /* Coordinator.swift */; };
 		CABB5FC9265566940079FFDF /* InsertCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */; };
 		CABB5FCA265566940079FFDF /* InsertCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */; };
@@ -238,6 +239,7 @@
 		CAB2E155266E458A00EC586C /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		CAB2E159266E681F00EC586C /* DiscountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountType.swift; sourceTree = "<group>"; };
 		CAB2E15B266E880500EC586C /* FractionalNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionalNumberTextField.swift; sourceTree = "<group>"; };
+		CAB43E71267238EF00743E48 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		CABB5FC4265564FD0079FFDF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CABB5FC7265566940079FFDF /* InsertCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertCustomerViewController.swift; sourceTree = "<group>"; };
 		CABB5FC8265566940079FFDF /* InsertCustomerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertCustomerViewController.xib; sourceTree = "<group>"; };
@@ -506,7 +508,9 @@
 		CA87DF4626543A9C0074A161 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				CAB43E7426723CE800743E48 /* Contracts */,
 				CAF751F9264F13B700EABEFC /* AlamofireClient.swift */,
+				CAB43E71267238EF00743E48 /* AlamofireObjectMapper.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -658,6 +662,22 @@
 				CAB2E155266E458A00EC586C /* CurrencyTextField.swift */,
 			);
 			path = CurrencyTextField;
+			sourceTree = "<group>";
+		};
+		CAB43E7326723CD400743E48 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CAF75201264F270C00EABEFC /* APIConfigurations.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		CAB43E7426723CE800743E48 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				CAF751FD264F158400EABEFC /* HTTPClient.swift */,
+			);
+			path = Contracts;
 			sourceTree = "<group>";
 		};
 		CABB5FC32655647A0079FFDF /* Coordinator */ = {
@@ -815,6 +835,7 @@
 		CABCA905264AB0DD007AE005 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				CAB43E7326723CD400743E48 /* Contracts */,
 				CAF751EE264F116400EABEFC /* Gerencianet */,
 				CA87DF9726545EFE0074A161 /* Database */,
 			);
@@ -895,7 +916,6 @@
 			isa = PBXGroup;
 			children = (
 				CAF75204264F28CB00EABEFC /* Helpers */,
-				CAF75203264F289400EABEFC /* Contracts */,
 				CAF751EF264F117700EABEFC /* Gerencianet.swift */,
 				CA90CF61266830A0008383D2 /* GerencianetError.swift */,
 				CAF751F1264F118E00EABEFC /* GerencianetEndpoints.swift */,
@@ -903,15 +923,6 @@
 				CAF751FF264F233700EABEFC /* Gerencianet+ChargeOneStep.swift */,
 			);
 			path = Gerencianet;
-			sourceTree = "<group>";
-		};
-		CAF75203264F289400EABEFC /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				CAF751FD264F158400EABEFC /* HTTPClient.swift */,
-				CAF75201264F270C00EABEFC /* APIConfigurations.swift */,
-			);
-			path = Contracts;
 			sourceTree = "<group>";
 		};
 		CAF75204264F28CB00EABEFC /* Helpers */ = {
@@ -1220,6 +1231,7 @@
 				CAB2E156266E458A00EC586C /* CurrencyTextField.swift in Sources */,
 				CA449BB0264D67100071AEF0 /* String+Extensions.swift in Sources */,
 				CA87DF4926543BEC0074A161 /* CoreDataManager.swift in Sources */,
+				CAB43E72267238EF00743E48 /* AlamofireObjectMapper.swift in Sources */,
 				CA87DF9226545BE30074A161 /* JuridicalPerson+CoreDataClass.swift in Sources */,
 				CAA44D8926669359002BA48F /* DiscountModel.swift in Sources */,
 				CA8A56AB2661377C00E95AB5 /* CustomButtons.swift in Sources */,

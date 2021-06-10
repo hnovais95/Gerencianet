@@ -10,6 +10,7 @@ struct ItemModel: Serializable {
     private(set) var name: String
     private(set) var value: Int
     private(set) var amount: Int
+    
     var total: Int {
         return value * amount
     }

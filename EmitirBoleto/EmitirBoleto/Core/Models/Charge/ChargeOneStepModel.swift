@@ -8,7 +8,7 @@
 struct ChargeOneStepModel: Serializable {
     
     private(set) var shippings: [ShippingModel]?
-    private(set) var items: [ItemModel]?
+    private(set) var items: [ItemModel]
     private(set) var bankingBillet: BankingBilletModel
     
     init(bankingBillet: BankingBilletModel, items: [ItemModel], shippings: [ShippingModel]? = nil) {

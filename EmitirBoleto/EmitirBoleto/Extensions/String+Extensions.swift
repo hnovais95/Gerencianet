@@ -21,6 +21,7 @@ extension String {
 }
 
 extension String {
+    
     func isLastCharANumber() -> Bool {
         let lastChar = self.last!
         

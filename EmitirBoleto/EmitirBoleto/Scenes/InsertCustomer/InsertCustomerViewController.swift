@@ -57,6 +57,7 @@ class InsertCustomerViewController: UIViewController {
         self.statePickerButton.addTarget(self, action: #selector(handleTapStatePickerButton), for: .touchUpInside)
         
         statePicker.delegate = self
+        scrollView.delegate = self
         
         setup()
         bindTextFields()
@@ -80,12 +81,12 @@ class InsertCustomerViewController: UIViewController {
     
     private func setupSegmentedControl() {
         segmentedControl.layer.borderWidth = 1.0
-        segmentedControl.layer.borderColor = Constants.Color.azulEscuro.cgColor
+        segmentedControl.layer.borderColor = Constants.Color.gnDarkBlue.cgColor
         segmentedControl.layer.masksToBounds = true
         segmentedControl.setBackgroundImage(UIImage(ciImage: .clear), for: .normal, barMetrics: .default)
-        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.azulEscuro), for: .selected, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(color: Constants.Color.gnDarkBlue), for: .selected, barMetrics: .default)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.azulEscuro], for: .normal)
+        segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.foregroundColor: Constants.Color.gnDarkBlue], for: .normal)
         segmentedControl.setTitleTextAttributes( [NSAttributedString.Key.font: UIFont(name: "SFProText-Regular", size: 13)!], for: .normal)
         segmentedControl.selectedSegmentIndex = 0
     }
@@ -113,14 +114,14 @@ class InsertCustomerViewController: UIViewController {
             let errorMessage = field != .email ? errorMessageLabels[field.rawValue] : nil
                
             if value.isEmpty {
-                validationLine.backgroundColor = Constants.Color.cinzaClaro
+                validationLine.backgroundColor = Constants.Color.gnLightGray
                 errorMessage?.alpha = 0
             }
             else if result == true {
-                validationLine.backgroundColor = Constants.Color.verde
+                validationLine.backgroundColor = Constants.Color.gnGreen
                 errorMessage?.alpha = 0
             } else {
-                validationLine.backgroundColor = Constants.Color.vermelhoEscuro
+                validationLine.backgroundColor = Constants.Color.gnDarkRed
                 errorMessage?.alpha = 1
             }
         }
@@ -170,8 +171,9 @@ class InsertCustomerViewController: UIViewController {
     @objc
     private func keyboardWillBeShown(_ notification: Notification) {
         let userInfo = notification.userInfo
-        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardFrame.height, right: 0.0)
+        let keyboardScreenEndFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        let contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0.0)
         scrollView.contentInset = contentInset
         scrollView.scrollIndicatorInsets = contentInset
         
@@ -371,5 +373,12 @@ extension InsertCustomerViewController: UITextFieldDelegate {
         if textField == textFields[FieldType.cpf.rawValue] { return updatedText.count <= 14 }
         if textField == textFields[FieldType.cnpj.rawValue] { return updatedText.count <= 18 }
         else { return true }
+    }
+}
+
+extension InsertCustomerViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0
     }
 }
