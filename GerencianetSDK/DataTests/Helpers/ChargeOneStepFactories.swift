@@ -20,7 +20,7 @@ func makeCustomerModel() -> CustomerModel {
 }
 
 func makeBankingBilletBilletModel() -> BankingBilletModel {
-    return BankingBilletModel(customer: makeCustomerModel(), expireAt: "2021-06-11")
+    return BankingBilletModel(customer: makeCustomerModel(), expireAt: "2021-12-01")
 }
 
 func makeChargeOneStepModel() -> ChargeOneStepModel {
@@ -50,7 +50,7 @@ func makeCustomerJson() -> [String: Any] {
 
 func makeBankingBilletJson() -> [String: Any] {
     return [
-        "expire_at": "2021-06-11",
+        "expire_at": "2021-12-01",
         "customer": makeCustomerJson()
     ] as [String : Any]
 }

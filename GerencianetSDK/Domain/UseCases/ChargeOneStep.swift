@@ -9,8 +9,8 @@ import Foundation
 
 public protocol ChargeOneStep {
     
-    typealias Result = Swift.Result<ChargeOneStepResponseModel, DomainError>
-    func charge(token: String, model: ChargeOneStepModel, completion: @escaping (ChargeOneStep.Result) -> Void)
+    typealias Result = Swift.Result<ChargeOneStepResponseModel, GnError>
+    func execute(token: String, model: ChargeOneStepModel, completion: @escaping (ChargeOneStep.Result) -> Void)
 }
 
 public struct ChargeOneStepModel {

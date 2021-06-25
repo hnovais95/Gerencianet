@@ -13,7 +13,8 @@ extension Gerencianet {
     public func chargeOneStep(chargeOneStepRequest: ChargeOneStepModel, completion: @escaping (ChargeOneStep.Result) -> Void) {
         guard let token = token else { return }
         let remoteChargeOneStep = makeRemoteChargeOneStep()
-        remoteChargeOneStep.charge(token: token, model: chargeOneStepRequest) { result in
+        remoteChargeOneStep.execute(token: token, model: chargeOneStepRequest) { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case .success(let response):
                 completion(.success(response))

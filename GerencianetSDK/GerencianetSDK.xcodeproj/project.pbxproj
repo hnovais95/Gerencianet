@@ -7,27 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA389C5626835C2B00727EDA /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5526835C2B00727EDA /* Authorization.swift */; };
-		CA389C5926835D0B00727EDA /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5826835D0B00727EDA /* AuthenticationResponseModel.swift */; };
-		CA389C5B26835D6500727EDA /* RemoteAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5A26835D6500727EDA /* RemoteAuthorization.swift */; };
-		CA389C5D2683655E00727EDA /* Gerencianet+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5C2683655E00727EDA /* Gerencianet+Authorization.swift */; };
-		CA389C5F268365EF00727EDA /* RemoteAuthorizationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5E268365EF00727EDA /* RemoteAuthorizationFactory.swift */; };
+		CA389C5626835C2B00727EDA /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5526835C2B00727EDA /* Authentication.swift */; };
+		CA389C5B26835D6500727EDA /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5A26835D6500727EDA /* RemoteAuthentication.swift */; };
+		CA389C5D2683655E00727EDA /* Gerencianet+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5C2683655E00727EDA /* Gerencianet+Authentication.swift */; };
+		CA389C5F268365EF00727EDA /* RemoteAuthenticationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C5E268365EF00727EDA /* RemoteAuthenticationFactory.swift */; };
 		CA389C622683733900727EDA /* ChargeOneStepFactoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C612683733900727EDA /* ChargeOneStepFactoriesTests.swift */; };
-		CA389C6E2683A56C00727EDA /* AuthenticationFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C6D2683A56C00727EDA /* AuthenticationFactories.swift */; };
-		CA389C702683A75400727EDA /* AuthorizationFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C6F2683A75400727EDA /* AuthorizationFactories.swift */; };
+		CA389C702683A75400727EDA /* AuthenticationFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C6F2683A75400727EDA /* AuthenticationFactories.swift */; };
 		CA389C752683C3FA00727EDA /* AuthorizationEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA389C742683C3FA00727EDA /* AuthorizationEndpointFactory.swift */; };
 		CA389C762683C4B300727EDA /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C6405268254DC00ECE58A /* ApiUrlFactory.swift */; };
-		CA389C772683C4B800727EDA /* AuthenticationEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C6407268255AB00ECE58A /* AuthenticationEndpointFactory.swift */; };
 		CA389C782683C4BB00727EDA /* ChangeOneStepEndpointFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C6409268257AF00ECE58A /* ChangeOneStepEndpointFactory.swift */; };
 		CA389C792683C51200727EDA /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C6400268252C800ECE58A /* Environment.swift */; };
 		CA389C7B2683CA4500727EDA /* ChargeOneStepFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63F32682301300ECE58A /* ChargeOneStepFactories.swift */; };
 		CA389C7C2684FAE200727EDA /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63F126822FDE00ECE58A /* Factories.swift */; };
-		CA8C63902682189700ECE58A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63872682189700ECE58A /* Domain.framework */; };
-		CA8C63952682189700ECE58A /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63942682189700ECE58A /* DomainTests.swift */; };
-		CA8C63A1268218C800ECE58A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A0268218C800ECE58A /* Authentication.swift */; };
-		CA8C63A32682194C00ECE58A /* AuthorizationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A22682194C00ECE58A /* AuthorizationResponseModel.swift */; };
+		CA8C63A32682194C00ECE58A /* AuthenticationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A22682194C00ECE58A /* AuthenticationResponseModel.swift */; };
 		CA8C63A52682199C00ECE58A /* ChargeOneStepResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A42682199C00ECE58A /* ChargeOneStepResponseModel.swift */; };
-		CA8C63A826821B0100ECE58A /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A726821B0100ECE58A /* DomainError.swift */; };
+		CA8C63A826821B0100ECE58A /* GnError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A726821B0100ECE58A /* GnError.swift */; };
 		CA8C63AA26821B6C00ECE58A /* ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63A926821B6C00ECE58A /* ChargeOneStep.swift */; };
 		CA8C63AE2682208500ECE58A /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63AD2682208500ECE58A /* CustomerModel.swift */; };
 		CA8C63B02682212B00ECE58A /* BankingBilletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63AF2682212B00ECE58A /* BankingBilletModel.swift */; };
@@ -37,8 +31,7 @@
 		CA8C63BB268228EF00ECE58A /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63BA268228EF00ECE58A /* Data+Extensions.swift */; };
 		CA8C63CA2682296100ECE58A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63C12682296100ECE58A /* Data.framework */; };
 		CA8C63CF2682296100ECE58A /* RemoteChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63CE2682296100ECE58A /* RemoteChargeOneStep.swift */; };
-		CA8C63DB26822C6000ECE58A /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63DA26822C6000ECE58A /* RemoteAuthentication.swift */; };
-		CA8C63DD26822C7B00ECE58A /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63DC26822C7B00ECE58A /* HttpPostClient.swift */; };
+		CA8C63DD26822C7B00ECE58A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63DC26822C7B00ECE58A /* HttpClient.swift */; };
 		CA8C63DF26822C9700ECE58A /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63DE26822C9700ECE58A /* HttpError.swift */; };
 		CA8C63E126822CB500ECE58A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63872682189700ECE58A /* Domain.framework */; };
 		CA8C63E226822CB500ECE58A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63872682189700ECE58A /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,7 +47,6 @@
 		CA8C642426826AA800ECE58A /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C642326826AA800ECE58A /* MainTests.swift */; };
 		CA8C643026826C6500ECE58A /* Gerencianet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C642F26826C6500ECE58A /* Gerencianet.swift */; };
 		CA8C643226826E3700ECE58A /* RemoteChargeOneStepFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C643126826E3700ECE58A /* RemoteChargeOneStepFactory.swift */; };
-		CA8C643426826E4900ECE58A /* RemoteAuthenticationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C643326826E4900ECE58A /* RemoteAuthenticationFactory.swift */; };
 		CA8C644326826E8700ECE58A /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C643A26826E8700ECE58A /* Infra.framework */; };
 		CA8C644826826E8700ECE58A /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C644726826E8700ECE58A /* UrlProtocolStub.swift */; };
 		CA8C645326826EB800ECE58A /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C645226826EB800ECE58A /* AlamofireAdapter.swift */; };
@@ -71,18 +63,13 @@
 		CA8C646D2682731500ECE58A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63C12682296100ECE58A /* Data.framework */; };
 		CA8C646E2682731500ECE58A /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA8C63C12682296100ECE58A /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CA8C64732682739300ECE58A /* AlamofireMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C64722682739300ECE58A /* AlamofireMapper.swift */; };
-		CA8C647E26827E2700ECE58A /* Gerencianet+Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C647D26827E2700ECE58A /* Gerencianet+Authentication.swift */; };
 		CA8C648026827E3400ECE58A /* Gerencianet+ChargeOneStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C647F26827E3400ECE58A /* Gerencianet+ChargeOneStep.swift */; };
+		CAF0A08226860C4D00E23421 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C63EF26822F7800ECE58A /* XCTestCase+Extensions.swift */; };
+		CAF0A089268632B800E23421 /* AuthenticationRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0A088268632B800E23421 /* AuthenticationRequestFactory.swift */; };
+		CAF0A08B268632C600E23421 /* ChargeOneStepRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0A08A268632C600E23421 /* ChargeOneStepRequestFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CA8C63912682189700ECE58A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA8C636E268217FE00ECE58A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA8C63862682189700ECE58A;
-			remoteInfo = Domain;
-		};
 		CA8C63CB2682296100ECE58A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CA8C636E268217FE00ECE58A /* Project object */;
@@ -187,24 +174,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CA389C5526835C2B00727EDA /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		CA389C5826835D0B00727EDA /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
-		CA389C5A26835D6500727EDA /* RemoteAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthorization.swift; sourceTree = "<group>"; };
-		CA389C5C2683655E00727EDA /* Gerencianet+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authorization.swift"; sourceTree = "<group>"; };
-		CA389C5E268365EF00727EDA /* RemoteAuthorizationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthorizationFactory.swift; sourceTree = "<group>"; };
+		CA389C5526835C2B00727EDA /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		CA389C5A26835D6500727EDA /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
+		CA389C5C2683655E00727EDA /* Gerencianet+Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authentication.swift"; sourceTree = "<group>"; };
+		CA389C5E268365EF00727EDA /* RemoteAuthenticationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationFactory.swift; sourceTree = "<group>"; };
 		CA389C612683733900727EDA /* ChargeOneStepFactoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepFactoriesTests.swift; sourceTree = "<group>"; };
-		CA389C6D2683A56C00727EDA /* AuthenticationFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFactories.swift; sourceTree = "<group>"; };
-		CA389C6F2683A75400727EDA /* AuthorizationFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationFactories.swift; sourceTree = "<group>"; };
+		CA389C6F2683A75400727EDA /* AuthenticationFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFactories.swift; sourceTree = "<group>"; };
 		CA389C742683C3FA00727EDA /* AuthorizationEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationEndpointFactory.swift; sourceTree = "<group>"; };
 		CA8C63872682189700ECE58A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C638A2682189700ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA8C638F2682189700ECE58A /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA8C63942682189700ECE58A /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
-		CA8C63962682189700ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA8C63A0268218C800ECE58A /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		CA8C63A22682194C00ECE58A /* AuthorizationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationResponseModel.swift; sourceTree = "<group>"; };
+		CA8C63A22682194C00ECE58A /* AuthenticationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponseModel.swift; sourceTree = "<group>"; };
 		CA8C63A42682199C00ECE58A /* ChargeOneStepResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStepResponseModel.swift; sourceTree = "<group>"; };
-		CA8C63A726821B0100ECE58A /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		CA8C63A726821B0100ECE58A /* GnError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnError.swift; sourceTree = "<group>"; };
 		CA8C63A926821B6C00ECE58A /* ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeOneStep.swift; sourceTree = "<group>"; };
 		CA8C63AD2682208500ECE58A /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		CA8C63AF2682212B00ECE58A /* BankingBilletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingBilletModel.swift; sourceTree = "<group>"; };
@@ -217,8 +198,7 @@
 		CA8C63C92682296100ECE58A /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C63CE2682296100ECE58A /* RemoteChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteChargeOneStep.swift; sourceTree = "<group>"; };
 		CA8C63D02682296100ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA8C63DA26822C6000ECE58A /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
-		CA8C63DC26822C7B00ECE58A /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
+		CA8C63DC26822C7B00ECE58A /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		CA8C63DE26822C9700ECE58A /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		CA8C63E626822DA500ECE58A /* RemoteChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteChargeOneStep.swift; sourceTree = "<group>"; };
 		CA8C63E926822EA900ECE58A /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
@@ -232,7 +212,6 @@
 		CA8C64022682532500ECE58A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CA8C64032682533A00ECE58A /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CA8C6405268254DC00ECE58A /* ApiUrlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
-		CA8C6407268255AB00ECE58A /* AuthenticationEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpointFactory.swift; sourceTree = "<group>"; };
 		CA8C6409268257AF00ECE58A /* ChangeOneStepEndpointFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeOneStepEndpointFactory.swift; sourceTree = "<group>"; };
 		CA8C641626826AA700ECE58A /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C641926826AA700ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,7 +220,6 @@
 		CA8C642526826AA800ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8C642F26826C6500ECE58A /* Gerencianet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gerencianet.swift; sourceTree = "<group>"; };
 		CA8C643126826E3700ECE58A /* RemoteChargeOneStepFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteChargeOneStepFactory.swift; sourceTree = "<group>"; };
-		CA8C643326826E4900ECE58A /* RemoteAuthenticationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationFactory.swift; sourceTree = "<group>"; };
 		CA8C643A26826E8700ECE58A /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C643D26826E8700ECE58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8C644226826E8700ECE58A /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,8 +229,9 @@
 		CA8C645826826F4500ECE58A /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		CA8C645B26826F8200ECE58A /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		CA8C64722682739300ECE58A /* AlamofireMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireMapper.swift; sourceTree = "<group>"; };
-		CA8C647D26827E2700ECE58A /* Gerencianet+Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+Authentication.swift"; sourceTree = "<group>"; };
 		CA8C647F26827E3400ECE58A /* Gerencianet+ChargeOneStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gerencianet+ChargeOneStep.swift"; sourceTree = "<group>"; };
+		CAF0A088268632B800E23421 /* AuthenticationRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequestFactory.swift; sourceTree = "<group>"; };
+		CAF0A08A268632C600E23421 /* ChargeOneStepRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargeOneStepRequestFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,14 +239,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA8C638C2682189700ECE58A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA8C63902682189700ECE58A /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				CA8C63882682189700ECE58A /* Domain */,
-				CA8C63932682189700ECE58A /* DomainTests */,
 				CA8C63C22682296100ECE58A /* Data */,
 				CA8C63CD2682296100ECE58A /* DataTests */,
 				CA8C643B26826E8700ECE58A /* Infra */,
@@ -362,7 +332,6 @@
 			isa = PBXGroup;
 			children = (
 				CA8C63872682189700ECE58A /* Domain.framework */,
-				CA8C638F2682189700ECE58A /* DomainTests.xctest */,
 				CA8C63C12682296100ECE58A /* Data.framework */,
 				CA8C63C92682296100ECE58A /* DataTests.xctest */,
 				CA8C641626826AA700ECE58A /* Main.framework */,
@@ -384,20 +353,10 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		CA8C63932682189700ECE58A /* DomainTests */ = {
-			isa = PBXGroup;
-			children = (
-				CA8C63942682189700ECE58A /* DomainTests.swift */,
-				CA8C63962682189700ECE58A /* Info.plist */,
-			);
-			path = DomainTests;
-			sourceTree = "<group>";
-		};
 		CA8C639E268218A600ECE58A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				CA389C5526835C2B00727EDA /* Authorization.swift */,
-				CA8C63A0268218C800ECE58A /* Authentication.swift */,
+				CA389C5526835C2B00727EDA /* Authentication.swift */,
 				CA8C63A926821B6C00ECE58A /* ChargeOneStep.swift */,
 			);
 			path = UseCases;
@@ -416,7 +375,7 @@
 		CA8C63A626821AE900ECE58A /* Errors */ = {
 			isa = PBXGroup;
 			children = (
-				CA8C63A726821B0100ECE58A /* DomainError.swift */,
+				CA8C63A726821B0100ECE58A /* GnError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -435,8 +394,7 @@
 		CA8C63B22682224700ECE58A /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				CA8C63A22682194C00ECE58A /* AuthorizationResponseModel.swift */,
-				CA389C5826835D0B00727EDA /* AuthenticationResponseModel.swift */,
+				CA8C63A22682194C00ECE58A /* AuthenticationResponseModel.swift */,
 				CA8C63A42682199C00ECE58A /* ChargeOneStepResponseModel.swift */,
 			);
 			path = Responses;
@@ -446,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				CA8C647B2682798200ECE58A /* Extensions */,
+				CAF0A0872686329500E23421 /* Factories */,
 				CA8C63D8268229DF00ECE58A /* UseCases */,
 				CA8C63D9268229E800ECE58A /* Http */,
 				CA8C63C42682296100ECE58A /* Info.plist */,
@@ -469,8 +428,7 @@
 		CA8C63D8268229DF00ECE58A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				CA389C5A26835D6500727EDA /* RemoteAuthorization.swift */,
-				CA8C63DA26822C6000ECE58A /* RemoteAuthentication.swift */,
+				CA389C5A26835D6500727EDA /* RemoteAuthentication.swift */,
 				CA8C63E626822DA500ECE58A /* RemoteChargeOneStep.swift */,
 			);
 			path = UseCases;
@@ -479,7 +437,7 @@
 		CA8C63D9268229E800ECE58A /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				CA8C63DC26822C7B00ECE58A /* HttpPostClient.swift */,
+				CA8C63DC26822C7B00ECE58A /* HttpClient.swift */,
 				CA8C63DE26822C9700ECE58A /* HttpError.swift */,
 			);
 			path = Http;
@@ -513,8 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				CA8C63F126822FDE00ECE58A /* Factories.swift */,
-				CA389C6F2683A75400727EDA /* AuthorizationFactories.swift */,
-				CA389C6D2683A56C00727EDA /* AuthenticationFactories.swift */,
+				CA389C6F2683A75400727EDA /* AuthenticationFactories.swift */,
 				CA8C63F32682301300ECE58A /* ChargeOneStepFactories.swift */,
 			);
 			path = Helpers;
@@ -572,8 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				CA8C6405268254DC00ECE58A /* ApiUrlFactory.swift */,
-				CA389C5E268365EF00727EDA /* RemoteAuthorizationFactory.swift */,
-				CA8C643326826E4900ECE58A /* RemoteAuthenticationFactory.swift */,
+				CA389C5E268365EF00727EDA /* RemoteAuthenticationFactory.swift */,
 				CA8C643126826E3700ECE58A /* RemoteChargeOneStepFactory.swift */,
 			);
 			path = Http;
@@ -583,7 +539,6 @@
 			isa = PBXGroup;
 			children = (
 				CA389C742683C3FA00727EDA /* AuthorizationEndpointFactory.swift */,
-				CA8C6407268255AB00ECE58A /* AuthenticationEndpointFactory.swift */,
 				CA8C6409268257AF00ECE58A /* ChangeOneStepEndpointFactory.swift */,
 			);
 			path = Endpoints;
@@ -647,11 +602,19 @@
 			isa = PBXGroup;
 			children = (
 				CA8C642F26826C6500ECE58A /* Gerencianet.swift */,
-				CA389C5C2683655E00727EDA /* Gerencianet+Authorization.swift */,
-				CA8C647D26827E2700ECE58A /* Gerencianet+Authentication.swift */,
+				CA389C5C2683655E00727EDA /* Gerencianet+Authentication.swift */,
 				CA8C647F26827E3400ECE58A /* Gerencianet+ChargeOneStep.swift */,
 			);
 			path = Gerencianet;
+			sourceTree = "<group>";
+		};
+		CAF0A0872686329500E23421 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				CAF0A088268632B800E23421 /* AuthenticationRequestFactory.swift */,
+				CAF0A08A268632C600E23421 /* ChargeOneStepRequestFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,24 +668,6 @@
 			productName = Domain;
 			productReference = CA8C63872682189700ECE58A /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		CA8C638E2682189700ECE58A /* DomainTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CA8C639B2682189700ECE58A /* Build configuration list for PBXNativeTarget "DomainTests" */;
-			buildPhases = (
-				CA8C638B2682189700ECE58A /* Sources */,
-				CA8C638C2682189700ECE58A /* Frameworks */,
-				CA8C638D2682189700ECE58A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CA8C63922682189700ECE58A /* PBXTargetDependency */,
-			);
-			name = DomainTests;
-			productName = DomainTests;
-			productReference = CA8C638F2682189700ECE58A /* DomainTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CA8C63C02682296100ECE58A /* Data */ = {
 			isa = PBXNativeTarget;
@@ -857,9 +802,6 @@
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
 					};
-					CA8C638E2682189700ECE58A = {
-						CreatedOnToolsVersion = 12.5;
-					};
 					CA8C63C02682296100ECE58A = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
@@ -900,7 +842,6 @@
 			projectRoot = "";
 			targets = (
 				CA8C63862682189700ECE58A /* Domain */,
-				CA8C638E2682189700ECE58A /* DomainTests */,
 				CA8C63C02682296100ECE58A /* Data */,
 				CA8C63C82682296100ECE58A /* DataTests */,
 				CA8C643926826E8700ECE58A /* Infra */,
@@ -913,13 +854,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		CA8C63852682189700ECE58A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA8C638D2682189700ECE58A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -976,28 +910,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8C63B62682243800ECE58A /* Shipping.swift in Sources */,
-				CA8C63A32682194C00ECE58A /* AuthorizationResponseModel.swift in Sources */,
+				CA8C63A32682194C00ECE58A /* AuthenticationResponseModel.swift in Sources */,
 				CA8C63AE2682208500ECE58A /* CustomerModel.swift in Sources */,
 				CA8C63B9268228DF00ECE58A /* Serializable+Extensions.swift in Sources */,
 				CA8C63B4268223FB00ECE58A /* ItemModel.swift in Sources */,
-				CA8C63A1268218C800ECE58A /* Authentication.swift in Sources */,
 				CA8C63F92682497100ECE58A /* Endpoint.swift in Sources */,
-				CA8C63A826821B0100ECE58A /* DomainError.swift in Sources */,
+				CA8C63A826821B0100ECE58A /* GnError.swift in Sources */,
 				CA8C63FB26824D4C00ECE58A /* String+Extensions.swift in Sources */,
 				CA8C63A52682199C00ECE58A /* ChargeOneStepResponseModel.swift in Sources */,
 				CA8C63BB268228EF00ECE58A /* Data+Extensions.swift in Sources */,
-				CA389C5626835C2B00727EDA /* Authorization.swift in Sources */,
+				CA389C5626835C2B00727EDA /* Authentication.swift in Sources */,
 				CA8C63B02682212B00ECE58A /* BankingBilletModel.swift in Sources */,
-				CA389C5926835D0B00727EDA /* AuthenticationResponseModel.swift in Sources */,
 				CA8C63AA26821B6C00ECE58A /* ChargeOneStep.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA8C638B2682189700ECE58A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA8C63952682189700ECE58A /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,10 +930,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8C63E726822DA500ECE58A /* RemoteChargeOneStep.swift in Sources */,
-				CA8C63DD26822C7B00ECE58A /* HttpPostClient.swift in Sources */,
-				CA389C5B26835D6500727EDA /* RemoteAuthorization.swift in Sources */,
+				CAF0A08B268632C600E23421 /* ChargeOneStepRequestFactory.swift in Sources */,
+				CA8C63DD26822C7B00ECE58A /* HttpClient.swift in Sources */,
+				CA389C5B26835D6500727EDA /* RemoteAuthentication.swift in Sources */,
 				CA8C63DF26822C9700ECE58A /* HttpError.swift in Sources */,
-				CA8C63DB26822C6000ECE58A /* RemoteAuthentication.swift in Sources */,
+				CAF0A089268632B800E23421 /* AuthenticationRequestFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,9 +946,8 @@
 				CA389C622683733900727EDA /* ChargeOneStepFactoriesTests.swift in Sources */,
 				CA8C63CF2682296100ECE58A /* RemoteChargeOneStep.swift in Sources */,
 				CA8C63F42682301300ECE58A /* ChargeOneStepFactories.swift in Sources */,
-				CA389C6E2683A56C00727EDA /* AuthenticationFactories.swift in Sources */,
 				CA8C63F226822FDE00ECE58A /* Factories.swift in Sources */,
-				CA389C702683A75400727EDA /* AuthorizationFactories.swift in Sources */,
+				CA389C702683A75400727EDA /* AuthenticationFactories.swift in Sources */,
 				CA8C63ED26822F2700ECE58A /* HttpClientSpy.swift in Sources */,
 				CA8C63EA26822EA900ECE58A /* RemoteAuthenticationTests.swift in Sources */,
 			);
@@ -1033,19 +957,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA389C5F268365EF00727EDA /* RemoteAuthorizationFactory.swift in Sources */,
+				CA389C5F268365EF00727EDA /* RemoteAuthenticationFactory.swift in Sources */,
 				CA389C782683C4BB00727EDA /* ChangeOneStepEndpointFactory.swift in Sources */,
 				CA8C648026827E3400ECE58A /* Gerencianet+ChargeOneStep.swift in Sources */,
 				CA389C792683C51200727EDA /* Environment.swift in Sources */,
-				CA8C647E26827E2700ECE58A /* Gerencianet+Authentication.swift in Sources */,
 				CA8C643226826E3700ECE58A /* RemoteChargeOneStepFactory.swift in Sources */,
 				CA8C645C26826F8200ECE58A /* AlamofireAdapterFactory.swift in Sources */,
 				CA8C643026826C6500ECE58A /* Gerencianet.swift in Sources */,
-				CA8C643426826E4900ECE58A /* RemoteAuthenticationFactory.swift in Sources */,
 				CA389C762683C4B300727EDA /* ApiUrlFactory.swift in Sources */,
-				CA389C5D2683655E00727EDA /* Gerencianet+Authorization.swift in Sources */,
+				CA389C5D2683655E00727EDA /* Gerencianet+Authentication.swift in Sources */,
 				CA389C752683C3FA00727EDA /* AuthorizationEndpointFactory.swift in Sources */,
-				CA389C772683C4B800727EDA /* AuthenticationEndpointFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,6 +975,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8C642426826AA800ECE58A /* MainTests.swift in Sources */,
+				CAF0A08226860C4D00E23421 /* XCTestCase+Extensions.swift in Sources */,
 				CA389C7B2683CA4500727EDA /* ChargeOneStepFactories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1080,11 +1002,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CA8C63922682189700ECE58A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA8C63862682189700ECE58A /* Domain */;
-			targetProxy = CA8C63912682189700ECE58A /* PBXContainerItemProxy */;
-		};
 		CA8C63CC2682296100ECE58A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA8C63C02682296100ECE58A /* Data */;
@@ -1301,44 +1218,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		CA8C639C2682189700ECE58A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = ZF258QDQ5C;
-				INFOPLIST_FILE = DomainTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.DomainTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		CA8C639D2682189700ECE58A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = ZF258QDQ5C;
-				INFOPLIST_FILE = DomainTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Heitor-Novais.DomainTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1627,15 +1506,6 @@
 			buildConfigurations = (
 				CA8C63992682189700ECE58A /* Debug */,
 				CA8C639A2682189700ECE58A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CA8C639B2682189700ECE58A /* Build configuration list for PBXNativeTarget "DomainTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA8C639C2682189700ECE58A /* Debug */,
-				CA8C639D2682189700ECE58A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

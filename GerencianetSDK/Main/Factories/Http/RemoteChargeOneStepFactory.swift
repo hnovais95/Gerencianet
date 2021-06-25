@@ -13,6 +13,6 @@ func makeRemoteChargeOneStep() -> ChargeOneStep {
     return makeRemoteChargeOneStepWith(endpoint: makeChargeOneStepEndpoint(), httpClient: makeAlamofireAdapter())
 }
 
-func makeRemoteChargeOneStepWith(endpoint: Endpoint, httpClient: HttpPostClient) -> ChargeOneStep {
+func makeRemoteChargeOneStepWith(endpoint: Endpoint, httpClient: HttpClient) -> ChargeOneStep {
     return RemoteChargeOneStep(endpoint: endpoint, httpClient: httpClient)
 }

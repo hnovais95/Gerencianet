@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA8C641526826AA700ECE58A"
-               BuildableName = "Main.framework"
-               BlueprintName = "Main"
+               BlueprintIdentifier = "CA8C63862682189700ECE58A"
+               BuildableName = "Domain.framework"
+               BlueprintName = "Domain"
                ReferencedContainer = "container:GerencianetSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,9 +34,9 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA8C641D26826AA800ECE58A"
-               BuildableName = "MainTests.xctest"
-               BlueprintName = "MainTests"
+               BlueprintIdentifier = "CA8C638E2682189700ECE58A"
+               BuildableName = "DomainTests.xctest"
+               BlueprintName = "DomainTests"
                ReferencedContainer = "container:GerencianetSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -62,9 +62,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CA8C641526826AA700ECE58A"
-            BuildableName = "Main.framework"
-            BlueprintName = "Main"
+            BlueprintIdentifier = "CA8C63862682189700ECE58A"
+            BuildableName = "Domain.framework"
+            BlueprintName = "Domain"
             ReferencedContainer = "container:GerencianetSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

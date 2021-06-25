@@ -2,7 +2,7 @@
 //  Gerencianet+Authentication.swift
 //  Main
 //
-//  Created by Heitor Novais | Gerencianet on 22/06/21.
+//  Created by Heitor Novais | Gerencianet on 23/06/21.
 //
 
 import Domain
@@ -10,10 +10,11 @@ import Data
 
 extension Gerencianet {
     
-    public func auth(model: AuthenticationModel, completion: @escaping (Result<Any?, DomainError>) -> Void) {
+    public func auth(model: AuthenticationModel, completion: @escaping (Result<Any?, GnError>) -> Void) {
         let remoteAuthentication = makeRemoteAuthentication()
-        let authenticationModel = AuthenticationModel(login: model.login, password: model.password)
-        remoteAuthentication.auth(model: authenticationModel) { [weak self] result in
+        let authorizationModel = AuthenticationModel(clientId: model.clientId, clientSecret: model.clientSecret)
+        remoteAuthentication.execute(model: authorizationModel) { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case .success(let response):
                 self?.saveToken(tokenType: response.tokenType, accessToken: response.accessToken)

@@ -2,7 +2,7 @@
 //  AuthenticationResponseModel.swift
 //  Domain
 //
-//  Created by Heitor Novais | Gerencianet on 23/06/21.
+//  Created by Heitor Novais | Gerencianet on 22/06/21.
 //
 
 public struct AuthenticationResponseModel: Serializable {

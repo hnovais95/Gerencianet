@@ -8,14 +8,14 @@
 import Foundation
 import Data
 
-class HttpClientSpy: HttpPostClient {
+class HttpClientSpy: HttpClient {
     
     var urls = [URL]()
     var method: String?
     var body: [String: Any]?
     var completion: ((Result<Data?, HttpError>) -> Void)?
     
-    func post(to url: URL, method: String, withHeaders hearders: [[String : String]]?, withBody body: [String : Any]?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
+    func request(to url: URL, method: String, withHeaders hearders: [[String : String]]?, withBody body: [String : Any]?, completion: @escaping (Result<Data?, HttpError>) -> Void) {
         self.urls.append(url)
         self.method = method
         self.body = body

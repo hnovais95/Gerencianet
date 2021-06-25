@@ -11,7 +11,9 @@ import Data
 
 public class Gerencianet {
     
-    var token: String?
+    public var token: String?
+    
+    public init() {}
     
     func saveToken(tokenType: String, accessToken: String) {
         token = "\(tokenType) \(accessToken)"

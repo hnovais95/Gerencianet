@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DomainError: Error {
+public enum GnError: Error {
     
     case unexpected
     case expiredSession

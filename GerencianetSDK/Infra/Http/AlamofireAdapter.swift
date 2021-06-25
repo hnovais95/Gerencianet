@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 import Data
 
-public final class AlamofireAdapter: HttpPostClient {
+public final class AlamofireAdapter: HttpClient {
     private let session: Session
     
     public init(session: Session = .default) {
         self.session = session
     }
     
-    public func post(to url: URL, method: String, withHeaders headers: [[String : String]]?, withBody body: [String : Any]?, completion: @escaping (Result<Data?, HttpError>) -> Void) {        
+    public func request(to url: URL, method: String, withHeaders headers: [[String : String]]?, withBody body: [String : Any]?, completion: @escaping (Result<Data?, HttpError>) -> Void) {        
         session.request(url, method: AlamofireMapper.toHTTPMethod(method: method),
                         parameters: body,
                         encoding: JSONEncoding.default,

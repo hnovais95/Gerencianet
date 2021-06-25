@@ -1,5 +1,5 @@
 //
-//  TestAuthenticationFactories.swift
+//  Authentication.swift
 //  DataTests
 //
 //  Created by Heitor Novais | Gerencianet on 23/06/21.
@@ -8,7 +8,7 @@
 import Domain
 
 func makeAuthenticationModel() -> AuthenticationModel {
-    return AuthenticationModel(login: "any_client_id", password: "any_client_secret")
+    return AuthenticationModel(clientId: "any_client_id", clientSecret: "any_client_secret")
 }
 
 func makeAuthenticationResponse() -> AuthenticationResponseModel {

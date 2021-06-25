@@ -13,7 +13,18 @@ import Infra
 import Main
 
 class MainTests: XCTestCase {
-
+    
+    var sut: Gerencianet?
+    
+    override func setUp() {
+        sut = makeSut()
+        testAuthentication(sut: sut!)
+    }
+    
+    override func tearDown() {
+        sut = nil
+    }
+    
     func test_environment_variables() {
         let url = Environment.variable(.apiBaseUrl)
         let interval = Environment.variable(.tokenUpdateInterval)
@@ -21,17 +32,13 @@ class MainTests: XCTestCase {
         XCTAssertNotNil(interval)
     }
     
-    func test_auth() {
-        let gerencianet = Gerencianet()
-        
-        
-        let authorizationModel = AuthorizationModel(clientId: "Client_Id_e89b59870bcfc8285adc603662fafb60e403ccb1",
-                                                    clientSecret: "Client_Secret_35f3fbcd52bfb705701e5cf769501d8b8c32f0a8")
+    func test_chargeOneStep_should_completes_with_success() {
         let exp = expectation(description: "waiting")
-        gerencianet.authorize(model: authorizationModel) { result in
+        sut!.chargeOneStep(chargeOneStepRequest: makeChargeOneStepModel()) { [weak self] result in
+            guard self != nil else { return }
             switch result {
-            case .success:
-                XCTAssertNotNil(gerencianet.token)
+            case .success(let response):
+                XCTAssertNotNil(response)
             case .failure(let error):
                 XCTFail("Expect success got \(error) instead")
             }
@@ -39,34 +46,30 @@ class MainTests: XCTestCase {
         }
         wait(for: [exp], timeout: 5)
     }
+}
+
+extension MainTests {
     
-    func test_chargeOneStep() {
-        let gerencianet = Gerencianet()
-        let authorizationModel = AuthorizationModel(clientId: "Client_Id_e89b59870bcfc8285adc603662fafb60e403ccb1",
-                                                    clientSecret: "Client_Secret_35f3fbcd52bfb705701e5cf769501d8b8c32f0a8")
-        
+    func makeSut() -> Gerencianet {
+        return Gerencianet()
+    }
+    
+    func testAuthentication(sut: Gerencianet, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "waiting")
-        gerencianet.authorize(model: authorizationModel) { result in
+        sut.auth(model: makeAuthenticationModel()) { result in
             switch result {
             case .success:
-                XCTAssertNotNil(gerencianet.token)
+                XCTAssertNotNil(sut.token, file: file, line: line)
             case .failure(let error):
-                XCTFail("Expect success got \(error) instead")
+                XCTFail("Expect success got \(error) instead", file: file, line: line)
             }
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5)
-        
-        let exp2 = expectation(description: "waiting")
-        gerencianet.chargeOneStep(chargeOneStepRequest: makeChargeOneStepModel()) { result in
-            switch result {
-            case .success(let response):
-                XCTAssertNotNil(response)
-            case .failure(let error):
-                XCTFail("Expect success got \(error) instead")
-            }
-            exp2.fulfill()
-        }
-        wait(for: [exp2], timeout: 5)
+    }
+    
+    func makeAuthenticationModel() -> AuthenticationModel {
+        return AuthenticationModel(clientId: "Client_Id_e89b59870bcfc8285adc603662fafb60e403ccb1",
+                                   clientSecret: "Client_Secret_35f3fbcd52bfb705701e5cf769501d8b8c32f0a8")
     }
 }

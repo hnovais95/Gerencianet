@@ -14,13 +14,13 @@ class RemoteChargeOneStepTests: XCTestCase {
     func test_charge_should_call_httpClient_with_correct_url() {
         let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
-        sut.charge(token: "any_token", model: makeChargeOneStepModel()) { _ in }
+        sut.execute(token: "any_token", model: makeChargeOneStepModel()) { _ in }
         XCTAssertEqual(httpClientSpy.urls, [url])
     }
     
     func test_charge_should_call_httpClient_with_correct_data() {
         let (sut, httpClientSpy) = makeSut()
-        sut.charge(token: "any_token", model: makeChargeOneStepModel()) { _ in }
+        sut.execute(token: "any_token", model: makeChargeOneStepModel()) { _ in }
         XCTAssertNotNil(httpClientSpy.body)
     }
     
@@ -37,16 +37,6 @@ class RemoteChargeOneStepTests: XCTestCase {
         expect(sut, completeWith: .success(chargeOneStepResponse), when: {
             httpClientSpy.completeWithData(chargeOneStepResponse.toData()!)
         })
-    }
-    
-    func test_charge_should_not_complete_if_sut_has_been_deallocated() {
-        let httpClientSpy = HttpClientSpy()
-        var sut : RemoteChargeOneStep? = RemoteChargeOneStep(endpoint: makeEndpoint(), httpClient: httpClientSpy)
-        var result: ChargeOneStep.Result?
-        sut?.charge(token: "any_token", model: makeChargeOneStepModel()) { result = $0 }
-        sut = nil
-        httpClientSpy.completeWithError(.noConnectivity)
-        XCTAssertNil(result)
     }
     
     func test_charge_should_complete_with_error_if_client_completes_with_invalid_data() {
@@ -71,7 +61,7 @@ extension RemoteChargeOneStepTests {
     func expect(_ sut: RemoteChargeOneStep, completeWith expectedResult: ChargeOneStep.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "waiting")
         let chargeOneStepRequest = makeChargeOneStepModel()
-        sut.charge(token: "any_token", model: chargeOneStepRequest) { receivedResult in
+        sut.execute(token: "any_token", model: chargeOneStepRequest) { receivedResult in
             switch (expectedResult, receivedResult) {
             case (.success(let expectedAccount), .success(let receivedAccount)):
                 XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
