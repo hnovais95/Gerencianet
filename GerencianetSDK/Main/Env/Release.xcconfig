@@ -1,0 +1,8 @@
+//
+//  Release.xcconfig
+//  GerencianetSDK
+//
+//  Created by Heitor Novais | Gerencianet on 22/06/21.
+//
+
+API_BASE_URL = https:/$()/sandbox.gerencianet.com.br/v1/
